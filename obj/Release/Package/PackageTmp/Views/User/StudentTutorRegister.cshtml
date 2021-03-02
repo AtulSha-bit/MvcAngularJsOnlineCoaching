@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "StudentTutorRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .cod {
+        border: 0px solid black;
+        padding: 2rem;
+        width: 50%;
+        margin: 10px auto;
+    }
+
+    .btn {
+        padding: 4em;
+        width: -webkit-fill-available;
+    }
+
+
+    body {
+        background-image: linear-gradient(180deg, white,#1e87f0 );
+    }
+
+    @@media only screen and (max-width:767px) {
+        .cod {
+            padding: 5px;
+        }
+    }
+</style>
+
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center" style="margin-top:10em;">
+        <h2 class="text-center"><b><u>Registration Process</u></b></h2>
+        <div class="row">
+
+            <div class="col-md-6 cod">
+                <form>
+                    <button type="submit" class="btn btn-info" formaction="~/User/StudentRegister">Student Registration</button>
+                </form>
+
+            </div>
+            <div class="col-md-6 cod">
+                <form>
+                    <button type="submit" class="btn btn-danger" formaction="~/User/StudentLogin">Already registered? Login Here</button>
+                </form>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="cod col-md-6">
+                <form>
+                    <button type="submit" class="btn btn-success" formaction="~/User/TutorRegister">Tutor Registration</button>
+                </form>
+
+            </div>
+
+            <div class="cod col-md-6">
+                <form>
+                    <button type="submit" class="btn btn-warning" formaction="~/User/TutorRegister">Intern Registration</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+

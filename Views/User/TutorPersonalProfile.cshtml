@@ -1,0 +1,171 @@
+﻿@{
+    ViewBag.Title = "TutorPersonalProfile";
+    Layout = "~/Views/Shared/_LayoutTutor.cshtml";
+}
+<style>
+    body {
+        
+    }
+    
+    label {
+        margin-bottom: 0rem;
+        font-size:13px;
+    }
+    .form-control {
+        height: 25px;
+        font-size: 9px;
+    }
+</style>
+
+<h2 style="text-align:center;margin-top:50px;"><u>Tutor Personal Profile</u></h2>
+<br />
+
+<div class="row" ng-app="app" ng-controller="MyCtrl" ng-init="TutorPersonalProfileDetails()">
+
+    
+    <div class="col-md-12">
+
+        <form name="tutorperonalproreg" novalidate class="p-1" style="margin-left:50px;">
+            <div ng-show="ImgOnlyOnEdit" align="center">
+                <img ng-src="~/ProjectImages/{{Title}}" style="height:130px;width:130px;border-radius:50%;" />
+            </div>
+
+            <div ng-show="PreviewImage" class="previ" align="center">
+                <img height="130" width="130" class="prevClass" style="height:130px;width:130px;border-radius:50%" ng-src="{{Preview}}" />
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="control-label"><b>Name</b></label>
+                    <input type="text" ng-model="Name" class="form-control" name="name" maxlength="45" ng-pattern="/^[a-z A-Z]+$/" required />
+
+                    <span style="color:Red" ng-show="tutorperonalproreg.name.$error.required && tutorperonalproreg.name.$touched" ng-cloak>
+                        Name is required
+                    </span>
+
+                    <span style="color:Red" ng-show="tutorperonalproreg.name.$dirty && tutorperonalproreg.name.$error.pattern" ng-cloak>
+                        Name must contain alphabets (A-Z and a-z) only
+                    </span>
+
+
+                </div>
+
+                <div class="form-group col-md-6">
+
+                    <label class="control-label"><b>Experience(Years)</b></label>
+
+                    <select class="form-control" ng-model="Experience" name="experience" required>
+                        <option value="">-- Select Your Experience --</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+
+                    <span style="color:Red" ng-show="tutorperonalproreg.experience.$error.required && tutorperonalproreg.experience.$touched" ng-cloak>
+                        Experience is required
+                    </span>
+
+                </div>
+            </div>
+
+
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label><b>Short Description </b></label>
+                    <textarea ng-model="mdlShortDesc" class="form-control" maxlength="256"></textarea>
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <label><b>Long Description </b></label>
+                    <textarea ng-model="mdlLongDesc" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="control-label"><b>Email</b></label>
+                    <input type="text" ng-model="Email" class="form-control" name="email" maxlength="50" ng-pattern="emailregex" required />
+
+                    <span style="color:Red" ng-show="tutorperonalproreg.email.$error.required && tutorperonalproreg.email.$touched" ng-cloak>
+                        Email is required
+                    </span>
+                    <span style="color:Red" ng-show="tutorperonalproreg.email.$dirty && tutorperonalproreg.email.$error.pattern" ng-cloak>
+                        Invalid Email
+                    </span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="control-label"><b>Contact</b></label>
+                    <input type="text" ng-model="Contact" class="form-control" name="contact" maxlength="10" ng-pattern="/^[6-9][0-9]{9}$/" required />
+
+                    <span style="color:Red" ng-show="tutorperonalproreg.contact.$error.required && tutorperonalproreg.contact.$touched" ng-cloak>
+                        Contact is required
+                    </span>
+                    <span style="color:Red" ng-show="tutorperonalproreg.contact.$dirty && tutorperonalproreg.contact.$error.pattern" ng-cloak>
+                        10 digits allowed (numbers only) number must start from 6 or 7 or 8 or 9
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+
+                    <label class="control-label" for="inputdob">
+                        <label> <b><span style="color:red">*</span> DOB </b> </label>
+                    </label>
+                    <input class="form-control" moment-picker="momentDOB" required format="DD/MM/YYYY" start-view="day" name="dob" ng-model="DOB"
+                           ng-model-options="{ updateOn: 'blur' }" ng-blur="validateTutorPersonalProfileDOB()">
+                    <span style="color:Red" ng-show="tutorperonalproreg.dob.$error.required && tutorperonalproreg.dob.$touched" ng-cloak>
+                        DOB is required
+                    </span>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="control-label"><b>Upload Image</b></label>
+
+                    <input type="file" class="form-control" ngf-select="uploadTutorImage($file)" ng-model="file" name="file" ngf-pattern="'image/*'"
+                           ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+                           ngf-resize="{width: 100, height: 100}" />
+                </div>
+            </div>
+            <br />
+            <div class="col-md-12 text-center mt-1">
+                <input type="button" class="btn  btn-warning" ng-disabled="tutorperonalproreg.$invalid" ng-click="UpdateTutorPersonalProfile()" value="Update" />
+            </div>
+            <br />
+            <br />
+            <br />
+        </form>
+    </div>
+   
+    <div class="modal fade" data-backdrop="static" id="updateTutorProfileModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-
+                       dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    Your Details updated Successfully
+                </div>
+
+                <div class="modal-footer">
+                    @*<a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>*@
+                    <a class="btn btn-success" href="/User/TutorPersonalProfile">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

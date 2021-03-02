@@ -1,0 +1,55 @@
+//============================================ Brand Tutor By Dilshad A. ==============================================
+
+    // Upload Multiple files by tutors By Dilshad A. On 30 Sept 2020
+    $scope.arrResourceFile = [];
+    $scope.arrMultipleResourceFile = [];
+    $scope.UploadResourseFilesByTutor = function (files) {
+        $scope.ResourceFileName = files.name;
+        //$scope.SelectedFiles = files;
+
+        var count = 0;
+        if ($scope.ResourceFileName != undefined) {
+            for (var i = 0; i < $scope.arrResourceFile.length; i++) {
+                if ($scope.ResourceFileName == $scope.arrResourceFile[i].ResourceName) {
+                    count++;
+                }
+            }
+        }
+        else {
+            alert('Please add file.')
+        }
+
+        if (count == 0) {
+            $scope.arrResourceFile.push({ ResourceName: $scope.ResourceFileName });
+            $scope.arrMultipleResourceFile.push(files);
+        }
+        else {
+            alert('File is already added.')
+        }
+    };
+
+    // Delete Resource Resource By Dilshad A. on 03 Oct 2020
+    $scope.DeleteInternResourceArray = function (index) {
+        var d = $scope.arrResourceFile[index];
+        var d1 = $scope.arrMultipleResourceFile[index];
+        //$scope.deleteInternResourceArray.push({ InternshipId: data2.InternshipId, InternshipName: data2.InternshipName, ResourceId: data2.ResourceId, ResourceName: data2.ResourceName });
+        $scope.arrResourceFile.splice(index, 1);
+        $scope.arrMultipleResourceFile.splice(index, 1);
+    }
+
+    // File Upload By Brand Tutor By Dilshad A. on 03 Oct 2020
+    $scope.FileUploadByBrandTutor = function () {
+        Upload.upload({
+            url: "/Tutor/FileUploadByBrandTutor",
+            data: {
+                file: $scope.arrMultipleResourceFile
+            }
+        }).then(function (res) {
+            if (res.data > 0) {
+                alert("File(s) successfully uploaded.")
+            }
+            else {
+                alert("Something went wrong. Please try again!!!");
+            }
+        });
+    };

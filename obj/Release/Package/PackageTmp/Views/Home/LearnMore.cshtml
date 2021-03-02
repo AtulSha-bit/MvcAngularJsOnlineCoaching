@@ -1,0 +1,301 @@
+﻿
+
+@{
+    ViewBag.Title = "LearnMore";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Learn More</title>
+    <style>
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+            text-decoration: none;
+            outline: none;
+        }
+
+            a,
+            a:active,
+            a:focus {
+                color: #6f6f6f;
+                text-decoration: none;
+                transition-timing-function: ease-in-out;
+                -ms-transition-timing-function: ease-in-out;
+                -moz-transition-timing-function: ease-in-out;
+                -webkit-transition-timing-function: ease-in-out;
+                -o-transition-timing-function: ease-in-out;
+                transition-duration: .2s;
+                -ms-transition-duration: .2s;
+                -moz-transition-duration: .2s;
+                -webkit-transition-duration: .2s;
+                -o-transition-duration: .2s;
+            }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            width: 100%;
+            height: -webkit-fill-available;
+        }
+
+        section {
+            padding: 60px 0;
+            min-height: 100vh;
+        }
+
+        .testimonials {
+            padding: 120px 0 0px;
+        }
+
+            .testimonials .heading {
+                margin-bottom: 60px;
+            }
+
+                .testimonials .heading h2 {
+                    font-size: 30px;
+                    font-weight: 700;
+                    color: #313e4b;
+                    margin-bottom: 20px;
+                }
+
+                    .testimonials .heading h2 span {
+                        font-weight: 300;
+                        color: #02a2c4;
+                        margin: 0;
+                    }
+
+                .testimonials .heading p {
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 26px;
+                    margin: 0;
+                    color: #727f8c;
+                }
+
+            .testimonials .box {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+                padding: 40px;
+                border-radius: 15px;
+                margin-bottom: 40px;
+                transition: all 0.4s ease-in-out;
+            }
+
+                .testimonials .box h3 {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #313e4b;
+                }
+
+                .testimonials .box:hover {
+                    transform: translateY(-10px);
+                }
+
+                .testimonials .box h3 span {
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: #02a2c4;
+                    margin-left: 10px;
+                }
+
+                .testimonials .box p {
+                    font-size: 15px;
+                    font-weight: 300;
+                    line-height: 24px;
+                    margin: 0;
+                    color: #727f8c;
+                    margin-bottom: 20px;
+                    margin-top: 10px;
+                    padding-right: 20px;
+                }
+
+                .testimonials .box .image img {
+                    width: 200px;
+                    border-radius: 50%;
+                    margin: 0;
+                    padding: 0;
+                    display: inline-block;
+                }
+
+                .testimonials .box .icon {
+                    border: 1px solid #eee;
+                    color: #777777;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin-right: 10px;
+                    text-decoration: none;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                    .testimonials .box .icon:hover {
+                        color: #ffffff;
+                        border: 1px solid #02a2c4;
+                        background: #02a2c4;
+                    }
+
+        #art {
+            padding: 1rem 10rem;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no">
+    <banner>
+        <img src="~/Images/neonbrand-zFSo6bnZJTw-unsplash.jpg" />
+    </banner>
+    <section class="testimonials">
+        <div class="container">
+            <div class="heading wow fadeIn text-center">
+                <h2>
+                    Our
+                    <span>Work</span>
+                </h2>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and type setting industry
+                    when an unknown printer took
+                    <br>
+                    a galley of type and scrambled it to make a type specimen book It has survived
+                    not only five centuries.
+                </p>
+            </div>
+            <div class="row">
+                <!-- Box-1 -->
+                <div class="col-lg-6">
+                    <div class="box d-flex align-items-center wow fadeInLeft">
+                        <div class="content">
+                            <h3>
+                                Your Name
+                                <span>Graphic Designer</span>
+                            </h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and type setting industry when an unknown printer</p>
+                            <div class="social d-flex">
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image"><img src="https://i.ibb.co/8x9xK4H/team.jpg" alt="" class="img-fluid"></div>
+                    </div>
+                </div>
+                <!-- Box-2 -->
+                <div class="col-lg-6">
+                    <div class="box d-flex align-items-center wow fadeInRight">
+                        <div class="content">
+                            <h3>
+                                Your Name
+                                <span>Graphic Designer</span>
+                            </h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and type setting industry when an unknown printer</p>
+                            <div class="social d-flex">
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image"><img src="https://i.ibb.co/8x9xK4H/team.jpg" alt="" class="img-fluid"></div>
+                    </div>
+                </div>
+                <!-- Box-3 -->
+                <div class="col-lg-6">
+                    <div class="box d-flex align-items-center wow fadeInLeft">
+                        <div class="content">
+                            <h3>
+                                Your Name
+                                <span>Graphic Designer</span>
+                            </h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and type setting industry when an unknown printer</p>
+                            <div class="social d-flex">
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image"><img src="https://i.ibb.co/8x9xK4H/team.jpg" alt="" class="img-fluid"></div>
+                    </div>
+                </div>
+                <!-- Box-4 -->
+                <div class="col-lg-6">
+                    <div class="box d-flex align-items-center wow fadeInRight">
+                        <div class="content">
+                            <h3>
+                                Your Name
+                                <span>Graphic Designer</span>
+                            </h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and type setting industry when an unknown printer</p>
+                            <div class="social d-flex">
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#0" class="icon d-flex align-items-center justify-content-center">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image"><img src="https://i.ibb.co/8x9xK4H/team.jpg" alt="" class="img-fluid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="row" id="art">
+        <div class="col-md-6">
+            <img src="~/Images/neonbrand-zFSo6bnZJTw-unsplash.jpg" class="w-100" style="height:auto;" />
+        </div>
+        <div class="col-md-6">
+            Lorem Ipsum is simply dummy text of the printing and type setting industry
+            when an unknown printer took
+            <br>
+            a galley of type and scrambled it to make a type specimen book It has survived
+            not only five centuries.
+        </div>
+    </div>
+</body>
+</html>
+
+

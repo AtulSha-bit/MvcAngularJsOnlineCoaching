@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "ViewStudents";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    input.form-control, select.form-control {
+        height: 22px !important;
+    }
+</style>
+
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="studentDetailsShowInit()">
+    <br />
+    <h2 class="text-center"><u><b>Student Details</b></u></h2>
+    <div ng-hide="hidestudentstable" class="m-2">
+        <table ng-table="StudentDetails" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in  $data track by $index">
+                <td data-title="'Sno'">{{$index+1}}</td>
+                <td data-title="'Name'" sortable="'Name'" filter="{'Name':'text'}"> {{ user.Name }} </td>
+                <td data-title="'Username'" sortable="'Username'" filter="{'Username':'text'}"> {{ user.Username }} </td>
+
+                <td data-title="'Mobile'" sortable="'Mobile'" filter="{'Mobile':'text'}"> {{ user.Mobile}} </td>
+                <td data-title="'Email'" sortable="'Email'" filter="{'Email':'text'}"> {{ user.Email}} </td>
+
+                <td data-title="'DOB'" sortable="'DOB'" filter="{'DOB':'text'}"> {{ user.DOB}} </td>
+
+                <td data-title="'Batch Size'" sortable="'BatchSize'" filter="{'BatchSize':'text'}"> {{ user.BatchSize}} </td>
+                
+
+                <td data-title="'Temporary Reg No'" sortable="'TemporaryRegNo'" filter="{'TemporaryRegNo':'text'}">
+                    {{ user.TemporaryRegNo }}
+                </td>
+
+                <td data-title="'Date Created'" sortable="'DateCreated'" filter="{'DateCreated':'text'}">
+                    {{ user.DateCreated}}
+                </td>
+
+                <td data-title="'Created By'" sortable="'CreatedBy'" filter="{'CreatedBy':'text'}">
+                    {{ user.CreatedBy}}
+                </td>
+
+                <td data-title="'Payment Status'" sortable="'PaymentStatus'" filter="{'PaymentStatus':'text'}">
+                    {{ user.PaymentStatus }}
+                </td>
+
+                <td data-title="'Category Name'" sortable="'CategoryName'" filter="{'CategoryName':'text'}">
+                    {{ user.CategoryName }}
+                </td>
+
+
+
+                <td data-title="'Student Type'" sortable="'StudentType'" filter="{'StudentType':'text'}">
+                    {{ user.StudentType }}
+                </td>
+
+                <td data-title="'Image'">
+                    <img ng-src="~/ProjectImages/{{user.ProfileImage}}" style="height:50px;width:100px" />
+                </td>
+
+                <td data-title="'Action'" class="editbtn">
+                    <a href="#" class="btn btn-sm btn-success" ng-click="editStudentsDetail(user.StudentId)"><i class="fa fa-edit"></i></a>
+
+                </td>
+
+
+
+            </tr>
+            <tr>
+                <td colspan="23" ng-show="$data =='undefined' || $data =='null' || $data.length==0">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

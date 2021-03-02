@@ -1,0 +1,816 @@
+﻿
+@{
+    ViewBag.Title = "InternProfile";
+    Layout = "~/Views/Shared/LayoutIntern.cshtml";
+}
+
+<style>
+    #firstrow {
+        margin-left: 4rem;
+        margin-right: 4rem;
+        width:100%;
+    }
+
+    /*  .btn {
+        border-radius: 0rem;
+        color: white !important;
+    }
+       */
+
+    .card {
+        border-radius: 10px;
+    }
+</style>
+
+<link href="~/Css/internprofile.css" rel="stylesheet" />
+@*studentprofileinit();callInit();*@
+<div ng-app="app" ng-controller="MyCtrl" ng-init="internprofileinit();documentinit();internshipdetailsinit()">
+    <div class="container" ng-hide="hideStudentProflie">
+
+        <div class="row" id="studentdata">
+            <div class="col-md-3" id="side" style="width: -webkit-fill-available; height: auto;">
+                <div ng-show="ImgOnlyOnEdit" class="imgname">
+                    @if (Session["InternImage"] != null)
+                    {
+                        @*<img ng-src="~/ProjectImages/@Session["InternImage"].ToString()" />*@
+                        <img ng-src="~/Intern/Images/@Session["InternImage"].ToString()" />
+                    }
+                    else
+                    {
+                        <img src="~/Images/kimberly-farmer-lUaaKCUANVI-unsplash.jpg" />
+                    }
+                    @if (Session["InternUser"] != null)
+                    {
+                        <h2>@Session["InternUser"].ToString()</h2>
+                    }
+
+                </div>
+
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-Profile" role="tab" aria-controls="Profile"> Profile</a>
+                    <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-Upload" role="tab" aria-controls="Upload"> Upload Image</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-Basic" role="tab" aria-controls="Basic"> Basic Information</a>
+                    @*<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-Qualification" role="tab" aria-controls="Qualification"> Qualification</a>
+
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-Document" role="tab" aria-controls="Document">Document</a>*@
+
+                    @*   <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-Course" role="tab" aria-controls="messages">Internship Details</a> *@
+                    @*   <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-Payment" role="tab" aria-controls="settings"> Payment Mode</a>*@
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-Settings" role="tab" aria-controls="settings">Settings</a>
+                    @*<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-Communication" role="tab" aria-controls="settings" ng-click="GetCommunicationById('All-Intern-Students');">Communication</a>*@
+                    @*     <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-Close" role="tab" aria-controls="settings">Close account</a>  Intern *@
+
+                </div>
+            </div>
+            <div class="col-md-9" id="info">
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-Profile" role="tabpanel" aria-labelledby="list-home-list">
+                        <div class="top">
+                            <h2>Intern Profile</h2>
+
+                            <h3>Information</h3>
+                        </div>
+                        <form class="inner2" name="studentprofiletab" novalidate>
+
+                            <div class="form-group">
+                                <label class="control-label">Name</label>
+                                <input type="text" ng-model="Name" class="form-control" name="name" maxlength="45" required ng-pattern="/^[a-z A-Z]+$/"  />
+
+                                <span style="color:Red" ng-show="studentprofiletab.name.$error.required && studentprofiletab.name.$touched" ng-cloak>
+                                    Name is required
+                                </span>
+
+                                <span style="color:Red" ng-show="studentprofiletab.name.$dirty && studentprofiletab.name.$error.pattern" ng-cloak>
+                                    Name must contain alphabets (A-Z and a-z) only
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div>
+                                    <label class="control-label" for="inputdob">
+                                        @*  <span style="color:red">* </span>*@
+                                        DOB
+                                    </label>
+                                    <input class="form-control" moment-picker="momentDOB" required format="DD/MM/YYYY" start-view="day" name="dob" ng-model="DOB"
+                                           ng-model-options="{ updateOn: 'blur' }" ng-blur="validateInternDOB()" />
+
+                                    <span style="color:Red" ng-show="studentprofiletab.DOB.$error.required && studentprofiletab.DOB.$touched" ng-cloak>
+                                        DOB is required
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Username</label>
+                                <input type="text" ng-model="Username" class="form-control" name="username" disabled required maxlength="45"  />
+                                <span style="color:Red" ng-show="studentprofiletab.username.$error.required && studentprofiletab.username.$touched" ng-cloak>
+                                    Username is required
+                                </span>
+                            </div>
+                            @*<div class="form-group" style="display:none">
+                                <label class="control-label">Password</label>
+                                <input type="password" ng-model="Password" class="form-control" name="password" maxlength="40" disabled required />
+
+                                <span style="color:Red" ng-show="studentprofilereg.password.$error.required && studentprofilereg.password.$touched" ng-cloak>
+                                    Password is required
+                                </span>
+                            </div>*@
+
+                            <div class="form-group ">
+                                <label class="control-label">Email</label>
+                                <input type="text" ng-model="Email" class="form-control" name="email" maxlength="50" required ng-pattern="emailregex"  />
+
+                                <span style="color:Red" ng-show="studentprofiletab.email.$error.required && studentprofiletab.email.$touched" ng-cloak>
+                                    Email is required
+                                </span>
+                                <span style="color:Red" ng-show="studentprofiletab.email.$dirty && studentprofiletab.email.$error.pattern" ng-cloak>
+                                    Invalid Email
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone No</label>
+                                <input type="text" class="form-control" id="exampleInputphon" name="mobile" autocomplete="off" ng-model="Phone" maxlength="10" required ng-pattern="/^[6-9][0-9]{9}$/" />
+
+                                <span style="color:Red" ng-show="studentprofiletab.mobile.$error.required && studentprofiletab.mobile.$touched" ng-cloak>
+                                    Mobile No. is required
+                                </span>
+
+                                <span style="color:Red" ng-show="studentprofiletab.mobile.$dirty && studentprofiletab.mobile.$error.pattern" ng-cloak>
+                                    10 digits only must start with 6,7,8,9
+                                </span>
+                            </div>
+                            <hr />
+                            <h5 class="pb-3">Links</h5>
+                            <div class="form-group">
+
+
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">http://twitter.com/</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup" ng-model="Twitter" placeholder="Username">
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">http://www.facebook.com/</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup2" ng-model="Facebook"
+                                           placeholder="Username">
+                                </div>
+
+                            </div>
+                            @*<div class="form-group">
+
+
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">http://www.linkedin.com/</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup3" placeholder="Username">
+                                </div>
+
+                            </div>*@
+                            <div class="form-group">
+
+
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">http://www.instagram.com/</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup4" ng-model="Instagram" placeholder="Username">
+                                </div>
+
+                            </div>
+
+                        </form>
+                        <div class="row" id="butk">
+                            <button type="submit" class="btn btn-primary" ng-click="UpdateInternProfile()" ng-disabled="studentprofiletab.$invalid">Save</button>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="list-Upload" role="tabpanel" aria-labelledby="list-home-list">
+                        <div class="top">
+                            <h2>Upload Image</h2>
+
+                            <h3>Information</h3>
+                        </div>
+                        <form class="inner2">
+                            <div class="form-group">
+                                <label class="control-label">Image preview</label>
+                                <div ng-show="PreviewImage" style="border-radius:50%;text-align: center;">
+                                    @* previ  src="~/Images/63081-profile-computer-social-user-icons-free-frame-thumb.png"*@
+                                    <img height="200" width="200" class="prevClass pt-3" data-ng-src="{{Preview}}" />
+                                </div>
+                            </div>
+
+                            @*  validatedCustomFile"*@
+
+                            <div class="form-group pt-3">
+                                <label class="control-label">Add / Change Image</label>
+                                <div class="custom-file mb-3">
+                                    <input type="file" class="custom-file-input" id="validateCustomFile" ngf-select="changeInternImg($file)" ng-model="file" name="file" ngf-pattern="'image/*'"
+                                           ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 200, height: 200}" required>
+                                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+
+                                </div>
+                            </div>
+
+
+
+                        </form>
+                        <div class="row" id="butk" style="margin-top: 48px">
+                            <button type="submit" class="btn btn-primary" ng-click="UpdateInternProfile()">Save</button>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="list-Basic" role="tabpanel" aria-labelledby="list-profile-list">
+                        <div class="top">
+                            <h2> Basic Information</h2>
+
+                            <h3>Information</h3>
+                        </div>
+                        <form class="inner2" name="profilebasictab" novalidate>
+
+                            <div class="form-group">
+                                <label for="inputState">State</label>
+                                <input type="text" class="form-control" ng-model="State" name="state" maxlength="30" required  autocomplete="off" />
+                                <span style="color:Red" ng-show="profilebasictab.state.$error.required && profilebasictab.state.$touched" ng-cloak>
+                                    State is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputCity"> City</label>
+                                <input type="text" class="form-control" ng-model="City"  name="city" id="inputCity" required maxlength="30">
+                                <span style="color:Red" ng-show="profilebasictab.city.$error.required && profilebasictab.city.$touched" ng-cloak>
+                                    City is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputZip"> Pin Code</label>
+                                <input type="text" class="form-control"  ng-model="PinCode" id="inputZip" name="PinCode" required maxlength="6">
+                                <span style="color:Red" ng-show="profilebasictab.PinCode.$error.required && profilebasictab.PinCode.$touched" ng-cloak>
+                                    Pin Code is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress"> Address</label>
+                                <textarea rows="3" cols="30" ng-model="Address"  name="address" class="form-control"
+                                          maxlength="100" required autocomplete="off">
+                                        </textarea>
+                                <span style="color:Red" ng-show="profilebasictab.address.$error.required && profilebasictab.address.$touched" ng-cloak>
+                                    Address is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress2">LandMark</label>
+                                <textarea class="form-control" rows="3" cols="30" ng-model="LandMark" id="landmark" name="landmark" maxlength="100" autocomplete="off">
+                                        </textarea>
+                            </div>
+
+                        </form>
+                        <div class="row" id="butk">
+                            <button type="submit" class="btn btn-primary" ng-click="UpdateInternProfile()" ng-disabled="profilebasictab.$invalid">Save</button>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="tab-pane fade" id="list-Qualification" role="tabpanel" aria-labelledby="list-profile-list">
+                        <div class="top">
+                            <h2>Qualification</h2>
+
+                            <h3>Information</h3>
+                        </div>
+                        <form class="inner2" name="qualificationreg" novalidate>
+
+                            <div class="form-group">
+                                <label for="inputState">Qualification</label>
+                                <input type="text" class="form-control" ng-model="Qualification" disabled name="qualification" maxlength="30" required autocomplete="off" />
+                                <span style="color:Red" ng-show="qualificationreg.qualification.$error.required && qualificationreg.qualification.$touched" ng-cloak>
+                                    Qualification is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputCity"> College / University</label>
+                                <input type="text" class="form-control" ng-model="CollegeUniv" name="collegeuniv" id="inputCollegeUniv" maxlength="40" required>
+                                <span style="color:Red" ng-show="qualificationreg.collegeuniv.$error.required && qualificationreg.collegeuniv.$touched" ng-cloak>
+                                    College/University is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputZip"> Year Of Passing</label>
+                                <input type="text" class="form-control" ng-model="YearOfPassing" id="yearOfPassing" name="yearofpassing" maxlength="6">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress"> How Do You Know</label>
+                                <textarea rows="3" cols="30" ng-model="HowDoYouKnow" disabled name="howdoyouknow" class="form-control"
+                                          maxlength="100" autocomplete="off">
+                                        </textarea>
+
+                            </div>
+
+                            @*<div class="form-group">
+                                <label for="inputAddress2">Comments</label>
+                                <textarea class="form-control" rows="3" cols="30" ng-model="Comments"
+                                          id="Comments" name="comments" maxlength="100" autocomplete="off">
+                                        </textarea>
+                            </div>*@
+
+                        </form>
+                        <div class="row" id="butk">
+                            <button type="submit" class="btn btn-primary" ng-click="UpdateInternProfile()" ng-disabled="qualificationreg.$invalid">Save</button>
+                        </div>
+                    </div>
+
+
+
+                    <div class="tab-pane fade" id="list-Document" role="tabpanel" aria-labelledby="list-profile-list">
+                        <div class="top">
+                            <h2>Documents</h2>
+
+                            <h3>Information</h3>
+                        </div>
+                        <form class="inner2" name="documentreg" novalidate>
+
+
+
+                            <div class="form-group">
+                                <label for="inputState">Aadhar Number</label>
+                                <input type="text" class="form-control" ng-model="mdlInternApplyAadhar" name="aadhaar" maxlength="30" required autocomplete="off" />
+                                <span style="color:Red" ng-show="documentreg.aadhaar.$error.required && documentreg.aadhaar.$touched" ng-cloak>
+                                    Aadhar Number is required
+                                </span>
+                            </div>
+
+
+
+
+                            <div class="form-group pt-1">
+                                <label class="control-label">Upload Aadhar Card Image</label>
+                                <div class="custom-file mb-3">
+                                    <input type="file" class="custom-file-input" id="validatedCustomFile" ngf-select="uploadAadhaarForInterns($file)" ng-model="fileAadhar" name="file" ngf-pattern="'image/*'"
+                                           ngf-accept="'image/*'" ngf-max-size="5MB" ngf-resize="{width: 300, height: 500}" />
+                                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                    <p><b>Note:</b>Only Image file.</p>
+
+                                    <div ng-hide="hideaadhar"><b> Document Name: </b>  {{ fileAadhar }} </div>
+
+                                    <div ng-hide="previewaadhar"> <b> Document Name: </b> {{ aadhaarFileName }} </div>
+                                    @*    {{ aadhaarFileName }}*@
+                                </div>
+                            </div>
+
+
+                            <div class="form-group pt-1">
+                                <label class="control-label">Upload Resume</label>
+                                <div class="custom-file mb-3">
+                                    <input type="file" class="custom-file-input" ngf-select="uploadResumeForInterns($file)" ng-model="fileResume" name="file" ngf-pattern="'.pdf'"
+                                           ngf-accept="'.pdf'" ngf-max-size="5MB" ngf-resize="{width: 300, height: 500}" />
+                                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                    <p><b>Note:</b>Only pdf file.</p>
+
+                                    <div ng-hide="hideresume"> <b>Resume:</b>   {{  fileResume }} </div>
+                                    <div ng-hide="previewresume"> <b> Resume: </b> {{ resumeFileName }} </div>
+
+                                </div>
+                            </div>
+
+                        </form>
+                        <div class="row" id="butk">
+                            <button type="submit" class="btn btn-primary" ng-click="UpdateInternProfile()" ng-disabled="documentreg.$invalid">Save</button>
+                        </div>
+                    </div>
+
+
+
+                    <div class="tab-pane fade" id="list-Course" role="tabpanel" aria-labelledby="list-messages-list">
+                        <div class="top">
+                            <h2>Internship Details</h2>
+
+
+                        </div>
+
+
+
+                        @*<div class="inner2">
+                            <table ng-table="InternshipDetailsTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                                    @if (Session["InterApllyId"] != null)
+                                    {
+                                        if (Session["UserType"].ToString() == "Intern")
+                                        {
+                                            <td data-title="'Sno'">{{$index+1}}</td>
+                                            <td data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
+                                                {{ user.Name }}
+                                            </td>
+                                            <td data-title="'Internship Name'" sortable="'InternshipName'" filter="{ 'InternshipName': 'text' }">
+                                                {{ user.InternshipName }}
+                                            </td>
+                                            <td data-title="'Duration'" sortable="'DurationName'" filter="{ 'DurationName': 'text' }">
+                                                {{ user.DurationName }}
+                                            </td>
+                                            <td data-title="'Valid From'" sortable="'ValidFrom'" filter="{ 'ValidFrom': 'text' }">
+                                                {{ user.ValidFrom }}
+                                            </td>
+                                            <td data-title="'Valid To'" sortable="'ValidTo'" filter="{ 'ValidTo': 'text' }">
+                                                {{ user.ValidTo }}
+                                            </td>
+
+
+                                            @*   <td data-title="'Action'" class="act">
+
+                                <a href="#" class="btn btn-success" ng-click="editDuration(user)"><i class="fa fa-edit"></i></a>
+                                @if (Session["UserType"].ToString() == "Intern")
+                                {
+                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteDuration" ng-click="deleteDuration(user.DurationId)"><i class="fa fa-trash"></i></a>
+                                }
+                            </td>
+                                            
+                                        }
+
+                                    }
+
+
+                                </tr>
+
+
+                                <tr>
+                                    <td colspan="5" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                                        <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>*@
+
+
+                        <div class="row" id="firstrow">
+                            <div class="card mt-2 col-md-3" style="height:250px;" ng-repeat="d in internshiparrayparse">
+                                <center style="padding-top: 1.5rem;">
+                                    <div class="internHeading">
+                                        @* class="justify-content-around" <h5 class="ng-binding" style="text-transform: capitalize;">{{ d.InternshipName }}</h5>*@
+                                    </div>
+                                    <div class="card-body internCardBody">
+
+                                        <p class="justify-content-around"><b>Internship: </b>{{ d.InternshipName }}</p>
+                                        <p class="justify-content-around"><b>Duration: </b>{{ d.DurationName }}</p>
+                                        <p class="justify-content-around"><b>Valid From: </b>{{ d.ValidFrom }}</p>
+                                        <p class="justify-content-around"><b>Valid To: </b>{{ d.ValidTo }}</p>
+                                        <br />
+                                    </div>
+                                    <br />
+
+                                </center>
+                            </div>
+
+                            <div class="card mt-2 col-md-3" style="height:250px;" ng-repeat="d in perksarrayparse">
+            <center style="padding-top: 1.5rem;">
+                <div class="internHeading">
+                     <h5 class="ng-binding" style="text-transform: capitalize;">{{ d.InternshipName }}</h5>
+                </div>
+                <div class="card-body internCardBody">
+
+
+                    <p class="justify-content-around"><b> Perk Name: </b>{{ d.PerkName }}</p>
+                    <br />
+                </div>
+                <br />
+
+            </center>
+        </div>
+                        </div>
+
+
+                        @*<form id="inner" name="studentprofilereg" novalidate>
+            <div ng-hide="hideCourseDur">
+                <div class="form-row">
+                    <div class="form-group col-md-6 mt-2">
+                        <label for="inputState">Select Course</label>
+                        <select id="selectCourse" class="form-control" name="course" ng-disabled="disableCourse" ng-model="Course" ng-change="getCourseDetails()"
+                                ng-options="item as item.CourseName for item in CourseData track by item.CourseId">
+                            <option value="" selected> -- Select  Course --</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group col-md-6 mt-2">
+                            <label for="inputState">Select Course</label>
+                            <select id="selectCourse" class="form-control" name="course" ng-disabled="disableCourse" ng-model="Course" ng-change="getCourseDetails()"
+                                    ng-options="item.CourseId as item.CourseName for item in CoursesData">
+                                <option value=""> -- Select  Course --</option>
+                            </select>
+                        </div>
+
+
+
+                    <div class="form-group col-md-6 mt-lg-2 mt-md-2">
+                        <label for="inputState">Cousre Duration</label>
+                        <select ng-model="strDuration" class="form-control" ng-disabled="disableDuration" name="duration" ng-change="getallDetails()">
+                            <option value="" selected>-- Select Duration--</option>
+                            <option value="1 Month">1 Month</option>
+                            <option value="2 Months">2 Months</option>
+                            <option value="3 Months">3 Months</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <input type="text" ng-show="false" name="StructureId" ng-model="StructureId" style="display:none" />
+
+            <div ng-hide="hidecourseValidation">
+
+                <div ng-hide="hideCourseValidFrom">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6 ">
+                            <div>
+
+                                <label for="ValidFrom">Valid From</label>
+                                <input class="form-control" moment-picker="mntCourseValidFrom" format="DD/MM/YYYY"
+                                       start-view="day" name="CourseValidFrom" ng-model="CourseValidFrom"
+                                       disabled ng-model-options="{ updateOn: 'blur' }">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div>
+
+                                <label class="ValidTo">Valid To</label>
+                                <input class="form-control" moment-picker="mntCourseValidTo" format="DD/MM/YYYY"
+                                       start-view="day" name="CourseValidTo" disabled ng-model="CourseValidTo"
+                                       ng-model-options="{ updateOn: 'blur' }">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <input type="text" ng-show="false" name="StructureId" ng-model="StructureId" style="display:none" />
+                <div class="form-row" ng-hide="hideFees">
+                    <div class="form-group col-md-6">
+                        <div>
+
+                            <label for="inputAddress">Fees</label>
+                            <input type="text" class="form-control" autocomplete="off" id="inputAddress" ng-model="Fees" name="fees" ng-hide="hideFees" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <div>
+                            <label for="inputAddress2">Discount % (Valid UpTo)</label>
+                            <input type="text" disabled autocomplete="off" class="form-control" id="inputAddress10" ng-hide="hideDiscount" ng-model="Discount" name="discount">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row" ng-hide="hideFeesAfterDiscount">
+                    <div class="form-group col-md-6">
+                        <div>
+                            <label for="inputAddress">Fees After Discount</label>
+                            <input type="text" class="form-control" id="inputAddress5" disabled autocomplete="off" ng-model="FeesAfterDiscount" name="feeafterdiscount">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <div>
+                            <label for="inputAddress">Net amount to pay</label>
+                            <input type="text" class="form-control" disabled id="inputAddress6" autocomplete="off" ng-model="NetAmount" name="netamount">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-row" ng-hide="hideMonth">
+                    <div class="form-group col-md-6">
+                        <div>
+
+                            <label for="inputState">Month</label>
+                            <select id="inputState7" class="form-control" ng-disabled="disableMonth" ng-model="Month" ng-change="calcuatejoining();enableDisableJoinDate()" name="month">
+                                <option value="" selected> -- Select Month -- </option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group col-md-6">
+                        <div ng-hide="hideJoiningDate">
+                            <label for="joiningdate">Joining date</label>
+
+                            <select class="form-control" ng-model="JoiningDate" ng-disabled="disabledJoinDate" name="joiningdate" ng-change="getjoin()">
+                                <option value="" selected>-- Select Joining Date --</option>
+                                <option value="01">01</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </form>
+        <div class="row" id="butk">
+            <button type="submit" class="btn btn-primary" id="butn" ng-hide="hideAddbtn" ng-disabled="disableAddBtn" ng-click="AddMultipleCourseForStudent();">Save</button>
+        </div>*@
+                    </div>
+
+
+                    <div class="tab-pane fade" id="list-Payment" role="tabpanel" aria-labelledby="list-settings-list">
+                        <div class="top">
+                            <h2> Payment Mode</h2>
+
+                            <h3>Work In Progress</h3>
+                        </div>
+                        @*<form id="inner" name="studentprofilereg" novalidate>
+
+                                <div class="form-group">
+                                    <label for="paymentmode">Payment Mode</label>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" ng-disabled="disablePayment" name="paymentmode" ng-model="Payment" ng-value='"Cash"' checked />
+                                        <label class="form-check-label">
+                                            Cash
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentmode" ng-model="Payment" ng-value='"Online"' disabled>
+                                        <label class="form-check-label">
+                                            Online
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <label for="inputRemarks">Remarks</label>
+
+                                    <textarea rows="3" cols="30" ng-model="RemarksOfCourse" ng-disabled="disableRemarks" name="remarks" autocomplete="off" class="form-control"
+                                              maxlength="150"> </textarea>
+                                </div>
+
+
+                            </form>
+                            <div class="row" id="butk" style="margin-top: 92px;">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>*@
+                    </div>
+                    <div class="tab-pane fade" id="list-Settings" role="tabpanel" aria-labelledby="list-settings-list">
+                        <div class="top">
+                            <h2>Settings</h2>
+
+                            <h3>Change Password</h3>
+                        </div>
+                        <form class="inner2" name="internchangepass" novalidate>
+
+                            <div class="form-group">
+                                <label class="control-label">Email</label>
+                                <input type="email" ng-model="Email" class="form-control" name="email" required placeholder="already avilable from database" />
+                                <span style="color:Red" ng-show="internchangepass.email.$error.required && internchangepass.email.$touched" ng-cloak>
+                                    Email is required
+                                </span>
+                            </div>
+                            <hr />
+                            <div class="form-group">
+                                <label for="currentpass" class="control-label">Enter Current Password</label>
+                                <input type="password" class="form-control" required name="currentpass" ng-model="CurrentPassword" id="currentpass" />
+                                <span style="color:Red" ng-show="internchangepass.currentpass.$error.required && internchangepass.currentpass.$touched" ng-cloak>
+                                    Current Password is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputPassword3" class="control-label">Enter New Password</label>
+                                <input type="password" class="form-control" required ng-model="NewPassword" name="newpass" id="newpass" />
+                                <span style="color:Red" ng-show="internchangepass.newpass.$error.required && internchangepass.newpass.$touched" ng-cloak>
+                                    New Password is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputPassword3" class="control-label">Re-type New Password</label>
+                                <input type="password" class="form-control" required ng-model="ReTypePassword" name="retypenewpass" id="retypepass" />
+                                <span style="color:Red" ng-show="internchangepass.retypenewpass.$error.required && internchangepass.retypenewpass.$touched" ng-cloak>
+                                   Re-type New Password is required
+                                </span>
+                            </div>
+
+                        </form>
+                        <div class="row" id="butk">
+                            <button type="submit" class="btn btn-primary" ng-disabled="internchangepass.$invalid" ng-click="changeInternPassword()">Change Password</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-Communication" role="tabpanel" aria-labelledby="list-settings-list">
+                        <div class="top">
+                            <h2>Communication</h2>
+                            <h3>Information</h3>
+                        </div>
+                        @*<form class="inner2">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row" ng-repeat="d in CommByUserId">
+                            <div class="col-md-6 border">
+                                <b>Message For You:</b><br />
+                                <p class="text-justify">{{d.Message}}</p>
+                            </div>
+
+                            <div class="col-md-6 border">
+                                <b>Message All:</b><br />
+                                <p class="text-justify">{{d.MessageAll}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row" ng-repeat="d in CommForAll">
+                            <div class="col-md-6 border">
+                                <b>Message To All Students:</b><br />
+                                <p class="text-justify">{{d.MessageAllStudents}}</p>
+                            </div>
+                            <div class="col-md-6 border">
+                                <b>Message All:</b><br />
+                                <p class="text-justify">{{d.MessageAll}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>*@
+
+                        <div class="row mt-1 mt-lg-1 mt-md-1 ml-1 mr-1">
+                            <h2 style="text-align:center"><b>Intern  Communication</b> </h2>
+                            <br /><br />
+                            <table ng-table="InternStudentMessagesByUserId" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                                    <td data-title="'S.No'">{{$index+1}}</td>
+                                    <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }"> {{ user.Message }}</td>
+                                    <td data-title="'Date'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">{{ user.DateCreated }}</td>
+
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="row" id="butk">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="list-Close" role="tabpanel" aria-labelledby="list-settings-list">
+                        <div class="top">
+                            <h2>Close Account</h2>
+
+                            <h3>Close your account permanently.</h3>
+                        </div>
+                        <form class="inner2">
+
+                            <h4>Close Your Account</h4><br />
+                            <p><span style="color:#992337;"><b>Warning:</b></span> If you close your account, you will be unsubscribed from all your 0 courses, and will lose access forever.</p>
+
+                            <div class="row" id="butk">
+                                <button type="submit" class="btn btn-primary">Close Account</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+

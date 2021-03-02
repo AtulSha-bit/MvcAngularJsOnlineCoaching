@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "ViewFeedback";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 35px !important;
+    }
+
+    input.form-control, select.form-control {
+        height: 22px !important;
+    }
+</style>
+
+<br />
+<h2 style="text-align:center;text-transform:capitalize"><b><u>View Feedback</b></u></h2>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="ViewFeedbackDetails();">
+    <div class="row m-1">
+        <table ng-table="FeedbackTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                @if (Session["UserId"] != null)
+                {
+                    if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "SuperAdmin")
+                    {
+                        <td data-title="'Sno'">{{$index+1}}</td>
+                        <td data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
+                            {{ user.Name }}
+                        </td>
+
+                        <td data-title="'Subject'" sortable="'Subject'" filter="{ 'Subject': 'text' }">
+                            {{ user.Subject }}
+                        </td>
+
+                        <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }">
+                            {{ user.Message }}
+                        </td>
+
+                        <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                            {{ user.DateCreated  }}
+                        </td>
+
+                        <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">
+                            {{ user.CreatedBy }}
+                        </td>
+
+
+                    }
+
+                }
+
+
+            </tr>
+
+
+            <tr>
+                <td colspan="6" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>

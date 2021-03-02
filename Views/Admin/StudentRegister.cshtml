@@ -1,0 +1,270 @@
+﻿
+@{
+    ViewBag.Title = "StudentRegister";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .container {
+        max-width: 720px;
+    }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="studentinit()">
+
+    <div class="container" style="margin-top: 1em;background-image: linear-gradient(180deg, #45b3e0, white)">
+        <h3 align="center"><b><u>Student Registration Form</u></b></h3>
+
+
+        <form name="studentreg" novalidate>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label><b><span style="color:red">*</span> Name</b> </label>
+                    <input type="text" ng-model="Name" class="form-control" name="name" maxlength="45" ng-pattern="/^[a-z A-Z]+$/" required />
+
+                    <span style="color:Red" ng-show="studentreg.name.$error.required && studentreg.name.$touched" ng-cloak>
+                        Name is required
+                    </span>
+
+                    <span style="color:Red" ng-show="studentreg.name.$dirty && studentreg.name.$error.pattern" ng-cloak>
+                        Name must contain alphabets (A-Z and a-z) only
+                    </span>
+                </div>
+
+                <div class="form-group col-md-6">
+
+                    <label class="control-label" for="inputdob">
+
+                        <b><span style="color:red">*</span> DOB </b>
+                    </label>
+                    <input class="form-control" moment-picker="momentDOB" required format="DD/MM/YYYY" start-view="day" name="dob" ng-model="DOB"
+                           ng-model-options="{ updateOn: 'blur' }" ng-blur="validateStudentDOB()">
+
+                    <span style="color:Red" ng-show="studentreg.dob.$error.required && studentreg.dob.$touched" ng-cloak>
+                        DOB is required
+                    </span>
+
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label><b><span style="color:red">*</span> Username </b> </label>
+                    <input type="text" ng-model="Username" class="form-control" name="username" maxlength="45" ng-blur="StudentExistsOrNot()" required />
+
+                    <span style="color:Red" ng-show="studentreg.username.$error.required && studentreg.username.$touched" ng-cloak>
+                        Username is required
+                    </span>
+
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <label><b><span style="color:red">*</span> Password</b></label>
+                    <input type="password" ng-model="Password" class="form-control" name="password" maxlength="40" required />
+
+                    <span style="color:Red" ng-show="studentreg.password.$error.required && studentreg.password.$touched" ng-cloak>
+                        Password is required
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label class="control-label"><b><span style="color:red">*</span> Email</b></label>
+                    <input type="text" ng-model="Email" class="form-control" name="email" maxlength="50" ng-pattern="emailregex" required />
+
+                    <span style="color:Red" ng-show="studentreg.email.$error.required && studentreg.email.$touched" ng-cloak>
+                        Email is required
+                    </span>
+                    <span style="color:Red" ng-show="studentreg.email.$dirty && studentreg.email.$error.pattern" ng-cloak>
+                        Invalid Email
+                    </span>
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <label class="control-label"><b><span style="color:red">*</span> Phone No</b></label>
+                    <input type="text" class="form-control" id="exampleInputphoneno" name="mobile" autocomplete="off" ng-model="Phone"
+                           maxlength="10" required ng-pattern="/^[6-9][0-9]{9}$/">
+                    <span style="color:Red" ng-show="studentreg.mobile.$error.required && studentreg.mobile.$touched" ng-cloak>
+                        Mobile No. is required
+                    </span>
+
+                    <span style="color:Red" ng-show="studentreg.mobile.$dirty && studentreg.mobile.$error.pattern" ng-cloak>
+                        10 digits only must start with 6,7,8,9
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label class="control-label"><b>Insta</b></label>
+                    <input type="text" ng-model="InstaLink" class="form-control" name="instalink" maxlength="45" />
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <label class="control-label"><b>Twitter</b></label>
+                    <input type="text" ng-model="TwitterLink" class="form-control" name="twitterlink" maxlength="45" />
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label class="control-label"><b><span style="color:red">*</span> Image</b></label>
+
+                    <input type="file" class="form-control" ngf-select="uploadImg($file)" ng-model="file" required name="file" ngf-pattern="'image/*'"
+                           ngf-accept="'image/*'" ngf-max-size="5MB" ngf-resize="{width: 300, height: 300}" />
+                    <span style="color:Red" ng-show="studentreg.file.$error.required && studentreg.file.$touched" ng-cloak>
+                        Image is required
+                    </span>
+
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="control-label"><b>Fb Link</b></label>
+                    <input type="text" ng-model="Fblink" class="form-control" name="fblink" maxlength="45" />
+                </div>
+            </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="control-label"><b>Student Code</b></label>
+                        <input type="text" ng-model="StudentCode" class="form-control" name="studentcode" size="200" disabled />
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label><b>Student Category</b></label>
+                        <select class="form-control" required ng-model="StudentCategoryId" name="stdctgid"
+                                ng-options="item.StudentCategoryId as item.CategoryName for item in StudentCategoryData">
+                            <option value="" selected><p> -- Select Student Category -- </p></option>
+                        </select>
+                        <span style="color:Red" ng-show="studentreg.stdctgid.$error.required && studentreg.stdctgid.$dirty" ng-cloak>
+                            Student Category is required
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label><b>Batch Size</b></label>
+                        <select class="form-control" required ng-model="BatchId" name="batchid"
+                                ng-options="item.BatchId as item.BatchSize for item in BatchSizeData">
+                            <option value="" selected><p> -- Select Batch Size -- </p></option>
+                        </select>
+                        <span style="color:Red" ng-show="studentreg.batchid.$error.required && studentreg.batchid.$dirty" ng-cloak>
+                            Batch is required
+                        </span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label><b>Batch Group</b></label>
+                        <select class="form-control" required ng-model="BatchGroupId" name="batchgroupid"
+                                ng-options="item.BatchGroupId as item.BatchName for item in BatchGroupData">
+                            <option value="" selected><p> -- Select Batch Group -- </p></option>
+                        </select>
+                        <span style="color:Red" ng-show="studentreg.batchgroupid.$error.required && studentreg.batchgroupid.$dirty" ng-cloak>
+                            Batch Name is required
+                        </span>
+                    </div>
+
+                </div>
+
+            @*</div>*@
+
+            <div class="form-row">
+                <div class="col-md-12">
+                    <br />
+                    <center>
+                        <button type="submit" class="btn btn-success" ng-disabled="studentreg.$invalid" ng-show="InsertBtn"
+                                ng-click="SendOtpToStudent()">
+
+                            Submit
+                        </button>
+                    </center>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="modal fade" data-backdrop="static" id="insertstudentModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-
+                       dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    You have registered Successfully
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-success" href="/User/StudentLogin">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" data-backdrop="static" id="verifyEmailOtp">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+
+                        <label>Verify Email OTP</label>
+                        <input type="text" class="form-control" ng-model="VerifyOTP" />
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    <button class="btn btn-success" ng-click="ConfirmOtp()">Confirm</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" data-backdrop="static" id="updateModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-
+                       dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    Tutors details updated successfully
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-success" href="/Admin/ShowTutors">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+</div>
+
+

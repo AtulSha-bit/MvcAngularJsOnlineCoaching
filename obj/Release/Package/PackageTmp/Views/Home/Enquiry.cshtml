@@ -1,0 +1,246 @@
+﻿
+@{
+    ViewBag.Title = "Enquiry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Css/Inquiry.css" rel="stylesheet" />
+@*inquirytop*@
+<style>
+    .custom-select:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0,0,0,0);
+    }
+</style>
+@*inquirytop*@
+<div class="row">
+    <div class="inquiry">
+        <p>
+            <span class="a">Want to learn more about our online tutoring programs?</span>
+            Complete the below inquiry form and an Enrollment Coordinator will contact you within 1 business day (usually sooner) or
+            <span class="b">
+                call us at
+            </span>
+            <span class="c">
+                011-42509015
+            </span>
+            and we will be happy to speak with you directly about our programs
+        </p>
+
+    </div>
+</div>
+@*inquiryform*@
+<div class="row" id="inquiryform" ng-app="app" ng-controller="MyCtrl" ng-init="Enquiryinit()">
+
+    <div class="col-md-12 col-lg-7">
+        <form name="enquiryvalidation" novalidate>
+            <fieldset>
+                <legend>Inquiry Form</legend>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6 mt-2">
+                        <select class="custom-select custom-select-sm" required name="candidatetype" ng-model="CandidateType">
+                            <option value="" selected>User Type</option>
+                            <option value="Student">Student</option>
+                            <option value="Guardian">Guardian</option>
+                            <option value="Parent">Parent</option>
+                            @*<option value="Other">Other</option>*@
+                        </select>
+                        <span style="color:Red" ng-show="enquiryvalidation.candidatetype.$error.required && enquiryvalidation.candidatetype.$touched" ng-cloak>
+                            User Type is required
+                        </span>
+                    </div>
+
+                    <div class="form-group col-md-6 mt-2">
+                        <input type="text" class="form-control" required name="name" placeholder="Name" ng-model="Name" ng-pattern="/^[a-z A-Z]+$/" autocomplete="off"  />
+                        <span style="color:Red" ng-show="enquiryvalidation.name.$error.required && enquiryvalidation.name.$touched" ng-cloak>
+                            Name is required
+                        </span>
+                        <span style="color:Red" ng-show="enquiryvalidation.name.$dirty && enquiryvalidation.name.$error.pattern" ng-cloak>
+                            Name must contain alphabets (A-Z and a-z) only
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6 mt-2">
+                        <input type="text" class="form-control" autocomplete="off" ng-pattern="/^[6-9][0-9]{9}$/" maxlength="10" placeholder="Contact Phone" name="phone" required ng-model="Mobile" />
+                        <span style="color:Red" ng-show="enquiryvalidation.phone.$error.required && enquiryvalidation.phone.$touched" ng-cloak>
+                            Mobile is required
+                        </span>
+                        <span style="color:Red" ng-show="enquiryvalidation.phone.$dirty && enquiryvalidation.phone.$error.pattern" ng-cloak>
+                            10 digits only must start with 6,7,8,9
+                        </span>
+                    </div>
+
+                    <div class="form-group col-md-6 mt-2">
+                        <input type="text" class="form-control" required ng-pattern="enquiryemailregex" placeholder="Email address" name="enqemail" ng-model="Email" />
+                        <span style="color:Red" ng-show="enquiryvalidation.enqemail.$error.required && enquiryvalidation.enqemail.$touched" ng-cloak>
+                            Email is required
+                        </span>
+                        <span style="color:Red" ng-show="enquiryvalidation.enqemail.$dirty && enquiryvalidation.enqemail.$error.pattern" ng-cloak>
+                            Invalid Email
+                        </span>
+                    </div>
+
+                </div>
+                @*<div class="form-row">
+                        <div class="form-group col-md-6 mt-2">
+                            <input type="text" class="form-control" placeholder="Email address" />
+                        </div>
+                        <div class="form-group col-md-6 mt-2">
+                            <input type="text" class="form-control" placeholder="City" />
+                        </div>
+                    </div>*@
+
+                @*<div class="form-row">
+                        <div class="form-group col-md-6 mt-2">
+                            <select id="selectCountry" class="form-control" name="course" placeholder="Country">
+                                <option value="" selected>Country </option>
+                                <option value="1">India </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6 mt-lg-2 mt-md-2">
+
+                            <select class="form-control">
+                                <option value="" selected>State</option>
+                                <option value="1 Month">1 </option>
+                                <option value="2 Months">2 </option>
+                                <option value="3 Months">3 </option>
+                            </select>
+
+                        </div>
+                    </div>*@
+
+                <div class="form-row" id="title">
+                    <p>Inquiry About</p>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label><b>Course Related</b></label>
+                                <select class="custom-select custom-select-sm" name="enqtype" required ng-model="EnquiryType" ng-change="getEnquiryType(EnquiryType)">
+                                    <option value="" selected>Course Related</option>
+                                    <option value="Intern">Intern</option>
+                                    <option value="Course">Course</option>
+                                    @*<option value="2">Undergrade</option>
+            <option value="3">Professional</option>*@
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span style="color:Red" ng-show="enquiryvalidation.enqtype.$error.required && enquiryvalidation.enqtype.$touched" ng-cloak>
+                                    Enquiry Type is required
+                                </span>
+                            </div>
+
+                            @*<div class="col-md-4">
+                                    <select class="custom-select custom-select-sm">
+                                        <option value="" selected>Open this select menu</option>
+
+                                    </select>
+                                </div>*@
+
+                            <div class="col-md-4" ng-hide="hideCategory">
+                                <label><b>Course Category</b></label>
+                                <select class="custom-select custom-select-sm"  ng-model="StudentCategoryId" name="stdctgid"
+                                        ng-change="getCourseForCategory(StudentCategoryId)" ng-options="item.StudentCategoryId as item.CategoryName for item in StudentCategoriesData">
+                                    <option value="" selected><p> -- Select Course Category -- </p></option>
+                                </select>
+                                @*<span style="color:Red" ng-show="coursedetails.stdctgid.$error.required && coursedetails.stdctgid.$dirty" ng-cloak>
+                                        Student Category is required
+                                    </span>*@
+                            </div>
+
+
+
+                            <div class="col-md-4" ng-hide="hideCourse">
+                                <label><b>Course</b></label>
+                                <select class="custom-select custom-select-sm"  ng-model="intCourseId" name="stdctgid"
+                                        ng-options="item.CourseId as item.CourseName for item in CourseForCategoryEnquiry">
+                                    <option value="" selected><p> -- Select Course -- </p></option>
+                                </select>
+                                @*<span style="color:Red" ng-show="coursedetails.stdctgid.$error.required && coursedetails.stdctgid.$dirty" ng-cloak>
+                                        Student Category is required
+                                    </span>*@
+                            </div>
+
+                            <div class="col-md-4" ng-hide="hideInternship">
+                                <label for="inputState"><b>Select Internship</b></label>
+                                <select id="inputState" class="custom-select custom-select-sm" name="internship" ng-model="intInternshipId"
+                                        ng-options="item.InternshipId as item.InternshipName for item in InternshipDataBind">
+                                    <option value="" selected>--Internship --</option>
+                                </select>
+
+                                @*<span style="color:Red" ng-show="internshipdetails.internship.$error.required && internshipdetails.internship.$dirty" ng-cloak>
+                                        Internship is required
+                                    </span>*@
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-row  mt-4">
+                            <label for="inputRemarks" style="font-size:14px;">Message</label>
+
+                            <textarea rows="4" cols="50" ng-model="Message" required  maxlength="500" name="message" style="font-size:14px;border: 1px solid #3d5a80 !important;" class="form-control" placeholder="Additions notes and special requests"> </textarea>
+                            <span style="color:Red" ng-show="enquiryvalidation.message.$error.required && enquiryvalidation.message.$touched" ng-cloak>
+                                Message is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row text-center mt-4">
+                        <button type="submit" class="btn btn-primary" ng-disabled="enquiryvalidation.$invalid" ng-click="SendOtpForEnquiry()">Inquiry Now</button>
+                    </div>
+                </div>
+                <div class="copyrightText"><p>We respect your privacy. We hate spam emails just like you.Your information will not be shared with any third party.</p></div>
+
+            </fieldset>
+        </form>
+    </div>
+
+
+    <div class="modal fade" data-backdrop="static" id="verifyEmailOtpEnquiry">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+
+                        <label>Verify Email OTP</label>
+                        <input type="text" class="form-control" ng-model="VerifyOTPForEnquiry" />
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    <button class="btn btn-success" ng-click="ConfirmEnquiryOtp()">Confirm</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-5">
+        <p style="font-size:14px;">
+            In The News
+            CNN
+            “The student’s mother is pleased with the results, saying her children have been getting all A’s and B’s since they started online tutoring about two years ago”
+
+            Boston Globe
+            “I was skeptical at first,” said the student’s mother, a developmental educator. “But I decided to give it a shot, and it works beautifully.”
+
+            The New York Times
+            “GrowingStars recruits, mostly with recent postgraduate and teaching de
+        </p>
+    </div>
+</div>
+
+@*
+    intern   internship select
+               course  category
+                   others   others
+
+*@

@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Communication";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 43px;
+    }
+
+    input.form-control, select.form-control {
+        height: 22px !important;
+    }
+</style>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="showcommunicationinit()" ng-cloak>
+    <br />
+    <h2 style="text-align:center"><b><u>View Communication</u></b></h2>
+    <div class="row m-1">
+        <table ng-table="ShowCommunication" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                <td data-title="'S.No'">{{$index+1}}</td>
+                <td data-title="'Intern Name'" sortable="'InternStudentName'" filter="{ 'InternStudentName': 'text' }">
+                    {{ user.Name }}
+                </td>
+                <td data-title="'UserType'" sortable="'UserType'" filter="{ 'UserType': 'text' }">
+                    {{ user.UserType  }}
+                </td>
+                <td data-title="'Tutor Name'" sortable="'TutorName'" filter="{ 'TutorName': 'text' }">
+                    {{ user.TutorName }}
+                </td>
+                <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }">
+                    {{ user.Message }}
+                </td>
+                <td data-title="'IsAllTeacher'" sortable="'IsAllTeacher'" filter="{ 'IsAllTeacher': 'text' }">
+                    <input type="checkbox" ng-model="user.IsAllTeacher" disabled />
+                </td>
+                <td data-title="'IsAllStudent'" sortable="'IsAllStudent'" filter="{ 'IsAllStudent': 'text' }">
+                    <input type="checkbox" ng-model="user.IsAllStudent" disabled />
+                </td>
+                <td data-title="'MessageAllTeachers'" sortable="'MessageAllTeachers'" filter="{ 'MessageAllTeachers': 'text' }">
+                    {{ user.MessageAllTeachers }}
+                </td>
+                <td data-title="'MessageAllStudents'" sortable="'MessageAllStudents'" filter="{ 'MessageAllStudents': 'text' }">
+                    {{ user.MessageAllStudents  }}
+                </td>
+                <td data-title="'IsAll'" sortable="'IsAll'" filter="{ 'IsAll': 'text' }">
+                    {{ user.IsAll  }}
+                </td>
+                <td data-title="'MessageAll'" sortable="'MessageAll'" filter="{ 'MessageAll': 'text' }">
+                    {{ user.MessageAll  }}
+                </td>
+                <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">
+                    {{ user.CreatedBy }}
+                </td>
+                <td data-title="'DateCreated'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                    {{ user.DateCreated }}
+                </td>
+                <td data-title="'Updated By'" sortable="'UpdatedBy'" filter="{ 'UpdatedBy': 'text' }">
+                    {{ user.UpdatedBy }}
+                </td>
+                <td data-title="'Last Updated'" sortable="'LastUpdated'" filter="{ 'LastUpdated': 'text' }">
+                    {{ user.LastUpdated }}
+                </td>
+
+                @if (Session["UserId"] != null)
+                {
+                    <td data-title="'Action'" class="act">
+                        <a href="#" class="btn btn-sm btn-info" ng-click="editDuration(user)"><i class="fa fa-edit"></i></a>
+
+                        @if (Session["UserType"].ToString() == "SuperAdmin")
+                        {
+                            <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteDuration" ng-click="deleteDuration(user.DurationId)"><i class="fa fa-trash"></i></a>
+                        }
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td colspan="5" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <br />
+    </div>
+</div>

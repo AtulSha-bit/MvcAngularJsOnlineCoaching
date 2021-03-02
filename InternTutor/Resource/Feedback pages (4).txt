@@ -1,0 +1,192 @@
+Feedback table query
+=======================
+
+CREATE TABLE [dbo].[tblFeedback](
+	[FeedbackId] [bigint] IDENTITY(1,1) NOT NULL,
+	[Subject] [nvarchar](128) NOT NULL,
+	[Message] [nvarchar](512) NOT NULL,
+	[Id] [bigint] NULL,
+	[UserType] [nvarchar](128) NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[DisplayOnWeb] [bit] NULL,
+	[IsPublished] [bit] NOT NULL,
+ CONSTRAINT [PK_tblFeedback] PRIMARY KEY CLUSTERED 
+(
+	[FeedbackId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tblFeedback] ADD  CONSTRAINT [DF_tblFeedback_DisplayOnWeb]  DEFAULT ((1)) FOR [DisplayOnWeb]
+GO
+=========================================
+
+
+Add Feedback in User Controller
+================================
+
+#region Add Feedback for Student by Dilshad A. on 19 Oct 2020
+        public ActionResult AddStudentFeedback()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddStudentFeedbackDetails(tblFeedback objFeedback)
+        {
+            try
+            {
+                if (objFeedback != null)
+                {
+                    db = new CourseDataContext();
+                    Int64 intStudentId = 0;
+                    objFeedback.DateCreated = DateTime.Now;
+
+                    if (Session["User"] != null)
+                    {
+                        objFeedback.CreatedBy = Session["User"].ToString();// User Name(Student Name)
+                    }
+                    else
+                    {
+                        objFeedback.CreatedBy = "UserType";
+                    }
+
+                    Int64.TryParse(Session["StudentId"].ToString(), out intStudentId);
+                    if (Session["StudentId"] != null)
+                    {
+                        objFeedback.Id = intStudentId;
+                    }
+                    else
+                    {
+                        objFeedback.Id = intStudentId;
+                    }
+
+                    objFeedback.UserType = "Student";
+                    return null;
+                    db.tblFeedbacks.InsertOnSubmit(objFeedback);
+                    db.SubmitChanges();
+                    return Json(objFeedback.FeedbackId, JsonRequestBehavior.AllowGet);
+                }
+                return Json("", JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion END Add Feedback for Student by Dilshad A. on 19 Oct 2020
+
+===============================
+HTML Code
+=========
+<h2>Student Feedback</h2>
+<div ng-app="app" ng-controller="MyCtrl">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Subject</label>
+            <input type="text" class="form-control" ng-model="mdlStudentFeedSub" maxlength="128" />
+        </div>
+        <div class="col-md-6">
+            <label>Message</label>
+            <textarea type="text" class="form-control" ng-model="mdlStduentFeedMsg" maxlength="512"></textarea>
+        </div>
+    </div>   
+    <div class="row">
+        <div class="col-md-6">
+            <input type="button" ng-click="AddStudentFeedbackDetails()" class="btn btn-primary"  value="Submit"/>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+</div>
+
+===================================
+JS Code For Add Feedback
+=======================
+ // Add Student Feedback Details by Dilshad A. on 19 Oct 2020
+    $scope.AddStudentFeedbackDetails = function () {
+        $scope.clsStdFeed = {};
+        $scope.clsStdFeed.Subject = $scope.mdlStudentFeedSub;
+        $scope.clsStdFeed.Message = $scope.mdlStduentFeedMsg;
+        $http.post("/User/AddStudentFeedbackDetails", { objFeedback: $scope.clsStdFeed }).then(function (res) {
+            $scope.StuFeedMsg = res.data;
+            if (res.data > 0) {
+                alert("Feedback successfully added.");
+            }
+            else {
+                alert("Failed. Something went wrong!!!");
+            }
+        });
+    };
+=========================================
+
+View Feedback in Admin Controller
+==================================
+#region Feedback Details of students and tutors By Dilshad A. on 21 Oct 2020
+        public ActionResult ViewFeedback()
+        {
+            return View();
+        }
+
+        public ActionResult ViewFeedbackDetails()
+        {
+            try
+            {
+                db = new CourseDataContext();
+                var data = (from d in db.tblFeedbacks
+                            join d1 in db.SITSPL_tblStudentProfiles on d.Id equals d1.StudentId
+                            select new
+                            {
+                                d,
+                                d1
+                            }).ToList();
+
+                var list = data.Select(x => new
+                {
+                    x.d.FeedbackId,
+                    x.d.Id,
+                    x.d1.Name,
+                    x.d.Message,
+                    x.d.Subject,
+                    DateCreated = x.d.DateCreated.ToString("dd/MM/yyyy")
+                }).ToList();
+                return Json(data, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion END Feedback Details of students and tutors By Dilshad A. on 21 Oct 2020
+
+===========================================
+ ViewFeedback Html Code
+======================
+<h2>View Feedback</h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="ViewFeedbackDetails();" ng-cloak>
+    <div class="m-3">
+        <table ng-table="FeedbackTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="d in  $data track by $index">
+                <td data-title="'S.No'">{{$index+1}}</td>
+                <td data-title="'Name'">{{d.Name}}</td>
+                <td data-title="'Name'">{{d.Subject}}</td>
+                <td data-title="'Name'">{{d.Message}}</td>                
+                <td data-title="'Created Date'">{{d.DateCreated}}</td>
+                <td data-title="'Created By'">{{d.CreatedBy}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+=================================================
+ViewFeedback JS Code
+====================
+ // View Feedback Details By Dilshad A. on 27 Oct 2020
+    $scope.ViewFeedbackDetails = function () {
+        $http.get("/Admin/ViewFeedbackDetails").then(function (res) {
+            $scope.Feedback = res.data;
+            $scope.FeedbackTable = new NgTableParams({}, { dataset: $scope.Feedback });
+        });
+    };
+======================

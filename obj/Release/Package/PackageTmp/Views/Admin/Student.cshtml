@@ -1,0 +1,182 @@
+﻿
+@{
+    ViewBag.Title = "Student";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        background-image: linear-gradient(180deg, white,#45b3e0 );
+    }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="studentinit()">
+    <h2 align="center" style="margin-top:10rem;"><b><u>Student Registration Form</u></b></h2>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form name="studentreg" novalidate>
+                <div class="form-row mt-4">
+                    <div class="form-group col-md-6">
+                        <label class="control-label"><b>Name</b></label>
+                        <input type="text" ng-model="Name" class="form-control" name="name" maxlength="45" ng-pattern="/^[a-z A-Z]+$/" required />
+
+                        <span style="color:Red" ng-show="studentreg.name.$error.required && studentreg.name.$touched" ng-cloak>
+                            Name is required
+                        </span>
+
+                        <span style="color:Red" ng-show="studentreg.name.$dirty && studentreg.name.$error.pattern" ng-cloak>
+                            Name must contain alphabets (A-Z and a-z) only
+                        </span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <div>
+                            <label class="control-label" for="inputdob">
+
+                                <b>DOB</b>
+                            </label>
+                            <input class="form-control" moment-picker="momentDOB" format="DD/MM/YYYY" start-view="day" name="dob" ng-model="DOB"
+                                   ng-model-options="{ updateOn: 'blur' }" ng-blur="validateStudentDOB()" required>
+
+                            <span style="color:Red" ng-show="studentreg.DOB.$error.required && studentreg.DOB.$touched" ng-cloak>
+                                DOB is required
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="control-label"><b>Username</b></label>
+                        <input type="text" ng-model="Username" class="form-control" name="username" maxlength="45" required />
+
+                        <span style="color:Red" ng-show="studentreg.username.$error.required && studentreg.username.$touched" ng-cloak>
+                            Username is required
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-group col-md-6">
+                        <label class="control-label"><b>Password</b></label>
+                        <input type="password" ng-model="Password" class="form-control" name="password" maxlength="40" required />
+
+                        <span style="color:Red" ng-show="studentreg.password.$error.required && studentreg.password.$touched" ng-cloak>
+                            Password is required
+                        </span>
+                    </div>
+
+
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label class="control-label"><b>Email</b></label>
+                        <input type="text" ng-model="Email" class="form-control" name="email" maxlength="50" ng-pattern="emailregex" required />
+
+                        <span style="color:Red" ng-show="studentreg.email.$error.required && studentreg.email.$touched" ng-cloak>
+                            Email is required
+                        </span>
+                        <span style="color:Red" ng-show="studentreg.email.$dirty && studentreg.email.$error.pattern" ng-cloak>
+                            Invalid Email
+                        </span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label class="control-label"><b>Fb Link</b></label>
+                        <input type="text" ng-model="Fblink" class="form-control" name="fblink" maxlength="45" />
+                    </div>
+
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label class="control-label col-md-2"><b>Insta</b></label>
+                        <input type="text" ng-model="InstaLink" class="form-control" name="instalink" maxlength="45" />
+                    </div>
+
+
+                    <div class="form-group col-md-6">
+                        <label class="control-label"><b>Twitter</b></label>
+                        <input type="text" ng-model="TwitterLink" class="form-control" name="twitterlink" maxlength="45" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label class="control-label"><b>Image</b></label>
+
+                        <input type="file" class="form-control" ngf-select="uploadImg($file)" ng-model="file" name="file" ngf-pattern="'image/*'"
+                               ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+                               ngf-resize="{width: 100, height: 100}" />
+                    </div>
+
+                </div>
+                <div class="form-row mb-3">
+                    <div class="col-md-12">
+                        <br />
+                        <center>
+                            <button type="submit" class="btn btn-primary btn-md" ng-disabled="studentreg.$invalid" ng-show="InsertBtn" ng-click="InsertStudent()">
+                                Submit
+                            </button>
+
+
+                        </center>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+
+    <div class="modal fade" data-backdrop="static" id="insertstudentModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-
+                       dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    You have registered Successfully
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-success" href="/User/StudentLogin">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" data-backdrop="static" id="updateModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-
+                       dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    Tutors details updated successfully
+                </div>
+
+                <div class="modal-footer">
+
+                    <a class="btn btn-success" href="/Admin/ShowTutors">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

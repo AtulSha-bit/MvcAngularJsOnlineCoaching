@@ -1,0 +1,10 @@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBrandTutor.cshtml";
+}
+
+<h2 align="center">
+    Welcome To "Tutor Name"
+</h2>
+

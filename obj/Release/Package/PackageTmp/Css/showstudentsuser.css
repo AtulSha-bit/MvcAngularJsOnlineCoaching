@@ -1,0 +1,177 @@
+﻿html, body {
+    color: #3d5a80;
+    background-color: aliceblue;
+}
+
+h3 {
+    text-align: center;
+    color: #3d5a80;
+    font-weight: 700;
+}
+
+    /*h3::after {
+        background-color: #3d5a80;
+        bottom: 0;
+        content: "";
+        top: 161px;
+        height: 5px;
+        left: 43%;
+        position: absolute;
+        width: 14%;
+    }*/
+label {
+    font-weight: bold;
+    font-size:1.1rem;
+}
+.page-link {
+    color: #3d5a80;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #3d5a80;
+}
+
+select option {
+    color: #3d5a80;
+    font-weight: bold;
+}
+
+.form-control {
+    color: #3d5a80;
+    font-weight: bold;
+    border: 1px solid #3d5a80;
+    background-color: aliceblue;
+}
+
+.submit_btn {
+    border: 0px solid #fff;
+    color: #fff !important;
+    background: #3d5a80;
+    padding: 11px 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.8s all;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+    .submit_btn:hover {
+        background: #ee6c4d;
+        color: #fff !important;
+    }
+
+div.ng-table-header.ng-scope {
+   
+    font-size: 20px;
+}
+.ng-table th.filter .input-filter {
+    background-color: #e0fbfc;
+}
+.ng-table th.sortable .sort-indicator {
+    padding-right: 220px;
+   top:15px;
+   
+}
+    .ng-table th.sortable .sort-indicator:after, .ng-table th.sortable .sort-indicator:before {
+        top:25%;
+    }
+.table-bordered th {
+    border: 1px solid #3d5a80;
+    color: #3d5a80;
+}
+
+.table-bordered td {
+    text-align: center;
+    border: 1px solid #3d5a80;
+    font-weight: 600;
+}
+/*.btn{
+    padding:.375rem 1.4rem !important;
+}*/
+.editbtn a{
+    position:relative;
+    left:12%;
+    top:12px;
+}
+
+@media only screen and (max-width: 1024px) {
+    h3::after {
+        left: 40%;
+        
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    h3::after {
+        left: 37%;
+        width: 26%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    h3 {
+        font-size: 1.23rem;
+    }
+    h3::after {
+        left: 36%;
+        width: 28%;
+    }
+    label {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    div.ng-table-header.ng-scope {
+        font-size: 16px;
+    }
+    .table-bordered td {
+        font-weight: 400;
+        font-size: 13px;
+    }
+    .submit_btn {
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .editbtn a {
+        position: relative;
+        left: 10.5%;
+        top: 10px;
+    }
+    .btn {
+        padding: .175rem .5rem !important;
+    }
+}
+@media only screen and (max-width: 425px) {
+    h3::after {
+        left: 33%;
+        width: 35%;
+    }
+    .submit_btn {
+        font-weight:bold;
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    h3::after {
+        left: 32%;
+        width: 38%;
+    }
+    .submit_btn {
+        font-weight: bold;
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    h3::after {
+        left: 28%;
+        width: 45%;
+    }
+    .btn-group > .btn-group:not(:first-child), .btn-group > .btn:not(:first-child) {
+        margin-left: -18px;
+    }
+    .submit_btn {
+        font-weight: bold;
+        font-size: 8.96px;
+    }
+}

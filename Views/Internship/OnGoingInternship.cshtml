@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "OnGoingInternship";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+</style>
+<h2 class="text-center mt-1">
+    <b>
+        <u>
+            OnGoingInternship
+        </u>
+    </b>
+</h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="OnGoingInternshipinit();" class="m-1">
+
+    <table ng-table="OngoingInternshipData" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+        <tr ng-repeat="user in $data">
+            @* <td data-title="'Internship Id'" sortable="'InternshipId'" filter="{ 'InternshipId': 'text' }"> {{ user.InternshipId }} </td>*@
+            <td data-title="'Internship Name'" sortable="'InternshipName'" filter="{ 'InternshipName': 'text' }"> {{ user.InternshipName  }} </td>
+            <td data-title="'Duration Name'" sortable="'DurationName'" filter="{ 'DurationName': 'text' }"> {{ user.DurationName  }} </td>
+            <td data-title="'Internship Type'" sortable="'InternshipType'" filter="{ 'InternshipType': 'text' }"> {{ user.InternshipType  }} </td>
+            <td data-title="'Fees'" sortable="'Fees'" filter="{ 'Fees': 'text' }"> {{ user.Fees  }} </td>
+            <td data-title="'Discount'" sortable="'Discount'" filter="{ 'Discount': 'text' }"> {{ user.Discount  }} </td>
+            <td data-title="'Fees'" sortable="'Fees'" filter="{ 'Fees': 'text' }"> {{ user.Fees  }} </td>
+            <td data-title="'Fee After Discount'" sortable="'FeeAfterDiscount'" filter="{ 'FeeAfterDiscount': 'text' }"> {{ user.FeeAfterDiscount  }} </td>
+            <td data-title="'TotalAmount'" sortable="'TotalAmount'" filter="{ 'TotalAmount': 'text' }"> {{ user.TotalAmount }} </td>
+            <td data-title="'Last Apply Date'" sortable="'LastApplyDate'" filter="{ 'LastApplyDate': 'text' }"> {{ user.LastApplyDate }} </td>
+            <td data-title="'Total Available Seat'" sortable="'TotalAvailableSeat'" filter="{ 'TotalAvailableSeat': 'text' }"> {{ user.TotalAvailableSeat }} </td>
+            <td data-title="'Stipened Amount'" sortable="'StipenedMoney'" filter="{ 'StipenedMoney': 'text' }"> {{ user.StipenedMoney }} </td>
+            <td data-title="'ValidFrom'" sortable="'ValidFrom'" filter="{ 'ValidFrom': 'text' }"> {{ user.ValidFrom }} </td>
+            <td data-title="'ValidTo'" sortable="'ValidTo'" filter="{ 'ValidTo': 'text' }"> {{ user.ValidTo }} </td>
+            <td data-title="'Date Created'" sortable="'CreatedDate'" filter="{ 'CreatedDate': 'text' }"> {{ user.CreatedDate }} </td>
+            <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }"> {{ user.CreatedBy }} </td>
+            <td data-title="'Updated By'" sortable="'UpdatedBy'" filter="{ 'UpdatedBy': 'text' }"> {{ user.UpdatedBy }} </td>
+            <td data-title="'Last Updated'" sortable="'LastUpdated'" filter="{ 'LastUpdated': 'text' }"> {{ user.LastUpdated }} </td>
+        </tr>
+    </table>
+</div>
+

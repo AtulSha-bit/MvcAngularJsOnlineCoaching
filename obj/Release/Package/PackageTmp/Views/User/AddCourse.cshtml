@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "AddCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <link href="~/Css/addcourseuser.css" rel="stylesheet" />
+        <title>Add Course</title>
+  
+
+<body ng-app="app" ng-controller="MyCtrl" ng-init="addcourseinit()">
+   
+
+        
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <form name="courseadd" novalidate>
+                    <h3>Add Course</h3>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="course">Cousre Name</label>
+                            <input type="text" class="form-control" name="course" id="course" ng-model="strCourse">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" ng-disabled="courseadd.$invalid" ng-click="saveCourse()">Save Course</button>
+                </form>
+
+                <div class="col-md-6 col-md-offset-3">
+                    @if (ViewBag.Message != null)
+                    {
+                        @ViewBag.Message
+                    }
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+
+        <table ng-table="ShowUsers" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-repeat="user in $data">
+                <td data-title="'Course'" sortable="'CourseName'" filter="{ 'CourseName': 'text' }"> {{ user.CourseName }} </td>
+                <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }"> {{ user.DateCreated  }} </td>
+                <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }"> {{ user.CreatedBy }} </td>
+                <td data-title="'Action'">
+                    <a href="#" class="btn btn-info">Edit</a>
+                    &nbsp; &nbsp;
+                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ng-click="deleteCourse(user.CourseId)">Delete</a>
+                </td>
+            </tr>
+        </table>
+
+        <div class="modal fade" data-backdrop="static" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a href="#" class="close" data-
+                           dismiss="modal">&times;</a>
+                    </div>
+
+                    <div class="modal-body">
+                        Are you sure?
+                        You want to delete this record
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                        <a class="btn btn-success" ng-click="DeleteCourse(user.CourseId)">Confirm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+
+        

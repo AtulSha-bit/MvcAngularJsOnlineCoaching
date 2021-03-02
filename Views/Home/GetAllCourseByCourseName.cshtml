@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "GetAllCourseByCourseName";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 align="center">Course-List</h2>
+<style>
+    #firstrow {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
+    .btn {
+        border-radius: 0rem;
+        color: white !important;
+    }
+
+    .card {
+        border-radius: 10px;
+        margin: 19px;
+    }
+
+    .text-center {
+        margin-top: 5em;
+    }
+
+    @@media only screen and (max-width:767px) {
+        .card {
+            margin: 5px;
+        }
+
+        #firstrow {
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+    }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetAllCourseByCourse()">
+    <br />
+    <h3 class="text-center"><u>Course List</u></h3>
+    <br />
+    <div class="row" id="firstrow">
+        <div class="card mt-2 col-md-2" style="height:200px;" ng-repeat="d in CourseListByCourse">
+            <center style="padding-top: 1.5rem;">
+                <div class="internHeading">
+                    <h5 class="ng-binding" style="text-transform: capitalize;">{{ d.CourseName }}</h5>
+                </div>
+                <div class="card-body internCardBody">
+                    <p class="justify-content-around">{{ d.DurationName }}</p>
+                </div>
+                <a class="btn btn-success" ng-click="getCoursesDetails(d.StructureId)">Detail</a>
+            </center>
+        </div>
+    </div>
+    <br />
+</div>

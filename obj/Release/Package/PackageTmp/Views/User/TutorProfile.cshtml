@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "TutorProfile";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+
+<title>Tutor Profile</title>
+<style>
+    .profilestyle {
+        display: block;
+        background: #000;
+        color: white;
+        text-align: center;
+        width: 200px;
+        height: 200px;
+        line-height: 37px;
+        margin-left: 692px;
+    }
+
+        .profilestyle a {
+            text-decoration: none;
+        }
+
+            .profilestyle a:link {
+                color: white;
+            }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetTutorById();">
+    <div class="container">
+        <div class="row" ng-repeat="d in TutorData" align="center">
+            <div class="col-md-12">
+                <h2>Tutor - Public Profile</h2>
+                <img src="~/ProjectImages/{{d.TutorImage}}" style="width:8%;border-radius:50%;" />
+            </div>
+            <div class="col-md-12">{{d.TutorName}}</div>
+            <div class="pt-5 pl-md-5">
+                {{d.LongDescription}}
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,352 @@
+﻿
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div ng-app="app" ng-controller="MyCtrl"  ng-init="GetUsers();InternStudentDetails();" class="m-3" ng-cloak>
+    
+    <div class="container">
+        <h2 align="center"><b><u>Student/Tutor/Intern/Brand-Tutor Credential Registration Form</u></b></h2>
+        <br />
+
+        <form name="studentreg" class="p-lg-5" novalidate>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label class="control-label col-md-4"><b>User Type </b></label>
+                    <select ng-model="mdlUserType" ng-disabled="disableUserType" ng-change="GetUserByType()" class="form-control">
+                        <option value="">-- Select User Type --</option>
+                        <option value="Tutor"> Tutor</option>
+                        <option value="Student">Student</option>
+                        <option value="Intern">Intern Student </option>
+                        <option value="Brand-Tutor">Brand Tutor</option>
+                        <option value="Intern-Tutor">Intern Tutor </option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="control-label col-md-4"><b>User</b></label>
+                    <select ng-model="mdlUserId" class="form-control" ng-show="shTutorUser" ng-disabled="disabletutor" ng-options="item.TutorId as item.TutorName for item in TutorsData">
+                        <option value="">--Select Tutor--</option>
+                    </select>
+                    <select ng-model="mdlStudentId" class="form-control" ng-show="shStudentUser" ng-disabled="disabletutor" ng-options="item.StudentId as item.Name for item in StudentsData">
+                        <option value="">--Select Student--</option>
+                    </select>
+                    <select ng-model="mdlInternId" class="form-control" ng-show="shInternUser" ng-disabled="disabletutor" ng-options="item.InterApllyId as item.Name for item in InternStudents">
+                        <option value="">--Select Intern--</option>
+                    </select>
+
+                    <select ng-model="mdlBrandTutorId" class="form-control" ng-show="shBrandTutorUser" ng-disabled="disabletutor" ng-options="item.TutorId as item.TutorName for item in BrandTutorsData">
+                        <option value="">--Select Brand Tutor--</option>
+                    </select>
+
+                    <select ng-model="mdlInternTutorId" class="form-control" ng-show="shInternTutorUser"
+                            ng-disabled="disabletutor" ng-options="item.TutorId as item.TutorName for item in InternTutorsData">
+                        <option value="">--Select Intern Tutor -- </option>
+                    </select>
+
+
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="control-label col-md-2"><b>Username</b></label>
+                    <input type="text" class="form-control" maxlength="16" ng-model="mdlUserName" />
+                </div>
+
+                <div class="form-group col-md-6" ng-show="showStudentsCode">
+                    <label class="control-label col-md-4"><b>Student Code</b></label>
+                    <input type="text" class="form-control" maxlength="16" disabled ng-model="StudentsCode" />
+                </div>
+
+                <div class="form-group col-md-6" ng-show="showTutorsCode">
+                    <label class="control-label col-md-4"><b>Tutor Code</b></label>
+                    <input type="text" class="form-control" maxlength="16" disabled ng-model="TutorsCode" />
+                </div>
+
+
+                <div class="form-group col-md-6" ng-show="showInternCode">
+                    <label class="control-label col-md-4"><b>Intern Code </b></label>
+                    <input type="text" class="form-control" maxlength="16" disabled ng-model="InternsCode" />
+                </div>
+
+
+                <div class="form-group col-md-6" ng-show="showBrandTutorsCode">
+                    <label class="control-label col-md-4"><b>Brand Tutor Code</b></label>
+                    <input type="text" class="form-control" maxlength="16" disabled ng-model="BrandTutorsCode" />
+                </div>
+
+
+                <div class="form-group col-md-6" ng-show="showInternTutorsCode">
+                    <label class="control-label col-md-4"><b>Intern Tutor Code</b></label>
+                    <input type="text" class="form-control" maxlength="16" disabled ng-model="InternTutorsCode" />
+                </div>
+
+                <div class="form-group col-md-6" ng-show="shPassword">
+                    <label class="control-label col-md-2"><b>Password</b></label>
+                    <input type="password" class="form-control" maxlength="16" ng-model="mdlPassword" />
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="control-label col-md-4"><b>Active</b></label>
+                    <input type="checkbox" ng-model="mdlChkIsPublishedUser" />
+                </div>
+
+                <div class="form-group col-md-6" ng-show="shStudentCode">
+                    <label class="control-label col-md-4"><b>Student Code</b></label>
+                    <input type="text" class="form-control" maxlength="16" ng-model="StudentCode" disabled />
+                </div>
+
+                <div class="form-group col-md-6" ng-show="shInternCode">
+                    <label class="control-label col-md-4"><b>Intern Code</b></label>
+                    <input type="text" class="form-control" maxlength="16" ng-model="InternCode" disabled />
+                </div>
+
+                <div class="form-group col-md-6" ng-show="shTutorCode">
+                    <label class="control-label col-md-4"><b>Tutor Code</b></label>
+                    <input type="text" class="form-control" maxlength="16" ng-model="TutorCode" disabled />
+                </div>
+
+
+                <div class="form-group col-md-6" ng-show="shBrandTutorCode">
+                    <label class="control-label col-md-4"><b>Brand Tutor Code</b></label>
+                    <input type="text" class="form-control" maxlength="16" ng-model="BrandTutorCode" disabled />
+                </div>
+
+                <div class="form-group col-md-6" ng-show="shInternTutorCode">
+                    <label class="control-label col-md-4"><b>Intern Tutor Code </b></label>
+                    <input type="text" class="form-control" maxlength="16" ng-model="InternTutorCode" disabled/>
+                </div>
+
+            </div>
+            <div class="row">
+                @*<div class="col-md-2 col-md-offset-5">*@
+                <div class="col-md-6 col-md-offset-3">
+                    <button type="submit" class="btn btn-primary btn-lg" style="float:right"
+                            ng-disabled="studentreg.$invalid" ng-show="InsertBtn" ng-click="AddUser()">
+                        Submit
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6 col-md-offset-3">
+                    <button type="submit" class="btn btn-primary btn-lg" style="float:right"
+                            ng-disabled="studentreg.$invalid" ng-show="UpdateBtn" ng-click="UpdateUser()">
+                        Update
+                    </button>
+                </div>
+            </div>
+
+
+                @*<div>
+                <button type="submit"  class="col-md-4 col-md-offset-3 btn btn-primary btn-lg" ng-click="AddUser()">Submit </button>
+        </div>*@
+
+</form>
+    </div>
+</div>
+
+
+
+@*
+    <div class="container" ng-app="app" ng-controller="MyCtrl" ng-init="GetUsers()">
+        <h2>Add User</h2>
+        <br /><br /><br />
+        <form name="frmUser" novalidate class="px-5">
+            <div class="row">
+                <div class="col-md-6">
+                    Active
+                </div>
+                <div class="col-md-6">
+                    <input type="checkbox" class="form-control" ng-model="mdlChkIsPublishedUser" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">Tutor Name</div>
+                <div class="col-md-6">
+
+                    <select ng-model="mdlUserId" class="form-control" ng-options="item.TutorId as item.TutorName for item in TutorsData">
+                        <option value="">--Select--</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    User Type
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="mdlUserType" class="form-control" disabled>
+                        <option value="Tutor" selected> Tutor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    User Name
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" maxlength="16" ng-model="mdlUserName" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    Password
+                </div>
+                <div class="col-md-6">
+                    <input type="password" class="form-control" maxlength="16" ng-model="mdlPassword" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="button" value="Submit" class="btn btn-outline-primary" ng-class="AddUser();" />
+                </div>
+            </div>
+        </form>
+    </div>
+*@
+
+
+@* Commented by Atul On 30 Aug. *@
+@* <div ng-app="app" ng-controller="MyCtrl" ng-init="GetUsers()">
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <h1 align="center"><b><u>Student/Tutor Credential Registration Form</u></b></h1>
+        <br />
+
+        <form name="studentreg" novalidate>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label class="control-label col-md-4"><b>User Type </b></label>
+                    <select ng-model="mdlUserType" ng-disabled="disableUserType" ng-change="GetUserByType()" class="form-control">
+                        <option value="">-- Select User Type --</option>
+                        <option value="Tutor"> Tutor</option>
+                        <option value="Student">Student</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="control-label col-md-4"><b>User</b></label>
+                    <select ng-model="mdlUserId" class="form-control" ng-show="shTutorUser" ng-disabled="disabletutor" ng-options="item.TutorId as item.TutorName for item in TutorsData">
+                        <option value="">--Select Tutor--</option>
+                    </select>
+                    <select ng-model="mdlStudentId" class="form-control" ng-show="shStudentUser" ng-disabled="disabletutor" ng-options="item.StudentId as item.Name for item in StudentsData">
+                        <option value="">--Select Student--</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="control-label col-md-2"><b>Username</b></label>
+                    <input type="text" class="form-control" maxlength="16" ng-model="mdlUserName" />
+                </div>
+
+                <div class="form-group col-md-6" ng-show="shPassword">
+                    <label class="control-label col-md-2"><b>Password</b></label>
+                    <input type="password" class="form-control" maxlength="16" ng-model="mdlPassword" />
+                </div>
+
+            </div>
+
+            <div class="form-row">
+                <label class="control-label col-md-2">Active</label>
+                <div class="form-group col-md-6">
+                    <input type="checkbox" ng-model="mdlChkIsPublishedUser" />
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-2 col-md-offset-5">
+
+                    <button type="submit" class="btn btn-primary btn-lg" ng-disabled="studentreg.$invalid" ng-show="InsertBtn" ng-click="AddUser()">
+                        Submit
+                    </button>
+
+                    <button type="submit" class="btn btn-primary btn-lg" ng-disabled="studentreg.$invalid" ng-show="UpdateBtn" ng-click="UpdateUser()">
+                        Update
+                    </button>
+                </div>
+            </div>
+
+
+            @*<div>
+                        <button type="submit"  class="col-md-4 col-md-offset-3 btn btn-primary btn-lg" ng-click="AddUser()">Submit </button>
+                </div>
+
+        </form>
+    </div>
+</div>
+
+
+    <div class="container" ng-app="app" ng-controller="MyCtrl" ng-init="GetUsers()">
+        <h2>Add User</h2>
+        <br /><br /><br />
+        <form name="frmUser" novalidate class="px-5">
+            <div class="row">
+                <div class="col-md-6">
+                    Active
+                </div>
+                <div class="col-md-6">
+                    <input type="checkbox" class="form-control" ng-model="mdlChkIsPublishedUser" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">Tutor Name</div>
+                <div class="col-md-6">
+
+                    <select ng-model="mdlUserId" class="form-control" ng-options="item.TutorId as item.TutorName for item in TutorsData">
+                        <option value="">--Select--</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    User Type
+                </div>
+                <div class="col-md-6">
+                    <select ng-model="mdlUserType" class="form-control" disabled>
+                        <option value="Tutor" selected> Tutor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    User Name
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" maxlength="16" ng-model="mdlUserName" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    Password
+                </div>
+                <div class="col-md-6">
+                    <input type="password" class="form-control" maxlength="16" ng-model="mdlPassword" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="button" value="Submit" class="btn btn-outline-primary" ng-class="AddUser();" />
+                </div>
+            </div>
+        </form>
+    </div>
+*@
+

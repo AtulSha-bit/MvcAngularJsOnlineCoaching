@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "ShowTutors";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 35px !important;
+    }
+
+    input.form-control, select.form-control {
+        height: 22px !important;
+    }
+</style>
+
+<body ng-app="app" ng-controller="MyCtrl" ng-init="callTutorInit();">
+    <br />
+    <h2 class="text-center"><b><u>Tutor Details</u></b></h2>
+
+    <div class="row m-1">
+
+
+        <table ng-table="ShowTutors" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                <td data-title="'Sno'">{{$index+1}}</td>
+                <td data-title="'Tutor Name'" sortable="'TutorName'" filter="{ 'TutorName': 'text' }">
+                    {{ user.TutorName }}
+                </td>
+
+                <td data-title="'Short Description'" sortable="'ShortDescription'" filter="{ 'ShortDescription': 'text' }">
+                    {{ user.ShortDescription }}
+                </td>
+
+                <td data-title="'Tutor Experience'" sortable="'TutorExperience'" filter="{ 'TutorExperience': 'text' }">
+                    {{ user.TutorExperience }}
+                </td>
+
+                <td data-title="'Tutor DOB'" sortable="'TutorDOB'" filter="{ 'TutorDOB': 'text' }">
+                    {{ user.TutorDOB }}
+                </td>
+
+                <td data-title="'Tutor Contact'" sortable="'TutorContact'" filter="{ 'TutorContact': 'text' }">
+                    {{ user.TutorContact }}
+                </td>
+
+                <td data-title="'Tutor Email'" sortable="'TutorEmail'" filter="{ 'TutorEmail': 'text' }">
+                    {{ user.TutorEmail }}
+                </td>
+
+                <td data-title="'Tutor Type'" sortable="'TutorType'" filter="{ 'TutorType': 'text' }">
+                    {{ user.TutorType }}
+                </td>
+
+                <td data-title="'Admin Description'" sortable="'AdminDescription'" filter="{ 'AdminDescription': 'text' }">
+                    {{ user.AdminDescription }}
+                </td>
+
+                <td data-title="'Aadhar No'" sortable="'AadharNo'" filter="{ 'AadharNo': 'text' }">
+                    {{ user.DocumentNo }}
+                </td>
+
+                <td data-title="'Pan No'" sortable="'PanNo'" filter="{ 'PanNo': 'text' }">
+                    {{ user.DocumentName }}
+                </td>
+
+
+
+                <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                    {{ user.DateCreated  }}
+                </td>
+
+                <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">
+                    {{ user.CreatedBy }}
+                </td>
+
+                <td data-title="'Image'">
+                    <img ng-src="~/ProjectImages/{{user.TutorImage}}" style="height:50px;width:100px" />
+
+                </td>
+
+                <td data-title="'Action'" class="act">
+                    <a href="#" class="btn btn-sm btn-info" ng-click="editTutorDetail(user)"><i class="fa fa-edit"></i></a> &nbsp;
+                    <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#mydeleteModal" ng-click="deleteTutor(user.TutorId)"><i class="fa fa-trash"></i></a>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="11" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+        <div class="modal fade" data-backdrop="static" id="mydeleteModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a href="#" class="close" data-dismiss="modal">&times;</a>
+                    </div>
+
+                    <div class="modal-body">
+                        Are you sure?
+                        You want to delete this record
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                        <a class="btn btn-success" ng-click="DeleteTutors(user.TutorId)">Confirm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Css/signup.css" rel="stylesheet" />
+    <title>SignUp</title>
+    <style>
+        .folk {
+            font-size: 16px;
+            line-height: 1.25;
+            font-weight: 600;
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="~/Home/Index">
+        <div class="row justify-content-center" id="t">
+
+            <img src="~/Images/logo.jpg" />
+            <p class="pl-1" style="letter-spacing: 2px;">
+                <b style="font-size: 1.1rem;">FolksTune </b><br />
+                <span class="folk"> resonating education</span>
+            </p>
+
+        </div>
+    </a>
+    <div class="row justify-content-center mt-3 mb-3">
+        <h2 class="">Let's get started!</h2>
+    </div>
+    <div class="card-group">
+        <div class="card">
+            <div class="upper text-center pt-3">
+                <img class="card-img-top" src="~/Images/images (2).png" alt="Card image cap">
+                <h6 class="card-title pt-2"><span style="color:black">Group-A:</span> Students</h6>
+            </div>
+            <div class="card-body">
+                <p class="card-text">For Class-IX, Class-XI, Class-XII Enrich &enable yourself with our esteemed faculty & subject matter experts</p>
+
+            </div>
+            <form class="text-center">
+                <button type="submit" formaction="~/User/StudentRegister" class="btn btn-success btn-md">Sign Up</button>
+            </form>
+
+            <a href="~/Home/LearnMore" class="text-center pt-3 pb-3">Learn more</a>
+
+        </div>
+        <div class="card">
+            <div class="upper text-center pt-3">
+                <img class="card-img-top" src="~/Images/images (2).png" alt="Card image cap">
+                <h6 class="card-title pt-2"><span style="color:black">Group-B:</span> Professional & Intership Courses</h6>
+            </div>
+            <div class="card-body">
+                <p class="card-text">For Undergraduate, Graduate, Postgraduate & Professionals who aims to put their career on exponential trajectory. </p>
+
+            </div>
+            <form class="text-center">
+                <button type="submit" formaction="~/User/InternshipList" class="btn btn-success btn-md">Sign Up</button>
+            </form>
+
+            <a href="~/Home/LearnMore" class="text-center pt-3 pb-3">Learn more</a>
+
+        </div>
+        <div class="card">
+            <div class="upper text-center pt-3">
+                <img class="card-img-top" src="~/Images/images (2).png" alt="Card image cap">
+                <h6 class="card-title pt-2"><span style="color:black">Group-C:</span> Tutors & Trainers</h6>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Find jobs, build your teaching career, teach online courses.</p>
+
+            </div>
+            <form class="text-center">
+                <button type="submit" formaction="~/User/TutorRegister" class="btn btn-success btn-md">Sign Up</button>
+            </form>
+
+            <a href="~/Home/LearnMore" class="text-center pt-3 pb-3">Learn more</a>
+
+        </div>
+    </div>
+    <script src="~/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+</body>
+</html>

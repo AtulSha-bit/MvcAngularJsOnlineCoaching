@@ -1,0 +1,1516 @@
+﻿@model OnlineCoaching.Linq_To_Sql.SITSPL_tblUser
+<!DOCTYPE html>
+
+<html style="--scrollbar-width:17px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    @*<script src="~/Css/headerrr/jquery.js" defer=""></script>*@
+
+    <script nonce="">
+
+        var new_design_system = true;
+
+    </script>
+    <title>Online Classes</title>
+    <link href="~/Css/headerrr/abc.css" rel="stylesheet" />
+    <script src="~/Scripts/abc.js" defer="" type="text/javascript"></script>
+    <link href="~/Content/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="~/bootstrap-4.5.0-dist/css/animate3.7.0.css" rel="stylesheet" />
+    <link href="~/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/ng-table.min.css" rel="stylesheet" />
+
+    <link href="~/Content/angular-moment-picker.min.css" rel="stylesheet" />
+    <link href="~/Content/sweetalert.css" rel="stylesheet" />
+    <link href="~/Css/headerrr/f.css" rel="stylesheet" />
+    <link href="~/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/Content/angucomplete-alt.css" rel="stylesheet" />
+    <style>
+        html, body {
+            overflow-x: hidden;
+        }
+
+        .modal-backdrop {
+            z-index: 12;
+        }
+    </style>
+    <style>
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+            .logo-container img {
+                width: 6rem;
+                height: -webkit-fill-available;
+            }
+
+        .folk {
+            margin-left: 10px;
+            margin-top: 16px;
+        }
+
+            .folk h5 {
+                color: #212529;
+            }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 0px;
+            /*text-transform: uppercase;*/
+            /* line-height: 3rem;*/
+        }
+
+        .fa {
+            margin-left: 6px;
+        }
+
+        .dropdown {
+            opacity: 1;
+        }
+
+        .heading_5, h5 {
+            font-size: 16px;
+            line-height: 1.25;
+            font-weight: 600;
+        }
+
+        #header .max-width-container .navbar .collapse .navbar-nav li a {
+            /* font-family: 'Inter var',sans-serif; */
+            padding-left: 7px !important;
+            padding-right: 7px !important;
+            border-top: 2px solid transparent !important;
+            border-bottom: 2px solid transparent !important;
+            height: 100% !important;
+            display: flex !important;
+            align-items: center !important;
+            font-size: 15px;
+            font-weight: 600;
+            color: black;
+        }
+
+            #header .max-width-container .navbar .collapse .navbar-nav li a:hover {
+                text-decoration: none;
+            }
+
+        @@media (min-width: 576px) {
+            .modal-dialog {
+                max-width: 500px;
+                margin: 9rem auto;
+            }
+        }
+
+        .modal-content {
+            background: linear-gradient(75deg, #45b3e0 10%, white) !important;
+        }
+
+        .form-control {
+            height: 25px;
+            font-size: 11px;
+        }
+
+        label {
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body ng-app="app" ng-controller="MyCtrl" ng-init="GetSubHeadingByStudentCategoryId();">
+    <div class="container-fluid">
+        <div class="row head sticky-top" style="position:fixed;">
+            <div class="header1 pt-2 pb-2">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-4  pl-sm-0 pl-lg-7 lefthead">
+
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-10 col-lg-8  pl-lg-5 righthead">
+
+                        <ul class="list-inline">
+                            <li class="list-inline-item pr-2">
+                                <form>
+                                    <button formaction="~/Home/Enquiry"> <i class="fa fa-question pr-1" aria-hidden="true"></i>Inquiry now</button>
+                                </form>
+                            </li>
+                            <li class="list-inline-item pr-1">
+                                <form>
+                                    <button formaction="~/Home/ReferFriend"> <i class="fa fa-users pr-1"></i>Refer a friend</button>
+                                </form>
+                            </li>
+                            <li class="list-inline-item pr-1">
+                                <form>
+                                    <button formaction="mailTo:poonamcool93@gmail.com"> <i class="fa fa-envelope pr-1"></i>poonamcool93@gmail.com</button>
+                                </form>
+                            </li>
+                            <li class="list-inline-item pr-1">
+                                <form>
+                                    <button formaction="tel:1-800-499-4769">  <i class="fa fa-phone pr-1" aria-hidden="true"></i>1-800-499-4769</button>
+                                </form>
+                            </li>
+                            <li class="list-inline-item pr-1">
+                                <form>
+                                    <div class="btn-group">
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-lock pr-1" aria-hidden="true"></i>  Login  <i class="fa fa-caret-down pr-1" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" style="background-color: #ee6c4d; cursor: pointer;">
+                                            <a class="dropdown-item" id="astu">Student</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" id="astup">Intern</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" id="astur">Tutor</a>
+                                            @*<div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="/Tutor/BrandTutorLogin">Brand Tutor</a> *@
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="/Tutor/InternTutorLogin">Intern Tutor</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" id="astura">Admin</a>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                            <li class="list-inline-item pr-1">
+                                <form>
+                                    <button formaction="~/Home/SignUp"><i class="fa fa-lock pr-1" aria-hidden="true"></i>SignUp</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal student -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style=" background: linear-gradient(75deg, #45b3e0 10%, white) !important;">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel"><b>Student Login</b></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            @using (Html.BeginForm("StudentLogin", "User", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <form>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "label control-label" })
+                                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", required = "required", autocomplete = "off" } })
+                                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "label control-label" })
+                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", required = "required" })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        @if (ViewBag.Message != null)
+                                        {
+                                            <h5 style="color:red;text-align:center">@ViewBag.Message</h5>
+                                        }
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="submit" value="LOGIN" class="btn btn-sm btn-primary" />
+                                    </div>
+                                    <a href="~/User/ForgetPasswordForTutor">Forget Password?</a>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Tutor-->
+            <div class="modal fade" id="exampModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel"><b>Tutor Login</b></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            @using (Html.BeginForm("TutorLogin", "User", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <form>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "label control-label" })
+                                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", required = "required", autocomplete = "off" } })
+                                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "label control-label" })
+                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", required = "required" })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        @if (ViewBag.Message != null)
+                                        {
+                                            <h5 style="color:red;text-align:center">@ViewBag.Message</h5>
+                                        }
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="submit" value="LOGIN" class="btn btn-sm btn-primary" />
+                                    </div>
+                                    <a href="~/User/ForgetPasswordForTutor">Forget Password?</a>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Admin-->
+            <div class="modal fade" id="examModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel"><b>Admin Login</b></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <form>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "label control-label" })
+                                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", required = "required", autocomplete = "off" } })
+                                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "label control-label" })
+                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", required = "required" })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        @if (ViewBag.Message != null)
+                                        {
+                                            <h5 style="color:red;text-align:center">@ViewBag.Message</h5>
+                                        }
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="submit" value="LOGIN" class="btn btn-sm btn-primary" />
+                                    </div>
+                                    <a href="~/User/ForgetPasswordForTutor">Forget Password?</a>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Professional-->
+            <div class="modal fade" id="examppleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel"><b>Professional Login</b></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            @using (Html.BeginForm("InternLogin", "User", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <form>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "label control-label" })
+                                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", required = "required", autocomplete = "off" } })
+                                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "label control-label" })
+                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", required = "required" })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        @if (ViewBag.Message != null)
+                                        {
+                                            <h5 style="color:red;text-align:center">@ViewBag.Message</h5>
+                                        }
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="submit" value="LOGIN" class="btn btn-sm btn-primary" />
+                                    </div>
+                                    <a href="~/User/ForgetPasswordForTutor">Forget Password?</a>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*<header2>*@
+            <div id="header" class="header_container container-fluid" style="background-color: #d5f2e3;">
+                <div class="max-width-container">
+                    <div>
+                        <div class="layer"></div>
+                        <div id="mySidenav" class="sidenav" style="">
+
+                            <div class="ham_menu_items_container guest">
+                                <div class="ham_menu_items">
+                                    <div class="ham_main_heading"><a href="">Home</a></div>
+                                </div>
+                                <div class="ham_menu_items">
+                                    <div class="ham_main_heading"><a href="">About Us</a></div>
+                                </div>
+                                <div class="ham_menu_training_items ham_menu_items without_link">
+                                    <div class="ham_title ham_main_heading">
+                                        Undergrad Courses
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="ham_submenu_items" style="display: none;">
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Contests
+                                                <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Programming with Python
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Digital Marketing
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Web Development
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Android App Development
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Creative Writing
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Ethical Hacking
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Data Science
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    French Language
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Programming <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Programming with C and C++
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Core Java
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Cloud Computing with AWS
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Angular
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    R Programming
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Business <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Advanced Excel
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Financial Modeling and Valuation
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Beginner's Trading Certification
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    How To Startup
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Core Engineering<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    AutoCAD
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    SOLIDWORKS
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    STAAD Pro
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Internet of Things
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Data Science<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Machine Learning
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Creative Arts<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Learn Guitar in 30 days
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Photography
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Video Editing
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Career Development <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Business Communication Skills
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Placement Preparation
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Design <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Graphic Design
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    UI/UX Design
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Specializations<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Machine Learning Specialization
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ham_menu_training_items ham_menu_items without_link">
+                                    <div class="ham_title ham_main_heading">
+                                        Professional Courses
+
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+
+                                    </div>
+                                    <div class="ham_submenu_items" style="display: none;">
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Contests
+                                                <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Programming with Python
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Digital Marketing
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Web Development
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Android App Development
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Creative Writing
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Ethical Hacking
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Data Science
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    French Language
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Programming <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Programming with C and C++
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Core Java
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Cloud Computing with AWS
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Angular
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    R Programming
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Business <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Advanced Excel
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Financial Modeling and Valuation
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Beginner's Trading Certification
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    How To Startup
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Core Engineering<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    AutoCAD
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    SOLIDWORKS
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    STAAD Pro
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Internet of Things
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Data Science<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Machine Learning
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Creative Arts<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Learn Guitar in 30 days
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Photography
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Video Editing
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Career Development <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Business Communication Skills
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Placement Preparation
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Design <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Graphic Design
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    UI/UX Design
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Specializations<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Machine Learning Specialization
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ham_menu_training_items ham_menu_items without_link">
+                                    <div class="ham_title ham_main_heading">
+                                        Industrial Training
+
+                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+
+                                    </div>
+                                    <div class="ham_submenu_items" style="display: none;">
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Contests
+                                                <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Programming with Python
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Digital Marketing
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Web Development
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Android App Development
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Creative Writing
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Ethical Hacking
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Data Science
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    French Language
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Programming <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Programming with C and C++
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Core Java
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Cloud Computing with AWS
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Angular
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    R Programming
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Business <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Advanced Excel
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Financial Modeling and Valuation
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Beginner's Trading Certification
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    How To Startup
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Core Engineering<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    AutoCAD
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    SOLIDWORKS
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    STAAD Pro
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Internet of Things
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Data Science<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Machine Learning
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Creative Arts<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Learn Guitar in 30 days
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Photography
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Video Editing
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Career Development <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Business Communication Skills
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Placement Preparation
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Design <i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Graphic Design
+                                                </a>
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    UI/UX Design
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="ham_menu_training_items ham_inner_menu_items">
+                                            <div class="ham_inner_title">
+                                                Specializations<i class="is-icon-chevron-down"></i>
+                                            </div>
+                                            <div class="ham_inner_submenu_items">
+                                                <a class="trainings_link" href="" style="" target="_blank">
+                                                    Machine Learning Specialization
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ham_menu_items">
+
+                                    <div class="ham_main_heading">
+                                        <a href="~/Home/Working">How It Works</a>
+                                    </div>
+                                </div>
+                                <div class="ham_menu_items">
+                                    <div class="ham_main_heading">
+                                        <a href="~/Home/FAQ">FAQs</a>
+                                    </div>
+                                </div>
+                                <div class="ham_menu_items">
+                                    <div class="ham_main_heading"><a href="~/Home/Contact">Contact Us</a></div>
+                                </div>
+
+                                @*<hr class="ham_line_break">
+                                    <div class="ham_menu_items">
+                                        <div class="ham_main_heading"><a href="">Register - As a Student</a></div>
+                                    </div>
+                                    <div class="ham_menu_items">
+                                        <div class="ham_main_heading"><a href="">Register - As an Employer</a></div>
+                                    </div>
+                                    <div class="ham_menu_items without_link">
+                                        <div class="ham_main_heading home_page_login_button" id="ham_login_button" data-toggle="modal" data-target="#login-modal">
+                                            Login
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="navbar navbar-expand-md">
+                        <div class="brand_container">
+                          @* Commented By Atul On 19 Dec. 2020   <img id="hamburger_menu_key" src="~/Images/hamburger-menu-key-new.svg" />*@
+                            <span class="offer_hamburger_dot" id="offer_hamburger_dot"></span>
+
+                            <a href='@Url.Action("Index","Home")' style="text-decoration:none;">
+                                <div class="logo-container">
+                                    <img src="~/online logo/Folks Tune.png" style=" height:60px; width:4rem; padding-top: 11px;" />
+                                    <div class="folk">
+                                        <h3 class="logo">FolksTune</h3>
+                                        <h5>resonating education</h5>
+                                    </div>
+                                </div>
+
+                            </a>
+
+                        </div>    <div class="navbar_header_for_chat navbar_mobile" id="main-navbar-header">
+                        </div>
+                        <div class="collapse navbar-collapse navbar_desktop">
+                            <ul class="navbar-nav nav_menu_container">
+                                <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="~/Home/About">About Us</a></li>
+                                <li class="nav-item training_container_hover dropdown dropdown-hover dropdown_backdrop">
+                                    <a class="nav-link dropdown-toggle trainings_link" href="" id="trainings_dropdown_link" target="_blank">
+                                        Undergrad Courses
+                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-center menu_dropdown" id="trainings-dropdown" style="display: none;background-color:#d5f2e3;">
+                                        <div class="dropdown-inner">
+                                            <div class="dropdown-inner-container">
+                                                <div class="inner-dropdown a1" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Programming                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Programming with C and C++</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Core Java</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Cloud Computing with AWS</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Angular</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">R Programming</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="inner-dropdown a2" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Business                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Advanced Excel</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Financial Modeling and Valuation </a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Beginner's Trading Certification</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">How To Startup</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="inner-dropdown a3" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Core Engineering </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">AutoCAD</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">SOLIDWORKS</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">STAAD Pro</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Internet of Things</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="inner-dropdown contest" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading">
+                                                            Contests
+                                                        </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Programming with Python</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Digital Marketing</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Web Development</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Android App Development</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Creative Writing</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Ethical Hacking</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Data Science</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">French Language</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item training_container_hover dropdown dropdown-hover dropdown_backdrop">
+                                    <a class="nav-link dropdown-toggle trainings_link" href="" id="trainings_dropdown_link" target="_blank">
+                                        Professional Courses
+
+                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-center menu_dropdown" id="trainings-dropdown" style="display: none;background-color:#d5f2e3;">
+                                        <div class="dropdown-inner">
+                                            <div class="dropdown-inner-container">
+                                                <div class="inner-dropdown a1" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Programming                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Programming with C and C++</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Core Java</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Cloud Computing with AWS</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Angular</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">R Programming</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="inner-dropdown a2" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Business                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Advanced Excel</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Financial Modeling and Valuation </a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Beginner's Trading Certification</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">How To Startup</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="inner-dropdown a3" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Core Engineering                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">AutoCAD</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">SOLIDWORKS</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">STAAD Pro</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Internet of Things</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="inner-dropdown a4" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Data Science                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Machine Learning</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="inner-dropdown a5" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Creative Arts                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Learn Guitar in 30 days</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Photography</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Video Editing</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="inner-dropdown a6" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Career Development                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Business Communication Skills</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Placement Preparation</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                @*<div class="inner-dropdown a7" "=" ">
+                                                        <div class="inner_dropdown_section">
+                                                            <div class="menu-heading"> Design                                                                    </div>
+                                                            <ul class="dropdown-menu-part">
+                                                                <li class="item">
+                                                                    <a class="item_link" href="" style="" target="_blank">Graphic Design</a>
+                                                                </li>
+                                                                <li class="divider"></li>
+                                                                <li class="item">
+                                                                    <a class="item_link" href="" style="" target="_blank">UI/UX Design</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="inner-dropdown a8" "=" ">
+                                                        <div class="inner_dropdown_section">
+                                                            <div class="menu-heading"> Specializations                                                                    </div>
+                                                            <ul class="dropdown-menu-part">
+                                                                <li class="item">
+                                                                    <a class="item_link" href="" style="" target="_blank">Machine Learning Specialization</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>*@
+
+
+                                                <div class="inner-dropdown contest" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading">
+                                                            Contests
+                                                        </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Programming with Python</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Digital Marketing</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Web Development</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Android App Development</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Creative Writing</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Ethical Hacking</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Data Science</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">French Language</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item training_container_hover dropdown dropdown-hover dropdown_backdrop">
+                                    <a class="nav-link dropdown-toggle trainings_link" href="" id="trainings_dropdown_link" target="_blank">
+                                        Industrial Training
+                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-center menu_dropdown" id="trainings-dropdown" style="display: none;background-color:#d5f2e3;">
+                                        <div class="dropdown-inner">
+                                            <div class="dropdown-inner-container">
+                                                <div class="inner-dropdown a1" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Programming                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Programming with C and C++</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Core Java</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Cloud Computing with AWS</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Angular</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">R Programming</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="inner-dropdown a2" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Business                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Advanced Excel</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Financial Modeling and Valuation </a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Beginner's Trading Certification</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">How To Startup</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="inner-dropdown a3" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading"> Core Engineering                                                                    </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">AutoCAD</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">SOLIDWORKS</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">STAAD Pro</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Internet of Things</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="inner-dropdown contest" "=" ">
+                                                    <div class="inner_dropdown_section">
+                                                        <div class="menu-heading">
+                                                            Contests <div class="contest">
+                                                                Update
+                                                            </div>
+                                                        </div>
+                                                        <ul class="dropdown-menu-part">
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Programming with Python</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Digital Marketing</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Web Development</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Android App Development</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Creative Writing</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Ethical Hacking</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">Data Science</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li class="item">
+                                                                <a class="item_link" href="" style="" target="_blank">French Language</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <style>
+                                    #header .navbar .dropdown-menu#trainings-dropdown .dropdown-inner-container {
+                                        grid-template-areas: "a1 a2 a3 c1" "a4 a5 a6 c1" "a7 a8 a6 c1";
+                                    }
+                                </style>
+
+                                <li class="nav-item"><a class="nav-link" href="/Home/Working">How It Works</a></li>
+                                <li class="nav-item"><a class="nav-link" href="~/Home/FAQ">FAQs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="~/Home/Contact">Contact Us</a></li>
+
+
+                            </ul>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        @RenderBody()
+
+
+        <div class="row footer ">
+            <div class="card-deck">
+                <div class="card animated slideInLeft">
+
+                    <div class="card-body text-center">
+                        <h5 class="card-title  mt-lg-4"><u>ABOUT US</u></h5>
+                        <ul class="list-group  mt-lg-4">
+                            <li class="list-group-item"><a href="">SITSPL Methodology & Concept</a></li>
+                            <li class="list-group-item"><a href="">Frenchise Informatio</a></li>
+                            <li class="list-group-item"><a href="">Investor Corner</a></li>
+                            <li class="list-group-item"><a href="">About SITSPL</a></li>
+                            <li class="list-group-item"><a href="">Why SITSPL</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card animated slideInLeft">
+
+                    <div class="card-body text-center ">
+                        <h5 class="card-title  mt-lg-4"><u>STUDENT AREA</u></h5>
+                        <ul class="list-group  mt-lg-4">
+                            <li class="list-group-item"><a href="">Award & Prizes Scheme</a></li>
+                            <li class="list-group-item"><a href="">Admission at SITSPL</a></li>
+                            <li class="list-group-item"><a href=""> Fee Structure</a></li>
+                            <li class="list-group-item"><a href="">SITSPL Centers</a></li>
+                            <li class="list-group-item"><a href="">Result</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card animated slideInRight">
+
+                    <div class="card-body text-center">
+                        <h5 class="card-title mt-lg-4"><u>PROGRAMME CATEGORIES</u></h5>
+                        <ul class="list-group mt-lg-4">
+                            <li class="list-group-item"><a href="">Information Technology</a></li>
+                            <li class="list-group-item"><a href="">General Management</a></li>
+                            <li class="list-group-item"><a href="">Digital Marketing</a></li>
+                            <li class="list-group-item"><a href="">Banking & Finance</a></li>
+                            <li class="list-group-item"><a href="">Data Analytic</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card animated slideInRight">
+                    <div class="card-body">
+                        <h5 class="card-title text-center  mt-lg-4"><u>NEWSLETTER</u></h5>
+                        <p class="card-text mt-lg-4">Keep up with our always upcoming news and updates. Enter your e-mail and subscribe to our newsletter.</p>
+
+                        <div class="footer-input">
+                            <input type="text" placeholder="Enter your e-mail" class="email-box" />
+                            <input type="submit" class="submit-my-email" name="Subscribe" value="Subscribe">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row bottom-txt border-top 2px solid rgba(0,0,0,.125)">
+
+            <div class="col-lg-2 col-md-6 pt-lg-3 pt-md-3 pt-2">
+                <p><a href="">Privacy Policy</a></p>
+            </div>
+            <div class="col-lg-2 col-md-6 pt-lg-3 pt-md-3 pt-2">
+                <p><a href="">Terms Of Use</a></p>
+            </div>
+            <div class="col-lg-2 col-md-6 pt-lg-3 pt-2 d-inline-block">
+                <p>Follow Us:</p>
+            </div>
+            <div class="col-lg-2 col-md-6 pt-lg-3 pt-2 social">
+                <a href=""> <span class="fab fa-facebook p-2"></span></a>
+                <a href="">
+                    <span class="fab fa-linkedin p-2"></span>
+                </a>
+                <a href="">
+                    <span class="fab fa-twitter p-2"></span>
+                </a>
+                <a href=""> <span class="fab fa-google-plus p-2"></span></a>
+            </div>
+            <div class="col-lg-4 col-md-12 pt-lg-3 pt-2">
+                <p>©2020 SITSPL; ALL RIGHTS RESERVED, <a href="http://www.specialiseditsquad.com/">SITSPL Institute.</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    @*<script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>*@
+    <script src="~/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/ngStorage.min.js"></script>
+    <script src="~/Scripts/ng-file-upload.min.js"></script>
+    <script src="~/Scripts/ng-file-upload-shim.min.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/moment-with-locales.min.js"></script>
+    <script src="~/Scripts/angular-moment-picker.min.js"></script>
+    <script src="~/Scripts/sweetalert.min.js"></script>
+    <script src="~/Scripts/ng-table.min.js"></script>
+    <script src="~/Scripts/angucomplete-alt.js"></script>
+    <script src="~/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    <script src="~/bootstrap-4.5.0-dist/js/wowmin112.js"></script>
+    <script src="~/bootstrap-4.5.0-dist/js/designjs.js"></script>
+    <script src="~/OwlCarousel2-2.3.4/mousewheel.js"></script>
+    <script src="~/Scripts/SITSPL.js"></script>
+    @*<script src="~/Scripts/SITSPL_PublicView.js"></script>*@
+
+    @* Commented by Atul Sh. on 2 Sept.   <script src="~/Scripts/scriptt.js"></script>*@
+    <script>
+        new WOW().init();
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".checkbtn").click(function () {
+                $(".srch").css({ "margin-left": "100px" })
+            })
+        })
+    </script>
+
+    <script type="text/javascript">
+        const currentLocation = location.href;
+        const menuItem = document.querySelectorAll('a');
+        const menuLength = menuItem.length
+        for (var i = 0; i < menuLength; i++) {
+            if (menuItem[i].href === currentLocation) {
+                menuItem[i].className = "active"
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#astur").click(function () {
+                $("#exampModal").modal();
+            });
+        });
+        $(document).ready(function () {
+            $("#astura").click(function () {
+                $("#examModal").modal();
+            });
+        });
+
+        $(document).ready(function () {
+            $("#astu").click(function () {
+                $("#exampleModal").modal();
+            });
+        });
+        $(document).ready(function () {
+            $("#astup").click(function () {
+                $("#examppleModal").modal();
+            });
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

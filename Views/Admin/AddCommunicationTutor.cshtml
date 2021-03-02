@@ -1,0 +1,228 @@
+﻿
+@{
+    ViewBag.Title = "AddCommunicationTutor";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+
+    fieldset {
+        border: 2px solid #3d5a80 !important;
+        padding: 1rem !important
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: table;
+    }
+
+    @@media only screen and (max-width:767) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+
+<br />
+<h2 class="text-center"><b><u>Add Communication Tutor</u></b></h2>
+@*GetStudentDetails();GetTutorDetails();ViewStudentCategoryDetails();GetAddedInternships();addcourseinit();*@
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetTutorsData();GetInternshipsData()" class="m-1" ng-cloak>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <form>
+                <fieldset>
+                    <legend>Select All Tutors</legend>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>All Intern Tutors</label>
+                            <input type="checkbox" class="form-control" ng-model="chkAllInternTutors" />
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>All Course Tutors</label>
+                            <input type="checkbox" class="form-control" ng-model="chkAllCourseTutors" />
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>All Brand Tutors</label>
+                            <input type="checkbox" class="form-control" ng-model="chkAllBrandTutors" />
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Category Type</label>
+                            <select class="form-control" ng-model="mdlCategoryTypeForTutor" ng-change="getTutors();">
+                                <option value="">--Select--</option>
+                                <option value="Intern">Intern</option>
+                                <option value="Course">Course</option>
+                                <option value="Brand">Brand</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group col-md-6" ng-hide="hideCourse">
+                            <label><b>Course</b></label>
+                            <select ng-model="mdlCourse" class="form-control" ng-change="GetTutorDetailsByCourseId(mdlCourse)" ng-options="d.CourseId as d.CourseName for d in CoursesForTutorBind" required>
+                                <option value="">--Select Course--</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group col-md-6" ng-hide="hideInternship">
+                            <label><b>Internship</b></label>
+                            <select ng-model="mdlInternship" class="form-control" ng-change="GetInternDetailsByInternshipId(mdlInternship)" ng-options="d.InternshipId as d.InternshipName for d in InternshipForTutorBind" required>
+                                <option value="">--Select Internship--</option>
+                            </select>
+
+                        </div>
+
+
+                        @*<div class="form-group col-md-6" ng-hide="hideBrandCourse">
+                <label><b>Course</b></label>
+                <select ng-model="mdlBrandCourse" class="form-control" ng-change="GetBrandDetailsByCourseId(mdlBrandCourse)" ng-options="d.CourseId as d.CourseName for d in CourseForBrandTutorBind" required>
+                    <option value="">--Select Brand Course--</option>
+                </select>
+
+            </div>*@
+
+
+
+
+
+                    </div>
+
+
+
+                    <div class="row" ng-show="shListOfCourseTutor">
+                        <div class="col-12 pt-2">
+                            <!--List of Intern Student-->
+                            <b>List Of Course Tutors</b>
+                            <table ng-table="TutorListByCourse" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-repeat="d in $data">
+                                    <td title="'S.No'">{{$index+1}}</td>
+                                    <td title="'Tutor Name'">{{d.TutorName}}</td>
+                                    <td title="'Select'">
+                                        <input type="checkbox" ng-model="d.chkAdminToCourseTutor" ng-change="SelectMultipleCourseTutorForCommunication();" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <hr />
+                        </div>
+                    </div>
+
+                    <div class="row" ng-show="shListOfInternTutor">
+                        <div class="col-12 pt-2">
+                            <!--List of Course Student-->
+                            <b>List Of Intern Tutors</b>
+                            <table ng-table="TutorListByInternship" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-repeat="d in $data">
+                                    <td title="'S.No'">{{$index+1}}</td>
+                                    <td title="'Tutor Name'">{{d.TutorName}}</td>
+                                    <td title="'Select'">
+                                        <input type="checkbox" ng-model="d.chkAdminToInternTutor" ng-change="SelectMultipleInternTutorCommunicatio();" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <hr />
+                        </div>
+                    </div>
+
+
+                    <div class="row" ng-show="shListOfBrandTutor">
+                        <div class="col-12 pt-2">
+                            <!--List of Course Student-->
+                            <b>List Of Brand Tutors</b>
+                            <table ng-table="BrandTutorListByCourse" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-repeat="d in $data">
+                                    <td title="'S.No'">{{$index+1}}</td>
+                                    <td title="'Tutor Name'">{{d.TutorName}}</td>
+                                    <td title="'Select'">
+                                        <input type="checkbox" ng-model="d.chkAdminToBrandTutorcheck" ng-change="AdminToBrandTutorSelectMultipleCommunication();" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <hr />
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="row mt-1">
+                        <div class="col-md-12">
+                            <label>Message To Tutor</label>
+                            <textarea type="text" class="form-control" ng-model="mdlMsgOnlyTutor"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row mt-1 text-center">
+                        <div class="col-md-12">
+                            <input type="button" value="Sent Message" class="btn btn-primary" ng-click="AddMessageForTutorCommunication()" />
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-1"></div>
+
+
+    </div>
+
+</div>
+
+@*<div class="form-group col-md-6" ng-hide="hideInternTutor">
+        <label><b>Intern Tutor</b></label>
+        <select ng-model="mdlInternTutor" class="form-control" ng-change="GetInternTutorId(mdlInternTutor)" ng-options="d.TutorId as d.TutorName for d in InternTutorsBind" required>
+            <option value="">--Select Intern Tutor--</option>
+        </select>
+
+    </div>*@
+
+
+@*<div class="form-group col-md-6">
+        <label><b>Internship</b></label>
+        <select id="inputState" class="form-control" name="internship" ng-model="Internship"
+                ng-options="d.InternshipId as d.InternshipName for d in InternshipBind" ng-change="GetTutorForInternship(Internship)" required>
+            <option value="" selected>-- Select Internship --</option>
+        </select>
+    </div>*@
+
+
+@*<div class="form-group col-md-6" ng-hide="hideCourseTutor">
+        <label><b>Course Tutor</b></label>
+        <select ng-model="mdlTutor" class="form-control" ng-change="GetTutorId(mdlTutor)" ng-options="d.TutorId as d.TutorName for d in TutorsBind" required>
+            <option value="">--Select Course Tutor--</option>
+        </select>
+
+    </div>
+
+    <div class="row" ng-show="shInternCourseCategoryType">
+                        <div class="col-12">
+                            <label>Intern Category Type</label>
+                            <select class="form-control" ng-model="mdlInternshipIdForStudent" ng-change="ViewIternStudentByInternshipId(mdlInternshipIdForStudent)" ng-options="d.InternshipId as d.InternshipName for d in GetInternshipDataForCommu">
+                                <option value="">--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+
+*@

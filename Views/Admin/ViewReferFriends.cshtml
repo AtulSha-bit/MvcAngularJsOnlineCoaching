@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "ViewReferFriends";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+<br />
+<h2 class="text-center"><b><u>Refer Friend</u></b></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetReferFriendDetails()">
+
+    <div class="row m-1 mb-5">
+        <table ng-table="ReferFriendDetailsForAdmin" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                @if (Session["UserId"] != null)
+                {
+
+                    if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "SuperAdmin")
+                    {
+                        <td data-title="'S.No'">{{$index+1}}</td>
+                        <td data-title="'Refer By'" sortable="'ReferBy'" filter="{ 'ReferBy': 'text' }">
+                            {{ user.ReferBy }}
+                        </td>
+                        <td data-title="'Email Refer By'" sortable="'EmailReferBy'" filter="{ 'EmailReferBy': 'text' }">
+                            {{ user.EmailReferBy }}
+                        </td>
+
+                        <td data-title="'Mobile Refer By'" sortable="'MobileRefereBy'" filter="{ 'MobileRefereBy': 'text' }">
+                            {{ user.MobileRefereBy  }}
+                        </td>
+
+                        <td data-title="'Refer To'" sortable="'ReferTo'" filter="{ 'ReferTo': 'text' }">
+                            {{ user.ReferTo }}
+                        </td>
+
+
+                        <td data-title="'Email Refer To'" sortable="'EmailReferTo'" filter="{ 'EmailReferTo': 'text' }">
+                            {{ user.EmailReferTo }}
+                        </td>
+
+                        <td data-title="'Mobile Refer To'" sortable="'MobileReferTo'" filter="{ 'MobileReferTo': 'text' }">
+                            {{ user.MobileReferTo }}
+                        </td>
+
+
+
+
+                        <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                            {{ user.DateCreated }}
+                        </td>
+
+                        <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">
+                            {{ user.CreatedBy }}
+                        </td>
+
+                      
+
+                        @*<td data-title="'Action'" class="act">
+
+                           <a href="#" class="btn btn-sm btn-info" ng-click="editFAQ(user)"><i class="fa fa-edit"></i></a>
+                            @if (Session["UserType"].ToString() == "SuperAdmin")
+                            {
+                                <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteFAQ" ng-click="deleteFrequentlyAsked(user.FAQId)"><i class="fa fa-trash"></i></a>
+                            }
+                        </td>*@
+                    }
+
+                }
+
+
+            </tr>
+
+
+            <tr>
+                <td colspan="7" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "AddTutorResourcesForCourse";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@*<h2>AddTutorResourcesForCourse</h2>*@
+
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    .thumb {
+        width: 24px;
+        height: 24px;
+        float: none;
+        position: relative;
+        top: 7px;
+    }
+
+    form .progress {
+        line-height: 15px;
+    }
+
+    .progress {
+        display: inline-block;
+        width: 100px;
+        border: 3px groove #ccc;
+    }
+
+        .progress > div {
+            font-size: smaller;
+            background-color: red;
+            width: 0%;
+        }
+
+    .table {
+        text-align: center;
+    }
+</style>
+
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="getCourseTutorDetailsOnId();" class="m-1">
+
+    <h2 align="center"><b><u>Add Tutors  For Course</u></b></h2>
+    <br />
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label><b>Course Name </b></label>
+                    <input type="text" class="form-control" ng-model="CourseName" />
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label><b>Tutor</b></label>
+                    <select ng-model="mdlTutor" class="form-control" ng-options="item as item.TutorName for item in TutorsData track by item.TutorId" required>
+                        <option value="">--Select Tutor--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row text-center mt-2">
+                <div class="col-md-12">
+
+                    <button type="submit" ng-click="AddMultipleTutorForCourse()" class="btn btn-md btn-primary">Add Tutors</button>
+
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <table class="table table table-striped">
+                        <tr>
+                            <th>S.No</th>
+                            <th>Tutor Name</th>
+                            <th>Internship Name</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr ng-repeat="d in CourseArray">
+                            <td>{{$index+1}}</td>
+
+                            <td> {{ d.TutorName }} </td>
+                            <td>{{ d.CourseName }} </td>
+
+                            <td><a href="" class="btn btn-sm btn-danger" ng-click="DeleteCourseTutorArray($index);" /><i class="fa fa-trash"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+
+            <div class="form-row text-center">
+
+                <div class="form-group col-md-12">
+
+                    <label><b>Upload Photo</b></label>
+                    <input type="file" multiple="multiple" ngf-select="UploadTheFiles($files)" ng-model="SelectedFilesCourse" />
+                    <hr />
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <table class="table table table-striped">
+                        <tr>
+                            <th>S.No</th>
+
+                            <th>Resource Name</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr ng-repeat="d in  multiplefilesarray">
+                            <td>{{$index+1}}</td>
+
+                            @*     <td> {{ d.InternshipName }} </td>*@
+
+                            <td>{{ d.ResourceName }}</td>
+
+                            <td><input type="button" value="Delete" class="btn btn-sm btn-danger" ng-click="DeleteCourseResourceArray($index);" /></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="col-md-12 text-center">
+
+                <button type="submit" ng-click="AddTutorResourceForCourse()" class="btn btn-md btn-primary">Submit </button>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+    </div>
+

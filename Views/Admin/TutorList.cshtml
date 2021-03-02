@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "TutorList";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<link href="~/Css/FacultyList.css" rel="stylesheet" />
+<style>
+    .internHeading {
+        padding-top: 27px;
+    }
+
+    .internCardBody {
+        height: 98px;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="TutorListDetail()">
+
+    <h3 align="center" style="margin-top:1em;"><b><u>Faculty List</u></b></h3>
+    <div class="row" id="firstrow">
+        <div class="card mt-2 col-md-3" style="height:200px;" ng-repeat="d in TutorsListShow">
+            <center>
+                <div class="internHeading">
+                    <h5 class="ng-binding">{{ d.TutorName }}</h5>
+                </div>
+                <div class="card-body internCardBody">
+                    <p class="justify-content-around">{{ d.ShortDescription }}</p>
+                </div>
+                <button ng-click="TutorPublicProfileById(d.TutorId)" class="btn btn-primary">Details</button>
+            </center>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "ViewEnquiries";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<br />
+<br />
+<h2 class="text-center"><b><u>View Enquiry</u></b></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetUserEnquiryDetails()">
+
+
+    <div class="row m-1 mb-5">
+        <table ng-table="EnquiryDetailsUserForAdmin" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                @if (Session["UserId"] != null)
+                {
+
+                    if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "SuperAdmin")
+                    {
+                        <td data-title="'S.No'">{{$index+1}}</td>
+                        <td data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
+                            {{ user.Name }}
+                        </td>
+                        <td data-title="'Candidate Type'" sortable="'CandidateType'" filter="{ 'CandidateType': 'text' }">
+                            {{ user.CandidateType }}
+                        </td>
+
+                        <td data-title="'Mobile'" sortable="'Mobile'" filter="{ 'Mobile': 'text' }">
+                            {{ user.Mobile  }}
+                        </td>
+
+                        <td data-title="'Enquiry Type'" sortable="'EnquiryType'" filter="{ 'EnquiryType': 'text' }">
+                            {{ user.EnquiryType }}
+                        </td>
+                        <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }">
+                            {{ user.Message  }}
+                        </td>
+
+                        <td data-title="'Course Name'" sortable="'CourseName'" filter="{ 'CourseName': 'text' }">
+                            {{ user.CourseName }}
+                        </td>
+
+                        <td data-title="'Internship Name'" sortable="'InternshipName'" filter="{ 'InternshipName': 'text' }">
+                            {{ user.InternshipName }}
+                        </td>
+
+                        <td data-title="'Category Name'" sortable="'CategoryName'" filter="{ 'CategoryName': 'text' }">
+                            {{ user.CategoryName }}
+                        </td>
+
+
+                        <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                            {{ user.DateCreated }}
+                        </td>
+
+                        <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">
+                            {{ user.CreatedBy }}
+                        </td>
+
+
+
+                        @*<td data-title="'Action'" class="act">
+
+                   <a href="#" class="btn btn-sm btn-info" ng-click="editFAQ(user)"><i class="fa fa-edit"></i></a>
+                    @if (Session["UserType"].ToString() == "SuperAdmin")
+                    {
+                        <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteFAQ" ng-click="deleteFrequentlyAsked(user.FAQId)"><i class="fa fa-trash"></i></a>
+                    }
+                </td>*@
+                    }
+
+                }
+
+
+            </tr>
+
+
+            <tr>
+                <td colspan="7" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

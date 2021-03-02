@@ -1,0 +1,22 @@
+CREATE TABLE [dbo].[tblResource](
+	[ResourceId] [bigint] IDENTITY(1,1) NOT NULL,
+	[ResourceName] [nvarchar](128) NOT NULL,
+	[ResourceType] [nvarchar](128) NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[IsPubllished] [bit] NULL,
+	[DisplayOnWeb] [bit] NULL,
+ CONSTRAINT [PK_tblResource] PRIMARY KEY CLUSTERED 
+(
+	[ResourceId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tblResource] ADD  CONSTRAINT [DF_tblResource_CreatedBy]  DEFAULT ('Admin') FOR [CreatedBy]
+GO
+
+ALTER TABLE [dbo].[tblResource] ADD  CONSTRAINT [DF_tblResource_DateCreated]  DEFAULT (getdate()) FOR [DateCreated]
+GO

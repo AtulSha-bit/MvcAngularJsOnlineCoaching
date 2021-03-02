@@ -1,0 +1,354 @@
+﻿
+@{
+    ViewBag.Title = "UpdateStudent";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+
+    fieldset {
+        border: 2px solid #3d5a80 !important;
+        padding: 3rem !important
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+</style>
+<br />
+<h2 class="text-center"><b><u>UpdateStudent</u></b></h2>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="StudentEditDataOnInit()">
+    <div class="row mt-3">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form name="studentupdatead">
+                <fieldset>
+                    <legend class="b" align="center"><b>Information</b></legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-2"><b>Name</b></label>
+                            <input type="text" ng-model="Name" class="form-control" name="name" maxlength="45" />
+
+                            <span style="color:Red" ng-show="studentprofilereg.name.$error.required && studentprofilereg.name.$touched" ng-cloak>
+                                Name is required
+                            </span>
+
+                            <span style="color:Red" ng-show="studentprofilereg.name.$dirty && studentprofilereg.name.$error.pattern" ng-cloak>
+                                Name must contain alphabets (A-Z and a-z) only
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            @*<label for="lastName" class="form-label col-lg-12">Last Name</label>
+                                <input type="text" class="form-control col-lg-12" id="lastName" placeholder="Last Name">*@
+                            <div>
+                                <label class="control-label col-md-2" for="inputdob">
+                                    @*  <span style="color:red">* </span>*@
+                                    <b>DOB</b>
+                                </label>
+                                <input class="form-control" moment-picker="momentDOB" format="DD/MM/YYYY" start-view="day" name="dob" ng-model="DOB"
+                                       ng-model-options="{ updateOn: 'blur' }" ng-blur="validateStudentDOB()">
+
+                                <span style="color:Red" ng-show="studentprofilereg.DOB.$error.required && studentprofilereg.DOB.$touched" ng-cloak>
+                                    DOB is required
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-2"><b>Username</b></label>
+                            <input type="text" ng-model="Username" class="form-control" disabled required name="username" maxlength="45" />
+                            <span style="color:Red" ng-show="studentprofilereg.username.$error.required && studentprofilereg.username.$touched" ng-cloak>
+                                Username is required
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-6" style="display:none">
+                            <label class="control-label col-md-2"><b>Password</b></label>
+                            <input type="password" ng-model="Password" class="form-control" name="password" maxlength="40" disabled required />
+
+                            <span style="color:Red" ng-show="studentprofilereg.password.$error.required && studentprofilereg.password.$touched" ng-cloak>
+                                Password is required
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-2"><b>Email</b></label>
+                            <input type="text" ng-model="Email" class="form-control" name="email" maxlength="50" ng-pattern="emailregex" />
+
+                            <span style="color:Red" ng-show="studentprofilereg.email.$error.required && studentprofilereg.email.$touched" ng-cloak>
+                                Email is required
+                            </span>
+                            <span style="color:Red" ng-show="studentprofilereg.email.$dirty && studentprofilereg.email.$error.pattern" ng-cloak>
+                                Invalid Email
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class="control-label"><b>Fb Link</b></label>
+                            <input type="text" ng-model="Fblink" class="form-control" disabled name="fblink" maxlength="45" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-2"><b>Insta</b></label>
+                            <input type="text" ng-model="InstaLink" class="form-control" disabled name="instalink" maxlength="45" />
+                        </div>
+
+
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-2"><b>Twitter</b></label>
+                            <input type="text" ng-model="TwitterLink" class="form-control" disabled name="twitterlink" maxlength="45" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label col-md-2"><b>Image</b></label>
+                            <input type="file" class="form-control" ngf-select="changeImage($file)" ng-model="file" name="file" ngf-pattern="'image/*'"
+                                   ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
+                                   ngf-resize="{width: 100, height: 100}" />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label><b>Phone No</b></label>
+                            <input type="text" class="form-control" id="exampleInputphoneno" name="mobile" autocomplete="off" ng-model="Phone" maxlength="10">
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label class="control-label"><b>Student Category</b></label>
+                            <select class="form-control" required ng-model="StudentCategoryId" name="stdctgid"
+                                    ng-options="item.StudentCategoryId as item.CategoryName for item in StudentCategoriesData">
+                                <option value="" selected><p> -- Select Student Category -- </p></option>
+                            </select>
+                            <span style="color:Red" ng-show="coursedetails.stdctgid.$error.required && coursedetails.stdctgid.$dirty" ng-cloak>
+                                Student Category is required
+                            </span>
+                        </div>
+                    </div>
+
+
+                    @* /title In place of preview *@
+
+                    <div ng-show="PreviewImage" class="previ">
+                        <img height="100" width="100" class="prevClass" data-ng-src="{{Preview}}" />
+                    </div>
+
+                    <div ng-show="EditedImage" class="previ">
+                        <img height="100" width="100" class="prevClass" ng-src="~/ProjectImages/{{Title}}" />
+                    </div>
+
+                </fieldset>
+                @* Basic Info *@
+
+
+                <div class="mt-5">
+                    <fieldset>
+                        <legend class="b" align="center"><b>Basic Information</b></legend>
+                        <div class="form-row">
+
+                            @* disabled required*@
+
+                            <div class="form-group col-md-6 mt-2">
+                                <label for="inputState">State</label>
+                                <input type="text" class="form-control" ng-model="State" name="state" maxlength="30"
+                                       autocomplete="off" />
+                            </div>
+
+                            @* disabled disabled required *@
+
+                            <div class="form-group col-md-6 mt-lg-2 mt-md-2">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" ng-model="City" name="city" id="inputCity"
+                                       maxlength="30">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                                <label for="inputZip">Pin Code</label>
+                                <input type="text" class="form-control" ng-model="PinCode" id="inputZip" name="PinCode"
+                                       maxlength="6">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="inputZip">Course Remarks</label>
+                                <textarea rows="3" cols="30" ng-model="RemarksForCourse" name="remarks" class="form-control" maxlength="100" autocomplete="off">
+                                </textarea>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress">Address</label>
+
+                                @* disabled  required*@
+
+                                <textarea rows="3" cols="30" ng-model="Address" name="address" class="form-control"
+                                          maxlength="100" autocomplete="off">
+
+                                        </textarea>
+                            </div>
+
+                            @*required disabled *@
+
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress2">LandMark</label>
+                                <textarea class="form-control" rows="3" cols="30" ng-model="LandMark"
+                                          id="inputAddress2" name="landmark" maxlength="100" autocomplete="off">
+                                        </textarea>
+                            </div>
+
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <br />
+                <br />
+                <div>
+                    <table class="table table-bordered table-responsive">
+                        <thead>
+                            <h2 style="text-align:center;font-weight:bold"><u>Course Details</u></h2>
+                            <tr style="font-weight:bold;white-space:nowrap;">
+
+                                <th>Course</th>
+                                <th>Duration</th>
+                                <th>Valid From</th>
+                                <th>Valid To</th>
+                                <th>Fees</th>
+                                <th>Discount</th>
+                                <th>Fees With Discount</th>
+                                <th>Net Amount</th>
+                                <th>Month</th>
+                                <th>Joining Date</th>
+
+                            </tr>
+                        </thead>
+
+                        <tr ng-repeat="d in multipleCourse">
+                            <td>{{d.CourseName}}</td>
+                        @*    <td>{{d.Duration}}</td>*@
+                            <td>{{d.DurationName}}</td>
+                            <td>{{ d.ValidFrom }}</td>
+                            <td> {{ d.ValidTo }}</td>
+                            <td>{{ d.Fees }}</td>
+                            <td>{{ d.DiscountPercent }}</td>
+                            <td>{{ d.FeeAfterDiscount }}</td>
+                            <td>{{ d.NetAmount }}</td>
+                            <td> {{ d.Month }}</td>
+                            <td> {{ d.JoiningDate }} </td>
+                        </tr>
+                        <tr>
+                            <td colspan="10" style="padding-left:720px"><b>Total: </b> {{ Total }}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div ng-hide="paymentdetails">
+                    <div class="mt-5 mb-5">
+                        <fieldset>
+                            <legend align="center"><b>Payment Information</b></legend>
+                            <div class="form-row">
+
+                                <div class="form-group col-md-6 mt-2">
+                                    <label><span style="color:red">* </span> Select Payment Status</label>
+                                    <select class="form-control" ng-model="PaymentStatus" name="paymentstatus" requied>
+
+                                        <option value="Pending">Pending</option>
+                                        <option value="Partial Payment">Partial Payment</option>
+                                        <option value="Full Payment">Full Payment</option>
+                                    </select>
+
+                                    <span style="color:Red" ng-show="studentupdatead.paymentstatus.$error.required && studentupdatead.paymentstatus.$touched" ng-cloak>
+                                        Payment Status is required
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-6 mt-lg-2 mt-md-2">
+                                    <label><span style="color:red">* </span> Paid Amount</label>
+                                    <input type="text" class="form-control" ng-model="PaidAmount" name="paidamount"
+                                           maxlength="30" autocomplete="off" required ng-change="forDuesAmountCalculation()">
+                                    <span style="color:Red" ng-show="studentupdatead.paidamount.$error.required && studentupdatead.paidamount.$touched" ng-cloak>
+                                        Paid Amount is required
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputdob">Due Amount</label>
+
+                                    <input class="form-control" ng-model="DueAmount" name="dueamount" autocomplete="off" required disabled>
+                                    <span style="color:Red" ng-show="regform.dueamount.$error.required && regform.dueamount.$touched" ng-cloak>
+                                        Due Amount is required
+                                    </span>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="inputdob">Next Installment Date</label>
+                                    <input class="form-control" moment-picker="dtNextInstallmentDate" format="DD/MM/YYYY"
+                                           start-view="day" autocomplete="off" ng-blur="validateNextInstallmentDate()" ng-model="NextInstallmentDate" name="NextInstallment" ng-model-options="{ updateOn: 'blur' }">
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Temporary Registration Number</label>
+                                        <input type="text" class="form-control" ng-model="TemporaryRegNo" name="tempreg" disabled autocomplete="off" />
+
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label><span style="color:red"> * </span>Final Registration Number</label>
+                                        <input type="text" class="form-control" required ng-model="FinalRegNo" name="finalreg" autocomplete="off" />
+                                        <span style="color:Red" ng-show="studentupdatead.finalreg.$error.required && studentupdatead.finalreg.$touched" ng-cloak>
+                                            Final Registration Number is required
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputAddress">Payment Remarks</label>
+
+                                    <textarea rows="3" cols="30" ng-model="PaymentRemarks" name="remarkspayment" class="form-control" maxlength="150" autocomplete="off">
+                                        </textarea>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label><b>Cash</b></label>
+                                    <input type="radio" ng-model='paymentmode' ng-value='"Cash"' name="paymentmode" checked="checked">
+                                    <label> <b>Online</b></label>
+                                    <input type="radio" ng-model='paymentmode' ng-value='"Online"' name="paymentmode">
+                                </div>
+                            </div>
+
+                            <div class="form-row text-center">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary btn-md" ng-click="updateStudentsDetails()">Update</button>
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

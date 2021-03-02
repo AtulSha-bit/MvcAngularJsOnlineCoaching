@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "ViewActivity";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<style>
+    form label {
+        color: #3d5a80 !important;
+        font-size: 20px !important;
+        font-weight: unset;
+    }
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: inline-table;
+    }
+
+    @@media only screen and (max-width:767px) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+<br />
+<h2 class="text-center"><b><u>Activity</u></b></h2>
+
+<div class="row m-1" ng-app="app" ng-controller="MyCtrl" ng-init="ViewActivityDetails()">
+    <table ng-table="ActivitiesTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+        <tr ng-repeat="d in $data">
+            <td title="'S.No'">{{$index+1}}</td>
+            <td title="'Opeartion'" filter="{ 'ActivityOperation':'text' }" sortable="'ActivityOperation'">{{d.ActivityOperation}}</td>
+            <td title="'Message'" filter="{ 'ActivityMessage':'text' }" sortable="'ActivityMessage'">{{d.ActivityMessage}}</td>
+            <td title="'Created Date'">{{d.ActivityDate}}</td>
+            <td data-title="'Action'" class="act">
+                @if (Session["UserType"].ToString() == "SuperAdmin")
+                {
+                    <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteActivity" ng-click="deleteActivities(d.ActivityId)"><i class="fa fa-trash"></i></a>
+                }
+            </td>
+        </tr>
+    </table>
+    <div class="modal fade" data-backdrop="static" id="deleteActivity">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    Are you sure?
+                    You want to delete this record
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    @*   d.ActivityId *@
+                    <a class="btn btn-success" ng-click="DeleteActivities(d.ActivityId)">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

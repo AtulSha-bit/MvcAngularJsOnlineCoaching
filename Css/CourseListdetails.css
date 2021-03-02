@@ -1,0 +1,250 @@
+﻿html {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+q, blockquote {
+    quotes: none;
+}
+
+    q:before, q:after, blockquote:before, blockquote:after {
+        content: "";
+        content: none;
+    }
+
+a img {
+    border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+/* fontawesome */
+[class*="fa-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+/* body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1em;
+        text-align: center;
+        color: #444444;
+
+    }*/
+
+h1 {
+    font-size: 2.5em;
+    margin: 2em 0 1em;
+}
+
+h2 {
+    margin-top: 4.5em;
+}
+
+em,
+strong {
+    font-weight: 700;
+}
+
+input {
+    display: none;
+}
+
+header p {
+    margin-bottom: 2em;
+}
+
+section {
+    margin-bottom: 2em;
+    padding: 0;
+}
+
+    section:last-of-type {
+        margin-bottom: 0;
+    }
+
+p, span {
+    font-size: 14px;
+}
+
+.container {
+    z-index: 1;
+    margin-bottom: 4em;
+}
+
+.pure-tree {
+    text-align: left;
+    display: block;
+}
+
+    .pure-tree.main-tree {
+        width: 100%;
+        display: inline-block;
+        padding-left: 0px;
+    }
+
+    .pure-tree:not(.main-tree) {
+        padding-left: 0em;
+    }
+
+        .pure-tree:not(.main-tree) li {
+            /* overflow: hidden;*/
+            /* height: 0;*/
+            display: block;
+        }
+
+    .pure-tree label {
+        display: block;
+        cursor: pointer;
+        color: #717780;
+        /* border-bottom: 1px dashed #B0B9C5;*/
+        border-top: 1px solid #B0B9C5;
+        border-bottom: 1px solid #B0B9C5;
+        border-left: 1px solid #B0B9C5;
+        border-right: 1px solid #B0B9C5;
+        padding: 1.125em 1.125em 1.125em 1.125em;
+    }
+
+label {
+    margin-bottom: 0px !important;
+}
+
+.pure-tree label:before {
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    display: inline-block;
+    font-family: 'FontAwesome', sans-serif;
+    content: "\f192";
+    padding-right: .75em;
+}
+
+#subli:before {
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    display: inline-block;
+    font-family: 'FontAwesome', sans-serif;
+    content: "\f192";
+    padding-right: 18px;
+    padding-left: 40px;
+}
+
+.pure-tree label:hover {
+    color: #434a58;
+    border-bottom-color: #434a58;
+}
+
+.pure-tree .pure-tree_link a {
+    padding: 1.500em 1.125em 0.750em 0;
+    display: block;
+    border-radius: .2em;
+    color: #717780;
+    text-decoration: none;
+}
+
+    .pure-tree .pure-tree_link a:hover {
+        color: #434a58;
+    }
+
+.pure-tree.nested {
+    padding-left: 1.7em;
+}
+
+.pure-tree [type="checkbox"] {
+    display: none;
+}
+
+    .pure-tree [type="checkbox"]:checked + label {
+        color: #434a58;
+        border-bottom-color: #434a58;
+    }
+
+    .pure-tree [type="checkbox"]:checked ~ ul > li {
+        height: auto;
+        border: 1px solid #B0B9C5;
+    }
+
+#fa, #fb {
+    float: right;
+}
+
+
+
+#req {
+    padding-bottom: 1.6rem;
+    background-color: #fbfbf8;
+    border: 1px solid #dcdacb;
+    border-radius: 4px;
+    padding: 2.4rem 0;
+}
+
+.requl {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: .4rem 0;
+}
+
+svg {
+    min-height: 1.96rem;
+    color: #73726c;
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: currentColor;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.gap {
+    margin-left: 1.6rem;
+    flex: 1;
+    min-width: 1px;
+}
+
+.morecontent span {
+    display: none;
+}
+
+.morelink {
+    display: block;
+}
+
+.df {
+    display: contents;
+    text-align: center;
+}
+/*readmoreless*/
+
+
+.morecontent span {
+    display: none;
+}
+
+.morelink {
+    display: block;
+}
+
+.boxx {
+    border: 1px solid #B0B9C5;
+    margin-left: 105px;
+    margin-right: 105px;
+    border-radius: 30px;
+}

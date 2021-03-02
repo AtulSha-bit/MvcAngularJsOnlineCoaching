@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "ViewActivity";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<style>
+    form label {
+        color: #3d5a80 !important;
+        font-size: 20px !important;
+        font-weight: unset;
+    }
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: inline-table;
+    }
+
+    @@media only screen and (max-width:767px) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+<br />
+<h2 class="text-center"><b><u>Activity</u></b></h2>
+
+<div class="row m-1" ng-app="app" ng-controller="MyCtrl" ng-init="ViewActivityDetails()">
+    <table ng-table="ActivitiesTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+        <tr ng-repeat="d in $data">
+            <td title="'S.No'">{{$index+1}}</td>
+            <td title="'Opeartion'" filter="{ 'ActivityOperation':'text' }" sortable="'ActivityOperation'">{{d.ActivityOperation}}</td>
+            <td title="'Message'" filter="{ 'ActivityMessage':'text' }" sortable="'ActivityMessage'">{{d.ActivityMessage}}</td>
+            <td title="'Created Date'">{{d.ActivityDate}}</td>
+        </tr>
+    </table>
+</div>
+

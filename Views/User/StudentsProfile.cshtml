@@ -1,0 +1,781 @@
+﻿
+@{
+    ViewBag.Title = "Student Profile";
+    Layout = "~/Views/Shared/_LayoutStudents.cshtml";
+}
+<!-- Required meta tags -->
+<link href="~/Css/StudentDataWithImage.css" rel="stylesheet" />
+<style>
+    form label {
+        color: #3d5a80 !important;
+        /*  font-size: 20px !important;*/
+        font-weight: unset;
+    }
+
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: inline-table;
+    }
+
+    @@media only screen and (max-width:767px) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="studentprofileinit();callInit();">
+    <div class="container" ng-hide="hideStudentProflie">
+
+        <div class="row" id="studentdata">
+            <div class="col-md-3" id="side" style="width: -webkit-fill-available; height: auto;">
+                <div ng-show="ImgOnlyOnEdit" class="imgname">
+                    @if (Session["Image"] != null)
+                    {
+                        <img ng-src="~/ProjectImages/@Session["Image"].ToString()" />
+                    }
+                    else
+                    {
+                        <img src="~/Images/kimberly-farmer-lUaaKCUANVI-unsplash.jpg" />
+                    }
+                    @if (Session["User"] != null)
+                    {
+                        <h2>@Session["User"].ToString()</h2>
+                    }
+
+                </div>
+
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-Profile" role="tab" aria-controls="Profile"> Profile</a>
+                    <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-Upload" role="tab" aria-controls="Profile"> Upload Image</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-Basic" role="tab" aria-controls="Basic" ng-click="Studentbasic()"> Basic Information</a>
+             
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-Settings" role="tab" aria-controls="settings" ng-click="Studentsettings()">Settings</a>
+                   
+                  @*  <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-Close" role="tab" aria-controls="settings">Close account</a>*@
+                </div>
+            </div>
+            <div class="col-md-9" id="info">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-Profile" role="tabpanel" aria-labelledby="list-home-list">
+                        <div class="top">
+                            <h2>Student Profile</h2>
+
+                            <h3>Information</h3>
+                        </div>
+                        <form id="inner" name="studentprofilepersonalreg" novalidate>
+
+                            <div class="form-group">
+                                <label class="control-label">Name</label>
+                                <input type="text" ng-model="Name" class="form-control" name="name" maxlength="45" ng-pattern="/^[a-z A-Z]+$/" required />
+
+                                <span style="color:Red" ng-show="studentprofilepersonalreg.name.$error.required && studentprofilepersonalreg.name.$touched" ng-cloak>
+                                    Name is required
+                                </span>
+
+                                <span style="color:Red" ng-show="studentprofilepersonalreg.name.$dirty && studentprofilepersonalreg.name.$error.pattern" ng-cloak>
+                                    Name must contain alphabets (A-Z and a-z) only
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div>
+                                    <label class="control-label" for="inputdob">
+                                        @*  <span style="color:red">* </span>*@
+                                        DOB
+                                    </label>
+                                    <input class="form-control" moment-picker="momentDOB" format="DD/MM/YYYY" start-view="day" name="dob" ng-model="DOB"
+                                           ng-model-options="{ updateOn: 'blur' }" ng-blur="validateStudentDOB()" required>
+
+                                    <span style="color:Red" ng-show="studentprofilepersonalreg.DOB.$error.required && studentprofilepersonalreg.DOB.$touched" ng-cloak>
+                                        DOB is required
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Username</label>
+                                <input type="text" ng-model="Username" class="form-control" name="username" disabled maxlength="45" required />
+                                <span style="color:Red" ng-show="studentprofilepersonalreg.username.$error.required && studentprofilepersonalreg.username.$touched" ng-cloak>
+                                    Username is required
+                                </span>
+                            </div>
+                            <div class="form-group" style="display:none">
+                                <label class="control-label">Password</label>
+                                <input type="password" ng-model="Password" class="form-control" name="password" maxlength="40" disabled required />
+
+                                <span style="color:Red" ng-show="studentprofilepersonalreg.password.$error.required && studentprofilepersonalreg.password.$touched" ng-cloak>
+                                    Password is required
+                                </span>
+                            </div>
+
+                            <div class="form-group ">
+                                <label class="control-label">Email</label>
+                                <input type="text" ng-model="Email" class="form-control" name="email" maxlength="50" ng-pattern="emailregex" required />
+
+                                <span style="color:Red" ng-show="studentprofilepersonalreg.email.$error.required && studentprofilepersonalreg.email.$touched" ng-cloak>
+                                    Email is required
+                                </span>
+                                <span style="color:Red" ng-show="studentprofilepersonalreg.email.$dirty && studentprofilepersonalreg.email.$error.pattern" ng-cloak>
+                                    Invalid Email
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone No</label>
+                                <input type="text" class="form-control" id="exampleInputphoneno" name="mobile" autocomplete="off" ng-model="Phone" maxlength="10" required ng-pattern="/^[6-9][0-9]{9}$/">
+                                <span style="color:Red" ng-show="studentprofilepersonalreg.mobile.$error.required && studentprofilepersonalreg.mobile.$touched" ng-cloak>
+                                    Mobile No. is required
+                                </span>
+
+                                <span style="color:Red" ng-show="studentprofilepersonalreg.mobile.$dirty && studentprofilepersonalreg.mobile.$error.pattern" ng-cloak>
+                                    10 digits only must start with 6,7,8,9
+                                </span>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Student Category</label>
+                                <select class="form-control" required ng-model="StudentCategoryId" name="stdctgid"
+                                        ng-options="item.StudentCategoryId as item.CategoryName for item in StudentCategoryData" disabled>
+                                    <option value="" selected><p> -- Select Student Category -- </p></option>
+                                </select>
+                                @*<span style="color:Red" ng-show="studentprofilepersonalreg.stdctgid.$error.required && studentprofilepersonalreg.stdctgid.$dirty" ng-cloak>
+                            Student Category is required
+                        </span>*@
+                            </div>
+
+                            <hr />
+                            <h5 class="pb-3">Links</h5>
+                            <div class="form-group">
+
+
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">http://twitter.com/</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup" ng-model="TwitterLink" placeholder="Username">
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+
+
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">http://www.facebook.com/</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup2" ng-model="Fblink"
+                                           placeholder="Username">
+                                </div>
+
+                            </div>
+
+                            @*<div class="form-group">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">http://www.linkedin.com/</div>
+                            </div>
+                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                        </div>
+                    </div>*@
+
+                            <div class="form-group">
+
+
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">http://www.instagram.com/</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="inlineFormInputGroup4" ng-model="InstaLink" placeholder="Username">
+                                </div>
+
+                            </div>
+
+                        </form>
+                        <div class="row" id="butk">
+                            <button type="submit" class="btn btn-primary" ng-click="UpdateStudentProfile()" @*ng-disabled="studentprofilepersonalreg.$invalid"*@>Save</button>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="list-Upload" role="tabpanel" aria-labelledby="list-home-list">
+                        <div class="top">
+                            <h2>Upload Image</h2>
+
+                            <h3>Information</h3>
+                        </div>
+                        <form id="inner" name="studentprofilereg" novalidate>
+                            <div class="form-group">
+                                <label class="control-label">Image preview</label>
+                                <div ng-show="PreviewImage" class="previ" style="border:1px solid black;text-align: center;">
+
+                                    <img height="100" width="100" class="prevClass pt-3" src="~/Images/63081-profile-computer-social-user-icons-free-frame-thumb.png" data-ng-src="{{Preview}}" />
+                                </div>
+                            </div>
+
+                            <div class="form-group pt-3">
+                                <label class="control-label">Add / Change Image</label>
+                                <div class="custom-file mb-3">
+                                    <input type="file" class="custom-file-input" id="validatedCustomFile" ngf-select="changeImg($file)" ng-model="file" name="file" ngf-pattern="'image/*'"
+                                           ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100}" required>
+                                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+
+                                </div>
+                            </div>
+
+
+
+                        </form>
+                        <div class="row" id="butk" style="margin-top: 48px">
+                            <button type="submit" class="btn btn-primary" ng-click="UpdateStudentProfile()">Save</button>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" ng-hide="hidebasic" id="list-Basic" role="tabpanel" aria-labelledby="list-profile-list">
+                        <div class="top">
+                            <h2> Basic Information</h2>
+
+                            <h3>Information</h3>
+                        </div>
+                        <form id="inner" name="studentprofileregvalidate" novalidate>
+
+                            <div class="form-group">
+                                <label for="inputState">State</label>
+                                <input type="text" class="form-control" ng-model="State" name="state" maxlength="30" ng-disabled="disableState" autocomplete="off" />
+                                <span style="color:Red" ng-show="studentprofileregvalidate.state.$error.required && studentprofileregvalidate.state.$touched" ng-cloak>
+                                    State is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputCity"> City</label>
+                                <input type="text" class="form-control" ng-model="City" ng-disabled="disableCity" name="city" id="inputCity" maxlength="30" autocomplete="off">
+                                <span style="color:Red" ng-show="studentprofileregvalidate.city.$error.required && studentprofileregvalidate.city.$touched" ng-cloak>
+                                    City is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputZip"> Pin Code</label>
+                                <input type="text" class="form-control" ng-model="PinCode" id="inputZip" name="PinCode" maxlength="6" autocomplete="off">
+                                <span style="color:Red" ng-show="studentprofileregvalidate.PinCode.$error.required && studentprofileregvalidate.PinCode.$touched" ng-cloak>
+                                    Pin Code is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress"> Address</label>
+                                <textarea rows="3" cols="30" ng-model="Address" name="address" class="form-control"
+                                          maxlength="100" required autocomplete="off">
+
+                                        </textarea>
+                                <span style="color:Red" ng-show="studentprofileregvalidate.address.$error.required && studentprofileregvalidate.address.$touched" ng-cloak>
+                                    Address is required
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress2">LandMark</label>
+                                <textarea class="form-control" rows="3" cols="30" ng-model="LandMark"
+                                          id="inputAddress4" name="landmark" maxlength="100" autocomplete="off">
+                                        </textarea>
+                            </div>
+
+                        </form>
+                        <div class="row" id="butk">
+                            <button type="submit" class="btn btn-primary" ng-click="UpdateStudentProfile()" ng-disabled="studentprofileregvalidate.$invalid">Save</button>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="list-Course" role="tabpanel" aria-labelledby="list-messages-list">
+                        <div class="top">
+                            <h2> Course Details</h2>
+
+                            <h3>Information</h3>
+                        </div>
+                        <form id="inner" name="studentprofileregisterations" novalidate>
+                            <div ng-hide="hideCourseDur">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6 mt-2">
+                                        <label for="inputState">Select Course</label>
+                                        <select id="selectCourse" class="form-control" name="course" ng-disabled="disableCourse" ng-model="Course" ng-change="getCourseDetails()"
+                                                ng-options="item as item.CourseName for item in CourseData track by item.CourseId">
+                                            <option value="" selected> -- Select  Course --</option>
+                                        </select>
+                                    </div>
+
+
+                                    @*<div class="form-group col-md-6 mt-2">
+                                <label for="inputState">Select Course</label>
+                                <select id="selectCourse" class="form-control" name="course" ng-disabled="disableCourse" ng-model="Course" ng-change="getCourseDetails()"
+                                        ng-options="item.CourseId as item.CourseName for item in CoursesData">
+                                    <option value=""> -- Select  Course --</option>
+                                </select>
+                            </div>*@
+
+                                    @* required*@
+
+                                    <div class="form-group col-md-6 mt-lg-2 mt-md-2">
+                                        <label for="inputState">Cousre Duration</label>
+                                        <select ng-model="strDuration" class="form-control" ng-disabled="disableDuration" name="duration" ng-change="getallDetails()">
+                                            <option value="" selected>-- Select Duration--</option>
+                                            <option value="1 Month">1 Month</option>
+                                            <option value="2 Months">2 Months</option>
+                                            <option value="3 Months">3 Months</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="text" ng-show="false" name="StructureId" ng-model="StructureId" style="display:none" />
+
+                            <div ng-hide="hidecourseValidation">
+
+                                <div ng-hide="hideCourseValidFrom">
+                                    @*ng-hide="hideValidFromTo"*@
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6 ">
+                                            <div>
+                                                @*ng-hide="hideCourseValidFrom"*@
+                                                <label for="ValidFrom">Valid From</label>
+                                                <input class="form-control" moment-picker="mntCourseValidFrom" format="DD/MM/YYYY"
+                                                       start-view="day" name="CourseValidFrom" ng-model="CourseValidFrom"
+                                                       disabled ng-model-options="{ updateOn: 'blur' }">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <div>
+                                                @*ng-hide="hideCourseValidTo"*@
+                                                <label class="ValidTo">Valid To</label>
+                                                <input class="form-control" moment-picker="mntCourseValidTo" format="DD/MM/YYYY"
+                                                       start-view="day" name="CourseValidTo" disabled ng-model="CourseValidTo"
+                                                       ng-model-options="{ updateOn: 'blur' }">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @* required*@
+
+                                <input type="text" ng-show="false" name="StructureId" ng-model="StructureId" style="display:none" />
+                                <div class="form-row" ng-hide="hideFees">
+                                    <div class="form-group col-md-6">
+                                        <div>
+                                            @*ng-hide="hideFees"*@
+                                            <label for="inputAddress">Fees</label>
+                                            <input type="text" class="form-control" autocomplete="off" id="inputAddress6" ng-model="Fees" name="fees" ng-hide="hideFees" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <div>
+                                            <label for="inputAddress2">Discount % (Valid UpTo)</label>
+                                            <input type="text" disabled autocomplete="off" class="form-control" id="inputAddress10" ng-hide="hideDiscount" ng-model="Discount" name="discount">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row" ng-hide="hideFeesAfterDiscount">
+                                    <div class="form-group col-md-6">
+                                        <div>
+                                            <label for="inputAddress">Fees After Discount</label>
+                                            <input type="text" class="form-control" id="inputAddress5" disabled autocomplete="off" ng-model="FeesAfterDiscount" name="feeafterdiscount">
+                                        </div>
+                                    </div>
+                                    @*required*@
+                                    <div class="form-group col-md-6">
+                                        <div>
+                                            <label for="inputAddress">Net amount to pay</label>
+                                            <input type="text" class="form-control" disabled id="inputAddress6" autocomplete="off" ng-model="NetAmount" name="netamount">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @*required*@
+
+                                <div class="form-row" ng-hide="hideMonth">
+                                    <div class="form-group col-md-6">
+                                        <div>
+                                            @*ng-hide="hideMonth"*@
+                                            <label for="inputState">Month</label>
+                                            <select id="inputState7" class="form-control" ng-disabled="disableMonth" ng-model="Month" ng-change="calcuatejoining();enableDisableJoinDate()" name="month">
+                                                <option value="" selected> -- Select Month -- </option>
+                                                <option>January</option>
+                                                <option>February</option>
+                                                <option>March</option>
+                                                <option>April</option>
+                                                <option>May</option>
+                                                <option>June</option>
+                                                <option>July</option>
+                                                <option>August</option>
+                                                <option>September</option>
+                                                <option>October</option>
+                                                <option>November</option>
+                                                <option>December</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    @*  required*@
+
+                                    <div class="form-group col-md-6">
+                                        <div ng-hide="hideJoiningDate">
+                                            <label for="joiningdate">Joining date</label>
+
+                                            <select class="form-control" ng-model="JoiningDate" ng-disabled="disabledJoinDate" name="joiningdate" ng-change="getjoin()">
+                                                <option value="" selected>-- Select Joining Date --</option>
+                                                <option value="01">01</option>
+                                                <option value="15">15</option>
+                                                <option value="30">30</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="butn" ng-hide="hideAddbtn" ng-disabled="disableAddBtn" ng-click="AddMultipleCourseForStudent();">Add</button>
+                            </div>
+
+                        </form>
+                        <div class="row" id="butk">
+
+                            <button type="submit" class="btn btn-primary" ng-click="UpdateStudentProfile()">Save</button>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="list-Communication" role="tabpanel" aria-labelledby="list-settings-list">
+                        <div class="top">
+                            <h2>Communication</h2>
+                            <h3>Information</h3>
+                        </div>
+
+                        <div class="row" ng-hide="hideInternStudentCommunication">
+
+                            <div class="col-md-6">
+                                <div ng-repeat="d in CommByUserId">
+                                    <div class="col-md-6 border">
+                                        <b>Message For You:</b><br />
+                                        <p class="text-justify">{{d.Message}}</p>
+                                    </div>
+
+                                    <div class="col-md-6 border">
+                                        <b>Message All:</b><br />
+                                        <p class="text-justify">{{d.MessageAll}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div ng-repeat="d in CommForAll">
+                                    <div class="col-md-6 border">
+                                        <b>Message To All Students:</b><br />
+                                        <p class="text-justify">{{d.MessageAllStudents}}</p>
+                                    </div>
+                                    <div class="col-md-6 border">
+                                        <b>Message All:</b><br />
+                                        <p class="text-justify">{{d.MessageAll}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-1 mt-lg-1 mt-md-1 ml-1 mr-1" ng-hide="hideBrandStudentCommunication">
+                            <h2 style="text-align:center"><b>Brand Student Communication</b> </h2>
+                            <br /><br />
+                            <table ng-table="BrandStudentMsg" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                                    <td data-title="'S.No'">{{$index+1}}</td>
+                                    <td data-title="'Tutor Name'" sortable="'TutName'" filter="{ 'TutName': 'text' }"> {{ user.TutName }}</td>
+                                    <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }"> {{ user.Message }}</td>
+                                    <td data-title="'Date'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">{{ user.DateCreated }}</td>
+
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                  
+                </div>
+
+                <div class="tab-pane fade" ng-hide="brandtutorcomm" id="list-BrandTutor" role="tabpanel" aria-labelledby="list-settings-list">
+                    <div class="top">
+                        <h2> Brand Tutor</h2>
+
+                        <h3>Communication</h3>
+                    </div>
+
+                    <form id="inner" name="studenttobrandtutor" novalidate>
+                        <div class="form-group col-md-6 mt-2">
+                            <label for="inputState">Select Brand Tutor</label>
+                            <select id="selectCourse" class="form-control" name="brandtutor" ng-model="BrandTutor"
+                                    ng-options="item.TutorId as item.TutorName for item in StudentsBrandTutorData">
+                                <option value="" selected> -- Select  Brand Tutor --</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Message To Tutor Only</label>
+                                <textarea type="text" class="form-control" ng-model="mdlMsgOnlyTutor"></textarea>
+                                <br />
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div class="row" id="butk" style="margin-top: 92px;">
+                        <button type="submit" class="btn btn-primary" ng-click="AddStudentCommunicationToBrandTutor()">Sent Message</button>
+                    </div>
+                </div>
+
+
+                <div class="tab-pane fade" ng-hide="brandtutorcomm" id="list-CourseTutor" role="tabpanel" aria-labelledby="list-settings-list">
+                    <div class="top">
+                        <h2> Course Tutor</h2>
+
+                        <h3>Communication</h3>
+                    </div>
+
+                    <form id="inner" name="studenttobrandtutor" novalidate>
+                        <div class="form-group col-md-6 mt-2">
+                            <label for="inputState">Select Course Tutor</label>
+                            <select id="selectCourse" class="form-control" name="brandtutor" ng-model="BrandTutor"
+                                    ng-options="item.TutorId as item.TutorName for item in StudentsBrandTutorData">
+                                <option value="" selected> -- Select  Course Tutor --</option>
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Message To Tutor Only</label>
+                                <textarea type="text" class="form-control" ng-model="mdlMsgOnlyTutor"></textarea>
+                                <br />
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <div class="row" id="butk" style="margin-top: 92px;">
+                        <button type="submit" class="btn btn-primary" ng-click="AddStudentCommunicationToBrandTutor()">Sent Message</button>
+                    </div>
+                </div>
+
+
+
+                <div class="tab-pane fade" id="list-Payment" role="tabpanel" aria-labelledby="list-settings-list">
+                    <div class="top">
+                        <h2> Payment Mode</h2>
+
+                        <h3>Information</h3>
+                    </div>
+                    <form id="inner" name="studentprofilereg" novalidate>
+
+                        <div class="form-group">
+                            <label for="paymentmode">Payment Mode</label>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" ng-disabled="disablePayment" name="paymentmode" ng-model="Payment" ng-value='"Cash"' checked />
+                                <label class="form-check-label">
+                                    Cash
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentmode" ng-model="Payment" ng-value='"Online"' disabled>
+                                <label class="form-check-label">
+                                    Online
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="inputRemarks">Remarks</label>
+
+                            <textarea rows="3" cols="30" ng-model="RemarksOfCourse" ng-disabled="disableRemarks" name="remarks" autocomplete="off" class="form-control"
+                                      maxlength="150"> </textarea>
+                        </div>
+
+
+                    </form>
+
+                    <div class="row" id="butk" style="margin-top: 92px;">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+
+
+                <div class="tab-pane fade" ng-hide="hideprofilesetting" id="list-Settings" role="tabpanel" aria-labelledby="list-settings-list">
+                    <div class="top">
+                        <h2>Settings</h2>
+
+                        <h3>Change Password</h3>
+                    </div>
+                    <form id="inner" name="studentprofileregistration" novalidate>
+
+                        <div class="form-group">
+                            <label class="control-label">Email</label>
+                            <input type="email" ng-model="Email" class="form-control" name="username" placeholder="already avilable from database" required />
+
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="inputPassword3" class="control-label">Enter Current Password</label>
+
+                            <input type="password" class="form-control" ng-model="CurrentPassword" id="currentpass" name="currentpass">
+                            <span style="color:Red" ng-show="studentprofileregistration.currentpass.$error.required && studentprofileregistration.currentpass.$touched" ng-cloak>
+                                Current Password is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="control-label">Enter New Password</label>
+
+                            <input type="password" class="form-control" ng-model="NewPassword" id="newpass" name="newpass">
+                            <span style="color:Red" ng-show="studentprofileregistration.newpass.$error.required && studentprofileregistration.newpass.$touched" ng-cloak>
+                                New Password is required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="control-label">Re-type New Password</label>
+
+                            <input type="password" class="form-control" ng-model="ReTypePassword" id="retypepass" name="retypepass">
+                            <span style="color:Red" ng-show="studentprofileregistration.retypepass.$error.required && studentprofileregistration.retypepass.$touched" ng-cloak>
+                                Retype New Password is required
+                            </span>
+                        </div>
+
+                    </form>
+                    <div class="row" id="butk">
+                        <button type="submit" class="btn btn-primary" ng-click="ChangeStudentsProfilePassword()" ng-disabled="studentprofileregistration.$invalid">Change Password</button>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="list-Notifications" role="tabpanel" aria-labelledby="list-settings-list">
+                    <div class="top">
+                        <h2>Student Profile</h2>
+
+                        <h3>Information</h3>
+                    </div>
+                    <form id="inner" name="studentprofilereg" novalidate>
+
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" id="inputAddress" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" id="inputAddress3" placeholder="Add a professional headline like, " Engineer at Udemy" or "Architect." ">
+                        </div>
+                        <div class="form-group">
+                            <select name="locale" required="" class="select form-control" id="id_locale">
+                                <option value="">-- Select Language --</option>
+                                <option value="de_DE">Deutsch</option>
+                                <option value="en_US" selected="">English (US)</option>
+                                <option value="es_ES">Español (España)</option>
+                                <option value="fr_FR">Français (France)</option>
+                                <option value="id_ID">Bahasa Indonesia</option>
+                                <option value="it_IT">Italiano</option>
+                                <option value="ja_JP">日本語</option>
+                                <option value="ko_KR">한국어</option>
+                                <option value="nl_NL">Nederlands</option>
+                                <option value="pl_PL">Polski</option>
+                                <option value="pt_BR">Português (Brasil)</option>
+                                <option value="ro_RO">Română</option>
+                                <option value="ru_RU">Русский</option>
+                                <option value="th_TH">ภาษาไทย</option>
+                                <option value="tr_TR">Türkçe</option>
+                                <option value="zh_CN">中文(简体)</option>
+                                <option value="zh_TW">中文 (繁體)</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">http://twitter.com/</div>
+                                </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">http://www.facebook.com/</div>
+                                </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup2" placeholder="Username">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">http://www.linkedin.com/</div>
+                                </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup3" placeholder="Username">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">http://www.youtube.com/</div>
+                                </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup4" placeholder="Username">
+                            </div>
+
+                        </div>
+
+                    </form>
+                    <div class="row" id="butk">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-Close" role="tabpanel" aria-labelledby="list-settings-list">
+                    <div class="top">
+                        <h2>Close Account</h2>
+
+                        <h3>Close your account permanently.</h3>
+                    </div>
+                    <form id="inner" name="studentprofilereg" novalidate>
+
+                        <h4>Close Your Account</h4><br />
+                        <p><span style="color:#992337;"><b>Warning:</b></span> If you close your account, you will be unsubscribed from all your 0 courses, and will lose access forever.</p>
+
+                        <div class="row" id="butk">
+                            <button type="submit" class="btn btn-primary">Close Account</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+                </div>
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "ViewUsers";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<link href="~/Css/addcourseuser.css" rel="stylesheet" />
+<style>
+    .table-responsive {
+        display: inline-table;
+    }
+
+    @@media only screen and (max-width:600px) {
+        .table-responsive {
+            display: block;
+        }
+    }
+
+    .table-bordered thead th {
+        padding: 15px 33px;
+    }
+</style>
+<title>Add Course</title>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="getusersbyadmininit()" class="m-3">
+    
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <h2 class="text-center"><b><u>View Users</u></b></h2>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+
+    <table ng-table="ShowAllUsers" show-filter="true" class="table-bordered table-hover table-condensed table-responsive mt-5 text-center">
+        <tr ng-repeat="user in $data">
+            <td data-title="'Sno'">{{$index+1}}</td>
+            <td data-title="'User Type'" sortable="'UserType'" filter="{ 'UserType': 'text' }"> {{ user.UserType }} </td>
+            <td data-title="'User Name'" sortable="'UserName'" filter="{ 'UserName': 'text' }"> {{ user.UserName }} </td>
+            @*<td data-title="'Active'" sortable="'IsPublished'" filter="{ 'IsPublished': 'text' }"> {{ user.IsPublished }} </td>*@
+            <td data-title="'Active'">
+                <input type="checkbox" disabled ng-model="user.IsPublished" />
+            </td>
+            <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }"> {{ user.DateCreated  }} </td>
+            <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }"> {{ user.CreatedBy }} </td>
+            <td data-title="'Action'">
+                <a href="#" class="btn btn-info" ng-click="editUserDetail(user)"><i class="fa fa-edit"></i></a>
+                &nbsp; &nbsp;
+                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ng-click="deleteCourse(user.CourseId)"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+    </table>  
+</div>

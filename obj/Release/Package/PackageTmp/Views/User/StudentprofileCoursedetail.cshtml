@@ -1,0 +1,199 @@
+﻿
+@{
+    ViewBag.Title = "StudentprofileCoursedetail";
+    Layout = "~/Views/Shared/_LayoutStudents.cshtml";
+}
+
+
+<div class="row" ng-app="app" ng-controller="MyCtrl" ng-init="GetCoursesByStudentCategoryId();" ng-clock>
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <br /> <br />
+        <h2 class="text-center"><b><u>Course Details</u></b> </h2>
+        <form id="inner" name="studentprofileregisterations" novalidate>
+            <div ng-hide="hideCourseDur">
+                <div class="form-row">
+                    <div class="form-group col-md-6 mt-2">
+                        <label for="inputState">Select Course</label>
+                        <select id="selectCourse" class="form-control" name="course" ng-disabled="disableCourse" ng-model="Course" ng-change="getCourseDetails()"
+                                ng-options="item as item.CourseName for item in CourseDataDeatils track by item.CourseId">
+                            <option value="" selected> -- Select  Course --</option>
+                        </select>
+                        <span style="color:Red" ng-show="studentprofileregisterations.course.$error.required && studentprofileregisterations.course.$touched" ng-cloak>
+                            Course is required
+                        </span>
+                    </div>
+                    @* required DurationData *@
+
+                    <div class="form-group col-md-6 mt-lg-2 mt-md-2">
+                        <label for="inputState">Cousre Duration</label>
+
+                        <select id="selectCourse" class="form-control" name="duration" ng-disabled="disableCourse" ng-model="strDuration" ng-change="getallDetails()"
+                                ng-options="item as item.DurationName for item in DurationData track by item.DurationId">
+                            <option value="" selected> -- Select  Duration --</option>
+                        </select>
+                        <span style="color:Red" ng-show="studentprofileregisterations.duration.$error.required && studentprofileregisterations.duration.$touched" ng-cloak>
+                            Duration is required
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <input type="text" ng-show="false" name="StructureId" ng-model="StructureId" style="display:none" />
+
+            <div ng-hide="hidecourseValidation">
+
+                <div ng-hide="hideCourseValidFrom">
+                    @*ng-hide="hideValidFromTo"*@
+                    <div class="form-row">
+                        <div class="form-group col-md-6 ">
+                            <div>
+                                @*ng-hide="hideCourseValidFrom"*@
+                                <label for="ValidFrom">Valid From</label>
+                                <input class="form-control" moment-picker="mntCourseValidFrom" format="DD/MM/YYYY"
+                                       start-view="day" disabled name="CourseValidFrom" ng-model="CourseValidFrom"
+                                       ng-model-options="{ updateOn: 'blur' }">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div>
+                                @*ng-hide="hideCourseValidTo"*@
+                                <label class="ValidTo">Valid To</label>
+                                <input class="form-control" moment-picker="mntCourseValidTo" format="DD/MM/YYYY"
+                                       start-view="day" disabled name="CourseValidTo" ng-model="CourseValidTo"
+                                       ng-model-options="{ updateOn: 'blur' }">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                @* required*@
+
+                <input type="text" ng-show="false" name="StructureId" ng-model="StructureId" style="display:none" />
+                <div class="form-row" ng-hide="hideFees">
+                    <div class="form-group col-md-6">
+                        <div>
+                            @*ng-hide="hideFees"*@
+                            <label for="inputAddress">Fees</label>
+                            <input type="text" class="form-control" autocomplete="off" id="inputAddress6" ng-model="Fees" name="fees" ng-hide="hideFees" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <div>
+                            <label for="inputAddress2">Discount % (Valid UpTo)</label>
+                            <input type="text" disabled autocomplete="off" class="form-control" id="inputAddress10" ng-hide="hideDiscount" ng-model="Discount" name="discount">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row" ng-hide="hideFeesAfterDiscount">
+                    <div class="form-group col-md-6">
+                        <div>
+                            <label for="inputAddress">Fees After Discount</label>
+                            <input type="text" class="form-control" id="inputAddress5" disabled autocomplete="off" ng-model="FeesAfterDiscount" name="feeafterdiscount">
+                        </div>
+                    </div>
+                    @*required*@
+                    <div class="form-group col-md-6">
+                        <div>
+                            <label for="inputAddress">Net amount to pay</label>
+                            <input type="text" class="form-control" disabled id="inputAddress6" autocomplete="off" ng-model="NetAmount" name="netamount">
+                        </div>
+                    </div>
+                </div>
+
+                @*required*@
+
+                <div class="form-row" ng-hide="hideMonth">
+                    <div class="form-group col-md-6">
+                        <div>
+                            @*ng-hide="hideMonth"*@
+                            <label for="inputState">Month</label>
+                            <select id="inputState7" class="form-control" ng-disabled="disableMonth" ng-model="Month" ng-change="calcuatejoining();enableDisableJoinDate()" name="month">
+                                <option value="" selected> -- Select Month -- </option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    @*  required*@
+
+                    <div class="form-group col-md-6">
+                        <div ng-hide="hideJoiningDate">
+                            <label for="joiningdate">Joining date</label>
+
+                            <select class="form-control" ng-model="JoiningDate" ng-disabled="disabledJoinDate" name="joiningdate" ng-change="getjoin()">
+                                <option value="" selected>-- Select Joining Date --</option>
+                                <option value="01">01</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row justify-content-center">
+                    <button type="submit" class="btn btn-primary" id="butn" ng-hide="hideAddbtn" ng-disabled="disableAddBtn" ng-click="AddMultipleCourseForStudent();">Add</button>
+                </div>
+            </div>
+
+            <div ng-hide="addmulticoursetable">                
+                <table class="table table-bordered table-responsive">
+                    <thead>
+                        <tr style="font-weight:bold;white-space:nowrap;">
+                            <th>Course</th>
+                            <th>Duration</th>
+                            <th>Valid From</th>
+                            <th>Valid To</th>
+                            <th>Fees</th>
+                            <th>Discount</th>
+                            <th>Fees With Discount</th>
+                            <th>Net Amount</th>
+                            <th>Month</th>
+                            <th>Joining Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tr ng-repeat="d in arrCourse">
+                        <td>{{d.CourseName}}</td>
+                        <td>{{d.DurationName}}</td>
+                        <td>{{ d.ValidFrom }}</td>
+                        <td> {{ d.ValidTo }}</td>
+                        <td>{{ d.Fees }}</td>
+                        <td>{{ d.Discount }}</td>
+                        <td>{{ d.FeesWithDiscount }}</td>
+                        <td>{{ d.NetAmount }}</td>
+                        <td> {{ d.Month }}</td>
+                        <td> {{ d.JoiningDate }} </td>
+                        <td><a href="" class="delete" ng-click="deleteFromSelectedCourse($index)"><i class="fa fa-trash"></i> </a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="12"><b>Total: </b> {{ TotalMoney }}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </form>
+        <div class="form-row justify-content-center mb-5" id="butk">
+            <br />
+            <button type="submit" class="btn btn-primary" ng-hide="hideSavebtn" ng-disabled="studentprofileregisterations.$invalid" ng-click="AddStudentCourses()">Save</button>
+
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+
+
+
+</div>

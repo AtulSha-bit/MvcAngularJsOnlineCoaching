@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "TutorList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link href="~/Css/FacultyList.css" rel="stylesheet" />
+<style>
+    .internHeading {
+        padding-top: 27px;
+    }
+
+    .internCardBody {
+        height: 98px;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="TutorListDetail()">
+   
+    <h3 align="center" style="margin-top:6em;"><b><u>Faculty List</u></b></h3>
+    <div class="row" id="firstrow">
+        <div class="card mt-2 col-md-3" style="height:200px;" ng-repeat="d in TutorsList">
+            <center>
+                <div class="internHeading">
+                    <h5 class="ng-binding">{{ d.TutorName }}</h5>
+                </div>
+                <div class="card-body internCardBody">
+                    <p class="justify-content-around">{{ d.ShortDescription }}</p>
+                </div>
+                <button ng-click="TutorPublicProfileById(d.TutorId)" class="btn btn-primary">Details</button>
+            </center>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+        <link href="~/Css/FacultyList.css" rel="stylesheet" />
+    <style>
+        .internHeading {
+            padding-top: 27px;
+        }
+
+        .internCardBody {
+            height: 98px;
+            word-wrap: break-word;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+
+    <div ng-app="app" ng-controller="MyCtrl" ng-init="TutorListDetail()">
+        <br /><br /><br /><br /><br />
+
+        <h3 align="center">Faculty List</h3>
+        <div class="row" id="firstrow">
+            <div class="card mt-2 col-md-3" style="height:200px;" ng-repeat="d in TutorsList">
+                <center>
+                    <div class="internHeading">
+                        <h5 class="ng-binding">{{ d.TutorName }}</h5>
+                    </div>
+                    <div class="card-body internCardBody">
+                        <p class="justify-content-around">{{ d.ShortDescription }}</p>
+                    </div>
+                    <a href="#" class="btn btn-primary">Register</a>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+        ...................
+
+
+        <link href="~/Css/FacultyList.css" rel="stylesheet" />
+
+            <div ng-app="app" ng-controller="MyCtrl" ng-init="TutorListDetail()">
+                <br /><br /><br /><br /><br />
+
+                <h3>Faculty List</h3>
+
+                <div class="row" id="firstrow">
+                    <div class="col-md-3" ng-repeat="d in TutorsList">
+                        <div class="card mt-2">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{ d.TutorName }}</h5>
+                                <p class="card-text">
+                                    {{ d.ShortDescription }}
+                                     Java is a general-purpose programming language that is class-based, object-oriented, and designed to have as few implementation.
+                            </p>
+        <div class="col-sm-12 text-center">
+            <a href="#" class="btn btn-primary">List</a>
+        </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <br />
+        </div>
+
+
+        <div class="col-sm-4">
+            <div class="card mt-2">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Oracle Department</h5>
+                    <p class="card-text">Oracle Corporation is an American multinational computer technology corporation headquartered in Redwood.</p>
+                    <div class="col-sm-12 text-center">
+                        <a href="#" class="btn btn-primary">List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">DotNet Department</h5>
+                    <p class="card-text">Dotnet is a software development and IT architecture provider company with over 23 years of reputable operation behind.</p>
+                    <div class="col-sm-12 text-center">
+                        <a href="#" class="btn btn-primary">List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+*@

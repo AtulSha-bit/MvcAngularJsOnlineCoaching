@@ -1,0 +1,268 @@
+﻿html, body {
+    color: #3d5a80;
+    /*background-color: #0082E6;*/
+    background-color: aliceblue;
+}
+form h3 {
+    text-align: center;
+    color: #3d5a80;
+    /*border-bottom: 10px solid #f59019;*/
+}
+    form h3::after {
+        background-color: #3d5a80;
+        bottom: 0;
+        content: "";
+        top: 36px;
+        height: 5px;
+        left: 42%;
+        position: absolute;
+        width: 16%;
+    }
+        form label {
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 4rem; /*12may*/
+   
+}
+.page-link {
+    color: #3d5a80;
+}
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #3d5a80;
+}
+.form-row > .col, .form-row > [class*=col-] {
+    padding-right: 5px;
+    padding-left: 14px;
+}
+form .form-control {
+    color: #3d5a80;
+    font-weight: bold;
+    border: 1px solid #3d5a80;
+    background-color: aliceblue;
+}
+.table-responsive {
+    display: table;
+}
+
+
+div.ng-table-header.ng-scope{
+    padding:19px !important;
+   
+    font-size:20px;
+   
+}
+.table-bordered td {
+    font-weight: 600;
+    border: 1px solid #3d5a80;
+    text-align: center;
+}
+.table-bordered th {
+    border: 1px solid #3d5a80;
+    color: #3d5a80;
+}
+
+.ng-table th.filter .input-filter {
+    background-color: #e0fbfc;
+}
+
+.submit_btn {
+    border: 0px solid #fff;
+    color: #fff !important;
+    background: #3d5a80;
+    padding: 8px 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.8s all;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .submit_btn:hover {
+        background: #ee6c4d;
+        color: #fff !important;
+    }
+.fa-edit:before{
+    font-size:30px;
+}
+.fa-trash{
+    font-size:30px;
+}
+table .act{text-align:center;}
+@media only screen and (max-width: 1306px) {
+    /*12may*/
+    form label {
+        
+        font-size: 19px;
+        padding-left: 4rem; 
+    }
+}
+@media only screen and (max-width: 1268px) {
+    /*12may*/
+    form label {
+        
+        padding-left: 3rem;
+    }
+}
+@media only screen and (max-width: 1172px) {
+    /*12may*/
+    form label {
+        padding-left: 2rem;
+    }
+}
+@media only screen and (max-width: 1077px) {
+    /*12may*/
+    form label {
+        padding-left: 1rem;
+    }
+}
+
+    @media only screen and (max-width: 1024px) {
+        form label {
+            padding-left: 0rem;
+        }
+
+        .submit_btn {
+            font-size: 15px;
+        }
+
+        form h3::after {
+            left: 38%;
+            width: 24%;
+        }
+    }
+@media only screen and (max-width: 991px) {
+    /*12may*/
+    form label {
+        padding-left: 4rem;
+    }
+}
+@media only screen and (max-width: 845px) {
+    form label { /*12may*/
+        padding-left: 3rem;
+    }}
+
+@media only screen and (max-width: 781px){
+    form label {
+        /*12may*/
+        padding-left: 2rem;
+    }}
+    @media only screen and (max-width: 768px) {
+        html, body {
+            overflow-x: scroll;
+        }
+
+        .fa-edit:before {
+            font-size: 30px;
+        }
+
+        .fa-trash {
+            font-size: 30px;
+        }
+
+        form h3::after {
+            left: 40%;
+            width: 20%;
+        }
+
+        form label {
+            padding-left: 2rem;
+        }
+
+        .table-responsive {
+            display: block;
+        }
+
+        table .act {
+            display: inline-flex;
+        }
+    }
+@media only screen and (max-width: 767px) {
+    form label {
+        /*12may*/
+        padding-left: 0rem;
+    }
+}
+    @media only screen and (max-width: 600px) {
+        html, body {
+            overflow-x: scroll;
+        }
+
+        form h3::after {
+            left: 35.5%;
+            width: 29%;
+        }
+
+        .table-bordered td {
+            font-weight: 400;
+            font-size: 13px;
+        }
+
+        .fa-edit:before {
+            font-size: 13px;
+        }
+
+        .fa-trash {
+            font-size: 13px;
+        }
+
+        .ng-table th.sortable .sort-indicator {
+            padding: 125px;
+        }
+
+        div.ng-table-header.ng-scope {
+            font-size: 16px;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 0.9rem;
+        }
+
+        form label {
+            padding-left: 0rem;
+        }
+
+        .pt-5, .py-5 {
+            padding-top: 2rem !important;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        html, body {
+            overflow-x: scroll;
+        }
+
+        form h3::after {
+            left: 33%;
+            width: 35%;
+        }
+
+        div.ng-table-header.ng-scope {
+            font-size: 14px;
+        }
+
+        .btn {
+            display: block;
+        }
+    }
+
+    @media only screen and (max-width: 375px) {
+        form h3::after {
+            left: 30%;
+            width: 40%;
+        }
+    }
+
+    @media only screen and (max-width: 320px) {
+        form h3::after {
+            left: 26%;
+            width: 48%;
+        }
+
+
+
+        /*.btn-group > .btn-group:not(:first-child), .btn-group > .btn:not(:first-child) {
+        }*/
+    }

@@ -1,0 +1,170 @@
+﻿body {
+    background-color: whitesmoke;
+    font-family: "Poppins",sans-serif;
+}
+
+.inquiry {
+    margin-top: 7.5rem;
+    width: 100%;
+    background: linear-gradient(75deg, skyblue 10%, white) !important;
+    padding: 2rem;
+}
+
+    .inquiry p .c {
+        font-size: 35px;
+    }
+
+    .inquiry p .b {
+        font-size: 19px;
+        font-weight: 600;
+        padding-bottom: 2px;
+        padding-top: 20px;
+    }
+
+    .inquiry p .a {
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 2px;
+    }
+
+    .inquiry p {
+        font-size: 13px;
+        padding: 1rem 5rem;
+    }
+
+.form-control:focus {
+    box-shadow: none !important;
+    background-color: unset;
+}
+
+.form-control {
+    background-color: unset;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #ee6c4d;
+    border-color: #ee6c4d;
+}
+
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #3d5a80;
+        border-color: #3d5a80;
+    }
+
+.a::after {
+    content: "\a";
+    white-space: pre;
+}
+
+.b::before {
+    content: "\a";
+    white-space: pre;
+}
+
+.c::after {
+    content: "\a";
+    white-space: pre;
+}
+
+#inquiryform {
+    padding: 1rem 4rem;
+}
+
+fieldset {
+    border: 2px solid #3d5a80 !important;
+    padding: 3rem !important;
+}
+
+legend {
+    width: auto !important;
+}
+
+.custom-control {
+    font-size: 14px;
+}
+
+    .custom-control:visited {
+        border-color: red;
+    }
+
+#coupn .form-control {
+    font-size: 12px;
+    border: 1px solid #3d5a80 !important;
+}
+
+.form-group .form-control {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #3d5a80;
+    border-radius: 0rem;
+    font-size: 14px;
+    width: 100%;
+}
+/*title*/
+#title {
+    color: #2a2b2f;
+    font-family: "Poppins",sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 34px;
+    padding-bottom: 14px;
+    width: auto;
+    padding-top: 26px;
+    padding-left: 2px;
+}
+
+.custom-control {
+    border: 1px solid #3d5a80;
+    padding-left: 3.5rem;
+    background-color: #abc8ef;
+}
+
+.custom-control-label {
+    cursor: pointer;
+}
+
+    .custom-control-label::before {
+        top: .5rem;
+    }
+
+    .custom-control-label::after {
+        position: absolute;
+        top: unset;
+    }
+
+.copyrightText {
+    font-size: 12px;
+}
+
+@media screen and (max-width:1024px) {
+    .inquiry {
+        margin-top: 11rem;
+    }
+
+    .custom-control {
+        padding-left: 2.5rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #inquiryform {
+        padding: .5rem .5rem;
+    }
+
+    .custom-control-inline {
+        display: initial;
+    }
+
+    .custom-control {
+        padding-top: .4rem;
+        padding-bottom: .4rem;
+    }
+
+    .inquiry p {
+        padding: unset;
+    }
+}

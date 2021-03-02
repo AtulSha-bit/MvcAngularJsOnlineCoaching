@@ -1,0 +1,155 @@
+﻿@model OnlineCoaching.Linq_To_Sql.SITSPL_tblUser
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Css/log.css" rel="stylesheet" />
+
+    <link href="~/Css/balsamiqsans.css" rel="stylesheet" />
+    <title>Login</title>
+
+</head>
+
+<body>
+    @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 col-12">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-12 left">
+                            <img src="~/Images/hd images/pexels-photo-3183150.jpeg" style="height:100%;" class="w-100" />
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-12 pt-lg-4 right">
+                            <ul>
+                                <a href="#">ADMIN LOGIN</a>
+                            </ul>
+                            
+                            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "label control-label" })
+                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", required = "required",autocomplete= "off" } })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "label control-label" })
+
+                            @Html.PasswordFor(model => model.Password, new {  @class = "form-control", required = "required"  })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            @if (ViewBag.Message != null)
+                            {
+                                <h5 style="color:red;text-align:center">@ViewBag.Message</h5>
+                            }
+
+                            <input type="submit" value="LOGIN" class="btn btn-info" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    }
+
+
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
+
+
+
+
+<!--
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    @*<script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>*@
+
+    @*<meta Http-Equiv="Cache-Control" Content="no-cache">
+    <meta Http-Equiv="Pragma" Content="no-cache">
+    <meta Http-Equiv="Expires" Content="0">*@
+    <title>Login</title>
+
+</head>
+
+<body>
+    <br /><br /><br /><br />
+    @using (Html.BeginForm("Login","Admin",FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+                      <div class="form-horizontal">
+                          <h2 class="text-center"><u>Admin Login</u></h2>
+                          <br />
+                          @* <h4>SITSPL_tblUser</h4>*@
+                          @* <hr />*@
+
+                          @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                          <div class="form-group">
+                              @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2 col-md-offset-2" })
+
+                              <div class="col-md-4">
+                                  @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                  @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2 col-md-offset-2" })
+                              <div class="col-md-4">
+                                  @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                  @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                              </div>
+                          </div>
+
+                          <div>
+                              <br />
+
+                              @if (ViewBag.Message != null)
+                              {
+                                  <h4 style="color:red;text-align:center">@ViewBag.Message</h4>
+                              }
+                          </div>
+                          <br />
+                          <div class="form-group">
+                              <div class="col-md-offset-5 col-md-7">
+                                  <input type="submit" value="Login" class="btn btn-lg btn-primary" />
+                              </div>
+                          </div>
+                      </div>
+    }
+
+    @*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+        <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
+    -->

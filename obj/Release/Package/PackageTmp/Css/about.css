@@ -1,0 +1,143 @@
+﻿body {
+    font-family: "Poppins",sans-serif;
+    background-color: whitesmoke;
+}
+
+h2 {
+    margin-top: 7.6rem;
+    text-align: center;
+    height: 16vh;
+    width: 100%;
+    background-color: rgba(0,123,255,.25);
+    padding: 1.6rem;
+}
+
+.row p {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+#frow #left img {
+    max-width: -webkit-fill-available;
+}
+
+#frow #right h4 {
+    margin-top: 6rem;
+}
+
+#srow #left h4 {
+    margin-top: 5rem;
+}
+
+#trow #right h4 {
+    margin-top: 8rem;
+}
+
+#forow .list-group-flush > .list-group-item {
+    border-width: 0 0 0px !important;
+}
+
+#srow #right img {
+    max-width: -webkit-fill-available;
+}
+
+#trow #left img {
+    max-width: -webkit-fill-available;
+}
+
+#forow #right img {
+    max-width: -webkit-fill-available;
+}
+
+#forow ul li {
+    background-color: unset;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+#forow h4 {
+    margin-left: 17px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width:1024px) {
+    h2 {
+        margin-top: 8.6rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+
+    h2 {
+        margin-top: 7.6rem;
+        font-size: 1.5rem;
+        padding: 2.6rem;
+    }
+
+    #frow, #srow, #trow, #forow {
+        padding: 2rem;
+    }
+
+        #frow #right h4 {
+            margin-top: 0rem;
+        }
+
+        #srow #left h4 {
+            margin-top: 0rem;
+        }
+
+        #trow #right h4 {
+            margin-top: 0rem;
+        }
+
+        #forow #left h4 {
+            margin-top: 0rem;
+        }
+
+    .row p {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    #forow ul li {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .list-group-item {
+        padding: .2rem 1.25rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    h2 {
+        margin-top: 11rem;
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+
+    #frow #right h4 {
+        margin-top: 1rem;
+    }
+
+    #frow, #srow, #trow, #forow {
+        padding: 1rem;
+    }
+
+        #trow #left {
+            margin-top: 25px;
+        }
+
+        #trow #right h4 {
+            margin-top: 1rem;
+        }
+
+        #forow #left h4 {
+            margin-left: 0rem;
+        }
+
+    .list-group-item {
+        padding: .2rem .25rem;
+    }
+}

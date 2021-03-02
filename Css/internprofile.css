@@ -1,0 +1,163 @@
+﻿body {
+}
+
+.list-group-item {
+    padding: .5rem 1.25rem;
+    border: 0px solid rgba(0,0,0,.125);
+}
+
+#studentdata {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /* padding:1rem 10rem;*/
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    min-width: 320px;
+    /* box-shadow: 0 1px 0 0 #dedfe0, 0 -1px 0 0 #dedfe0;*/
+}
+
+h2 {
+    color: #29303b;
+    text-align: center;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+    font-size: 22px;
+    margin: 20px 0 3px;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 400;
+    min-height: 17px;
+    color: #29303b;
+    text-align: center;
+    margin: 0 0 15px;
+    line-height: 25px;
+}
+
+.top {
+    border: 1px solid #dedfe0;
+}
+
+.inner2 {
+    padding: 1rem 8rem;
+}
+
+
+#inner {
+    padding: 1rem 8rem;
+}
+
+.imgname {
+    padding: 10px;
+    text-align: center;
+}
+
+    .imgname img {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+    }
+
+    .imgname h2 {
+        font-size: 15px;
+        min-height: 17px;
+    }
+
+#side {
+    border: 1px solid #dedfe0;
+}
+
+    #side ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        #side ul li {
+            color: #cacbcc;
+            font-weight: 500;
+            display: block !important;
+            margin: 0 !important;
+        }
+
+    #side li a {
+        color: #007791;
+        display: block;
+    }
+
+    #side li * {
+        display: block;
+        padding: 3px 15px;
+    }
+    /*#side ul li.on a, #side ul li:hover a {
+    color: #fff;
+    background: #ee6c4d !important;
+    border-color: #ee6c4d;
+    text-decoration:none;
+}*/
+    #side ul li:hover a {
+        color: #fff;
+        background: #ee6c4d !important;
+        border-color: #dedfe0;
+        text-decoration: none;
+    }
+
+.btn-primary {
+    color: #fff;
+    background-color: #ee6c4d;
+    border-color: #dedfe0;
+    margin: 10px 0px;
+}
+
+#butk {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 12rem;
+    justify-content: center;
+    border: 1px solid #dedfe0;
+}
+
+#info {
+    padding-left: 0;
+    padding-right: 0;
+    border: 1px solid #dedfe0;
+}
+
+input.form-control, select.form-control {
+    height: 40px !important;
+}
+
+@media screen and (max-width:1024px) {
+
+
+    #inner {
+        padding: 1rem 6rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #inner {
+        padding: 1rem 4rem;
+    }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) {
+
+
+    #inner {
+        padding: 1rem 1rem;
+    }
+}

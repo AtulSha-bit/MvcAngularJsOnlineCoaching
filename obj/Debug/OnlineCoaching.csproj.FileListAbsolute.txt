@@ -1,0 +1,1495 @@
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+C:\Users\ITS\Documents\Visual Studio 2017\Projects\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+C:\Users\poonam kumari\Desktop\projects backup\Online Classes Mailed File\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+C:\Users\ITS\Documents\11 June Adjust Code In Design\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+C:\Users\poonam kumari\Desktop\16 June Share Project to Poonam\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+E:\Poonam Final Design\WeSendit-20200617010654\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+E:\17 June Online Coaching Working On\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+D:\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+E:\OC from 1 sept proj\OnlineProj\OnlineCoaching29Aug2020\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Owin.dll
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.xml
+D:\SITSPL Projects\Atul\14 Sept 2020\Proj db\OnlineCoaching\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Owin.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.pdb
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+E:\18 Sept\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Owin.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.pdb
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+H:\Users\poonam kumari\Desktop\projects backup\22 oct with db\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Owin.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.pdb
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+E:\OC\OnlineCoaching (1)\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Owin.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.pdb
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+D:\SITSPL Projects\Running Proj\OnlineCoaching (1)\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Owin.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.pdb
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Course Project\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache
+E:\Course Project\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+E:\Course Project\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+E:\Course Project\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+E:\Course Project\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+E:\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll.config
+E:\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.dll
+E:\OnlineCoaching\OnlineCoaching\bin\OnlineCoaching.pdb
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.exe.config
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\csc.rsp
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.exe.config
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\csi.rsp
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.Managed.Core.targets
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.AppContext.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Collections.Immutable.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Console.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Compression.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.IO.Pipes.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Reflection.Metadata.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.AccessControl.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Claims.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Security.Principal.Windows.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.ValueTuple.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XmlDocument.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.exe.config
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\vbc.rsp
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe
+E:\OnlineCoaching\OnlineCoaching\bin\roslyn\VBCSCompiler.exe.config
+E:\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.dll
+E:\OnlineCoaching\OnlineCoaching\bin\ClosedXML.dll
+E:\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.dll
+E:\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.dll
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.dll
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.dll
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.dll
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.Web.Infrastructure.dll
+E:\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.dll
+E:\OnlineCoaching\OnlineCoaching\bin\Owin.dll
+E:\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.dll
+E:\OnlineCoaching\OnlineCoaching\bin\System.IO.FileSystem.Primitives.dll
+E:\OnlineCoaching\OnlineCoaching\bin\System.IO.Packaging.dll
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.dll
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.dll
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.dll
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.dll
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.dll
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.dll
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.dll
+E:\OnlineCoaching\OnlineCoaching\bin\WebGrease.dll
+E:\OnlineCoaching\OnlineCoaching\bin\ClosedXML.pdb
+E:\OnlineCoaching\OnlineCoaching\bin\ClosedXML.xml
+E:\OnlineCoaching\OnlineCoaching\bin\DocumentFormat.OpenXml.xml
+E:\OnlineCoaching\OnlineCoaching\bin\ExcelNumberFormat.xml
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.pdb
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.xml
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.Owin.Security.xml
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.Helpers.xml
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.Mvc.xml
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.Optimization.xml
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.Razor.xml
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.xml
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Deployment.xml
+E:\OnlineCoaching\OnlineCoaching\bin\System.Web.WebPages.Razor.xml
+E:\OnlineCoaching\OnlineCoaching\bin\Newtonsoft.Json.xml
+E:\OnlineCoaching\OnlineCoaching\bin\Antlr3.Runtime.pdb
+E:\OnlineCoaching\OnlineCoaching\bin\System.Diagnostics.DiagnosticSource.xml
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\OnlineCoaching\OnlineCoaching\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CoreCompileInputs.cache
+E:\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csproj.CopyComplete
+E:\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.dll
+E:\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.pdb
+E:\OnlineCoaching\OnlineCoaching\obj\Debug\OnlineCoaching.csprojAssemblyReference.cache

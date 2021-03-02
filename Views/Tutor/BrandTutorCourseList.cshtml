@@ -1,0 +1,516 @@
+﻿
+@{
+    ViewBag.Title = "BrandTutorCourseList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<style>
+        html {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        caption, th, td {
+            text-align: left;
+            font-weight: normal;
+            vertical-align: middle;
+        }
+
+        q, blockquote {
+            quotes: none;
+        }
+
+            q:before, q:after, blockquote:before, blockquote:after {
+                content: "";
+                content: none;
+            }
+
+        a img {
+            border: none;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+            display: block;
+        }
+
+        /* fontawesome */
+        [class*="fa-"]:before {
+            font-family: 'FontAwesome', sans-serif;
+        }
+
+        /* body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1em;
+            text-align: center;
+            color: #444444;
+
+        }*/
+
+        h1 {
+            font-size: 2.5em;
+            margin: 2em 0 1em;
+        }
+
+        h2 {
+            margin-top: 4.5em;
+        }
+
+        em,
+        strong {
+            font-weight: 700;
+        }
+
+        input {
+            display: none;
+        }
+
+        header p {
+            margin-bottom: 2em;
+        }
+
+        section {
+            margin-bottom: 2em;
+            padding: 0;
+        }
+
+            section:last-of-type {
+                margin-bottom: 0;
+            }
+
+        p {
+            line-height: 1.5em;
+        }
+
+        .container {
+            z-index: 1;
+            margin-bottom: 4em;
+        }
+
+        .pure-tree {
+            text-align: left;
+            display: block;
+        }
+
+            .pure-tree.main-tree {
+                width: 100%;
+                display: inline-block;
+            }
+
+            .pure-tree:not(.main-tree) {
+                padding-left: 1.2em;
+            }
+
+                .pure-tree:not(.main-tree) li {
+                    overflow: hidden;
+                    height: 0;
+                    display: block;
+                }
+
+            .pure-tree label {
+                display: block;
+                cursor: pointer;
+                color: #717780;
+                border-bottom: 1px dashed #B0B9C5;
+                padding: 1.125em 1.125em 1.125em 0;
+            }
+
+                .pure-tree label:before {
+                    width: 1em;
+                    height: 1em;
+                    line-height: 1em;
+                    display: inline-block;
+                    font-family: 'FontAwesome', sans-serif;
+                    content: "\f114";
+                    padding-right: .75em;
+                }
+
+        #subli:before {
+            width: 1em;
+            height: 1em;
+            line-height: 1em;
+            display: inline-block;
+            font-family: 'FontAwesome', sans-serif;
+            content: "\f006";
+            padding-right: .75em;
+        }
+
+        .pure-tree label:hover {
+            color: #434a58;
+            border-bottom-color: #434a58;
+        }
+
+        .pure-tree .pure-tree_link a {
+            padding: 1.500em 1.125em 0.750em 0;
+            display: block;
+            border-radius: .2em;
+            color: #717780;
+            text-decoration: none;
+        }
+
+            .pure-tree .pure-tree_link a:hover {
+                color: #434a58;
+            }
+
+        .pure-tree.nested {
+            padding-left: 1.7em;
+        }
+
+        .pure-tree [type="checkbox"] {
+            display: none;
+        }
+
+            .pure-tree [type="checkbox"]:checked + label {
+                color: #434a58;
+                border-bottom-color: #434a58;
+            }
+
+            .pure-tree [type="checkbox"]:checked ~ ul > li {
+                height: auto;
+            }
+
+        li i {
+            float: right;
+        }
+
+        .fa {
+            margin-left: 0px;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+    <div ng-app="app" ng-controller="MyCtrl" ng-init="GetBrandTutorCourseDetails();">
+
+        <div class="col-md-12">
+            <h2 style="text-transform:capitalize;text-align:center"><b> {{ CourseName }} </b></h2>
+        </div>
+        <div class="row" style="margin-top:70px;text-align:center;">
+            <div class="col-md-6">
+
+                <ul id="compositions-list" class="pure-tree main-tree">
+                    <li>
+                        <input type="checkbox" id="trigger-views" checked="checked">
+                        <label for="trigger-views" style="display:none;"></label>
+                        <ul class="pure-tree">
+                            <li class="pure-tree_link" style="display:none;"><a href="" title="index.jade" target="_blank"></a></li>
+
+                            <li>
+                                <h6><b>About <span> {{ CourseName }}</span></b></h6>
+
+                            </li>
+                            <li>
+                                    <p ng-if="ShortDescription !== undefined">{{ShortDescription}}</p>
+                                    <p ng-if="ShortDescription === undefined || ShortDescription === ''">
+                                        The first and most important thing about effective studying is time management. Once you’ve learned the method – one of the numerous suggested by specialists in this field or one of your own invention – you may happily and effectively keep using it for the rest of your life. Be realistic, don’t put the things off until the last moment, you are most likely to spend more time on them than you could have predicted and it will lead to no end of trouble
+                                    </p>
+
+                                </li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-6 mt-6">
+                <div class="row">
+                    <div class="col-md-6" id="item">
+                        <i class="fa fa-play-circle" aria-hidden="true">&nbsp;START&nbsp;DATE</i>
+                        <p>{{ValidFrom}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+                        <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+                        <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <i class="fa fa-money" aria-hidden="true">&nbsp;STIPEND</i>
+                        <p>Immediate</p>
+                    </div>
+                    <div class="col-md-6">
+                        <i class="fa fa-hourglass-end" aria-hidden="true">&nbsp;APPLY BY</i>
+                        <p>{{ValidTo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:40px;text-align:center;">
+            <div class="col-md-6">
+
+                <ul id="compositions-list" class="pure-tree main-tree">
+                    <li>
+                        <input type="checkbox" id="trigger-views" checked="checked">
+                        <label for="trigger-views" style="display:none;"></label>
+                        <l class="pure-tree">
+                    <li class="pure-tree_link" style="display:none;"><a href="" title="index.jade" target="_blank"></a></li>
+
+                    <li>
+                        <h6><b>About <span> {{ CourseName }}</span> </b></h6>
+                        <input type="checkbox" id="trigger-layout">
+                        <label for="trigger-layout">Prerequisities<i class="fa fa-chevron-down"></i></label>
+                        <ul class="pure-tree">
+                            <li ng-repeat="d in prerequisitearray" id="subli">
+                                {{ d.PrerequisitePoints }}
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="trigger-partials">
+                        <label for="trigger-partials">Description<i class="fa fa-chevron-down"></i></label>
+                        <ul class="pure-tree">
+                            <li ng-repeat="d in descriptionarray" id="subli">
+                                {{d.Description}}
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="col-md-6">
+                <p ng-if="CourseContentHeading !== undefined"><b>1.</b> {{CourseContentHeading}} </p>
+                <p ng-if="CourseContentHeading === undefined || CourseContentHeading === ''"></p>
+
+
+                <p ng-if="SubHeading !== undefined" style="margin-left:10px;margin-top:-10px"><b>1.1 </b>{{SubHeading}}</p>
+                <p ng-if="SubHeading === undefined || SubHeading === ''"></p>
+
+                <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+                <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+                <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+
+
+            </div>
+        </div>
+
+
+        <div class="col-md-12 text-center mt-4 mb-4">
+            <button type="button" class="btn btn-success btn-lg" ng-click="BrandTutorCourseApplyPage()">Apply Now</button>
+        </div>
+
+    </div>*@
+
+
+<script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
+
+
+
+<link href="~/Css/CourseListdetails.css" rel="stylesheet" />
+
+<script>
+    window.console = window.console || function (t) { };
+</script>
+<script>
+    if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+    }
+</script>
+
+<div class="container">
+   @* getCourseStructureDetailsBasedOnId*@
+    
+    <div ng-app="app" ng-controller="MyCtrl" ng-init="GetBrandTutorCourseDetails();">
+
+        <div class="col-md-12" style="margin-top:13em;">
+            <h3 style="text-transform:capitalize;text-align:center"><b> {{ CourseName }} </b></h3>
+        </div>
+
+        <div class="row" id="req">
+            <h3 style="margin: 0 2.4rem 1.6rem;">What you'll learn</h3>
+            <div class="col-md-12">
+                <ul class="requl">
+                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" id="req">
+            <h3 style="margin: 0 2.4rem 1.6rem;">Requirements</h3>
+            <div class="col-md-12">
+                <ul class="requl">
+                    <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">We Start from Scratch so no previous experience required!</span></li>
+                    <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">This Course is targeted Primarily at Beginners, So if you have more than a few years Linux experience, this course might not be for you.</span></li>
+                    <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">This Course is targeted Primarily at Beginners, So if you have more than a few years Linux experience, this course might not be for you.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" id="req">
+            <h3 style="margin: 0 2.4rem 1.6rem;">Description</h3>
+            <div class="col-md-12">
+                <span class="more">
+                    <p> <strong>JOIN THE OTHER 20,000 SUCCESSFUL STUDENTS WHO HAVE ALREADY TAKEN THIS COURSE</strong> </p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </span>
+
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:70px;text-align:center;" id="req">
+            <div class="col-md-12">
+
+                <ul id="compositions-list" class="pure-tree main-tree">
+                    <li>
+                        <input type="checkbox" id="trigger-views" checked="checked">
+                        <label for="trigger-views" style="display:none;"></label>
+                        <ul class="pure-tree">
+                            <li class="pure-tree_link" style="display:none;"><a href="" title="index.jade" target="_blank"></a></li>
+
+                            <li>
+                                <h6><b>About <span> {{ CourseName }}</span></b></h6>
+
+                            </li>
+                            <li>
+                                <p ng-if="ShortDescription !== undefined">{{ShortDescription}}</p>
+                                <p ng-if="ShortDescription === undefined || ShortDescription === ''">
+                                    The first and most important thing about effective studying is time management. Once you’ve learned the method – one of the numerous suggested by specialists in this field or one of your own invention – you may happily and effectively keep using it for the rest of your life. Be realistic, don’t put the things off until the last moment, you are most likely to spend more time on them than you could have predicted and it will lead to no end of trouble
+                                </p>
+
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="df">
+                <div class="col-md-3 w-100">
+                    <i class="fa fa-play-circle" aria-hidden="true">&nbsp;START&nbsp;DATE</i>
+                    <p>{{ValidFrom}}</p>
+                </div>
+                <div class="col-md-3 w-100">
+                    <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+                    <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+                    <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+
+                </div>
+                <div class="col-md-3 w-100">
+                    <i class="fa fa-money" aria-hidden="true">&nbsp;STIPEND</i>
+                    <p>Immediate</p>
+                </div>
+                <div class="col-md-3 w-100">
+                    <i class="fa fa-hourglass-end" aria-hidden="true">&nbsp;APPLY BY</i>
+                    <p>{{LastApplyDate}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:40px;text-align:center;" id="req">
+            <div class="col-md-6">
+
+                <ul id="compositions-list" class="pure-tree main-tree">
+                    <li>
+                        <input type="checkbox" id="trigger-views" checked="checked">
+                        <label for="trigger-views" style="display:none;"></label>
+                        <l class="pure-tree">
+                    <li class="pure-tree_link" style="display:none;"><a href="" title="index.jade" target="_blank"></a></li>
+
+                    <li>
+                        <h3 style="margin: 0 1.5rem 1.6rem;">Course Content</h3>
+
+                        <input type="checkbox" id="trigger-layout">
+                        <label for="trigger-layout">Prerequisities<i class="fa fa-chevron-down" id="fa"></i></label>
+                        <ul class="pure-tree">
+                            <li ng-repeat="d in prerequisitearray" id="subli">
+                                {{ d.PrerequisitePoints }}
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="trigger-partials">
+                        <label for="trigger-partials">Description<i class="fa fa-chevron-down" id="fb"></i></label>
+                        <ul class="pure-tree">
+                            <li ng-repeat="d in descriptionarray" id="subli">
+                                {{d.Description}}
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="boxx">
+                    <h3 style="margin: 0 2.4rem 1.6rem;">Contents</h3>
+                    <p ng-if="CourseContentHeading !== undefined"><b>1.</b> {{CourseContentHeading}} </p>
+                    <p ng-if="CourseContentHeading === undefined || CourseContentHeading === ''"></p>
+
+
+                    <p ng-if="SubHeading !== undefined" style="margin-left:10px;margin-top:-10px"><b>1.1 </b>{{SubHeading}}</p>
+                    <p ng-if="SubHeading === undefined || SubHeading === ''"></p>
+
+                    <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+                    <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+                    <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-12 text-center mt-4 mb-4">
+                <button type="button" class="btn btn-success btn-lg" ng-click="BrandTutorCourseApplyPage()">Apply Now</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
+<script src="~/Scripts/courselist.js"></script>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>

@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "ViewResource";
+    Layout = "~/Views/Shared/_LayoutBrandTutor.cshtml";
+}
+
+    <style>
+        form label {
+            color: #3d5a80 !important;
+            font-weight: unset;
+        }
+
+
+        .table-bordered td {
+            text-align: center;
+        }
+
+        .table-bordered thead th {
+            padding: 15px 26px;
+        }
+
+        .table-responsive {
+            display: inline-table;
+        }
+
+        @@media only screen and (max-width:767px) {
+            .table-responsive {
+                display: block;
+            }
+        }
+    </style>
+<h2 class="text-center"><b><u>Resources</u></b></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="ViewResourceDetails();" ng-cloak>
+    <div class="m-1">
+        <table ng-table="ResourceTutorTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="d in  $data track by $index">
+                <td data-title="'S.No'">{{$index+1}}</td>
+                <td data-title="'Name'">
+                    <a href="/Tutor/DownloadBrandTutorResource?strFileName={{d.ResourceName}}">
+                        {{d.ResourceName}}
+                    </a>
+                </td>
+                @*<td data-title="'Type'">{{d.ResourceType}}</td>*@
+                
+                <td data-title="'Course Name'">{{d.CourseName}}</td>
+                <td data-title="'Created Date'">{{d.DateCreated}}</td>
+                <td data-title="'Created By'">{{d.CreatedBy}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "DownloadResourcesForInternStudent";
+    Layout = "~/Views/Shared/LayoutIntern.cshtml";
+}
+
+
+<style>
+    form label {
+        color: #3d5a80 !important;
+        font-weight: unset;
+    }
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: inline-table;
+    }
+
+    @@media only screen and (max-width:767px) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+<br />
+<h2 class="text-center"><b><u>View Intern Resources</u></b></h2>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="DownloadResourcesForInternStudent();" ng-cloak>
+    <div class="m-3">
+        <table ng-table="DownloadTutorResourcesForInternStudentTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive" style="margin-left:20px;">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="d in  $data track by $index">
+                <td data-title="'S.No'">{{$index+1}}</td>
+
+                <td data-title="'Resource'" sortable="'ResourceName'" filter="{ 'ResourceName': 'text' }">
+                    <a href="/InternTutor/DownloadInternTutorResource?strFileName={{d.ResourceName}}">
+                        {{d.ResourceName}}
+                    </a>
+                </td>
+                @*<td data-title="'Type'">{{d.ResourceType}}</td>*@
+                <td data-title="'Internship Name'" sortable="'InternshipName'" filter="{ 'InternshipName': 'text' }">  {{ d.InternshipName }} </td>
+                <td data-title="'Created Date'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">{{d.DateCreated}}</td>
+                <td data-title="'Tutor Name'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">{{d.CreatedBy}}</td>
+            </tr>
+            <tr>
+                <td colspan="5" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+

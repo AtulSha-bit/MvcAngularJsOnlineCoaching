@@ -1,0 +1,703 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<link href="~/Css/userindex.css" rel="stylesheet" />
+
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+    .ng-cloak, .x-ng-cloak,
+    .ng-hide {
+        display: none !important;
+    }
+
+    .previ:hover {
+        width: 100px;
+        height: 100px;
+        display: block;
+        overflow: hidden;
+    }
+
+    .prevClass:hover {
+        transform: scale(1.3);
+        transition: all 4s ease;
+    }
+
+    .submit_btn {
+        padding: 20px;
+    }
+</style>
+<br />
+<div ng-app="app" ng-controller="MyCtrl" ng-init="callInit();">
+
+    <form name="regform" class="mb-5" novalidate>
+        <br />
+        <br /><br /><br /><br />
+        <div class="row">
+
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 t">
+
+                <h3 class="r">Registration Form</h3>
+
+                <div class="form-row text-center">
+                    <div class="form-group col-md-4 mt-5">
+                        <label><span style="color:red">* </span> Name</label>
+                        <input type="text" class="form-control" name="name" ng-model="Name" maxlength="50" autocomplete="off" required>
+
+                        <span style="color:Red" ng-show="regform.name.$error.required && regform.name.$touched" ng-cloak>
+                            Name is required
+                        </span>
+
+                    </div>
+
+                    <div class="form-group col-md-4 mt-lg-5 mt-md-5">
+                        <label for="exampleInputphoneno"><span style="color:red">* </span> Phone No</label>
+                        <input type="text" class="form-control" id="exampleInputphoneno" name="mobile" autocomplete="off" ng-model="Phone"
+                               maxlength="10" required>
+
+                        <span style="color:Red" ng-show="regform.mobile.$error.required && regform.mobile.$touched" ng-cloak>
+                            Mobile is required
+                        </span>
+
+                    </div>
+
+                    <div class="form-group col-md-4 mt-lg-5 mt-md-5">
+                        <label for="exampleInputEmail1"><span style="color:red">* </span> Email Address</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                               name="email" ng-model="Email" autocomplete="off" ng-disabled="disableEmail" required>
+
+                        <span style="color:Red" ng-show="regform.email.$error.required && regform.email.$touched" ng-cloak>
+                            Email is required
+                        </span>
+
+                    </div>
+                </div>
+
+                <div class="form-row mt-3 sendbtn">
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2">
+                        <button type="submit" class="submit_btn" ng-show="showsendOtp" ng-disabled="DisableOtpBtn" ng-click="sendOtp()">Send OTP</button>
+                    </div>
+                    <div class="col-md-5"></div>
+                </div>
+
+
+
+                <div class="modal fade" data-backdrop="static" id="verifyEmailOtp">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="form-group">
+
+                                    <label>Verify Email OTP</label>
+                                    <input type="text" class="form-control" ng-model="VerifyOTP" />
+
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                                <button class="btn btn-success" ng-click="ConfirmOtp()">Confirm</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2"></div>
+        </div>
+
+        <div ng-hide="hidebasic">
+            <div class="row mt-5">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <fieldset>
+                        <legend class="b">Basic Information</legend>
+                        <div class="form-row">
+
+                            @*  required*@
+
+                            <div class="form-group col-md-6 mt-2">
+                                <label for="inputState">State</label>
+                                <input type="text" class="form-control" ng-model="State" name="state" maxlength="30"
+                                       ng-disabled="disableState" autocomplete="off" />                               
+                            </div>
+
+                            @*  required *@
+
+                            <div class="form-group col-md-6 mt-lg-2 mt-md-2">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" ng-model="City" ng-disabled="disableCity" name="city" id="inputCity"
+                                       maxlength="30">
+                                @*<span style="color:Red" autocomplete="off" ng-show="regform.city.$error.required && regform.city.$touched" ng-cloak>
+                                        City is required
+                                    </span>
+                                    <span style="color:Red" ng-show="regform.city.$dirty && regform.city.$error.pattern" ng-cloak>
+                                        City must contain alphabets (A-Z and a-z) only
+                                    </span> ng-pattern="/^[a-z A-Z]+$/" *@
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputdob"><span style="color:red">* </span> DOB</label>
+
+                                @*  required *@
+
+                                <input class="form-control" moment-picker="mntDOB" format="DD/MM/YYYY"
+                                       start-view="day" name="dob" ng-model="DOB" ng-model-options="{ updateOn: 'blur' }" ng-blur="validateDob()" ng-disabled="disabledDOB">
+                                @*<span style="color:Red" autocomplete="off" ng-show="regform.dob.$error.required && regform.dob.$touched" ng-cloak>
+                                        Date Of Birth is required
+                                    </span>*@
+
+                            </div>
+
+                            @*  required ng-pattern="/^[0-9]{6,6}$/"  *@
+                            <div class="form-group col-md-6">
+                                <label for="inputZip">Pin Code</label>
+                                <input type="text" class="form-control" ng-disabled="disablePinCode" ng-model="PinCode" id="inputZip" name="PinCode"
+                                       maxlength="6">
+                                @*<span style="color:Red" autocomplete="off" ng-show="regform.PinCode.$error.required && regform.PinCode.$touched" ng-cloak>
+                                        Pin Code is required
+                                    </span>
+
+                                    <span style="color:Red" ng-show="regform.PinCode.$dirty && regform.PinCode.$error.pattern" ng-cloak>
+                                        6 digits only
+                                    </span>*@
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress">Address</label>
+
+                                @*  required*@
+
+                                <textarea rows="3" cols="30" ng-model="Address" name="address" class="form-control"
+                                          maxlength="100" ng-disabled="disableAddress" autocomplete="off">
+
+                         </textarea>
+                                @*<span style="color:Red" ng-show="regform.address.$error.required && regform.address.$touched" ng-cloak>
+                                        Address is required
+                                    </span>*@
+                            </div>
+
+                            @*required*@
+
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress2">LandMark</label>
+                                <textarea class="form-control" rows="3" cols="30" ng-model="LandMark"
+                                          id="inputAddress2" ng-disabled="disableLandMark" name="landmark" maxlength="100" autocomplete="off">
+                           </textarea>
+                                @*<span style="color:Red" ng-show="regform.landmark.$error.required && regform.landmark.$touched" ng-cloak>
+                                        LandMark is required
+                                    </span>*@
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+
+        @*  required *@
+
+        <div ng-hide="coursedetails">
+            <div class="row pt-4">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <fieldset>
+                        <legend>Course Details</legend>
+                        <div ng-hide="hideCourseDur">
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mt-2">
+                                    <label for="inputState">Select Course</label>
+                                    <select id="selectCourse" class="form-control" name="course" ng-disabled="disableCourse" ng-model="Course" ng-change="getCourseDetails()"
+                                            ng-options="item as item.CourseName for item in CourseData track by item.CourseId">
+                                        <option value="" selected> -- Select  Course --</option>
+                                    </select>
+                                </div>
+
+                                @* required*@
+
+                                <div class="form-group col-md-6 mt-lg-2 mt-md-2">
+                                    <label for="inputState">Cousre Duration</label>
+                                    <select ng-model="strDuration" class="form-control" ng-disabled="disableDuration" name="duration" ng-change="getallDetails()">
+                                        <option value="" selected>-- Select Duration--</option>
+                                        <option value="1 Month">1 Month</option>
+                                        <option value="2 Months">2 Months</option>
+                                        <option value="3 Months">3 Months</option>
+                                    </select>
+                                    @*   <span style="color:Red" ng-show="regform.duration.$error.required && regform.duration.$touched" ng-cloak>
+                                            Duration is required
+                                        </span>
+                                    *@
+                                </div>
+                            </div>
+                        </div>
+
+                        <div ng-hide="hidecourseValidation">
+
+                            <div ng-hide="hideCourseValidFrom">
+                                @*ng-hide="hideValidFromTo"*@
+                                <div class="form-row">
+                                    <div class="form-group col-md-6 ">
+                                        <div>
+                                            @*ng-hide="hideCourseValidFrom"*@
+                                            <label for="ValidFrom">Valid From</label>
+                                            <input class="form-control" moment-picker="mntCourseValidFrom" format="DD/MM/YYYY"
+                                                   start-view="day" name="CourseValidFrom" ng-model="CourseValidFrom"
+                                                   disabled ng-model-options="{ updateOn: 'blur' }">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div>
+                                            @*ng-hide="hideCourseValidTo"*@
+                                            <label class="ValidTo">Valid To</label>
+                                            <input class="form-control" moment-picker="mntCourseValidTo" format="DD/MM/YYYY"
+                                                   start-view="day" name="CourseValidTo" disabled ng-model="CourseValidTo"
+                                                   ng-model-options="{ updateOn: 'blur' }">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            @* required*@
+
+                            <input type="text" ng-show="false" name="StructureId" ng-model="StructureId" style="display:none" />
+                            <div class="form-row" ng-hide="hideFees">
+                                <div class="form-group col-md-6">
+                                    <div>
+                                        @*ng-hide="hideFees"*@
+                                        <label for="inputAddress">Fees</label>
+                                        <input type="text" class="form-control" autocomplete="off" id="inputAddress" ng-model="Fees" name="fees" ng-hide="hideFees" disabled>
+                                        @*<span style="color:Red"  ng-show="regform.fees.$error.required && regform.fees.$touched" ng-cloak>
+                                                Fees is required
+                                            </span>*@
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-md-6">
+                                    <div>
+                                        <label for="inputAddress2">Discount % (Valid UpTo)</label>
+                                        <input type="text" disabled autocomplete="off" class="form-control" id="inputAddress10" ng-hide="hideDiscount" ng-model="Discount" name="discount">
+                                        @*<span style="color:Red"  ng-show="regform.discount.$error.required && regform.discount.$touched" ng-cloak>
+                                                Discount is required
+                                            </span>*@
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-row" ng-hide="hideFeesAfterDiscount">
+                                <div class="form-group col-md-6">
+                                    <div>
+                                        @*ng-hide="hideFeesAfterDiscount"*@
+                                        <label for="inputAddress">Fees After Discount</label>
+                                        <input type="text" class="form-control" id="inputAddress5" disabled autocomplete="off" ng-model="FeesAfterDiscount" name="feeafterdiscount">
+                                    </div>
+                                </div>
+
+                                @*required*@
+
+                                <div class="form-group col-md-6">
+                                    <div>
+                                        <label for="inputAddress">Net amount to pay</label>
+                                        <input type="text" class="form-control" disabled id="inputAddress6" autocomplete="off" ng-model="NetAmount" name="netamount">
+                                        @*<span style="color:Red" ng-show="regform.netamount.$error.required &&
+                                            regform.netamount.$touched" ng-cloak>
+                                                      Net Amount to pay is required
+                                                  </span>*@
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*required*@
+
+                            <div class="form-row" ng-hide="hideMonth">
+                                <div class="form-group col-md-6">
+                                    <div>
+                                        @*ng-hide="hideMonth"*@
+                                        <label for="inputState">Month</label>
+                                        <select id="inputState7" class="form-control" ng-disabled="disableMonth" ng-model="Month" ng-change="calcuatejoining();enableDisableJoinDate()" name="month">
+                                            <option value="" selected> -- Select Month -- </option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                @*  required*@
+
+                                <div class="form-group col-md-6">
+                                    <div ng-hide="hideJoiningDate">
+                                        <label for="joiningdate">Joining date</label>
+
+                                        <select class="form-control" ng-model="JoiningDate" ng-disabled="disabledJoinDate" name="joiningdate" ng-change="getjoin()">
+                                            <option value="" selected>-- Select Joining Date --</option>
+                                            <option value="01">01</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*29juneviapoonam*@
+                            <div class="form-row">
+                                <div class="col-md-12 text-center pt-3">
+                                    <button class="submit_btn" id="butn" ng-hide="hideAddbtn" ng-disabled="disableAddBtn" ng-click="AddMultipleCourse();">Add</button>@*29juneviapoonam*@
+                                </div>
+                            </div>
+                            <br />
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+
+                                    <label for="paymentmode">Payment Mode</label>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" ng-disabled="disablePayment" name="paymentmode" ng-model="Payment" ng-value='"Cash"' checked />
+                                        <label class="form-check-label">
+                                            Cash
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentmode" ng-model="Payment" ng-value='"Online"' disabled>
+                                        <label class="form-check-label">
+                                            Online
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputRemarks">Remarks</label>
+
+                                    <textarea rows="3" cols="30" ng-model="Remarks" ng-disabled="disableRemarks" name="remarks" autocomplete="off" class="form-control"
+                                              maxlength="150"> </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+
+        <div ng-hide="paymentdetails">
+            <div class="row mt-5">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <fieldset>
+                        <legend>Payment Information</legend>
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6 mt-2">
+                                <label><span style="color:red">* </span> Select Payment Status</label>
+                                <select class="form-control" ng-model="PaymentStatus" name="paymentstatus" requied>
+
+                                    <option value="Pending">Pending</option>
+                                    <option value="Partial Payment">Partial Payment</option>
+                                    <option value="Full Payment">Full Payment</option>
+                                </select>
+
+                                <span style="color:Red" ng-show="regform.paymentstatus.$error.required && regform.paymentstatus.$touched" ng-cloak>
+                                    Payment Status is required
+                                </span>
+                            </div>
+                            <div class="form-group col-md-6 mt-lg-2 mt-md-2">
+                                <label><span style="color:red">* </span> Paid Amount</label>
+                                <input type="text" class="form-control" ng-model="PaidAmount" name="paidamount"
+                                       maxlength="30" autocomplete="off" required ng-change="forDueAmountCalculation()">
+                                <span style="color:Red" ng-show="regform.paidamount.$error.required && regform.paidamount.$touched" ng-cloak>
+                                    Paid Amount is required
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputdob">Due Amount</label>
+
+                                <input class="form-control" ng-model="DueAmount" name="dueamount" autocomplete="off" required disabled>
+                                <span style="color:Red" ng-show="regform.dueamount.$error.required && regform.dueamount.$touched" ng-cloak>
+                                    Due Amount is required
+                                </span>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="inputdob">Next Installment Date</label>
+                                <input class="form-control" moment-picker="dtNextInstallmentDate" format="DD/MM/YYYY"
+                                       start-view="day" autocomplete="off" ng-blur="validateNextInstallmentDate()" ng-model="NextInstallmentDate" name="NextInstallment" ng-model-options="{ updateOn: 'blur' }" required>
+                            </div>
+                        </div>
+
+                        <div ng-show="tempregno">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Temporary Registration Number</label>
+                                    <input type="text" class="form-control" ng-model="TemporaryRegNo" name="tempreg" disabled autocomplete="off" />
+
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label><span style="color:red"> * </span>Final Registration Number</label>
+                                    <input type="text" class="form-control" ng-model="FinalRegNo" name="finalreg" autocomplete="off" required />
+                                    <span style="color:Red" ng-show="regform.finalreg.$error.required && regform.finalreg.$touched" ng-cloak>
+                                        Final Registration Number is required
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress">Payment Remarks</label>
+
+                                <textarea rows="3" cols="30" ng-model="RemarksPayment" name="remarkspayment" class="form-control"
+                                          maxlength="150" autocomplete="off" required>
+                         </textarea>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+
+        <br />
+
+        <div ng-hide="addmulticoursetable">
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr style="font-weight:bold;white-space:nowrap;">
+                        <th>Course</th>
+                        <th>Duration</th>
+                        <th>Valid From</th>
+                        <th>Valid To</th>
+                        <th>Fees</th>
+                        <th>Discount</th>
+                        <th>Fees With Discount</th>
+                        <th>Net Amount</th>
+                        <th>Month</th>
+                        <th>Joining Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tr ng-repeat="d in arrCourse">
+                    <td>{{d.CourseName}}</td>
+                    <td>{{d.Duration}}</td>
+                    <td>{{ d.ValidFrom }}</td>
+                    <td> {{ d.ValidTo }}</td>
+                    <td>{{ d.Fees }}</td>
+                    <td>{{ d.Discount }}</td>
+                    <td>{{ d.FeesWithDiscount }}</td>
+                    <td>{{ d.NetAmount }}</td>
+                    <td> {{ d.Month }}</td>
+                    <td> {{ d.JoiningDate }} </td>
+
+                    @*<td><input type="button" value="Delete" class="btn btn-danger" ng-click="deleteFromSelectedCourse($index)" /></td>*@
+                    <td><a href="" class="delete" ng-click="deleteFromSelectedCourse($index)"><i class="fa fa-trash"></i> </a></td>
+                </tr>
+
+                <tr>
+                    @*<td colspan="8" style="text-align:right"><b>Total: </b> {{ arrCourse.length }}</td> *@
+                    <td colspan="12"><b>Total: </b> {{ TotalMoney }}</td>
+                </tr>
+            </table>
+        </div>
+
+
+
+        <div ng-hide="editmulticoursetable">
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr style="font-weight:bold;white-space:nowrap;">
+
+                        <th>Course</th>
+                        <th>Duration</th>
+                        <th>Valid From</th>
+                        <th>Valid To</th>
+                        <th>Fees</th>
+                        <th>Discount</th>
+                        <th>Fees With Discount</th>
+                        <th>Net Amount</th>
+                        <th>Month</th>
+                        <th>Joining Date</th>
+
+                    </tr>
+                </thead>
+
+
+
+                <tr ng-repeat="d in multipleCourse">
+                    <td>{{d.CourseName}}</td>
+                    <td>{{d.Duration}}</td>
+                    <td>{{ d.ValidFrom }}</td>
+                    <td> {{ d.ValidTo }}</td>
+                    <td>{{ d.Fees }}</td>
+                    <td>{{ d.DiscountPercent }}</td>
+                    <td>{{ d.FeeAfterDiscount }}</td>
+                    <td>{{ d.NetAmount }}</td>
+                    <td> {{ d.Month }}</td>
+                    <td> {{ d.JoiningDate }} </td>
+
+                    @*  <td><input type="button" value="Delete" class="btn btn-danger" ng-click="deleteFromSelectedCourse($index)" /></td> *@
+                </tr>
+
+                <tr>
+                    @*<td colspan="8" style="text-align:right"><b>Total: </b> {{ arrCourse.length }}</td> *@
+
+
+
+                    <td colspan="10"><b>Total: </b> {{ Total }}</td>
+
+                </tr>
+            </table>
+        </div>
+
+
+
+        <br />
+
+        <div class="form-row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 mt-2">
+
+                @* ng-disabled="regform.$invalid"*@
+
+                <button type="submit" class="submit_btn" ng-click="saveStudent()" ng-disabled="disableInsertBtn" ng-show="insertStudent">Submit</button>
+                <button type="submit" class="submit_btn" ng-disabled="disableUpdateBtn" ng-show="updateStudent" ng-click="updateStudentDetails()">
+
+                    Update
+                </button>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+
+    </form>
+    <div class="modal fade" data-backdrop="static" id="studentupdateModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-
+                       dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    <h3 style="font-family:Arial">Student Updated Successfully</h3>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" ng-click="updateConfirm();">OK</button>
+                    @* <a href='@Url.Action("ShowStudents","User")' class="btn btn-success">OK</a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" data-backdrop="static" id="studentinsertModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-
+                       dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    <h3 style="font-family:Arial">You have registered successfully</h3>
+                </div>
+
+                <div class="modal-footer">
+
+                    <a href='@Url.Action("Index","User")' class="btn btn-success">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" data-backdrop="static" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-row text-center">
+                        <div class="form-group col-md-4 mt-5">
+                            <label><span style="color:red">* </span> Name</label>
+                            <input type="text" class="form-control" name="name" ng-model="Name" maxlength="50" autocomplete="off" required>
+
+                            <span style="color:Red" ng-show="regform.name.$error.required && regform.name.$touched" ng-cloak>
+                                Name is required
+                            </span>
+
+                        </div>
+
+                        <div class="form-group col-md-4 mt-lg-5 mt-md-5">
+                            <label for="exampleInputphoneno"><span style="color:red">* </span> Phone No</label>
+                            <input type="text" class="form-control" id="exampleInputphoneno" name="mobile" autocomplete="off" ng-model="Phone"
+                                   maxlength="10" required>
+
+                            <span style="color:Red" ng-show="regform.mobile.$error.required && regform.mobile.$touched" ng-cloak>
+                                Mobile is required
+                            </span>
+
+                        </div>
+
+                        <div class="form-group col-md-4 mt-lg-5 mt-md-5">
+                            <label for="exampleInputEmail1"><span style="color:red">* </span> Email Address</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                   name="email" ng-model="Email" autocomplete="off" ng-disabled="disableEmail" required>
+
+                            <span style="color:Red" ng-show="regform.email.$error.required && regform.email.$touched" ng-cloak>
+                                Email is required
+                            </span>
+
+                        </div>
+                    </div>
+
+                    <div class="form-row mt-3 sendbtn">
+                        <div class="col-md-5"></div>
+                        <div class="col-md-2">
+                            <button type="submit" class="submit_btn" ng-show="showsendOtp" ng-disabled="DisableOtpBtn" ng-click="sendOtp()">Send OTP</button>
+                        </div>
+                        <div class="col-md-5"></div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

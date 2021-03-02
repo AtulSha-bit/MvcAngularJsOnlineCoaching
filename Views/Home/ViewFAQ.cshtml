@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "ViewFAQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="row m-1 mb-5" ng-app="app" ng-controller="MyCtrl" ng-init="ViewUserFAQinit()">
+    <table ng-table="ShowUserFAQ" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+        <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+            @*@if (Session["UserId"] != null)
+        {
+
+            if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "SuperAdmin")
+            {*@
+            <td data-title="'S.No'">{{$index+1}}</td>
+            <td data-title="'Name'" sortable="'Name'" filter="{ 'Name': 'text' }">
+                {{ user.Name }}
+            </td>
+            <td data-title="'Query'" sortable="'Query'" filter="{ 'Query': 'text' }">
+                {{ user.Query }}
+            </td>
+
+            <td data-title="'Mobile'" sortable="'Mobile'" filter="{ 'Mobile': 'text' }">
+                {{ user.Mobile  }}
+            </td>
+
+            <td data-title="'Email'" sortable="'Email'" filter="{ 'Email': 'text' }">
+                {{ user.Email  }}
+            </td>
+
+            @*<td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">
+            {{ user.CreatedBy }}
+        </td>*@
+
+            <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                {{ user.DateCreated }}
+            </td>
+
+            @*<td data-title="'Is Published'" sortable="'IsPublished'" filter="{ 'IsPublished': 'text' }">
+            {{ user.IsPublished }}
+        </td>*@
+
+            @*<td data-title="'Is Published'">
+            <input type="checkbox" disabled ng-model="user.IsPublished" />
+        </td>*@
+
+            @*<td data-title="'Updated By'" sortable="'UpdatedBy'" filter="{ 'UpdatedBy': 'text' }">
+            {{ user.UpdatedBy }}
+        </td>
+
+        <td data-title="'Last Updated'" sortable="'LastUpdated'" filter="{ 'LastUpdated': 'text' }">
+            {{ user.LastUpdated }}
+        </td>*@
+
+            @*    <td data-title="'Action'" class="act">
+
+            <a href="#" class="btn btn-sm btn-info" ng-click="editFAQ(user)"><i class="fa fa-edit"></i></a>
+           @if (Session["UserType"].ToString() == "SuperAdmin")
+        {
+            <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteFAQ" ng-click="deleteFrequentlyAsked(user.FAQId)"><i class="fa fa-trash"></i></a>
+            }
+            </td>
+           }
+
+        }*@
+
+
+        </tr>
+
+
+        <tr>
+            <td colspan="7" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+            </td>
+        </tr>
+    </table>
+</div>
+

@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "AddCourseTutor";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="CourseStudentToTutorMsg()" ng-cloak>
+    <form id="inner" name="addcoursetutor" novalidate>
+        <div class="form-group col-md-6 mt-2">
+            <label for="inputState">Select Course Tutor</label>
+            <select id="selectCourse" class="form-control" name="brandtutor" ng-model="CourseTutor"
+                    ng-options="item.TutorId as item.TutorName for item in CourseTutorsData">
+                <option value="" selected> -- Select  Course Tutor --</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <label>Message To Tutor Only</label>
+                <textarea type="text" class="form-control" ng-model="mdlMessageOnlyTutor"></textarea>
+                <br />
+            </div>
+        </div>
+
+    </form>
+
+    <div class="row" id="butk" style="margin-top: 92px;">
+        @*  AddStudentCommunicationToBrandTutor*@
+        <button type="submit" class="btn btn-primary" ng-click="AddStudentCommunicationToBrandTutor()">Sent Message</button>
+    </div>
+</div>

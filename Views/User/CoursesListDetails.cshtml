@@ -1,0 +1,570 @@
+﻿
+
+@{
+    ViewBag.Title = "CoursesListDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Css/CourseListdetails.css" rel="stylesheet" />
+<style>
+    h2 {
+        margin-top: 0px;
+    }
+
+    #scope {
+        padding: 0px 0px 0px 0px !important;
+    }
+
+    .sd:before {
+        width: 1em;
+        height: 1em;
+        line-height: 1em;
+        display: inline-block;
+        font-family: 'FontAwesome', sans-serif;
+        content: "\f164";
+        padding-right: 18px;
+        padding-left: 40px;
+    }
+
+    .scope {
+        padding: 0px 0px 0px 0px !important;
+    }
+
+    .btn:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0rem rgba(0,0,0,0);
+    }
+
+    .btn-link:hover {
+        color: #0056b3;
+        text-decoration: none;
+    }
+
+    .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    li {
+        font-size: 13px;
+    }
+
+    .row {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+</style>
+<script>
+    window.console = window.console || function (t) { };
+</script>
+<script>
+    if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+    }
+</script>
+<style>
+    .box {
+        font-family: sf pro display,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    }
+
+    .coursename {
+        font-size: 2.5rem;
+        text-transform: capitalize;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -.02rem;
+        margin-bottom: .8rem;
+    }
+
+    .shortdesc {
+        font-size: 1rem;
+    }
+
+    .box2 {
+        font-family: sf pro display,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    }
+
+    .card-header {
+        padding: 0px !important;
+    }
+
+    body {
+        background-color: #f1f7f4;
+        color: #185d57;
+    }
+
+    .list-group-item {
+        /* background-color: #fff;*/
+        border: 1px solid #185d57;
+    }
+
+    .btn-outline-success {
+        color: #185d57;
+        border-color: #185d57;
+    }
+
+        .btn-outline-success:hover {
+            color: #f1f7f4;
+            background-color: #185d57;
+            border-color: #185d57;
+        }
+</style>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="boxx text-black">
+    <div class="row">
+        <div class="col-md-7 box" style="background-color:;">
+            <span class="coursename">sap business one</span><br />
+            <span class="shortdesc mt-4">Use the in-demand Linux skills you learn in this course to get promoted or start a new career as a Linux professional.</span><br />
+            <button type="button" class="btn btn-outline-success mt-3">Share<i class="fa fa-share" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-outline-success mt-3">Gift this course<i class="fa fa-gift" aria-hidden="true"></i></button>
+            <div id="what"></div>
+            <div class="box2 mt-5">
+                <div class="row">
+                    <ul class="list-group list-group-horizontal-md" style="font-weight:700;">
+                        <li class="list-group-item"><a href="#what" style="color: #185d57;">What you will learn?</a></li>
+                        <li class="list-group-item"><a href="#about" style="color: #185d57;">About</a></li>
+                        <li class="list-group-item"><a href="#course" style="color: #185d57;">Content</a></li>
+                        <li class="list-group-item"><a href="#requirement" style="color: #185d57;">Requirements</a></li>
+                        <li class="list-group-item" style=""><a href="#what" style="color: #185d57;">Faq</a></li>
+                    </ul>
+                </div>
+                <div id="about"></div>
+                <div class="req mt-5" id="">
+                    <h3 style="margin: 0 0rem 1.6rem;"><u>What you'll learn</u></h3>
+                    <ul class="requl">
+                        <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                        <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                        <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                        <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                    </ul>
+
+                </div>
+                <div id="course"></div>
+                <div class="req" id="">
+                    <h3 style="margin: 0 0rem 1.6rem;"><u>About</u></h3>
+                    <ul class="requl">
+                        <li>
+                            Building a website is, in many ways, an exercise of willpower. It’s tempting to get distracted by the bells and whistles of the design process, and forget all about creating compelling content.
+
+                            It's that compelling content that's crucial to making inbound marketing work for your business.
+
+                            So how do you balance your remarkable content creation with your web design needs? It all starts with the "About Us" page.
+                        </li>
+                    </ul>
+                </div>
+                <div id="requirement"></div>
+                <div class="req" id="">
+                    <h3 style="margin: 0 0rem 1.6rem;"><u>Course Content</u></h3>
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <i class="fa fa-chevron-down" id="fa"></i>  Prerequisities
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul class="pure-tree">
+                                        <li ng-repeat="d in prerequisitearray" id="subli">
+                                            {{ d.PrerequisitePoints }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" ng-repeat="d in HeadingsContent">
+                            <div class="card-header" id="HeadingCount-{{$index+1}}">
+                                @*id="headingTwo"*@
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapse-{{$index+1}}" aria-expanded="false" aria-controls="collapse-{{$index+1}}">
+                                        <i class="fa fa-chevron-down" id="fa"></i> {{ d.CourseContentHeading }}
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapse-{{$index+1}}" class="collapse" aria-labelledby="HeadingCount-{{$index+1}}" data-parent="#accordionExample">
+                                <div class="card-body text-left">
+
+                                    <ul ng-repeat="d1 in DescriptionsContent" id="scope">
+                                        <li ng-if="d.ContentId === d1.ContentId" id="subli" style="padding-left:0 !important">{{d1.Description}}</li>
+                                    </ul>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row req" id="">
+                    <h3 style="margin: 1.5rem 0rem 1.6rem;"><u>Requirements</u></h3>
+                    <div class="col-md-12">
+                        <ul class="requl">
+                            <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">We Start from Scratch so no previous experience required!</span></li>
+                            <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">This Course is targeted Primarily at Beginners, So if you have more than a few years Linux experience, this course might not be for you.</span></li>
+                            <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">This Course is targeted Primarily at Beginners, So if you have more than a few years Linux experience, this course might not be for you.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 sidebox" style="height:auto;width:4rem;border:0px solid red;padding: 2.4rem;color:black;background-color: #185d57;">
+            <div class="card-group">
+                <div class="card" style="position: fixed; top: 12rem; right: 222px;">
+                    <div class="mr-3 ml-3 mb-3 mt-3">
+                        <button type="button" class="btn btn-primary btn-lg btn-block">Add to cart</button>
+                        <button type="button" class="btn btn-secondary btn-lg btn-block">Buy now</button>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Course Duration:</h5>
+                        <ul style="text-transform:capitalize">
+                            <li>online courses</li>
+                            <li>course material(e-format)</li>
+                            <li>highly interactive</li>
+                            <li>periodic test(online)</li>
+                            <li>extra point 1</li>
+                            <li>extra point 2</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*<link href="~/Css/CourseListdetails.css" rel="stylesheet" />
+    <style>
+        h2 {
+            margin-top: 0px;
+        }
+
+        #scope {
+            padding: 0px 0px 0px 0px !important;
+        }
+
+        .sd:before {
+            width: 1em;
+            height: 1em;
+            line-height: 1em;
+            display: inline-block;
+            font-family: 'FontAwesome', sans-serif;
+            content: "\f164";
+            padding-right: 18px;
+            padding-left: 40px;
+        }
+
+        .scope {
+            padding: 0px 0px 0px 0px !important;
+        }
+
+        .btn:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0rem rgba(0,0,0,0);
+        }
+
+        .btn-link:hover {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+            width: 100%;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        li {
+            font-size: 13px;
+        }
+
+        .row {
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+        }
+    </style>
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+    <div class="container">
+        <div ng-app="app" ng-controller="MyCtrl" ng-init="getCourseStructureDetailsBasedOnId();Batchdata();" ng-cloak>
+
+            <div class="col-md-12" style="margin-top:9em;">
+                <h3 style="text-transform:capitalize;text-align:center"><b> {{ CourseName }} </b></h3>
+            </div>
+
+            <div class="row" id="req">
+                <h3 style="margin: 0 2.4rem 1.6rem;">What you'll learn</h3>
+                <div class="col-md-12">
+                    <ul class="requl">
+                        <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                        <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                        <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                        <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row" id="req">
+                <h3 style="margin: 0 2.4rem 1.6rem;">Requirements</h3>
+                <div class="col-md-12">
+                    <ul class="requl">
+                        <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">We Start from Scratch so no previous experience required!</span></li>
+                        <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">This Course is targeted Primarily at Beginners, So if you have more than a few years Linux experience, this course might not be for you.</span></li>
+                        <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">This Course is targeted Primarily at Beginners, So if you have more than a few years Linux experience, this course might not be for you.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row" id="req">
+                <h3 style="margin: 0 2.4rem 1.6rem;">Description</h3>
+                <div class="col-md-12">
+
+                    <p class="sd"> {{ShortDescription}} </p>
+                    <h6 ng-if="ShortDescription === undefined || ShortDescription === ''">{{ CourseName }} is good course to take for getting recruited in good companies</h6>
+                </div>
+            </div>
+
+            <div class="" id="req">
+
+                <h3 style="margin: 0 2.4rem 1.6rem;">Course Content</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <i class="fa fa-chevron-down" id="fa"></i>  Prerequisities
+                                        </button>
+                                    </h2>
+
+                                </div>
+
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <ul class="pure-tree">
+                                            <li ng-repeat="d in prerequisitearray" id="subli">
+                                                {{ d.PrerequisitePoints }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card" ng-repeat="d in HeadingsContent">
+                                <div class="card-header" id="HeadingCount-{{$index+1}}">
+
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                                data-target="#collapse-{{$index+1}}" aria-expanded="false" aria-controls="collapse-{{$index+1}}">
+                                            <i class="fa fa-chevron-down" id="fa"></i> {{ d.CourseContentHeading }}
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapse-{{$index+1}}" class="collapse" aria-labelledby="HeadingCount-{{$index+1}}" data-parent="#accordionExample">
+                                    <div class="card-body text-left">
+
+                                        <ul ng-repeat="d1 in DescriptionsContent" id="scope">
+                                            <li ng-if="d.ContentId === d1.ContentId" id="subli" style="padding-left:0 !important">{{d1.Description}}</li>
+                                        </ul>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 text-center">
+                        <div class="boxx">
+                            <h3 style="margin: .5rem 2.4rem 1.6rem;">Contents</h3>
+                            <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+                            <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+                            <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+
+                            <div class="row">
+                                <div class="col-md-12" ng-repeat="d in HeadingsContent">
+                                    <ol class="scope"><u><b>{{$index+1}}. {{ d.CourseContentHeading }}</u></b></ol>
+                                    <ul ng-repeat="d1 in DescriptionsContent" class="scope">
+                                        <li ng-if="d.ContentId === d1.ContentId">{{d1.Description}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <br /><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="button" value="Apply Now" class="btn btn-primary" ng-click="ShowApplyNowPop();" />
+                </div>
+                <div class="col-md-6">
+                    <a href="/Home/Enquiry">Any Query... Click Here.</a>
+                </div>
+            </div>
+
+            <!--Modal for apply Start Here-->
+            <div id="popupApplyNow" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Apply Now</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form name="studentreg" novalidate>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label><b><span style="color:red">*</span> Name</b> </label>
+                                        <input type="text" ng-model="Name" class="form-control" name="name" maxlength="45" ng-pattern="/^[a-z A-Z]+$/"
+                                               autocomplete="off" required />
+                                        <span style="color:Red" ng-show="studentreg.name.$error.required && studentreg.name.$touched" ng-cloak>
+                                            Name is required
+                                        </span>
+                                        <span style="color:Red" ng-show="studentreg.name.$dirty && studentreg.name.$error.pattern" ng-cloak>
+                                            Name must contain alphabets (A-Z and a-z) only
+                                        </span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label" for="inputdob">
+                                            <b><span style="color:red">*</span> DOB </b>
+                                        </label>
+                                        <input class="form-control" moment-picker="momentDOB" required format="DD/MM/YYYY" start-view="day" name="dob" ng-model="DOB"
+                                               ng-model-options="{ updateOn: 'blur' }" ng-blur="validateStudentDOB()">
+                                        <span style="color:Red" ng-show="studentreg.dob.$error.required && studentreg.dob.$touched" ng-cloak>
+                                            DOB is required
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label><b><span style="color:red">*</span> Username </b> </label>
+                                        <input type="text" ng-model="Username" class="form-control" autocomplete="off" name="username" maxlength="45" ng-blur="StudentExistsOrNot()" required />
+                                        <span style="color:Red" ng-show="studentreg.username.$error.required && studentreg.username.$touched" ng-cloak>
+                                            Username is required
+                                        </span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label><b><span style="color:red">*</span> Password</b></label>
+                                        <input type="password" ng-model="Password" class="form-control" autocomplete="off" name="password" maxlength="40" required />
+
+                                        <span style="color:Red" ng-show="studentreg.password.$error.required && studentreg.password.$touched" ng-cloak>
+                                            Password is required
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label"><b><span style="color:red">*</span> Email</b></label>
+                                        <input type="text" ng-model="Email" class="form-control" autocomplete="off" name="email" maxlength="50" ng-pattern="emailregex" required />
+                                        <span style="color:Red" ng-show="studentreg.email.$error.required && studentreg.email.$touched" ng-cloak>
+                                            Email is required
+                                        </span>
+                                        <span style="color:Red" ng-show="studentreg.email.$dirty && studentreg.email.$error.pattern" ng-cloak>
+                                            Invalid Email
+                                        </span>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label"><b><span style="color:red">*</span> Phone No</b></label>
+                                        <input type="text" class="form-control" id="exampleInputphoneno" name="mobile" autocomplete="off" ng-model="Phone"
+                                               maxlength="10" required ng-pattern="/^[6-9][0-9]{9}$/">
+                                        <span style="color:Red" ng-show="studentreg.mobile.$error.required && studentreg.mobile.$touched" ng-cloak>
+                                            Mobile No. is required
+                                        </span>
+
+                                        <span style="color:Red" ng-show="studentreg.mobile.$dirty && studentreg.mobile.$error.pattern" ng-cloak>
+                                            10 digits only must start with 6,7,8,9
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label"><b>Batch (Students)</b></label>
+                                        <select class="form-control" ng-model="mdlBatchSize">
+                                            <option value="">--Select--</option>
+                                            <option value="{{d.BatchId}}" ng-repeat="d in BatchDetails">{{d.BatchSize}}</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                        <br />
+                                        <center>
+                                            <button type="submit" class="btn btn-success" ng-disabled="studentreg.$invalid"
+                                                    ng-click="SendOTPForRegisterCourse()">
+                                                Submit
+                                            </button>
+                                        </center>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Modal for apply End Here-->
+            <!--Modal For Verify OTP for Registraion-->
+            <div class="modal fade" data-backdrop="static" id="verifyEmailOtp">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <a href="#" class="close" data-dismiss="modal">&times;</a>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Verify Email OTP</label>
+                                <input type="text" class="form-control" ng-model="VerifyOTP" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                            <button class="btn btn-success" ng-click="ConfirmOtpAndRegister();">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Modal For Verify OTP for Registraion-->
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
+    <script src="~/Scripts/courselist.js"></script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>*@

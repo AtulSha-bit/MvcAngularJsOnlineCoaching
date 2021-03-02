@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "CourseDetails";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Admin/Login");
+    }
+}
+
+<title>Createstructurefor</title>
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+    .ng-cloak, .x-ng-cloak,
+    .ng-hide {
+        display: none !important;
+    }
+
+    .submit_btn {
+        padding: 10px 32px;
+    }
+</style>
+<body ng-app="app" ng-controller="MyCtrl" ng-init="courseDetailInit();GetBatchDetails();courseUpdateInit();">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 mt-1">
+            <form name="coursedetails" class="mb-2 m-2" novalidate>
+                <h2 class="text-center"><b><u>Add Course Structure</u></b></h2>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputState"><b>Publish</b></label>
+                        <input type="checkbox" ng-model="mdlIsPublishedCourseStru" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="form-group col-md-6">
+                        <label for="inputState"><b>Course</b></label>
+                        <select id="inputState" class="form-control" name="course" ng-model="Course"
+                                ng-options="item.CourseId as item.CourseName for item in CourseData" required>
+                            <option value="" selected><p> -- Select  Course --</p></option>
+                        </select>
+                        <span style="color:Red" ng-show="coursedetails.course.$error.required && coursedetails.course.$dirty" ng-cloak>
+                            Course is required
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress"><b>Fees</b></label>
+                        <input type="text" class="form-control" id="inputAddress" ng-model="Fees" ng-blur="getNetAmount()" name="fees" required>
+                        <span style="color:Red" ng-show="coursedetails.fees.$error.required && coursedetails.fees.$dirty" ng-cloak>
+                            Fees is required
+                        </span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress2"><b>Discount(%)</b></label>
+                        <input type="text" class="form-control" id="inputAddress3" ng-model="Discount" ng-blur="netamountwithdiscount()"
+                               name="discount">
+
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress2"><b>Net Amount</b></label>
+                        <input type="text" class="form-control" id="inputAddress2" ng-model="NetAmount" name="netamount" disabled required>
+                        <span style="color:Red" ng-show="coursedetails.netamount.$error.required && coursedetails.netamount.$dirty" ng-cloak>
+                            Net Amount is required
+                        </span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputdob"><b>Valid From</b></label>
+                        <input class="form-control"
+                               placeholder=""
+                               moment-picker="ValidFrom"
+                               format="DD/MM/YYYY"
+                               start-view="day"
+                               ng-model="ValidFrom" ng-blur="validateFromDate()"
+                               ng-model-options="{ updateOn: 'blur' }" required>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="inputdob"><b>Valid To</b></label>
+                        <input class="form-control"
+                               placeholder=""
+                               moment-picker="ValidTo"
+                               format="DD/MM/YYYY"
+                               start-view="day"
+                               ng-model="ValidTo" ng-blur="ValidateToDate()"
+                               ng-model-options="{ updateOn: 'blur' }" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label><b>Duration</b></label>
+                        <select class="form-control" ng-model="strDuration" name="duration"
+                                ng-options="item.DurationId as item.DurationName for item in DurationData" required>
+                            <option value="" selected><p> -- Select  Duration --</p></option>
+                        </select>
+                        <span style="color:Red" ng-show="coursedetails.duration.$error.required && coursedetails.duration.$dirty" ng-cloak>
+                            Duration is required
+                        </span>
+                    </div>
+
+                    @*<div class="form-group col-md-6">
+                        <label><b>Student Category</b></label>
+                        <select class="form-control" required ng-model="StudentCategoryId" name="stdctgid"
+                                ng-options="item.StudentCategoryId as item.CategoryName for item in StudentCategoryData">
+                            <option value="" selected><p> -- Select Student Category -- </p></option>
+                        </select>
+                        <span style="color:Red" ng-show="coursedetails.stdctgid.$error.required && coursedetails.stdctgid.$dirty" ng-cloak>
+                            Student Category is required
+                        </span>
+                    </div>*@
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label><b>Student Category</b></label>
+                        <select class="form-control" required ng-model="StudentCategoryId" name="stdctgid"
+                                ng-options="item.StudentCategoryId as item.CategoryName for item in StudentCategoryData" ng-change="GetSubCategory()">
+                            <option value="" selected><p> -- Select Student Category -- </p></option>
+                        </select>
+                        <span style="color:Red" ng-show="coursedetails.stdctgid.$error.required && coursedetails.stdctgid.$dirty" ng-cloak>
+                            Student Category is required
+                        </span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label><b>Student Sub Category</b></label>
+                        <select class="form-control" required ng-model="SubCategoryId" name="stdsubctgid"
+                                ng-options="item.StudedetSubCategoryId as item.SubCategoryName for item in SubCategories">
+                            <option value="" selected><p> -- Select Sub Category -- </p></option>
+                        </select>
+                        <span style="color:Red" ng-show="coursedetails.stdsubctgid.$error.required && coursedetails.stdsubctgid.$dirty" ng-cloak>
+                            Sub Category is required
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label><b>Tutor</b></label>
+                        <select ng-model="mdlTutorId" class="form-control" ng-options="item.TutorId as item.TutorName for item in BrandTutorData">
+                            <option value="">--Select Tutor--</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label"><b>Batch (Students)</b></label>
+                        <select class="form-control" ng-model="mdlBatchSizeCourseStr" ng-options="d.BatchId as d.BatchSize for d in BatchDetails">
+                            <option value="">--Select--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row text-center mb-2 mt-2">
+
+                    <div class="col-md-12">
+                        <button type="submit" ng-if="StructureId === 0 || StructureId === undefined " class="btn btn-primary" ng-disabled="coursedetails.$invalid" ng-click="saveCourseDetails()">Add</button>
+                        <button type="submit" ng-if="StructureId > 0" class="btn btn-primary" ng-disabled="coursedetails.$invalid" ng-click="updateCourseDetails()">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</body>

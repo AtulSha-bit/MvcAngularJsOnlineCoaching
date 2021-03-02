@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "AddResourse";
+    Layout = "~/Views/Shared/_LayoutBrandTutor.cshtml";
+}
+
+<br />
+@*addcoursecontentinit();updatecoursecontentinit()*@
+<div class="container" ng-app="app" ng-controller="MyCtrl" ng-init="addresourcebrandtutorinit()">
+    <h2 class="text-center"><b><u>Information</u></b></h2>
+    <form name="addbrandtutvalidate" novalidate>
+
+        <div class="form-row mt-1">
+            <div class="col-md-3"></div>
+            <div class="form-group col-md-6 text-center">
+                <label><b>Select Course</b></label>
+
+                <select class="form-control" required ng-model="CourseId" name="validcourse"
+                        ng-options="item.CourseId as item.CourseName for item in CoursesForBrandTutor">
+                    <option value="" selected><p> -- Select Course -- </p></option>
+                </select>
+                <span style="color:Red" ng-show="addbrandtutvalidate.validcourse.$error.required && addbrandtutvalidate.validcourse.$dirty" ng-cloak>
+                    Course is required
+                </span>
+            </div>
+
+        </div>
+
+        <div class="form-row mt-1">
+            <div class="form-group col-md-12 text-center">
+                <label><b>Upload Resource</b></label>
+
+                <input type="file" name="file" required ngf-select="UploadResourseFilesByTutor($file)" ng-model="SelectedFiles" />
+                <span style="color:Red" ng-show="addbrandtutvalidate.file.$error.required && addbrandtutvalidate.file.$dirty" ng-cloak>
+                    File is required
+                </span>
+            </div>
+        </div>
+
+        <div class="form-row mt-1">
+            <div class="form-group col-md-12">
+                <table class="table table table-striped">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Resource Name</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr ng-repeat="d in  arrResourceFile">
+                        <td>{{$index+1}}</td>
+                        <td>{{ d.ResourceName }}</td>
+                        <td><a href="" class="btn btn-sm btn-danger" ng-click="DeleteInternResourceArray($index);" /><i class="fa fa-trash"></i></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-12 text-center">
+
+            <button type="submit" ng-click="FileUploadByBrandTutor()" class="btn btn-md btn-primary" ng-disabled="addbrandtutvalidate.$invalid">Submit </button>
+        </div>
+    </form>
+</div>
+
+

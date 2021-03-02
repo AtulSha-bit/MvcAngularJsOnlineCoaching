@@ -1,0 +1,256 @@
+﻿
+@{
+    ViewBag.Title = "ApplyInternship";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .errorColor {
+        color: red;
+    }
+
+
+    fieldset {
+        border: 2px solid #3d5a80 !important;
+        padding: 1rem !important
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+    .form-control{
+        height:25px;
+        font-size:9px;
+    }
+    label{
+        font-size:13px;
+    }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-cloak>
+
+    <div class="row">
+
+        <div class="col-md-1"></div>
+        <div class="col-md-10" style="margin-top:6em;">
+            <form name="frmInterApply" novalidate class="mt-5 mb-5">
+                <fieldset>
+                    <legend><b>Apply For Internship</b></legend>
+
+                    <h4><u>Personal Details</u></h4>
+                    <div class="form-row pt-2">
+                        <div class="form-group col-md-6">
+                            <label>Name</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyName" name="name" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.name.$dirty">
+                                <span ng-show="frmInterApply.name.$error.required">
+                                    Name is required.
+                                </span>
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>DOB</label>
+                            <input class="form-control"
+                                   placeholder=""
+                                   moment-picker="mntInternApplyDOB"
+                                   format="DD/MM/YYYY"
+                                   start-view="day"
+                                   ng-model="mdlInternApplyDOB" ng-blur=""
+                                   ng-model-options="{ updateOn: 'blur' }" name="dob" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.dob.$error.required && frmInterApply.dob.$dirty" ng-cloak>
+                                Valid From is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Mobile</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyContact" name="mobile" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.mobile.$dirty">
+                                <span ng-show="frmInterApply.mobile.$error.required">
+                                    Mobile is required.
+                                </span>
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Email</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyEmail" name="email" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.email.$dirty">
+                                <span ng-show="frmInterApply.email.$error.required">
+                                    Email is required.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <h4 class="mt-1"><u>Social Details</u></h4>
+                    <div class="form-row pt-2">
+                        <div class="form-group col-md-6">
+                            <label>Twitter</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyTwitter" name="tweeter" />
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Instagram</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyInsta" name="insta" />
+
+                        </div>
+                    </div>
+                    <div class="form-row pt-2">
+                        <div class="form-group col-md-6">
+                            <label>Facebook</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyFacebook" name="facebook" />
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>How do you know?</label>
+                            <select class="form-control" ng-model="mdlInternApplyHowDoYouKnow">
+                                <option value="">--Select--</option>
+                                <option value="Friends">Through Friends</option>
+                                <option value="SocialMedia">Facebook/Instagram/Twitter</option>
+                                <option value="Website">Website</option>
+                            </select>
+                            <span class="errorColor" ng-show="frmInterApply.howDoYouKnow.$dirty">
+                                <span ng-show="frmInterApply.howDoYouKnow.$error.required">
+                                    Field is required.
+                                </span>
+                            </span>
+                        </div>
+
+                    </div>
+                    <h4 class="mt-1"><u>Address Details</u></h4>
+                    <div class="form-row pt-2">
+                        <div class="form-group col-md-6">
+                            <label>Address</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyAddress" name="address" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.address.$dirty">
+                                <span ng-show="frmInterApply.address.$error.required">
+                                    Address is required.
+                                </span>
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>City</label>
+                            <input type="text" class="form-control" />
+
+                        </div>
+
+                    </div>
+                    <div class="form-row pt-2">
+                        <div class="form-group col-md-6">
+                            <label>State</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyState" name="state" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.state.$dirty">
+                                <span ng-show="frmInterApply.state.$error.required">
+                                    State is required.
+                                </span>
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Pin</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyPin" name="pin" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.pin.$dirty">
+                                <span ng-show="frmInterApply.pin.$error.required">
+                                    Pin is required.
+                                </span>
+                            </span>
+                        </div>
+
+
+                    </div>
+                    <h4 class="mt-1"><u>Document Verification</u></h4>
+                    <div class="form-row pt-2">
+                        <div class="form-group col-md-6">
+                            <label>Aadhaar No.</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyAadhar" name="aadhaar" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.aadhaar.$dirty">
+                                <span ng-show="frmInterApply.aadhaar.$error.required">
+                                    Aadhaar is required.
+                                </span>
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Upload Aadhar Card Image</label>
+                            <input type="file" class="form-control" ngf-select="uploadAadhaarForIntern($file)" ng-model="fileAadhar" required name="file" ngf-pattern="'image/*'"
+                                   ngf-accept="'image/*'" ngf-max-size="5MB" ngf-resize="{width: 300, height: 500}" />
+                            <p><b>Note:</b>Only Image file.</p>
+                            <span class="errorColor" ng-show="frmInterApply.fileAadhar.$dirty">
+                                <span ng-show="frmInterApply.fileAadhar.$error.required">
+                                    Document is required.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row pt-2">
+                        <div class="form-group col-md-6">
+                            <label>Upload Photo</label>
+                            <input type="file" class="form-control" ngf-select="uploadImageForIntern($file)" ng-model="fileImg" required name="file" ngf-pattern="'image/*'"
+                                   ngf-accept="'image/*'" ngf-max-size="5MB" ngf-resize="{width: 300, height: 500}" />
+                            <p><b>Note:</b>Only Image file.</p>
+                            <span class="errorColor" ng-show="frmInterApply.fileImg.$dirty">
+                                <span ng-show="frmInterApply.fileImg.$error.required">
+                                    Photo is required.
+                                </span>
+                            </span>
+                        </div>
+                        <div class="form-groupcol-md-6">
+                            <label>Upload Resume</label>
+                            <input type="file" class="form-control" ngf-select="uploadResumeForIntern($file)" ng-model="fileResume" required name="file" ngf-pattern="'.pdf'"
+                                   ngf-accept="'.pdf'" ngf-max-size="5MB" ngf-resize="{width: 300, height: 500}" />
+                            <p><b>Note:</b>Only pdf file.</p>
+                            <span class="errorColor" ng-show="frmInterApply.fileResume.$dirty">
+                                <span ng-show="frmInterApply.fileResume.$error.required">
+                                    Resume is required.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <h4 class="mt-1"><u>Qualifications</u></h4>
+                    <div class="form-row pt-2">
+                        <div class="form-group col-md-6">
+                            <label>College/University</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyCollege" name="college" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.college.$dirty">
+                                <span ng-show="frmInterApply.college.$error.required">
+                                    College/University is required.
+                                </span>
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Qualification</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyQualification" name="qualification" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.qualification.$dirty">
+                                <span ng-show="frmInterApply.qualification.$error.required">
+                                    Qualification is required.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row pt-2">
+                        <div class="form-group col-md-6">
+                            <label>Year Of Passing</label>
+                            <input type="text" class="form-control" ng-model="mdlInternApplyYOP" name="yop" required autocomplete="off" />
+                            <span class="errorColor" ng-show="frmInterApply.yop.$dirty">
+                                <span ng-show="frmInterApply.yop.$error.required">
+                                    College/University is required.
+                                </span>
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                        </div>
+                    </div>
+
+                    <div class="row mt-2 text-center">
+                        <div class="col-md-12">
+                            <input type="button" class="btn btn-success" value="Submit" ng-click="AddApplyForInternship();" />
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+</div>

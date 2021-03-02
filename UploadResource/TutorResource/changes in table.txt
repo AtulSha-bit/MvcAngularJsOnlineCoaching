@@ -1,0 +1,116 @@
+
+Changes in table:
+================
+
+ALTER TABLE SITSPL_tblTutor
+ADD TutorType nvarchar(35);
+
+.............................
+
+ALTER TABLE tblContent
+ADD ShortDescription nvarchar(256) NULL;
+
+...............................
+
+CREATE TABLE tblCoursePrerequisities(
+PrerequisiteId bigint identity(1,1) primary key not null,
+ContentId bigint not null,
+PrerequisitePoints nvarchar(128) null,
+CreatedBy nvarchar(128) null,
+LastUpdated datetime null,
+UpdateBy nvarchar(128),
+IsPublished bit not null,
+DisplayOnWeb bit null);
+
+ALTER TABLE tblCoursePrerequisities
+ADD CONSTRAINT FK_tblCoursePrerequisities_ContentId_tblContent_ContentId
+FOREIGN KEY(ContentId) 
+REFERENCES tblContent(ContentId);
+
+select * from tblCoursePrerequisities;
+
+..........................................
+
+CREATE PROCEDURE [dbo].[SITSPL_ShowCourseStructure]
+AS
+BEGIN
+select CS.CourseId as CourseId,C.CourseName as Course,CS.StructureId as StructureId ,CS.DurationName as Month,Fees,
+Convert(varchar(35),ValidFrom,103) as ValidFrom,
+Convert(varchar(35),ValidTo,103) as ValidTo,
+Convert(varchar(35),CS.DateCreated,103) as CreatedDate,CS.CreatedBy as CreatedBy,
+Convert(varchar(35),CS.LastUpdated,103) as LastUpdated,
+CS.DiscountPercent as Discount,
+CS.NetAmount as NetAmount,
+CS.IsDeleted as ISDeleted,
+CS.UpdatedBy as UpdatedBy,CS.DurationId,dur.DurationName as strDuration,CS.StdCatgId as StudentCategoryId,
+stdcatg.CategoryName
+from SITSPL_tblCourseStructure as CS INNER JOIN SITSPL_tblCourse as C
+ON CS.CourseId = C.CourseId
+INNER JOIN tblDuration as dur
+ON dur.DurationId = CS.DurationId
+INNER JOIN tblStudentCategory as stdcatg
+on CS.StdCatgId = stdcatg.StudentCategoryId
+END
+
+.............
+
+ALTER PROCEDURE [dbo].[SITSPL_ShowCourseStructure]
+AS
+BEGIN
+select CS.CourseId as CourseId,C.CourseName as Course,CS.StructureId as StructureId ,CS.DurationName as Month,Fees,
+Convert(varchar(35),ValidFrom,103) as ValidFrom,
+Convert(varchar(35),ValidTo,103) as ValidTo,
+Convert(varchar(35),CS.DateCreated,103) as CreatedDate,CS.CreatedBy as CreatedBy,
+Convert(varchar(35),CS.LastUpdated,103) as LastUpdated,
+CS.DiscountPercent as Discount,
+CS.NetAmount as NetAmount,
+CS.IsDeleted as ISDeleted,
+CS.UpdatedBy as UpdatedBy,CS.DurationId,dur.DurationName as strDuration,CS.StdCatgId as StudentCategoryId,
+stdcatg.CategoryName, tut.TutorName,tut.TutorId
+from SITSPL_tblCourseStructure as CS INNER JOIN SITSPL_tblCourse as C
+ON CS.CourseId = C.CourseId
+INNER JOIN tblDuration as dur
+ON dur.DurationId = CS.DurationId
+INNER JOIN tblStudentCategory as stdcatg
+on CS.StdCatgId = stdcatg.StudentCategoryId
+INNER JOIN SITSPL_tblTutor as tut
+on tut.TutorId = CS.TutorId
+where tut.TutorType = 'Brand-Tutor';
+END
+
+........................
+
+SP
+====
+
+ALTER PROC [dbo].[SITSPL_GetCourseContent]
+	@Id INT,
+	@UserType NVARCHAR(128)
+AS 
+BEGIN
+If(@UserType = 'Course') -- For Course Intern
+	BEGIN
+		SELECT ContentId,content.CourseId as CourseId,cour.CourseName,CourseType,CourseContentHeading,IsSubHeading,
+		ISNULL(SubHeading,' ') as SubHeading,ISNULL(content.ShortDescription,' ') as ShortDescription,
+		content.IsPublished,
+		Convert(varchar(32),content.DateCreated,103) as DateCreated,content.CreatedBy FROM tblContent content
+		INNER JOIN SITSPL_tblCourse cour 
+		ON content.CourseId = cour.CourseId 
+	   WHERE content.ContentId = @Id
+		AND content.CourseType = @UserType 
+	END
+ELSE IF(@UserType = 'Intern')
+	BEGIN
+		SELECT ContentId,content.InternCourseId as InternCourseId ,intr.InternshipName,CourseType,CourseContentHeading,IsSubHeading,
+		ISNULL(SubHeading,' ') as SubHeading,ISNULL(content.ShortDescription,' ') as ShortDescription,
+		content.IsPublished,
+		Convert(varchar(32),content.DateCreated,103) as DateCreated,content.CreatedBy FROM tblContent content
+		INNER JOIN SITSPL_tblInternship intr 
+		ON content.InternCourseId = intr.InternshipId
+		WHERE content.ContentId = @Id
+		AND content.CourseType = @UserType 
+	END
+END
+
+
+

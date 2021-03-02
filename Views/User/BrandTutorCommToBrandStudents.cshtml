@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "BrandTutorCommToBrandStudents";
+    Layout = "~/Views/Shared/_LayoutStudents.cshtml";
+}
+
+
+
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 43px;
+    }
+
+    input.form-control, select.form-control {
+        height: 22px !important;
+    }
+</style>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetTutorToCourseStudentIncomingComm()" ng-cloak>
+    <br />
+    <h2 style="text-align:center"><b><u>View Brand Tutor To Brand Student Incoming </u></b></h2>
+    <br />
+    <div class="row m-1">
+        <table ng-table="BrandTutorToBrandStudentIncomingMessages" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                <td data-title="'S.No'">{{$index+1}}</td>
+
+                <td data-title="'Tutor Name'" sortable="'TutorName'" filter="{ 'TutorName': 'text' }">
+                    {{ user.TutorName }}
+                </td>
+
+
+
+                <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }">
+                    {{ user.Message }}
+                </td>
+
+
+
+                <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                    {{ user.DateCreated }}
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="4" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <br />
+    </div>
+</div>

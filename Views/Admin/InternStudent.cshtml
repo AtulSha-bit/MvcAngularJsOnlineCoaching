@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "InternStudent";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+
+    fieldset {
+        border: 2px solid #3d5a80 !important;
+        padding: 3rem !important
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+</style>
+
+<br />
+<h2 class="text-center"><b><u>Intern Students</u></b></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="InternStudentDetails();" class="m-1">
+    <table ng-table="InternStudentsTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+        <tr ng-repeat="d in $data">
+            <td title="'S.No'">{{$index+1}}</td>
+            <td title="'Name'" sortable="'Name'" filter="{'Name' :'text'}">{{d.Name}}</td>
+            <td title="'DOB'" sortable="'DOB'" filter="{'DOB' :'text'}">{{d.DOB}}</td>
+            <td title="'Email'" sortable="'Email'" filter="{'Email' :'text'}">{{d.Email}}</td>
+            <td title="'Twiter'" sortable="'Twiter'" filter="{'Twiter' :'text'}">{{d.Twiter}}</td>
+            <td title="'Instagram'" sortable="'Instagram'" filter="{'Instagram' :'text'}">{{d.Instagram}}</td>
+            <td title="'Facebook'" sortable="'Facebook'" filter="{'Facebook' :'text'}">{{d.Facebook}}</td>
+            <td title="'How Do You Know'" sortable="'HowDoYouKnow'" filter="{'HowDoYouKnow' :'text'}">{{d.HowDoYouKnow}}</td>
+            <td title="'Image'" sortable="''" filter="{'' :'text'}">{{d.Image}}</td>
+            <td title="'College/Univ'" sortable="'CollegeUniv'" filter="{'CollegeUniv' :'text'}">{{d.CollegeUniv}}</td>
+            <td title="'Year Of Passing'" sortable="'YearOfPassing'" filter="{'YearOfPassing' :'text'}">{{d.YearOfPassing}}</td>
+            <td title="'Internship Name'" sortable="'InternshipName'" filter="{'InternshipName' :'text'}">{{d.InternshipName}}</td>
+            <td title="'Months/Days'" sortable="'DurationMonths'" filter="{ 'DurationMonths ' :'text'}">{{d.DurationMonths}}</td>
+            <td title="'DateCreated'" sortable="'DateCreated'" filter="{'DateCreated' :'text'}">{{d.DateCreated}}</td>
+            <td title="'Created By'" sortable="'CreatedBy'" filter="{'CreatedBy' :'text'}">{{d.CreatedBy}}</td>
+            <td title="'Last Update'" sortable="'LastUpdated'" filter="{'LastUpdated' :'text'}">{{LastUpdated}}</td>
+            <td title="'Updated By'" sortable="'UpdatedBy'" filter="{'UpdatedBy' :'text'}">{{UpdatedBy}}</td>
+            <td data-title="'Action'" class="act">
+                @if (Session["UserType"].ToString() == "SuperAdmin")
+                {
+                    <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteInternStudent" ng-click="deleteInternStudents(d.InterApllyId)"><i class="fa fa-trash"></i></a>
+                }
+            </td>
+        </tr>
+    </table>
+
+    <div class="modal fade" data-backdrop="static" id="deleteInternStudent">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    Are you sure?
+                    You want to delete this record
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    @*   d.ActivityId *@
+                    <a class="btn btn-success" ng-click="DeleteInternStudentsByAdmin(d.InterApllyId)">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

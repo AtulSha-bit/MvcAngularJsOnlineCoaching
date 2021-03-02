@@ -1,0 +1,118 @@
+﻿html, body {
+    overflow-x: hidden;
+    font-family: "Poppins",sans-serif !important;
+}
+
+#t {
+    border-bottom: 0px solid grey;
+    padding-top: 11px;
+    background-color: #18bfae;
+}
+
+    #t img {
+        height: 52px;
+    }
+
+    #t p .folk {
+        font-weight: 800;
+    }
+
+.card-group {
+    margin: 2rem 8rem;
+}
+
+    .card-group h6 {
+        color: #18bfae;
+        font-weight: bolder;
+    }
+
+    .card-group .card img {
+        width: fit-content;
+    }
+
+    .card-group .card a {
+        color: #18bfae;
+    }
+
+        .card-group .card a:hover {
+            text-decoration: none;
+            color: #f36733;
+        }
+
+    .card-group .card .upper img {
+        height: 120px;
+        width: 120px;
+    }
+
+.btn-success {
+    background-color: #f36733 !important;
+    border-color: #f36733 !important;
+    padding: .475rem 3rem;
+}
+
+.card-body p {
+    font-weight: 500;
+}
+/*.card {
+    border: .5px #f36733 solid !important;
+}*/
+.btn-success:focus {
+    box-shadow: 0 0 0 0.2rem #f36733;
+}
+
+@media screen and (maxwidth:1024px) {
+}
+
+
+/*Extra small devices (portrait phones, less than 576px)*/
+/*No media query for `xs` since this is the default in Bootstrap
+*/
+@media (min-width: 320px) {
+    .card-group {
+        margin: 1rem 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+
+
+    #t img {
+        width: 85px;
+    }
+}
+
+@media (min-width: 375px) {
+    .card-group {
+        margin: 1rem 1rem;
+    }
+}
+
+@media (min-width: 425px) {
+    .card-group {
+        margin: 1rem 1rem;
+    }
+}
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    .card-group {
+        margin: 1.5rem 1.5rem;
+    }
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .card-group {
+        margin: 1rem 1rem;
+    }
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .card-group {
+        margin: 2rem 2rem;
+    }
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

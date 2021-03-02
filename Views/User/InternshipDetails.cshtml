@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "InternshipDetails";
+    Layout = "~/Views/Shared/LayoutIntern.cshtml";
+}
+
+
+<style>
+    #firstrow {
+        margin-left: 4rem;
+        margin-right: 4rem;
+        width: 100%;
+    }
+
+    /*  .btn {
+        border-radius: 0rem;
+        color: white !important;
+    }
+       */
+
+    .card {
+        border-radius: 10px;
+    }
+</style>
+<div class="row" id="firstrow" ng-init="internshipdetailsinit()">
+    <div class="card mt-2 col-md-3" style="height:250px;" ng-repeat="d in internshiparrayparse">
+        <center style="padding-top: 1.5rem;">
+            <div class="internHeading">
+                @* class="justify-content-around" <h5 class="ng-binding" style="text-transform: capitalize;">{{ d.InternshipName }}</h5>*@
+            </div>
+            <div class="card-body internCardBody">
+
+                <p class="justify-content-around"><b>Internship: </b>{{ d.InternshipName }}</p>
+                <p class="justify-content-around"><b>Fees: </b>{{ d.TotalAmount }}</p>
+                <p class="justify-content-around"><b>Duration: </b>{{ d.DurationName }}</p>
+                <p class="justify-content-around"><b>Valid From: </b>{{ d.ValidFrom }}</p>
+                <p class="justify-content-around"><b>Valid To: </b>{{ d.ValidTo }}</p>
+                <p class="justify-content-around"><b>Registered On:</b>{{ d.DateCreated }}</p>
+                <br />
+            </div>
+            <br />
+
+        </center>
+    </div>
+
+    <div class="card mt-2 col-md-3" style="height:250px;" ng-repeat="d in perksarrayparse">
+        <center style="padding-top: 1.5rem;">
+            <div class="internHeading">
+                <h5 class="ng-binding" style="text-transform: capitalize;">{{ d.InternshipName }}</h5>
+            </div>
+            <div class="card-body internCardBody">
+
+
+                <p class="justify-content-around"><b> Perk Name: </b>{{ d.PerkName }}</p>
+                <br />
+            </div>
+            <br />
+
+        </center>
+    </div>
+</div>

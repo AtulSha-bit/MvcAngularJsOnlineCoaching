@@ -1,0 +1,116 @@
+﻿html, body {
+    color: #3d5a80;
+    /*background-color: #0082E6;*/
+    background-color: aliceblue;
+}
+
+form h3 {
+    text-align: center;
+    color: #3d5a80;
+    /*border-bottom: 10px solid #f59019;*/
+}
+
+    form h3::after {
+        background-color: #3d5a80;
+        bottom: 0;
+        content: "";
+        top: 90px;
+        height: 5px;
+        left: 36%;
+        position: absolute;
+        width: 28%;
+    }
+.page-link {
+    color: #3d5a80;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #3d5a80;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form select option {
+    color: #3d5a80;
+    font-weight: bold;
+}
+
+form .form-control {
+    color: #3d5a80;
+    font-weight: bold;
+    border: 1px solid #3d5a80;
+    background-color: aliceblue;
+}
+
+.submit_btn {
+    border: 0px solid #fff;
+    color: #fff !important;
+    background: #3d5a80;
+    padding: 15px 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.8s all;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .submit_btn:hover {
+        background: #ee6c4d;
+        color: #fff !important;
+    }
+@media only screen and (max-width: 1024px) {
+    .submit_btn {
+        padding: 15px 40px 15px 30px;
+    }
+
+    form h3::after {
+        left: 30%;
+        width: 41%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .submit_btn {
+        padding: 15px 40px 15px 38px;
+    }
+    form h3::after {
+        left: 33%;
+        width: 35%;
+    }
+
+    .submit_btn {
+        padding: 15px 40px 15px 38px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    form h3 {
+       font-size:20px;
+    }
+        form h3::after {
+            left: 32%;
+            width: 37%;
+        }
+}
+
+@media only screen and (max-width: 425px) {
+    form h3::after {
+        left: 29%;
+        width: 44%;
+    }
+}
+@media only screen and (max-width: 375px) {
+    form h3::after {
+        left: 26%;
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 320px) {
+    form h3::after {
+        left: 21%;
+        width: 60%;
+    }
+}

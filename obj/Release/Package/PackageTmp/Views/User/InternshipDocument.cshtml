@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "InternshipDocument";
+    Layout = "~/Views/Shared/LayoutIntern.cshtml";
+}
+
+<style>
+
+    fieldset {
+        border: 2px solid #3d5a80 !important;
+        padding: 1rem !important
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+    form {
+        padding: 0 80px;
+        margin-left: 40px;
+    }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="documentinit()">
+    <br />
+    <form class="inner2" name="documentreg" novalidate>
+        <fieldset>
+            <legend>Document</legend>
+            <br /><br />
+            <div class="form-row">
+                <div class="col-md-3"></div>
+                <div class="form-group col-md-6">
+                    <label for="inputState">Aadhar Number</label>
+                    <input type="text" class="form-control" ng-model="mdlInternApplyAadhar" name="aadhaar" maxlength="30" required autocomplete="off" />
+                    <span style="color:Red" ng-show="documentreg.aadhaar.$error.required && documentreg.aadhaar.$touched" ng-cloak>
+                        Aadhar Number is required
+                    </span>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-3"></div>
+                <div class="form-group pt-1">
+                    <label class="control-label">Upload Aadhar Card Image</label>
+                    <div class="custom-file mb-3">
+                        <input type="file" class="custom-file-input" id="validatedCustomFile" ngf-select="uploadAadhaarForInterns($file)" ng-model="fileAadhar" name="file" ngf-pattern="'image/*'"
+                               ngf-accept="'image/*'" ngf-max-size="5MB" ngf-resize="{width: 300, height: 500}" />
+                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                        <p><b>Note:</b>Only Image file.</p>
+
+                        <div ng-hide="hideaadhar"><b> Document Name: </b>  {{ fileAadhar }} </div>
+
+                        <div ng-hide="previewaadhar"> <b> Document Name: </b> {{ aadhaarFileName }} </div>
+                        @*    {{ aadhaarFileName }}*@
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-3"></div>
+                <div class="form-group pt-1">
+                    <label class="control-label">Upload Resume</label>
+                    <div class="custom-file mb-3">
+                        <input type="file" class="custom-file-input" ngf-select="uploadResumeForInterns($file)" ng-model="fileResume" name="file" ngf-pattern="'.pdf'"
+                               ngf-accept="'.pdf'" ngf-max-size="5MB" ngf-resize="{width: 300, height: 500}" />
+                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                        <p><b>Note:</b>Only pdf file.</p>
+
+                        <div ng-hide="hideresume"> <b>Resume:</b>   {{  fileResume }} </div>
+                        <div ng-hide="previewresume"> <b> Resume: </b> {{ resumeFileName }} </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div align="center" id="butk">
+                <button type="submit"  class="btn btn-lg btn-primary" ng-click="UpdateInternProfileDocument()"  @*ng-click="UpdateInternProfile()"*@ ng-disabled="documentreg.$invalid">Save</button>
+            </div>
+            </fieldset>
+    </form>
+    
+</div>

@@ -1,0 +1,101 @@
+﻿html, body {
+    overflow-x: hidden;
+    font-size: 14px;
+    line-height: 1.57142857;
+    font-weight: 400;
+}
+
+h6 {
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: capitalize;
+}
+
+#details {
+    max-width: 840px;
+    margin: 48px auto;
+}
+
+.s {
+    font-size: 14px;
+    line-height: 1.43;
+    font-weight: 600;
+}
+
+.w {
+    line-height: 22px;
+    color: #333;
+    font-weight: 400;
+}
+
+.soft {
+    border: 1px solid #EEE;
+    padding: 24px 24px 0;
+    max-width: 940px;
+    margin: 48px 26px;
+}
+
+.rights {
+    border: 1px solid #EEE;
+    padding: 24px 24px 0;
+    max-width: 940px;
+    margin: 48px 5px;
+}
+
+.typeone {
+    padding: .5rem 1rem;
+    border: 0px solid green;
+    background-color: #ecf0f4;
+    border-radius: 15px;
+    color: black;
+}
+
+.typetwo {
+    padding: .5rem 1rem;
+    border: 0px solid green;
+    background-color: #ecf0f4;
+    border-radius: 15px;
+    color: black;
+    margin-left: 16px;
+}
+
+.aboutskill {
+    border-top: 1px solid #EEE;
+}
+
+    .aboutskill .views {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        padding-bottom: 8px;
+        color: #484848;
+    }
+
+#learn {
+    font-weight: 700 !important;
+    color: #484848;
+}
+
+.learneone {
+    padding: .5rem 1rem;
+    border: 0px solid green;
+    background-color: transparent;
+    border-radius: 15px;
+    color: #008BDC;
+}
+
+.learnetwo {
+    padding: .5rem 1rem;
+    border: 0px solid green;
+    background-color: transparent;
+    border-radius: 15px;
+    color: #008BDC;
+    margin-left: 16px;
+}
+
+.btn-lg {
+    padding: .5rem 1rem !important;
+    font-size: 1.25rem !important;
+    line-height: 1.5 !important;
+    border-radius: .3rem !important;
+}

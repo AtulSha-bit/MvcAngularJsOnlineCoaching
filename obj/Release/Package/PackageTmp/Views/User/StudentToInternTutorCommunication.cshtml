@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "StudentToInternTutorCommunication";
+    Layout = "~/Views/Shared/LayoutIntern.cshtml";
+}
+
+
+<style>
+
+    fieldset {
+        border: 2px solid #3d5a80 !important;
+        padding: 1rem !important
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: table;
+    }
+
+    @@media only screen and (max-width:767) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+
+<h2 class="text-center mt-2"><b><u>Add Intern Tutor Communication</u></b></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="InternStudentToInternTutorInit()" class="m-1" ng-cloak>
+    @* CoursesForBrandTutor GetStudentDetails();GetTutorDetails();ViewStudentCategoryDetails();GetAddedInternships();addcourseinit()     ViewSectionByCategoryTypeForStudent *@
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <form>
+                <fieldset>
+                    <legend>Select All Student</legend>
+                    @*<div class="col-md-6">*@
+                    <!--Student Part-->
+
+                    <div class="form-row">
+                        @*<div class="form-group col-md-6">
+            <label>Select All Intern Tutors </label>
+
+            <input type="checkbox" class="form-control" ng-model="chkAllInternTutors" />
+        </div>*@
+                        <div class="form-group col-md-3"></div>
+                        <div class="form-group col-md-6">
+                            <label><b> Select Intern Tutor</b></label>
+                            <select class="form-control" ng-model="mdlInternshipTutor" ng-options="d.TutorId as d.TutorName for d in InternTutorsData">
+                                <option value="">--Select Intern Tutor--</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3"></div>
+                    </div>
+                    <br />
+
+                  
+                    <div class="form-row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <label><b> Message To Tutors </b></label>
+                            <textarea type="text" class="form-control" ng-model="mdlMsgToInternStudents"></textarea>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+
+                    <div class="form-row text-center mt-1">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <input type="button" value="Sent Message" class="btn btn-primary" ng-click="AddMessageForStudentToInternTutorCommunication();" />
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>

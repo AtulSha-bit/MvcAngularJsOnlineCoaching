@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "BrandTutorStudents";
+    Layout = "~/Views/Shared/_LayoutBrandTutor.cshtml";
+}
+
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    input.form-control, select.form-control {
+        height: 22px !important;
+    }
+</style>
+<br />
+
+<h2 class="text-center"><u><b>Student Details</b></u></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="StudentsOfBrandTutor()" ng-cloak class="mb-5">
+    <div class="m-1">
+        <table ng-table="BrandTutorStudents" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in  $data track by $index">
+                <td data-title="'S.No'">{{$index+1}}</td>
+                <td data-title="'Name'" sortable="'Name'" filter="{'Name':'text'}"> {{ user.Name }} </td>
+                <td data-title="'Username'" sortable="'Username'" filter="{'Username':'text'}"> {{ user.Username }} </td>
+
+                <td data-title="'Mobile'" sortable="'Mobile'" filter="{'Mobile':'text'}"> {{ user.Mobile}} </td>
+                <td data-title="'Email'" sortable="'Email'" filter="{'Email':'text'}"> {{ user.Email}} </td>
+
+                <td data-title="'DOB'" sortable="'DOB'" filter="{'DOB':'text'}"> {{ user.DOB}} </td>
+
+                <td data-title="'Payment Status'" sortable="'PaymentStatus'" filter="{'PaymentStatus':'text'}">
+                    {{ user.PaymentStatus }}
+                </td>
+                <td data-title="'Paid Amount'" sortable="'PaidAmount'" filter="{'PaidAmount':'text'}">
+                    {{ user.PaidAmount }}
+                </td>
+                <td data-title="'Due'" sortable="'Due'" filter="{'Due':'text'}">
+                    {{ user.Due }}
+                </td>
+                <td data-title="'Class Category'" sortable="'CategoryName'" filter="{'CategoryName':'text'}">
+                    {{ user.CategoryName }}
+                </td>
+
+                <td data-title="'Image'">
+                    <img ng-src="~/ProjectImages/{{user.ProfileImage}}" style="height:50px;width:100px" />
+                </td>
+
+                @*<td data-title="'Action'" class="editbtn">
+                        <a href="#" class="btn btn-success" ng-click="editStudentsDetail(user.StudentId)"><i class="fas fa-edit"></i></a>
+                    </td>*@
+            </tr>
+            <tr>
+                <td colspan="23" ng-show="$data =='undefined' || $data =='null' || $data.length==0">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

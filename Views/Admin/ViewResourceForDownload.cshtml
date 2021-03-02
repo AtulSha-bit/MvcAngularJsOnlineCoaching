@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "ViewResourceForDownload";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    form label {
+        color: #3d5a80 !important;
+        font-weight: unset;
+    }
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: inline-table;
+    }
+
+    @@media only screen and (max-width:767px) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+<h2 class="text-center"><b><u>Resources For Download</u></b></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="ViewResourceForDownloadDetails();" ng-cloak>
+    <div class="m-1">
+        <table ng-table="ResourceForDownTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="d in  $data track by $index">
+                <td data-title="'S.No'">{{$index+1}}</td>
+                <td data-title="'File'">
+                    <a href="/Admin/DownloadPublicResource?strFileName={{d.ResourceName}}" target="_blank">
+                        {{d.ResourceName}}
+                    </a>
+                </td>                
+                <td data-title="'Title'">{{d.ResourceTitle}}</td>
+                <td data-title="'Tutor Name'">{{d.TutorName}}</td>
+                @*<td data-title="'Created By'">{{d.CreatedBy}}</td>*@
+                <td data-title="'Created Date'">{{d.DateCreated}}</td>
+                <td data-title="'Approved By Admin'">
+                <input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                @*<td data-title="'Updated By'">{{d.UpdatedBy}}</td>*@
+                <td data-title="'Last Updated'">{{d.LastUpdated}}</td>
+                <td data-title="'#'">
+                    <input type="button" ng-click="UpdateResourseForDownload(d.PublicResourceId,d.IsPublished)" class="btn btn-primary btn-sm" value="Update" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,171 @@
+﻿
+@{
+    ViewBag.Title = "FrequentlyAskedQuestions";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="container">
+    <br /><br />
+    <h2 class="text-center"><b>FAQ</b></h2>
+
+    <div ng-app="app" ng-controller="MyCtrl" ng-init="FAQAdmininit();" ng-cloak>
+        <form name="faqquestions" novalidate>
+            <div class="form-row">
+                <div class="form-group col-md-3"></div>
+                <div class="form-group col-md-6">
+                    <label>Question Type</label>
+                    <select class="form-control" ng-model="FAQQuestionType" required name="faqquestiontype">
+                        <option value="" selected>-- Select Question Type --</option>
+                        <option>Course</option>
+                        <option>Intern</option>
+                        <option>Other</option>
+                    </select>
+                    <span style="color:Red" ng-show="faqquestions.faqquestiontype.$error.required && faqquestions.faqquestiontype.$touched" ng-cloak>
+                        Question Type is required
+                    </span>
+                </div>
+               
+                <div class="form-group col-md-3"></div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="form-group col-md-3"></div>
+                <div class="form-group col-md-6">
+                    <label>Question</label>
+                    <input type="text" class="form-control" name="question" ng-model="FAQQuestion" />
+                    <span style="color:Red" ng-show="faqquestions.question.$error.required && faqquestions.question.$touched" ng-cloak>
+                        Question is required
+                    </span>
+                </div>
+                
+                <div class="form-group col-md-3"></div>
+            </div>
+
+
+
+            <div class="form-row">
+                <div class="form-group col-md-3"></div>
+                <div class="form-group col-md-6">
+                    <label>Answer</label>
+                    <input type="text" class="form-control" required name="answer" ng-model="FAQAnswer" />
+                    <span style="color:Red" ng-show="faqquestions.answer.$error.required && faqquestions.answer.$touched" ng-cloak>
+                        Answer is required
+                    </span>
+                </div>
+               
+                <div class="form-group col-md-3"></div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-3"></div>
+                <div class="form-group col-md-6">
+                    <label>Published</label>
+                    <input type="checkbox" class="form-control" ng-model="IsPublishedForFAQ" />
+                </div>
+                <div class="form-group col-md-3"></div>
+            </div>
+            <br />
+            <div class="form-row">
+                <div class="form-group col-md-3"></div>
+                <div class="form-group col-md-6" align="center">
+
+                    <button type="button" class="btn btn-primary" ng-disabled="faqquestions.$invalid" ng-click="AddFAQ()">Submit</button>
+                </div>
+                <div class="form-group col-md-3"></div>
+            </div>
+        </form>
+
+        <div class="row m-1 mb-5">
+            <table ng-table="ShowFAQ" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                    @if (Session["UserId"] != null)
+                    {
+
+                        if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "SuperAdmin")
+                        {
+                            <td data-title="'S.No'">{{$index+1}}</td>
+                            <td data-title="'Question Type'" sortable="'QuestionType'" filter="{ 'QuestionType': 'text' }">
+                                {{ user.QuestionType }}
+                            </td>
+                            <td data-title="'Question'" sortable="'Question'" filter="{ 'Question': 'text' }">
+                                {{ user.Question }}
+                            </td>
+
+                            <td data-title="'Answer'" sortable="'Answer'" filter="{ 'Answer': 'text' }">
+                                {{ user.Answer  }}
+                            </td>
+
+                            <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">
+                                {{ user.CreatedBy }}
+                            </td>
+
+                            <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                                {{ user.DateCreated }}
+                            </td>
+
+                            @*<td data-title="'Is Published'" sortable="'IsPublished'" filter="{ 'IsPublished': 'text' }">
+                                {{ user.IsPublished }}
+                            </td>*@
+
+                            <td data-title="'Is Published'">
+                                <input type="checkbox" disabled ng-model="user.IsPublished" />
+                            </td>
+
+                            <td data-title="'Updated By'" sortable="'UpdatedBy'" filter="{ 'UpdatedBy': 'text' }">
+                                {{ user.UpdatedBy }}
+                            </td>
+
+                            <td data-title="'Last Updated'" sortable="'LastUpdated'" filter="{ 'LastUpdated': 'text' }">
+                                {{ user.LastUpdated }}
+                            </td>
+
+                            <td data-title="'Action'" class="act">
+
+                                <a href="#" class="btn btn-sm btn-info" ng-click="editFAQ(user)"><i class="fa fa-edit"></i></a>
+                                @if (Session["UserType"].ToString() == "SuperAdmin")
+                                {
+                                    <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteFAQ" ng-click="deleteFrequentlyAsked(user.FAQId)"><i class="fa fa-trash"></i></a>
+                                }
+                            </td>
+                        }
+
+                    }
+
+
+                </tr>
+
+
+                <tr>
+                    <td colspan="7" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                        <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="modal fade" data-backdrop="static" id="deleteFAQ">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a href="#" class="close" data-
+                           dismiss="modal">&times;</a>
+                    </div>
+
+                    <div class="modal-body">
+                        Are you sure?
+                        You want to delete this record
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                        <a class="btn btn-success" ng-click="DeleteFAQ(user.FAQId)">Confirm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

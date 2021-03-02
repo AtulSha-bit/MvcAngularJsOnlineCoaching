@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "StudentprofileCommunication";
+    Layout = "~/Views/Shared/_LayoutStudents.cshtml";
+}
+
+
+<h2 class="text-center"><b><u>Communication</u></b></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetCommunicationByStudentId('All-Students-Course','All-Brand-Students');">
+
+    <table ng-repeat="user in BrandStudentMsgByUserId" class="table-bordered table-hover table-condensed table-responsive m-1">
+        <tr>
+            <td data-title="'Sno'">Sno</td>
+            <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }">
+                {{ user.Message }}
+            </td>
+            <td data-title="'Date'" sortable="'Date'" filter="{ 'Date': 'text' }">
+                {{ user.DateCreated }}
+            </td>
+        </tr>
+    </table>
+</div>

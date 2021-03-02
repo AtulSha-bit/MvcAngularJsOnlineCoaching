@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "Careers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Css/career.css" rel="stylesheet" />
+<div class="row">
+    <h2>Jobs At SITSPL</h2>
+</div>
+<div class="row">
+
+    <div class="col-md-12" id="cand">
+        <div class="data text-center">
+            <small @*style="color:#77b3f3"*@> Fill up the form below and you will be short listed in the next round of recruitment.</small>
+        </div>
+
+        <h3 class="mt-4 mb-5 text-center"><u>Candidate Registration Page</u></h3>
+
+        <form>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Name</label>
+                <div class="col-sm-9" id="namee">
+                    <div class="col-sm-2">
+                        <select class="custom-select-sm">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <option selected>---Select---</option>
+                            <option value="1">Dr.</option>
+                            <option value="2">Mr.</option>
+                            <option value="3">Mrs.</option>
+                            <option value="3">Ms.</option>
+                            <option value="3">Prof.</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="FirstName">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="LasttName">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Post graduation</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Graduation</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control form-control-sm" id="colFormLabelSm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Other qualifications, if any</label>
+                <div class="col-sm-9">
+
+                    <input type="email" class="form-control form-control-sm" id="colFormLabelSm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Gender</label>
+                <div class="col-sm-9" id="gender">
+                    @*<input type="email" class="form-control form-control-sm" id="colFormLabelSm" >*@
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline1">Male</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">Female</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline3">Others</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Date of birth</label>
+                <div class="col-sm-9">
+                    <input type="date" class="form-control form-control-sm" id="colFormLabelSm">
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Home phone</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Cell phone</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Email id</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control form-control-sm" id="colFormLabelSm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Place</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">State</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control form-control-sm" id="colFormLabelSm">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Position applying for</label>
+                <div class="col-sm-9">
+                    <select class="custom-select custom-select-sm">
+                        <option selected>---Select---</option>
+                        <option value="1">Academic Director</option>
+                        <option value="2">Quality Control</option>
+                        <option value="3">Teacher</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Preferred subject(For teachers only)</label>
+                <div class="col-sm-9">
+                    <select class="custom-select custom-select-sm">
+                        <option selected>---Select---</option>
+                        <option value="1">Hindi</option>
+                        <option value="2">English</option>
+                        <option value="3">Math</option>
+                        <option value="3">Chemistry</option>
+                        <option value="3">Biology</option>
+                        <option value="3">Physics</option>
+                        <option value="3">Computer</option>
+                        <option value="3">Economics</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Resume</label>
+                <div class="col-sm-9">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row text-center mt-5">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

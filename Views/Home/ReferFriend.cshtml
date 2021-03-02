@@ -1,0 +1,167 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "ReferFriend";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Css/Refer.css" rel="stylesheet" />
+<div class="row">
+    <h2>Refer a Friend, Earn a Reward</h2>
+</div>
+<div class="row" ng-app="app" ng-controller="MyCtrl" ng-init="referfriendinit();" ng-clock>
+    <div class="col-md-12">
+        <form name="validatereferfriend" novalidate>
+            <fieldset>
+                <legend>Reference Form</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset>
+                            <legend>Refering person details</legend>
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mt-2">
+
+                                    <input type="text" class="form-control" required name="referbyname" ng-model="mdlReferByName" placeholder="Name" ng-pattern="/^[a-z A-Z]+$/" autocomplete="off" />
+                                    <span style="color:Red" ng-show="validatereferfriend.referbyname.$error.required && validatereferfriend.referbyname.$touched" ng-cloak>
+                                        Refer Name is required
+                                    </span>
+                                    <span style="color:Red" ng-show="validatereferfriend.referbyname.$dirty && validatereferfriend.referbyname.$error.pattern" ng-cloak>
+                                      Refer Name must contain alphabets (A-Z and a-z) only
+                                    </span>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mt-2">
+
+                                    <input type="text" class="form-control" autocomplete="off" ng-pattern="/^[6-9][0-9]{9}$/" maxlength="10" required name="mobile" ng-model="mdlReferByMobile" placeholder="Mobile" />
+                                    <span style="color:Red" ng-show="validatereferfriend.mobile.$error.required && validatereferfriend.mobile.$touched" ng-cloak>
+                                        Refer Mobile is required
+                                    </span>
+                                    <span style="color:Red" ng-show="validatereferfriend.mobile.$dirty && validatereferfriend.mobile.$error.pattern" ng-cloak>
+                                        10 digits only must start with 6,7,8,9
+                                    </span>
+                                </div>
+
+                  
+
+
+                                <div class="form-group col-md-6 mt-2">
+                                    <input type="text" class="form-control" required name="referbyemail" ng-pattern="emailregularex" ng-model="mdlReferByEmail" placeholder="Email" />
+                                    <span style="color:Red" ng-show="validatereferfriend.referbyemail.$error.required && validatereferfriend.referbyemail.$touched" ng-cloak>
+                                        Refer Email is required
+                                    </span>
+                                    <span style="color:Red" ng-show="validatereferfriend.referbyemail.$dirty && validatereferfriend.referbyemail.$error.pattern" ng-cloak>
+                                        Invalid Email
+                                    </span>
+                                </div>
+
+
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset>
+                            <legend>Refered person details</legend>
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mt-2">
+                                    <input type="text" class="form-control" required name="refertoname"  ng-model="mdlReferToName" ng-pattern="/^[a-z A-Z]+$/" autocomplete="off" placeholder="Name" />
+                                    <span style="color:Red" ng-show="validatereferfriend.refertoname.$error.required && validatereferfriend.refertoname.$touched" ng-cloak>
+                                        Refer To Name is required
+                                    </span>
+                                    <span style="color:Red" ng-show="validatereferfriend.refertoname.$dirty && validatereferfriend.refertoname.$error.pattern" ng-cloak>
+                                        Refer To Name must contain alphabets (A-Z and a-z) only
+                                    </span>
+                                </div>
+                                <div class="form-group col-md-6 mt-2">
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                
+                                <div class="form-group col-md-6 mt-2">
+                                    <input type="text" class="form-control" required name="refertomobile" autocomplete="off" maxlength="10" ng-pattern="/^[6-9][0-9]{9}$/" ng-model="mdlReferToMobile" placeholder="Mobile" />
+                                    <span style="color:Red" ng-show="validatereferfriend.refertomobile.$error.required && validatereferfriend.refertomobile.$touched" ng-cloak>
+                                        Refer To Mobile is required
+                                    </span>
+                                    <span style="color:Red" ng-show="validatereferfriend.refertomobile.$dirty && validatereferfriend.refertomobile.$error.pattern" ng-cloak>
+                                        10 digits only must start with 6,7,8,9
+                                    </span>
+
+
+                                </div>
+                                <div class="form-group col-md-6 mt-2">
+                                    <input type="text" class="form-control" required name="refertoemail" ng-pattern="emailregularexp" ng-model="mdlReferToEmail" placeholder="Email address" />
+                                    <span style="color:Red" ng-show="validatereferfriend.refertoemail.$error.required && validatereferfriend.refertoemail.$touched" ng-cloak>
+                                        Refer To Email is required
+                                    </span>
+                                    <span style="color:Red" ng-show="validatereferfriend.refertoemail.$dirty && validatereferfriend.refertoemail.$error.pattern" ng-cloak>
+                                        Invalid Email
+                                    </span>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="form-row justify-content-center mt-4">
+                    <button type="submit" class="btn btn-sm btn-primary" ng-disabled="validatereferfriend.$invalid" ng-click="SendOtpForRefer()">Refer Now</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="modal fade" data-backdrop="static" id="verifyEmailOtpRefer">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group">
+
+                        <label>Verify Email OTP</label>
+                        <input type="text" class="form-control" ng-model="VerifyOTPForRefer" />
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    <button class="btn btn-success" ng-click="ConfirmReferOtp()">Confirm</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="refer">
+    <p>
+        When a Current Customer refers  a New Customer, the Referring Customer earns the following Referral Credit
+        ”Free Tutoring” for a month (1 month or 8 sessions whichever is less)<br /><br />
+
+        If the Current Customer refers 5 or more New Customers within 3 months, Referring Customer earns double the reward<br /><br />
+
+        “Free Tutoring” for 10 months (1 month or 8 sessions whichever is less, for 10 months)
+    </p>
+    <p1>Terms and Conditions.</p1><br />
+    <p>
+        Referral Credit will be applied after the second billing of the New Customer <br /> <br />
+
+        Referring Customer will get a credit equivalent to the billing amount of the New Customer ( full month advance billing) or the billing amount of the Referring Customer whichever is less, subject to a maximum of $ 120<br /> <br />
+
+        The Referring Customer’s, as well as the New Customer’s account, must be current and in good standing. <br /> <br />
+
+        Referral Credit will be applied to the billing amount of the Referring Customer <br /> <br />
+
+        If there are more than one referrals in a month, the balance of credits will be applied in subsequent monthly billing <br /> <br />
+
+        Either the current customer can identify the family they are referring to or the new customer can identify the source of the referral. <br />
+    </p>
+</div>

@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewBag.Title = "AddBatch";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    fieldset {
+        border: 2px solid #3d5a80 !important;
+        padding: 1rem !important
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+</style>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="addbatchinit()">
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <form name="batchadd" novalidate>
+                <fieldset>
+                    <legend>Batch</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+
+                            <label>Batch Size</label>
+                            <input type="text" ng-model="BatchSize" class="form-control"
+                                   autocomplete="off" required name="batchsize" />
+                            <span style="color:Red" ng-show="batchadd.batchsize.$error.required && batchadd.batchsize.$touched" ng-cloak>
+                                Batch Size is required
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="publish">Publish</label>
+                            <input type="checkbox" class="form-control" name="IsPublished" ng-model="mdlBatchIsPublished" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="description">Description</label>
+                            <textarea autocomplete="off" class="form-control" rows="3" cols="30" ng-model="Description" id="description" name="description" maxlength="100" autocomplete="off">
+                                        </textarea>
+                        </div>
+                    </div>
+                    <div class="form-row text-center">
+                        <div class="form-group col-md-12">
+                            <button type="submit" class="btn btn-primary" ng-disabled="batchadd.$invalid" ng-click="saveBatch()">Save</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+    <br />
+    <div class="row m-1 mb-5">
+        <table ng-table="ShowBatchdata" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                @if (Session["UserId"] != null)
+                {
+
+                    if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "SuperAdmin")
+                    {
+                        <td data-title="'Sno'">{{$index+1}}</td>
+                        <td data-title="'Batch Size'" sortable="'BatchSize'" filter="{ 'BatchSize': 'text' }">
+                            {{ user.BatchSize }}
+                        </td>
+
+                        <td data-title="'Description'" sortable="'Description'" filter="{ 'Description': 'text' }">
+                            {{ user.Description  }}
+                        </td>
+
+                        <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">
+                            {{ user.CreatedBy }}
+                        </td>
+
+                        <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                            {{ user.DateCreated }}
+                        </td>
+
+                        @*<td data-title="'Is Published'" sortable="'IsPublished'" filter="{ 'IsPublished': 'text' }">
+                                {{ user.IsPublished }}
+                            </td>*@
+
+                        <td data-title="'Is Published'">
+                            <input type="checkbox" disabled ng-model="user.IsPublished" />
+                        </td>
+
+                        <td data-title="'Updated By'" sortable="'UpdatedBy'" filter="{ 'UpdatedBy': 'text' }">
+                            {{ user.UpdatedBy }}
+                        </td>
+
+                        <td data-title="'Last Updated'" sortable="'LastUpdated'" filter="{ 'LastUpdated': 'text' }">
+                            {{ user.LastUpdated }}
+                        </td>
+
+                        <td data-title="'Action'" class="act">
+
+                            <a href="#" class="btn btn-sm btn-info" ng-click="editBatch(user)"><i class="fa fa-edit"></i></a>
+                            @if (Session["UserType"].ToString() == "SuperAdmin")
+                            {
+                                <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteBatchSize" ng-click="deleteBatchById(user.BatchId)"><i class="fa fa-trash"></i></a>
+                            }
+                        </td>
+                    }
+                }
+
+            </tr>
+            <tr>
+                <td colspan="7" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal fade" data-backdrop="static" id="deleteBatchSize">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-
+                       dismiss="modal">&times;</a>
+                </div>
+                <div class="modal-body">
+                    Are you sure?
+                    You want to delete this record
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    <a class="btn btn-success" ng-click="DeleteBatch(user.BatchId)">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

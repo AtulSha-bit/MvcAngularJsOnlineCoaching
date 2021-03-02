@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "ShowCourseStructure";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Admin/Login");
+    }
+}
+<link href="~/Content/fontawesome-all.min.css" rel="stylesheet" />
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    input.form-control, select.form-control {
+        height: 22px !important;
+    }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="courseDetailInit()">
+    <br />
+
+    <h2 class="text-center"><b><u>Course Structure Details</u></b></h2>
+    <div class="row m-1">
+
+        <table ng-table="CourseDetail" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                @if (Session["UserId"].ToString() != null)
+                {
+                    if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "SuperAdmin")
+                    {
+                        <td data-title="'S.No'">{{ $index+1}}</td>
+
+                        <td data-title="'Course'" filter="{ 'Course':'text' }" sortable="'Course'"> {{ user.Course}} </td>
+                        <td data-title="'Duration'" sortable="'strDuration'" filter="{'strDuration':'text'}"> {{ user.strDuration }} </td>
+                        <td data-title="'Category Name'" sortable="'CategoryName'" filter="{ 'CategoryName':'text'}">
+                            {{ user.CategoryName}}
+                        </td>
+
+                        <td data-title="'SubCategoryName'" sortable="'SubCategoryName'" filter="{ 'SubCategoryName':'text'}">
+                            {{ user.SubCategoryName}}
+                        </td>
+
+                        <td data-title="'Fees'" sortable="'Fees'" filter="{ 'Fees':'text' }" style="text-align:right">
+                            {{ user.Fees}}
+                        </td>
+                        <td data-title="'Discount'" sortable="'Discount'" filter="{ 'Discount':'text'}" style="text-align:center">
+                            {{ user.Discount}}
+                        </td>
+                        <td data-title="'NetAmount'" sortable="'NetAmount'" filter="{ 'NetAmount':'text'}" style="text-align:right">
+                            {{ user.NetAmount}}
+                        </td>
+
+                        <td data-title="'Batch Size'" sortable="'BatchSize'" filter="{ 'BatchSize':'text'}">
+                            {{ user.BatchSize}}
+                        </td>
+
+                        <td data-title="'ValidFrom'" sortable="'ValidFrom'" filter="{ 'ValidFrom':'text'}">
+                            {{ user.ValidFrom}}
+                        </td>
+
+                        <td data-title="'ValidTo'" sortable="'ValidTo'" filter="{ 'ValidTo':'text' }">{{ user.ValidTo}}</td>
+                        <td data-title="'CreatedDate'" sortable="'CreatedDate'" filter="{ 'CreatedDate':'text' }"> {{ user.CreatedDate}} </td>
+
+                        <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy':'text' }"> {{ user.CreatedBy }} </td>
+
+                        <td data-title="'Last Updated'" sortable="'LastUpdated'" filter="{ 'LastUpdated':'text' }"> {{ user.LastUpdated}} </td>
+
+                        <td data-title="'Updated By'" sortable="'UpdatedBy'" filter="{'UpdatedBy':'text'}"> {{ user.UpdatedBy }} </td>
+
+                        <td data-title="'Action'">
+                            <a href="#" class="btn btn-sm btn-info" ng-click="editCourseDetail(user.CourseId,user.StructureId)"><i class="fa fa-edit"></i></a>
+                            @if (Session["UserType"].ToString() == "SuperAdmin")
+                            {
+                                <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal"
+                                   ng-click="deleteCourseStructure(user.CourseId,user.StructureId)"><i class="fa fa-trash"></i></a>
+                            }
+                        </td>
+                    }
+
+                }
+
+            </tr>
+
+            <tr>
+                <td colspan="15" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="modal fade" data-backdrop="static" id="deleteModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-
+                       dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    Are you sure?
+                    You want to delete this record
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    <a class="btn btn-success" ng-click="DeleteCourseStructure(user.CourseId)">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

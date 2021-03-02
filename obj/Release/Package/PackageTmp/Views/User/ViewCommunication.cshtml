@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "ViewCommunication";
+    Layout = "~/Views/Shared/LayoutIntern.cshtml";
+}
+<br />
+<br />
+<h2 class="text-center"><b><u>View Communication</u></b></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="ViewCommunicationDetails();" class="m-3">
+    <div ng-repeat="d in Communication">
+        <div>{{d.MessageAllTeachers}}</div>
+        <div>{{d.MessageAllStudents}}</div>
+        <div>{{d.MessageAll}}</div>
+    </div>
+</div>
+

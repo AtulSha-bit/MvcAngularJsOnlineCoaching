@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Communication";
+    Layout = "~/Views/Shared/_LayoutInternTutor.cshtml";
+}
+
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 43px;
+    }
+
+    input.form-control, select.form-control {
+        height: 22px !important;
+    }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetInternTutorCommunicationById('All-Intern-Tutor')" ng-cloak>
+    <br />
+    <h2 style="text-align:center"><b><u>Admin Communication</u></b></h2>
+    <div class="row m-1">
+        <table ng-table="AdminToInternTutorCommunicationMsg" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                <td data-title="'S.No'">{{$index+1}}</td>
+               
+
+                <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }">
+                    {{ user.Message }}
+                </td>
+
+                <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                    {{ user.DateCreated }}
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="4" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <br />
+    </div>
+</div>
+
+
+
+
+@*<br />
+<div class="top" ng-init="GetInternTutorCommunicationById('All-Intern-Tutor')">
+    <h2 class="text-center"><b><u>Communication/Information</u></b></h2>
+
+</div>
+<form class="inner2">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row" ng-repeat="d in CommInternTutorByUserId">
+                    <div class="col-md-6 border">
+                        <b>Message For You:</b><br />
+                        <p class="text-justify">{{d.Message}}</p>
+                    </div>
+
+                    <div class="col-md-6 border">
+                        <b>Message All:</b><br />
+                        <p class="text-justify">{{d.MessageAll}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row" ng-repeat="d in CommInternTutorForAll">
+                    <div class="col-md-6 border">
+                        <b>Message To All Students:</b><br />
+                        <p class="text-justify">{{d.MessageAllStudents}}</p>
+                    </div>
+                    <div class="col-md-6 border">
+                        <b>Message All:</b><br />
+                        <p class="text-justify">{{d.MessageAll}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>*@

@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "BrandTutorToAdmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 43px;
+    }
+
+    input.form-control, select.form-control {
+        height: 22px !important;
+    }
+</style>
+@*GetCourseTutorToAdminMessageInit*@
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetBrandTutorToAdminMessageInit()" ng-cloak>
+    <br />
+    <h2 style="text-align:center"><b><u>View Brand Tutor To Admin </u></b></h2>
+    <br />
+    <div class="row m-1">
+        <table ng-table="BrandTutorToAdminOutgoinMsg" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                <td data-title="'S.No'">{{$index+1}}</td>
+                <td data-title="'Tutor Name'" sortable="'TutorName'" filter="{ 'TutorName': 'text' }">
+                    {{ user.TutorName }}
+                </td>
+
+                @*<td data-title="'Email'" sortable="'Email'" filter="{ 'Email': 'text' }">
+                        {{ user.Email }}
+                    </td>*@
+
+                <td data-title="'Course Name'" sortable="'CourseName'" filter="{ 'CourseName': 'text' }">
+                    {{ user.CourseName }}
+                </td>
+
+                <td data-title="'Tutor Email'" sortable="'TutorEmail'" filter="{ 'TutorEmail': 'text' }">
+                    {{ user.TutorEmail }}
+                </td>
+
+                <td data-title="'DOB'" sortable="'DOB'" filter="{ 'DOB': 'text' }">
+                    {{ user.DOB }}
+                </td>
+
+                <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }">
+                    {{ user.Message }}
+                </td>
+
+                @*<td data-title="'User Type'" sortable="'UserType'" filter="{ 'UserType': 'text' }">
+                        {{ user.UserType }}
+                    </td>
+
+                    <td data-title="'Category Type'" sortable="'CategoryType'" filter="{ 'CategoryType': 'text' }">
+                        {{ user.CategoryType }}
+                    </td>*@
+
+                <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">
+                    {{ user.CreatedBy }}
+                </td>
+
+
+                <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                    {{ user.DateCreated }}
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="4" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <br />
+    </div>
+</div>

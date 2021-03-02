@@ -1,0 +1,899 @@
+﻿@{
+    ViewBag.Title = "InternshipStructure";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<title>Internship Structure</title>
+<link href="~/Css/CourseListdetails.css" rel="stylesheet" />
+<style>
+    @@media (min-width: 576px) {
+        .modal-dialog {
+            max-width: 800px;
+            margin: 1.75rem auto;
+        }
+    }
+</style>
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+    .ng-cloak, .x-ng-cloak,
+    .ng-hide {
+        display: none !important;
+    }
+
+    fieldset {
+        border: 2px solid #3d5a80 !important;
+        padding: 1rem !important
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+
+    .b {
+        position: relative;
+        left: 44%;
+        top: 50%;
+    }
+</style>
+
+<body ng-app="app" ng-controller="MyCtrl" ng-init="internshipstructureInit();ViewCourse();getInternStructureById();">
+    @*GetInternashipDataById();*@
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 mt-1 mb-5">
+            <h2 class="text-center mt-1"><b><u>Add Internship Structure</u></b></h2>
+            <form name="internshipdetails" novalidate>
+                <fieldset>
+                    <legend>Information</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Publish</label>
+                            <input type="checkbox" class="form-control" ng-model="mdlInternStrIsPublished" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Internship</label>
+                            <select id="inputState" class="form-control" name="internship" ng-model="Internship"
+                                    ng-options="item.InternshipId as item.InternshipName for item in InternshipData" ng-change="getInternshipName(Internship)" required>
+                                <option value="" selected>-- Select Internship --</option>
+                            </select>
+
+                            <span style="color:Red" ng-show="internshipdetails.internship.$error.required && internshipdetails.internship.$dirty" ng-cloak>
+                                Internship is required
+                            </span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputdob">Last Apply Date</label>
+
+                            <input class="form-control"
+                                   placeholder=""
+                                   moment-picker="mntLastApply"
+                                   format="DD/MM/YYYY"
+                                   start-view="day"
+                                   ng-model="LastApplyDate"
+                                   ng-model-options="{ updateOn: 'blur' }">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Duration</label>
+
+                            @*<select class="form-control" ng-model="strDurationInternshipStructure" name="duration"
+                ng-options="item as item.DurationName for item in DurationsData track by item.DurationId" required>
+            ng-options="item.DurationId as item.DurationName for item in DurationsData" required>
+            <option value="" selected> -- Select  Duration --</option>
+        </select>  @*ng-change="getDurationNameForIS(strDurationInternshipStructure)"*@
+
+                        <select class="form-control" ng-model="strDurations" name="duration"
+                                ng-options="item.DurationId as item.DurationName for item in DurationsData" ng-change="getInternshipDuration(strDurations)" required>
+                            <option value="" selected>Select Duration</option>
+
+                        </select>
+
+                            @*<select class="form-control" ng-model="strDurations"
+                                    name="duration"
+                                    ng-options="item as item.DurationName for item in DurationsData track by item.DurationId" required>
+                                <option value="" selected>Select Duration</option>
+                            </select>*@
+
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Total Available Seat</label>
+                            <input type="text" class="form-control" ng-model="TotalAvailableSeat" name="totalavailableseat">
+                        </div>
+                        <div class="form-group col-md-6">
+
+                            <label for="inputState">Internship Type</label>
+                            <select class="form-control" ng-model="InternshipType" name="internshiptype"
+                                    ng-change="getinternshiptype()" required>
+                                <option value="" selected>-- Select Internship Type --</option>
+                                <option>Paid</option>
+                                @*
+        <option>Free</option>
+        <option>Stipened</option>*@
+                            </select>
+
+                            <span style="color:Red" ng-show="internshipdetails.internshiptype.$error.required && internshipdetails.internshiptype.$dirty" ng-cloak>
+                                Internship Type is required
+                            </span>
+                        </div>
+                    </div>
+                    <div ng-hide="hidefeescolumns">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress">Fees</label>
+                                <input type="text" class="form-control" id="inputAddress" ng-model="Fees" ng-blur="getInternshipNetAmount()" name="fees" required>
+                                <span style="color:Red" ng-show="internshipdetails.fees.$error.required && internshipdetails.fees.$dirty" ng-cloak>
+                                    Fees is required
+                                </span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress2">Discount(%)</label>
+                                <input type="text" class="form-control" id="inputAddress3" ng-model="Discount" ng-blur="netamountInternshipwithdiscount()"
+                                       name="discount">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress2">Fee After Discount</label>
+                                <input type="text" class="form-control" ng-model="FeeAfterDiscount" name="feeafterdiscount" disabled required>
+                                <span style="color:Red" ng-show="internshipdetails.feeafterdiscount.$error.required && internshipdetails.feeafterdiscount.$dirty" ng-cloak>
+                                    Fee After Discount is required
+                                </span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress2">Net Amount</label>
+                                <input type="text" class="form-control" id="inputAddress2" ng-model="NetAmount" name="netamount" disabled required>
+                                <span style="color:Red" ng-show="internshipdetails.netamount.$error.required && internshipdetails.netamount.$dirty" ng-cloak>
+                                    Net Amount is required
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputdob">Valid From</label>
+                            <input class="form-control"
+                                   placeholder=""
+                                   moment-picker="mntValidFrom"
+                                   format="DD/MM/YYYY"
+                                   start-view="day"
+                                   ng-model="ValidFrom" ng-blur="validateInternshipFromDate()"
+                                   ng-model-options="{ updateOn: 'blur' }" name="validfrom" required />
+                            <span style="color:Red" ng-show="internshipdetails.validfrom.$error.required && internshipdetails.validfrom.$dirty" ng-cloak>
+                                Valid From is required
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputdob">Valid To</label>
+                            <input class="form-control"
+                                   placeholder=""
+                                   moment-picker="mntValidTo"
+                                   format="DD/MM/YYYY"
+                                   start-view="day"
+                                   ng-model="ValidTo" ng-blur="validateInternshipToDate()"
+                                   ng-model-options="{ updateOn: 'blur' }" name="validto" required />
+                            <span style="color:Red" ng-show="internshipdetails.validto.$error.required && internshipdetails.validto.$dirty" ng-cloak>
+                                Valid To is required
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row" ng-hide="showStipened">
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Stipened</label>
+                            <input type="text" class="form-control" ng-model="StipenedMoney" name="stipenedmoney">
+                        </div>
+                    </div>
+                </fieldset>
+
+                @*  item as item.DurationName for item in DurationsData track by item.DurationId*@
+
+                <!--===========================Internship New Points 25 Aug 2020 By Dilshad A. on 25 Aug 2020================================-->
+                <!-- =============Bullet Points ================-->
+
+                <fieldset>
+                    <legend>Bullet Points</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label>Publish</label>
+                            <input type="checkbox" ng-model="mdlBulletIsPublished" class="form-control" />
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label>Bullet Point</label>
+                            <input type="text" class="form-control" ng-model="mdlInternBulletPoint">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="b">
+                                <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultipleInternBulletPoints();" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <table class="table table table-striped">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Publish</th>
+                                    <th>Point</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr ng-repeat="d in arrInterBullet">
+                                    <td>{{$index+1}}</td>
+                                    <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                    <td>
+                                        <input type="text" class="form-control" ng-model="d.BulletPoint">
+                                    </td>
+                                    <td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeleteBulletPoints($index);" /></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- ============= END Bullet Points ================-->
+                <!-- ============= Skills Required for Internship ================-->
+
+
+                <fieldset>
+                    <legend>Skills Required</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label>Publish</label>
+                            <input type="checkbox" ng-model="mdlSkillIsPublished" class="form-control" />
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label>Skill</label>
+                            <input type="text" class="form-control" ng-model="CourseName" />
+                            @*<select class="form-control" ng-model="mdlCourseIdSkill" ng-options="d as d.Course for d in CourseRecords track by d.CourseId">
+                                <option value="">--Select--</option>
+                                <option value="{{ d.CourseId }}">{{ d.Course}}</option>
+                            </select>*@
+
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="b">
+                                <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultipleInternSkill();" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <table class="table table table-striped">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Publish</th>
+                                    <th>Course</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr ng-repeat="d in arrInterSkill">
+                                    <td>{{$index+1}}</td>
+                                    <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                    @*
+                                    <td>{{d.Course}}</td>*@
+                                    <td><input type="text" ng-model="d.CourseName" class="form-control" /></td>
+                                    <td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeleteInternSkills($index);" /></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+
+
+                <!-- ============= Skills Required for internship ================-->
+                <!-- ============= Who Can Apply for Internship ================-->
+
+                <fieldset>
+                    <legend>Who Can Apply</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label>Publish</label>
+                            <input type="checkbox" ng-model="mdlApplyPublished" class="form-control" />
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label>Point</label>
+                            <input type="text" class="form-control" ng-model="mdlWhoCanApply">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="b">
+                                <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultipleWhoCanApply();" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <table class="table table table-striped">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Publish</th>
+                                    <th>Point</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr ng-repeat="d in arrWhoCanApply">
+                                    <td>{{$index+1}}</td>
+                                    <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                    <td>
+                                        <input type="text" class="form-control" maxlength="256" ng-model="d.ApplyPoint">
+                                    </td>
+                                    <td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeleteWhoCanApply($index);" /></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- ============= END Who Can Apply for internship ================-->
+                <!-- ============= Perks for Internship ================-->
+
+                <fieldset>
+                    <legend>Perks</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label>Publish</label>
+                            <input type="checkbox" ng-model="mdlPerkPublished" class="form-control" />
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label>Point</label>
+                            <input type="text" class="form-control" maxlength="64" ng-model="mdlPerks" />
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="b">
+                                <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultiplePerks();" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <table class="table table table-striped">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Publish</th>
+                                    <th>Point</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr ng-repeat="d in arrPerks">
+                                    <td>{{$index+1}}</td>
+                                    <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                    <td>
+                                        <input type="text" class="form-control" maxlength="64" ng-model="d.PerkName" />
+                                    </td>
+                                    <td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeletePerks($index);" /></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- ============= END Perks for internship ================-->
+                <!-- ============= Activities for Internship ================-->
+                @*<select class="form-control" ng-model="mdlInternActivityType">
+                    <option value="">--Select--</option>
+                    <option value="Online">Online</option>
+                    <option value="Offline">Offline</option>
+                </select>*@
+
+
+                @*      item as item.DurationName for item in DurationData track by item.DurationId*@
+                @* Old Working with Id: item.InternActivityTypeId as item.InternActivityType for item in InternshipActivityTypeData
+                item.InternActivityTypeId as item.InternActivityType for item in InternshipActivityTypeData*@
+
+
+                <div ng-show="showActivitytypeInsert">
+                    <fieldset>
+                        <legend>Activity</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label>Publish</label>
+                                <input type="checkbox" ng-model="mdlActivityPublished" class="form-control" />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Activity Type</label>
+
+                                <select class="form-control" ng-model="mdlInternActivityType"
+                                        ng-options="item as item.InternActivityType for item in InternshipActivityTypeData track by item.InternActivityTypeId" required>
+                                    <option value=""> -- Select Intern Activity Type --</option>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group col-md-3">
+                                <label>Point</label>
+                                <input type="text" class="form-control" maxlength="128" ng-model="mdlActivity">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <div class="b">
+                                    <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultipleActivity();" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <table class="table table table-striped">
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Publish</th>
+                                        <th>Type</th>
+                                        <th>Point</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr ng-repeat="d in arrActivity">
+                                        <td>{{$index+1}}</td>
+                                        <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                        <td>{{d.ActivityTypeId}}</td>
+                                        <td>
+                                            <input type="text" class="form-control" maxlength="128" ng-model="d.ActivityPoint">
+                                        </td>
+                                        <td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeleteActivity($index);" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div ng-show="hideActivityType">
+                    <fieldset>
+                        <legend>Activity (Update)</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label>Publish</label>
+                                <input type="checkbox" ng-model="mdlActivityPublished" class="form-control" />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Activity Type</label>
+
+                                <select class="form-control" ng-model="mdlInternActivityType"
+                                        ng-options="item as item.InternActivityType for item in InternshipActivityTypeData track by item.InternActivityTypeId">
+                                    <option value=""> -- Select Intern Activity Type --</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label>Point</label>
+                                <input type="text" class="form-control" maxlength="128" ng-model="mdlActivity">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <div class="b">
+                                    <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultipleActivity();" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <table class="table table table-striped">
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Publish</th>
+                                        <th>Type</th>
+                                        <th>Point</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr ng-repeat="d in arrActivity">
+                                        <td>{{$index+1}}</td>
+                                        <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                        <td>{{d.ActivityTypeId}}</td>
+                                        <td>
+                                            <input type="text" class="form-control" maxlength="128" ng-model="d.ActivityPoint">
+                                        </td>
+                                        <td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeleteActivity($index);" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+
+
+                <!-- ============= END Activities for internship ================-->
+                <!--===========================END Internship New Points 25 Aug 2020 By Dilshad A. on 25 Aug 2020================================-->
+
+                <div class="form-row text-center mt-1">
+
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-warning" ng-show="InsertBtn" ng-click="saveInternshipDetails()">
+                            Add
+                        </button>
+                    </div>
+
+                </div>
+                <div class="form-row text-center mt-1">
+
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-success" ng-show="UpdateBtn" ng-click="updateInternshipDetails()">
+                            Update
+                        </button>
+                    </div>
+
+                </div>
+                <div class="form-row mt-1">
+                    <div class="col-md-12">
+                        <input type="button" value="Preview" ng-click="InterStucturePreview();" class="btn btn-info" />
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+        <div class="col-lg-1"></div>
+        <!--================Preview Before Submit By Dilshad On 27 Aug 2020===========================-->
+        <div class="row">
+            <!-- Modal -->
+            <div id="interPreview" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Internship Preview </h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="col-md-12">
+                                <h3 style="text-transform:capitalize;text-align:center"><b><u>
+    <span class="s" ng-if="InternshipNames !== undefined"> {{ InternshipNames }} </span>
+    <span class="s" ng-if="InternshipNames === undefined"> {{ InternshipNameOnEdit }} </span>
+</u></b></h3>
+                            </div>
+
+                            <div class="soft" style="">
+                                <div class="row">
+
+                                    <br />
+                                    <div class="col-md-12">
+                                        <a href="" style="color: #8A8A8A;">
+
+                                            @*SkillBit*@
+                                            <span class="s" ng-if="InternshipNames !== undefined"> {{ InternshipNames }} </span>
+                                            <span class="s" ng-if="InternshipNames === undefined"> {{ InternshipNameOnEdit }} </span>
+                                            
+                                        </a>
+                                    </div>
+                                    <div class="col-md-12 pt-3">
+                                        <a href="" style="color: #8A8A8A;">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                            <span class="w">
+                                                Work From Home
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-md-3 text-left" id="item">
+                                        <i class="fa fa-play-circle" aria-hidden="true">&nbsp;START&nbsp;DATE</i>
+                                        <p>{{mntValidFrom}}</p>
+                                    </div>
+                                    <div class="col-md-3 text-left">
+                                        <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+                                        @* {{strDurations}}*@
+                                        @*<p ng-if="strDurations.DurationName !== undefined">{{strDurations.DurationName}}</p>*@
+                                        <p ng-if="DurationNames !== undefined">{{DurationNames}}</p>
+                                        
+                                        <p ng-if="DurationNames === undefined">{{DurationName}}</p>
+                                       @* <p ng-if="strDurations.DurationName === undefined || strDurations.DurationName === ''">Immediate</p>*@
+                                    </div>
+                                    <div class="col-md-3 text-left">
+                                        <i class="fa fa-money" aria-hidden="true">&nbsp;STIPEND</i>
+                                        <p>Immediate</p>
+                                    </div>
+                                    <div class="col-md-3 text-left">
+                                        <i class="fa fa-hourglass-end" aria-hidden="true">&nbsp;APPLY BY</i>
+                                        @*<p>{{mntValidTo}}</p>*@
+                                        <p>{{ mntLastApply }}</p>
+                                    </div>
+                                </div>
+                                <div class=" row type mt-5">
+                                    <div class="col-md-6">
+                                        <span class="typeone">Internship</span>
+                                        <span class="typetwo">Part time allowed</span>
+                                        {{  InternshipType }}
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <i class="fa fa-users" aria-hidden="true">&nbsp;1000+&nbsp;applicants</i>
+                                    </div>
+                                </div>
+                                <div class="row mt-4 aboutskill">
+                                    <div class="col-md-12  mt-4">
+                                        <div>
+                                            <h6 ng-if="ShortDescription !== undefined"><b>About <span> {{ InternshipName }}</span> </b></h6>
+                                            <a href="">http://skillbits.in<i class="fa fa-external-link " aria-hidden="true" style="font-size: 12px;"></i></a>
+                                            <p> {{ShortDescription}} </p>
+                                            <h6 ng-if="ShortDescription === undefined || ShortDescription === ''">{{ InternshipName }} is good internship to take for getting recruited in good companies</h6>
+
+                                        </div>
+                                        <div class="abtw">
+                                            <h6 style="text-transform:capitalize;"><b>About the work from home job/internship</b></h6>
+                                            <p>Selected intern's day-to-day responsibilities include:</p>
+                                            <div ng-repeat="d in arrInterBullet">
+                                                <p>{{$index+1}}. {{ d.BulletPoint}}</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="mt-4">
+                                            <h6><b>Skill(s) required</b></h6>
+                                            <div class="col-md-6" style="margin-top: 18px;">
+                                                <div ng-repeat="d in arrInterSkill">
+                                                    <span class="typetwo">
+                                                        {{ d.CourseName }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <p id="learn" class="mt-4">Learn these skills on Internshala Trainings</p>
+                                            <div class="col-md-12" style="margin-top: 18px;">
+                                                <a href="">
+                                                    <span class="learneone" ng-repeat="d in arrInterSkill">
+                                                        Learn {{ d.CourseName }}
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="abtw mt-4">
+                                            <h6><b>Who can apply</b></h6>
+                                            <p>Only those candidates can apply who have knowledge of:</p>
+                                            <p>
+                                                <div ng-repeat="d in arrWhoCanApply">
+                                                    {{$index+1}}. {{ d.ApplyPoint }}
+                                                </div>
+                                            </p>
+                                        </div>
+                                        <h6 class="mt-4"><b>Perks</b></h6>
+                                        <div class="col-md-12" style="margin-top: 18px;">
+                                            <span class="typetwo" ng-repeat="d in arrPerks">
+                                                {{ d.PerkName }}
+                                            </span>
+                                        </div>
+                                        <h6 class="mt-4"><b>Activity</b></h6>
+                                        <div ng-repeat="d in arrActivity">
+                                            <h6> Activity Type:  {{ d.ActivityType  }} </h6>
+                                            <h6>Activity Point: {{ d.ActivityPoint }} </h6>
+                                        </div>
+                                        <h6 class="mt-4"><b>Number of openings</b></h6>
+                                        <p>{{TotalAvailableSeat}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-center mt-4 mb-4">
+                                    <button type="button" class="btn btn-success btn-sm" ng-click="InternApplyPage()">Apply Now</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--<div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Internship Preview</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+                        <u><b>Internship Structure</b></u>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <br />
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label><b>Published</b></label>
+                                        <input type="checkbox" ng-model="mdlInternStrIsPublished" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label><b>Internship</b></label>
+                                        <select id="inputState" class="form-control" name="internship" ng-model="Internship"
+                                                ng-options="item.InternshipId as item.InternshipName for item in InternshipData" disabled required>
+                                            <option value="" selected>-- Select Internship --</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label><b>Duration</b></label>
+                                        <select class="form-control" ng-model="strDurations" name="duration"
+                                                ng-options="item.DurationId as item.DurationName for item in DurationsData" disabled required>
+
+                                            <option value=""> -- Select  Duration --</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="inputdob"><b>Last Apply Date</b></label>
+
+                                        <input class="form-control"
+                                               placeholder=""
+                                               moment-picker="mntLastApply"
+                                               format="DD/MM/YYYY"
+                                               start-view="day" disabled
+                                               ng-model="LastApplyDate"
+                                               ng-model-options="{ updateOn: 'blur' } ">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label><b>Total Seat</b></label>
+                                        <input type="text" class="form-control" ng-model="TotalAvailableSeat" disabled name="totalavailableseat">
+                                    </div>
+
+
+
+                                    <div class="form-group col-md-6">
+                                        <label><b>Internship Type</b></label>
+                                        <select class="form-control" ng-model="InternshipType" name="internshiptype"
+                                                ng-change="getinternshiptype()" disabled required>
+                                            <option value="" selected>-- Select Internship Type --</option>
+                                            <option>Paid</option>-->
+                    @* <option>Free</option>*@
+                    <!--<option>Stipened</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form-row" ng-hide="hideFeeDiscount">
+                        <div class="form-group col-md-6">
+                            <label><b>Fees</b></label>
+                            <input type="text" class="form-control" id="inputAddress" ng-model="Fees" disabled ng-blur="getInternshipNetAmount()" name="fees" required>
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label><b>Discount(%)</b></label>
+                            <input type="text" class="form-control" id="inputAddress3" ng-model="Discount" disabled ng-blur="netamountInternshipwithdiscount()"
+                                   name="discount">
+                        </div>
+                    </div>
+
+
+                    <div class="form-row" ng-hide="hideFeeNetAmount">
+                        <div class="form-group col-md-6">
+                            <label><b>Fee With Discount</b></label>
+                            <input type="text" class="form-control" ng-model="FeeAfterDiscount" name="feeafterdiscount" disabled required>
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label><b>Net Amount</b></label>
+                            <input type="text" class="form-control" id="inputAddress2" ng-model="NetAmount" name="netamount" disabled required>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-row" ng-hide="showStipened">
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Stipened</label>
+                            <input type="text" class="form-control" ng-model="StipenedMoney" disabled name="stipenedmoney">
+                        </div>
+                    </div>-->
+                    @*<td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeleteBulletPoints($index);" /></td>*@
+
+
+                    <!--</div>
+                    </div>
+
+                    <u><b>Bullet Points</b></u>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <table class="table table table-striped">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Publish</th>
+                                    <th>Point</th>-->
+                    @*<th>Action</th>*@
+                    <!--</tr>
+                    <tr ng-repeat="d in arrInterBullet">
+                        <td>{{$index+1}}</td>
+                        <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                        <td>{{d.BulletPoint}}</td>-->
+                    @*<td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeleteBulletPoints($index);" /></td>*@
+                    <!--</tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <u><b>Skill Set</b></u>
+                        <div class="form-group col-md-12">
+                            <table class="table table table-striped">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Publish</th>
+                                    <th>Course</th>-->
+                    @*<th>Action</th>*@
+                    <!--</tr>
+                    <tr ng-repeat="d in arrInterSkill">
+                        <td>{{$index+1}}</td>
+                        <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>-->
+                    @*<td>{{d.CourseId}}</td>*@
+                    <!--<td>{{d.CourseName}}</td>-->
+                    @*<td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeleteInternSkills($index);" /></td>*@
+                    <!--</tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <u><b>Who Can Apply</b></u>
+                        <div class="form-group col-md-12">
+                            <table class="table table table-striped">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Publish</th>
+                                    <th>Point</th>-->
+                    @*<th>Action</th>*@
+                    <!--</tr>
+                    <tr ng-repeat="d in arrWhoCanApply">
+                        <td>{{$index+1}}</td>
+                        <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                        <td>{{d.ApplyPoint}}</td>-->
+                    @*<td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeleteWhoCanApply($index);" /></td>*@
+                    <!--</tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <u><b>Perks</b></u>
+                        <div class="form-group col-md-12">
+                            <table class="table table table-striped">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Publish</th>
+                                    <th>Point</th>-->
+                    @*<th>Action</th>*@
+                    <!--</tr>
+                    <tr ng-repeat="d in arrPerks">
+                        <td>{{$index+1}}</td>
+                        <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                        <td>{{d.PerkName}}</td>-->
+                    @*<td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeletePerks($index);" /></td>*@
+                    <!--</tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <u><b>Activity</b></u>
+                        <div class="form-group col-md-12">
+                            <table class="table table table-striped">
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Publish</th>
+                                    <th>Type</th>
+                                    <th>Point</th>-->
+                    @*<th>Action</th>*@
+                    <!--</tr>
+                    <tr ng-repeat="d in arrActivity">
+                        <td>{{$index+1}}</td>
+                        <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>-->
+                    @*<td>{{d.ActivityType}}</td>*@
+                    <!--<td>{{d.ActivityTypeId}}</td>
+                    <td>{{d.ActivityPoint}}</td>-->
+                    @*<td><input type="button" value="del" class="btn btn-danger btn-sm" ng-click="DeleteActivity($index);" /></td>*@
+                    <!--</tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>

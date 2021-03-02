@@ -1,0 +1,244 @@
+﻿
+@{
+    ViewBag.Title = "AddCommunication";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+
+    fieldset {
+        border: 2px solid #3d5a80 !important;
+        padding: 1rem !important
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: table;
+    }
+
+    @@media only screen and (max-width:767) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+
+<h2 class="text-center mt-1"><b><u>Add Communication</u></b></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetStudentDetails();GetTutorDetails();ViewStudentCategoryDetails();GetAddedInternships();addcourseinit();" class="m-1" ng-cloak>
+
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <form>
+                <fieldset>
+                    <legend>Select All Student</legend>
+                    @*<div class="col-md-6">*@
+                    <!--Student Part-->
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>All Course Students</label>
+                            <input type="checkbox" class="form-control" ng-model="chkAllCourseStudents" />
+                        </div>
+                        <div class="form-group  col-md-4">
+                            <label>All Intern Students</label>
+                            <input type="checkbox" class="form-control" ng-model="chkAllInternStudents" />
+                        </div>
+
+                        <div class="form-group  col-md-4">
+                            <label>All Brand Students</label>
+                            <input type="checkbox" class="form-control" ng-model="chkAllBrandStudents" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <label>Category Type</label>
+                            <select class="form-control" ng-model="mdlCategoryTypeForStudent" ng-change="ViewSectionByCategoryTypeForStudent();">
+                                <option value="">--Select--</option>
+                                <option value="Intern">Intern</option>
+                                <option value="Course">Course</option>
+                                <option value="Brand">Brand</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row" ng-show="shStudentClassCategory">
+                        <div class="col-md-12">
+                            <!--8-10,11-12,UG etc-->
+                            <label>Student Category Type</label>   @* ViewStudentCourseByStudentClassCategory *@
+                            <select class="form-control" ng-model="mdlStudentClassCategory" ng-change="GetSubCategory()" ng-options="d.StudentCategoryId as d.CategoryName for d in StudentCategory">
+                                <option value="">--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row" ng-show="shStudentSubClassCategory">
+                        <div class="col-md-12">
+                            <label><b> Sub Category</b></label>
+                            <select class="form-control" required ng-model="StudentSubCategoryId" name="stdsubctgid"
+                                    ng-options="item.StudedetSubCategoryId as item.SubCategoryName for item in SubCategories" ng-change="GetCourseBasedOnCategoryAndSubCategories(StudentSubCategoryId)">
+                                <option value="" selected><p> -- Select Student Sub Category -- </p></option>
+                            </select>
+                            <span style="color:Red" ng-show="studentreg.stdsubctgid.$error.required && studentreg.stdsubctgid.$dirty" ng-cloak>
+                                Sub Category is required
+                            </span>
+                        </div>
+                    </div>
+
+                    <!--Bind Course by StudentClassCategoory (C#,SAP,JAVA)-->
+
+                    <div class="form-row" ng-show="shStudentCourseByStudentClassCategory">
+                        <div class="col-md-12">
+                            <label>Course </label>
+
+                            @*<select class="form-control" ng-model="mdlStudentClassCategoryId" ng-change="GetStudentDetailsByCourseId(mdlStudentClassCategoryId,mdlStudentClassCategory)" ng-options="d.CourseId as d.CourseName for d in data">*@
+                            <select class="form-control" ng-model="mdlStudentClassCategoryId" ng-change="showbatchforAdminToStudentComm()"
+                                    @*ng-change="GetStudentDetailsByCourseId(mdlStudentClassCategoryId,mdlStudentClassCategory,StudentSubCategoryId)"*@ ng-options="d.CourseId as d.CourseName for d in AllCourseDataBasedOnSubCategory">
+                                <option value="">--Select Course--</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row" ng-hide="hidebatchForAdminComm">
+                        <div class="form-group col-md-6">
+                            <label><b>Batch Size</b></label>
+                            <select class="form-control" required ng-model="BatchId" name="batchid"
+                                    ng-options="item.BatchId as item.BatchSize for item in BatchDetails">
+                                <option value="" selected><p> -- Select Batch Size -- </p></option>
+                            </select>
+                            <span style="color:Red" ng-show="coursedetails.batchid.$error.required && coursedetails.batchid.$dirty" ng-cloak>
+                                Batch is required
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label><b>Batch Group</b></label>
+                            <select class="form-control" @*required*@ ng-model="BatchGroupId" name="batchgroupid"
+                                    ng-options="item.BatchGroupId as item.BatchName for item in BatchGroupData" 
+                                    ng-change="GetStudentDetailsByCourseId(mdlStudentClassCategoryId,mdlStudentClassCategory,BatchId,BatchGroupId)">
+                               @* ng-change="getCourseStudentsBasedOnBatch(BatchGroupId)"*@
+                                <option value="" selected><p> -- Select Batch Group -- </p></option>
+                            </select>
+                            <span style="color:Red" ng-show="coursedetails.batchgroupid.$error.required && coursedetails.batchgroupid.$dirty" ng-cloak>
+                                Batch Name is required
+                            </span>
+                        </div>
+
+                    </div>
+
+                    @*<div class="form-row" ng-show="shBrandStudentByStudentClassCategory">
+            <div class="col-md-12">
+                <label>Course </label>
+                <select class="form-control" ng-model="mdlStudentClassCategoryId" ng-change="GetStudentDetailsByCourseId(mdlStudentClassCategoryId,$scope.mdlStudentClassCategory)" ng-options="d.CourseId as d.CourseName for d in BrandCourse">
+                    <option value="">--Select Course--</option>
+                </select>
+            </div>
+        </div>*@
+
+
+                    <div class="form-row" ng-show="shInternCourseCategoryType">
+                        <div class="col-md-12">
+                            <label>Internship</label>
+                            <select class="form-control" ng-model="mdlInternshipIdForStudent" ng-change="ViewIternStudentByInternshipId(mdlInternshipIdForStudent)" ng-options="d.InternshipId as d.InternshipName for d in GetInternshipDataForCommu">
+                                <option value="">--Select Internship--</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row" ng-show="shListOfInternStudent">
+                        <div class="col-md-12 pt-2">
+                            <!--List of Intern Student-->
+                            List Of Students
+                            <table ng-table="InterStudentListByInternShipIdTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-repeat="d in $data">
+                                    <td title="'S.No'">{{$index+1}}</td>
+                                    <td title="'Name'">{{d.Name}}</td>
+                                    <td title="'Select'">
+                                        <input type="checkbox" ng-model="d.chkInternStudent" ng-change="SelectMultipleInternStudentForCommunication();" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <hr />
+                        </div>
+                    </div>
+
+                    <div class="form-row" ng-show="shListOfBrandStudent">
+                        <div class="col-md-12 pt-2">
+                            <!--List of Brand Student-->
+                            List Of Brand Students
+                            <table ng-table="BrandStudentListByCourseCategory" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-repeat="d in $data">
+                                    <td title="'S.No'">{{$index+1}}</td>
+                                    <td title="'Name'">{{d.Name}}</td>
+                                    <td title="'Select'">
+                                        <input type="checkbox" ng-model="d.chkAdminToBrandStudent" ng-change="SelectMultipleBrandStudentForAdminCommunication();" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <hr />
+                        </div>
+                    </div>
+
+                    @* *@
+
+                    <div class="form-row" ng-show="shListOfCourseStudent">
+                        <div class="col-md-12 pt-2">
+                            <!--List of Course Student-->
+                            <b>List Of Students</b>
+                            <table ng-table="StudentListByCourseCategory" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-repeat="d in $data">
+                                    <td title="'S.No'">{{$index+1}}</td>
+                                    <td title="'Name'">{{d.Name}}</td>
+                                    <td title="'Select'">
+                                        @*<input type="checkbox" ng-model="d.chkInternStudent" ng-change="SelectMultipleInternStudentForCommunication();" />*@
+                                        <input type="checkbox" ng-model="d.chkCourseStudent" ng-change="SelectMultipleCourseStudentForCommunication();" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <hr />
+                        </div>
+                    </div>
+
+
+                    <div class="form-row mt-1">
+                        <div class="form-group col-md-12">
+                            <label>Message To Student</label>
+                            <textarea type="text" class="form-control" ng-model="mdlMsgOnlyStudent"></textarea>
+                            <br />
+                        </div>
+                        @*<div class="form-group col-md-6">
+                <label>Message To All</label>
+                <textarea type="text" class="form-control" ng-model="mdlMsgAll"></textarea>
+            </div>*@
+                    </div>
+
+
+                    <div class="form-row text-center">
+                        <div class="col-md-12">
+                            <input type="button" value="Sent Message" class="btn btn-primary" ng-disabled="disablesendmessage" ng-click="AddMessageForCommunicatioin();" />
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+
+

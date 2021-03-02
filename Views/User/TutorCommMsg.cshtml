@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "TutorCommMsg";
+    Layout = "~/Views/Shared/_LayoutTutor.cshtml";
+}
+
+
+<br />
+<h3 class="text-center"><b><u>Tutor Communication Message</u></b></h3>
+
+@* GetTutorCommunicationById('All-Intern-Tutor');*@
+<div ng-app="app" ng-controller="MyCtrl" ng-init="">
+
+    <div class="top">
+       
+    </div>
+  
+    <form class="inner2 m-4 text-center">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row" ng-repeat="d in CommTutorByUserId">
+                        <div class="col-md-6 border">
+                            <b>Message For You:</b><br />
+                            <p class="text-justify">@*{{d.Message}}*@zz</p>
+                        </div>
+                        @*<div class="col-md-4 border">
+                                <b>Message To All Students:</b><br />
+                                {{d.MessageAllStudents}}
+                            </div>*@
+                        <div class="col-md-6 border">
+                            <b>Message All:</b><br />
+                            <p class="text-justify">{{d.MessageAll}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row" ng-repeat="d in CommTutorForAll">
+                        <div class="col-md-6 border">
+                            <b>Message To All Students:</b><br />
+                            <p class="text-justify">{{d.MessageAllStudents}}</p>
+                        </div>
+                        <div class="col-md-6 border">
+                            <b>Message All:</b><br />
+                            <p class="text-justify">{{d.MessageAll}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+

@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "AddResource";
+    Layout = "~/Views/Shared/_LayoutBrandTutor.cshtml";
+}
+
+<br />
+<br />
+<h2 class="text-center"><b><u>Add Resource </u></b> </h2>
+<div class="container" ng-app="app" ng-controller="MyCtrl" ng-init="addcoursecontentinit();updatecoursecontentinit()">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label><b>Upload Resource</b></label>
+            @*<input type="file" multiple="multiple" ngf-select="UploadResourseFilesByTutor($files)" ng-model="SelectedFiles" />*@
+            <input type="file" ngf-select="UploadResourseFilesByTutor($file)" ng-model="SelectedFiles" />
+            <hr />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <table class="table table table-striped">
+                <tr>
+                    <th>S.No</th>
+                    <th>Resource Name</th>
+                    <th>Action</th>
+                </tr>
+                <tr ng-repeat="d in  arrResourceFile">
+                    <td>{{$index+1}}</td>
+                    <td>{{ d.ResourceName }}</td>
+                    <td><input type="button" value="Delete" class="btn btn-danger" ng-click="DeleteInternResourceArray($index);" /></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-md-offset-3">
+        <br /><br />
+        <button type="submit" ng-click="FileUploadByBrandTutor()" class="btn btn-lg btn-primary" style="float:right">Submit </button>
+    </div>
+</div>
+

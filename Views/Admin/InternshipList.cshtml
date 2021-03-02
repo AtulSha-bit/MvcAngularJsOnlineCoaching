@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "InternshipList";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<style>
+    #firstrow {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
+    .btn {
+        border-radius: 0rem;
+        color: white !important;
+    }
+
+    .card {
+        border-radius: 10px;
+        margin: 3px;
+    }
+</style>
+<title>Show Internship List</title>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="InternshipListDetail()">
+    <br />
+    <h3 class="text-center"><u>Internship List</u></h3>
+    <br />
+    <div class="row" id="firstrow">
+        <div class="card mt-2 col-md-3" style="height:200px;" ng-repeat="d in InternList">
+            <center style="padding-top: 1.5rem;">
+                <div class="internHeading">
+                    <h5 class="ng-binding" style="text-transform: capitalize;">{{ d.InternshipName }}</h5>
+                </div>
+                <div class="card-body internCardBody">
+                    <p class="justify-content-around">{{ d.InternshipName }}</p>
+                </div>
+                <a class="btn btn-success" ng-click="getInternshipDetails(d.InternStructureId)">Detail</a>
+            </center>
+        </div>
+    </div>
+    <br />
+</div>
+

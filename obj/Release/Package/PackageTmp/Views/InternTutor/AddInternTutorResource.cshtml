@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "AddInternTutorResource";
+    Layout = "~/Views/Shared/_LayoutInternTutor.cshtml";
+}
+
+
+<br />
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+    .ng-cloak, .x-ng-cloak,
+    .ng-hide {
+        display: none !important;
+    }
+
+    .submit_btn {
+        padding: 10px 32px;
+    }
+</style>
+
+<div class="container" ng-app="app" ng-controller="MyCtrl" ng-init="addinterntutorresourceinit()">
+    <h2 class="text-center"><b><u>Add Intern Tutor Resource</u></b></h2>
+    <br />
+    <form name="validateaddinterntutorresource" novalidate>
+
+        <div class="form-row mt-1">
+            <div class="col-md-3"></div>
+            <div class="form-group col-md-6 text-center">
+                <label><b>Select Internship</b></label>
+
+                <select class="form-control" required ng-model="InternshipId" name="validcourse"
+                        ng-options="item.InternshipId as item.InternshipName for item in InternshipForTutor">
+                    <option value="" selected><p> -- Select Internship -- </p></option>
+                </select>
+                <span style="color:Red" ng-show="validateaddinterntutorresource.validcourse.$error.required && validateaddinterntutorresource.validcourse.$dirty" ng-cloak>
+                    Internship is required
+                </span>
+            </div>
+
+        </div>
+
+        <div class="form-row mt-1">
+            <div class="form-group col-md-12 text-center">
+                <label><b>Upload Resource</b></label>
+
+                <input type="file" required name="file" ngf-select="UploadInternTutorResourceFiles($file)" ng-model="SelectedFiles" />
+                <span style="color:Red" ng-show="validateaddinterntutorresource.file.$error.required && validateaddinterntutorresource.file.$dirty" ng-cloak>
+                    File is required
+                </span>
+            </div>
+        </div>
+
+        <div class="form-row mt-1">
+            <div class="form-group col-md-12">
+                <table class="table table table-striped">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Resource Name</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr ng-repeat="d in  arrInternTutorResourceFiles">
+                        <td>{{$index+1}}</td>
+                        <td>{{ d.ResourceName }}</td>
+                        <td><a href="" class="btn btn-sm btn-danger" ng-click="DeleteInternTutorsResourceArray($index);" /><i class="fa fa-trash"></i></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-md-12 text-center">
+
+            <button type="submit" ng-click="FileUploadByInternTutor()" class="btn btn-md btn-primary" ng-disabled="validateaddinterntutorresource.$invalid">Submit </button>
+        </div>
+    </form>
+</div>
+

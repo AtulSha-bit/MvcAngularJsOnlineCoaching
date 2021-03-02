@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "AdminToTutorIncomingCommunication";
+    Layout = "~/Views/Shared/_LayoutTutor.cshtml";
+}
+
+
+<style>
+    .table-responsive {
+        display: table;
+    }
+
+    @@media only screen and (max-width:767px) {
+        .table-responsive {
+            display: block;
+        }
+    }
+
+    .pagination {
+        padding-left: 96px;
+    }
+</style>
+<h2 style="text-align:center" class="mt-5"><b><u>Admin To Tutor Communication</u></b> </h2>
+<div class="row" ng-init="AdminToCourseTutorIncomingComm('All-Course-Tutor')">
+
+    <br /><br />
+    <table ng-table="AdminToCourseTutorIncomingMessages" show-filter="true" class="table-bordered table-hover table-condensed table-responsive" style="margin-left: 94px;
+    margin-right: 31px;">
+        <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+            <td data-title="'S.No'">{{$index+1}}</td>
+            <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }"> {{ user.Message }}</td>
+            <td data-title="'Date'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">{{ user.DateCreated }}</td>
+
+        </tr>
+        <tr>
+            <td colspan="4" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+            </td>
+        </tr>
+
+    </table>
+</div>

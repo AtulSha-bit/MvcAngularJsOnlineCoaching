@@ -1,0 +1,646 @@
+
+CREATE TABLE [dbo].[SITSPL_tblCourse](
+	[CourseId] [int] IDENTITY(1,1) NOT NULL,
+	[CourseName] [nvarchar](128) NOT NULL,
+	[ShortDescription] [nvarchar](512) NULL,
+	[LongDescription] [nvarchar](max) NULL,
+	[DisplayOnWeb] [bit] NOT NULL,
+	[IPAddress] [nvarchar](64) NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[IsDeleted] [bit] NOT NULL,
+	[DeletedBy] [nvarchar](128) NULL,
+	[DateDeleted] [datetime] NULL,
+	[IsPublished] [bit] NOT NULL,
+	[PublishedBy] [nvarchar](128) NULL,
+	[DatePublished] [datetime] NULL,
+ CONSTRAINT [PK_SITSPL_tblCourse_1] PRIMARY KEY CLUSTERED 
+(
+	[CourseId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+ CONSTRAINT [UQ_SITSPL_tblCourse_CourseName] UNIQUE NONCLUSTERED 
+(
+	[CourseName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourse] ADD  CONSTRAINT [DF_SITSPL_tblCourse_DisplayOnWeb]  DEFAULT ((1)) FOR [DisplayOnWeb]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourse] ADD  CONSTRAINT [DF_SITSPL_tblCourse_IPAddress]  DEFAULT ('127.0.0.1') FOR [IPAddress]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourse] ADD  CONSTRAINT [DF_SITSPL_tblCourse_CreatedBy]  DEFAULT ('Admin') FOR [CreatedBy]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourse] ADD  CONSTRAINT [DF_SITSPL_tblCourse_DateCreated]  DEFAULT (getdate()) FOR [DateCreated]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourse] ADD  CONSTRAINT [DF_SITSPL_tblCourse_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourse] ADD  CONSTRAINT [DF_SITSPL_tblCourse_IsPublished]  DEFAULT ((0)) FOR [IsPublished]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourse] ADD  CONSTRAINT [DF_SITSPL_tblCourse_PublishedBy]  DEFAULT ('Admin') FOR [PublishedBy]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourse]  WITH CHECK ADD  CONSTRAINT [FK_SITSPL_tblCourse_SITSPL_tblCourse] FOREIGN KEY([CourseId])
+REFERENCES [dbo].[SITSPL_tblCourse] ([CourseId])
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourse] CHECK CONSTRAINT [FK_SITSPL_tblCourse_SITSPL_tblCourse]
+GO
+
+
+==============================================================================================
+
+CREATE TABLE [dbo].[SITSPL_tblCourseStructure](
+	[StructureId] [int] IDENTITY(1,1) NOT NULL,
+	[CourseId] [int] NOT NULL,
+	[DurationName] [nvarchar](128) NOT NULL,
+	[Months] [int] NOT NULL,
+	[Fees] [money] NULL,
+	[DiscountPercent] [int] NULL,
+	[NetAmount] [money] NULL,
+	[ValidFrom] [datetime] NOT NULL,
+	[ValidTo] [datetime] NOT NULL,
+	[JoiningMonth] [nvarchar](16) NULL,
+	[JoiningDate] [nvarchar](16) NULL,
+	[ShortDescription] [nvarchar](512) NULL,
+	[LongDescription] [nvarchar](max) NULL,
+	[DisplayOnWeb] [bit] NOT NULL,
+	[IPAddress] [nvarchar](64) NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[IsDeleted] [bit] NOT NULL,
+	[DeletedBy] [nvarchar](128) NULL,
+	[DateDeleted] [datetime] NULL,
+	[IsPublished] [bit] NOT NULL,
+	[PublishedBy] [nvarchar](128) NULL,
+	[DatePublished] [datetime] NULL,
+ CONSTRAINT [PK_SITSPL_tblCourseStructure] PRIMARY KEY CLUSTERED 
+(
+	[StructureId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure] ADD  CONSTRAINT [DF_SITSPL_tblCourseStructure_DisplayOnWeb]  DEFAULT ((1)) FOR [DisplayOnWeb]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure] ADD  CONSTRAINT [DF_SITSPL_tblCourseStructure_IPAddress]  DEFAULT ('127.0.0.1') FOR [IPAddress]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure] ADD  CONSTRAINT [DF_SITSPL_tblCourseStructure_CreatedBy]  DEFAULT ('Admin') FOR [CreatedBy]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure] ADD  CONSTRAINT [DF_SITSPL_tblCourseStructure_DateCreated]  DEFAULT (getdate()) FOR [DateCreated]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure] ADD  CONSTRAINT [DF_SITSPL_tblCourseStructure_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure] ADD  CONSTRAINT [DF_SITSPL_tblCourseStructure_IsPublished]  DEFAULT ((0)) FOR [IsPublished]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure] ADD  CONSTRAINT [DF_SITSPL_tblCourseStructure_PublishedBy]  DEFAULT ('Admin') FOR [PublishedBy]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure]  WITH CHECK ADD  CONSTRAINT [FK_SITSPL_tblCourseStructure_SITSPL_tblCourseStructure] FOREIGN KEY([StructureId])
+REFERENCES [dbo].[SITSPL_tblCourseStructure] ([StructureId])
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure] CHECK CONSTRAINT [FK_SITSPL_tblCourseStructure_SITSPL_tblCourseStructure]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure]  WITH CHECK ADD  CONSTRAINT [SITSPL_tblCourse_CourseId_FK] FOREIGN KEY([CourseId])
+REFERENCES [dbo].[SITSPL_tblCourse] ([CourseId])
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblCourseStructure] CHECK CONSTRAINT [SITSPL_tblCourse_CourseId_FK]
+GO
+
+
+=========================================
+===========================================
+CREATE TABLE [dbo].[SITSPL_tblStudentProfile](
+	[StudentId] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[DOB] [datetime] NOT NULL,
+	[ProfileImage] [nvarchar](max) NOT NULL,
+	[Fblink] [nvarchar](500) NULL,
+	[Twitterlink] [nvarchar](500) NULL,
+	[Instalink] [nvarchar](500) NULL,
+	[Email] [nvarchar](500) NOT NULL,
+	[Username] [nvarchar](50) NOT NULL,
+	[Password] [nvarchar](max) NOT NULL,
+	[ShortDescription] [nvarchar](512) NULL,
+	[LongDescription] [nvarchar](max) NULL,
+	[PaymentStatus] [nvarchar](50) NULL,
+	[PaidAmount] [money] NULL,
+	[Due] [money] NULL,
+	[NextInstallmentDate] [datetime] NULL,
+	[RemarksPayment] [nvarchar](216) NULL,
+	[TemporaryRegNo] [nvarchar](1000) NULL,
+	[FinalRegNo] [nvarchar](250) NULL,
+	[PaymentMode] [nvarchar](16) NULL,
+	[IsPaid] [bit] NULL,
+	[PaymentDate] [datetime] NULL,
+	[NetAmount] [money] NULL,
+	[Remarks] [nvarchar](216) NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[IsDeleted] [bit] NULL,
+	[DeletedBy] [nvarchar](128) NULL,
+	[DateDeleted] [datetime] NULL,
+	[DatePublished] [datetime] NULL,
+	[IsPublished] [bit] NULL,
+	[DisplayOnWeb] [bit] NULL,
+	[Mobile] [nvarchar](18) NULL,
+	[StructureId] [int] NULL,
+ CONSTRAINT [PK_SITSPL_tblStudentProfile] PRIMARY KEY CLUSTERED 
+(
+	[StudentId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblStudentProfile]  WITH CHECK ADD  CONSTRAINT [SITSPL_tblCourseStructure_StructureId] FOREIGN KEY([StructureId])
+REFERENCES [dbo].[SITSPL_tblCourseStructure] ([StructureId])
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblStudentProfile] CHECK CONSTRAINT [SITSPL_tblCourseStructure_StructureId]
+GO
+
+====================================
+==================================
+
+CREATE TABLE [dbo].[SITSPL_tblDocument](
+	[DocumentId] [bigint] IDENTITY(1,1) NOT NULL,
+	[UserId] [bigint] NOT NULL,
+	[DocumentName] [nvarchar](128) NOT NULL,
+	[DocumentType] [nvarchar](128) NULL,
+	[DoucmentNo] [nvarchar](32) NOT NULL,
+	[AadharNo] [nvarchar](30) NULL,
+	[PanNo] [nvarchar](30) NULL,
+	[ShortDescription] [nvarchar](256) NULL,
+	[LongDescription] [nvarchar](max) NULL,
+	[DisplayOnWeb] [bit] NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[IsDeleted] [bit] NULL,
+	[DeletedBy] [nvarchar](128) NULL,
+	[DateDeleted] [datetime] NULL,
+	[DatePublished] [datetime] NULL,
+ CONSTRAINT [PK_SITSPL_tblDocument] PRIMARY KEY CLUSTERED 
+(
+	[DocumentId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+=============================
+===============================
+CREATE TABLE [dbo].[SITSPL_tblContact](
+	[ContactId] [bigint] IDENTITY(1,1) NOT NULL,
+	[UserId] [bigint] NOT NULL,
+	[Mobile] [nvarchar](20) NOT NULL,
+	[Email] [nvarchar](450) NOT NULL,
+	[Address] [nvarchar](350) NOT NULL,
+	[State] [nvarchar](200) NOT NULL,
+	[City] [nvarchar](150) NOT NULL,
+	[Pincode] [nvarchar](20) NOT NULL,
+	[Landmark] [nvarchar](250) NULL,
+	[CreatedBy] [nvarchar](128) NULL,
+	[DateCreated] [datetime] NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[IsDeleted] [bit] NULL,
+	[DeletedBy] [nvarchar](128) NULL,
+	[DateDeleted] [datetime] NULL,
+	[DatePublished] [datetime] NULL,
+ CONSTRAINT [PK_SITSPL_tblContact] PRIMARY KEY CLUSTERED 
+(
+	[ContactId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblContact]  WITH CHECK ADD FOREIGN KEY([UserId])
+REFERENCES [dbo].[SITSPL_tblStudentProfile] ([StudentId])
+GO
+
+================================
+=====================================
+
+CREATE TABLE [dbo].[SITSPL_tblTutor](
+	[TutorId] [bigint] IDENTITY(1,1) NOT NULL,
+	[TutorName] [nvarchar](50) NOT NULL,
+	[TutorExperience] [nvarchar](50) NOT NULL,
+	[ShortDescription] [nvarchar](256) NULL,
+	[LongDescription] [nvarchar](max) NULL,
+	[DisplayOnWeb] [bit] NULL,
+	[TutorImage] [nvarchar](max) NOT NULL,
+	[TutorDOB] [datetime] NOT NULL,
+	[TutorContact] [nvarchar](20) NOT NULL,
+	[TutorEmail] [nvarchar](550) NOT NULL,
+	[TutorState] [nvarchar](50) NULL,
+	[TutorCity] [nvarchar](50) NULL,
+	[TutorAddress] [nvarchar](450) NULL,
+	[TutorPinCode] [nvarchar](20) NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[IsDeleted] [bit] NULL,
+	[DeletedBy] [nvarchar](128) NULL,
+	[DateDeleted] [datetime] NULL,
+	[DatePublished] [datetime] NULL,
+	[AdminDescription] [nvarchar](max) NULL,
+	[IsPublished] [bit] NULL,
+ CONSTRAINT [PK_SITSPL_tblTutor] PRIMARY KEY CLUSTERED 
+(
+	[TutorId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblTutor] ADD  CONSTRAINT [DF_SITSPL_tblTutor_DateCreated]  DEFAULT (getdate()) FOR [DateCreated]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblTutor] ADD  CONSTRAINT [DF_SITSPL_tblTutor_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+=========================
+===============================
+
+CREATE TABLE [dbo].[SITSPL_tblUser](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [nvarchar](128) NOT NULL,
+	[Password] [nvarchar](32) NOT NULL,
+	[UserType] [nvarchar](128) NOT NULL,
+	[IsPublished] [bit] NOT NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[PublishedBy] [nvarchar](128) NULL,
+	[DatePublished] [datetime] NULL,
+	[Id] [bigint] NULL,
+	[UserPrifix] [nvarchar](16) NULL,
+	[AutoId] [nvarchar](8) NULL,
+	[CompleteId] [nvarchar](32) NULL,
+ CONSTRAINT [PK_SITSPL_tblUser] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+=========================
+===========================
+
+CREATE TABLE [dbo].[SITSPL_tblUserDetails](
+	[UserName] [nvarchar](50) NOT NULL,
+	[DOB] [datetime] NOT NULL,
+	[AadharNo] [nvarchar](35) NULL,
+	[PanNo] [nvarchar](35) NULL,
+	[UserId] [bigint] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_SITSPL_tblUserDetails_1] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+=======================
+===========================
+
+CREATE TABLE [dbo].[SITSPL_tblInternship](
+	[InternshipId] [int] IDENTITY(1,1) NOT NULL,
+	[InternshipName] [nvarchar](128) NOT NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[IsDeleted] [bit] NULL,
+	[DeletedBy] [nvarchar](128) NULL,
+	[DateDeleted] [datetime] NULL,
+	[IsPublished] [bit] NOT NULL,
+	[PublishedBy] [nvarchar](128) NULL,
+	[DatePublished] [datetime] NULL,
+	[DisplayOnweb] [bit] NULL,
+ CONSTRAINT [PK_SITSPL_tblInternship] PRIMARY KEY CLUSTERED 
+(
+	[InternshipId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternship] ADD  CONSTRAINT [DF_SITSPL_tblInternship_CreatedBy]  DEFAULT (N'Admin') FOR [CreatedBy]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternship] ADD  CONSTRAINT [DF_SITSPL_tblInternship_DateCreated]  DEFAULT (getdate()) FOR [DateCreated]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternship] ADD  CONSTRAINT [DF_SITSPL_tblInternship_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternship] ADD  CONSTRAINT [DF_SITSPL_tblInternship_IsPublished]  DEFAULT ((1)) FOR [IsPublished]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternship] ADD  CONSTRAINT [DF_SITSPL_tblInternship_DisplayOnweb]  DEFAULT ((1)) FOR [DisplayOnweb]
+GO
+
+=================
+=========================
+
+CREATE TABLE [dbo].[SITSPL_tblInternshipStructure](
+	[InternStructureId] [int] IDENTITY(1,1) NOT NULL,
+	[LongDescription] [nvarchar](max) NULL,
+	[ShortDescription] [nvarchar](256) NULL,
+	[InternshipId] [int] NOT NULL,
+	[DurationName] [nvarchar](128) NOT NULL,
+	[DurationMonths] [int] NOT NULL,
+	[LastApplyDate] [datetime] NULL,
+	[TotalAvailableSeat] [int] NULL,
+	[ValidFrom] [datetime] NULL,
+	[ValidTo] [datetime] NULL,
+	[InternshipType] [nvarchar](32) NOT NULL,
+	[Fees] [money] NULL,
+	[Discount] [money] NULL,
+	[FeeAfterDiscount] [money] NULL,
+	[TotalAmount] [money] NULL,
+	[Stipened] [money] NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[IsDeleted] [bit] NULL,
+	[DeletedBy] [nvarchar](128) NULL,
+	[DateDeleted] [datetime] NULL,
+	[IsPublished] [bit] NOT NULL,
+	[PublishedBy] [nvarchar](128) NULL,
+	[DatePublished] [datetime] NULL,
+	[DisplayOnWeb] [bit] NULL,
+	[StipenedMoney] [money] NULL,
+ CONSTRAINT [PK_SITSPL_tblInternshipStructure] PRIMARY KEY CLUSTERED 
+(
+	[InternStructureId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternshipStructure] ADD  CONSTRAINT [DF_SITSPL_tblInternshipStructure_CreatedBy]  DEFAULT (N'Admin') FOR [CreatedBy]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternshipStructure] ADD  CONSTRAINT [DF_SITSPL_tblInternshipStructure_DateCreated]  DEFAULT (getdate()) FOR [DateCreated]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternshipStructure] ADD  CONSTRAINT [DF_SITSPL_tblInternshipStructure_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternshipStructure] ADD  CONSTRAINT [DF_SITSPL_tblInternshipStructure_IsPublished]  DEFAULT ((1)) FOR [IsPublished]
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternshipStructure]  WITH CHECK ADD  CONSTRAINT [FK_SITSPL_tblInternshipStructure_InternshipId_SITSPL_tblInternship_InternshipId] FOREIGN KEY([InternshipId])
+REFERENCES [dbo].[SITSPL_tblInternship] ([InternshipId])
+GO
+
+ALTER TABLE [dbo].[SITSPL_tblInternshipStructure] CHECK CONSTRAINT [FK_SITSPL_tblInternshipStructure_InternshipId_SITSPL_tblInternship_InternshipId]
+GO
+
+====================
+============================
+
+CREATE TABLE [dbo].[tblActivity](
+	[ActivityId] [bigint] IDENTITY(1,1) NOT NULL,
+	[ActivityOperation] [nvarchar](128) NOT NULL,
+	[ActivityMessage] [nvarchar](256) NULL,
+	[ActivityDescription] [nvarchar](512) NULL,
+	[ActivityDate] [datetime] NULL,
+	[Id] [bigint] NOT NULL,
+	[UserType] [nvarchar](128) NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[IsPublished] [bit] NOT NULL,
+	[DisplayOnWeb] [bit] NULL,
+ CONSTRAINT [PK_tblActivity] PRIMARY KEY CLUSTERED 
+(
+	[ActivityId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tblActivity] ADD  CONSTRAINT [DF_tblActivity_ActivityDate]  DEFAULT (getdate()) FOR [ActivityDate]
+GO
+
+ALTER TABLE [dbo].[tblActivity] ADD  CONSTRAINT [DF_tblActivity_CreatedBy]  DEFAULT ('Admin') FOR [CreatedBy]
+GO
+
+ALTER TABLE [dbo].[tblActivity] ADD  CONSTRAINT [DF_tblActivity_DateCreated]  DEFAULT (getdate()) FOR [DateCreated]
+GO
+
+ALTER TABLE [dbo].[tblActivity] ADD  CONSTRAINT [DF_tblActivity_IsPublished]  DEFAULT ((0)) FOR [IsPublished]
+GO
+
+===============
+=====================
+
+CREATE TABLE [dbo].[tblInternActivity](
+	[InternActivityId] [bigint] IDENTITY(1,1) NOT NULL,
+	[InternshipId] [int] NOT NULL,
+	[ActivityType] [nvarchar](32) NOT NULL,
+	[ActivityPoint] [nvarchar](256) NOT NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[DisplayOnWeb] [bit] NULL,
+	[IsPublished] [bit] NOT NULL,
+ CONSTRAINT [PK_tblInternActivity] PRIMARY KEY CLUSTERED 
+(
+	[InternActivityId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tblInternActivity] ADD  CONSTRAINT [DF_tblInternActivity_DateCreated]  DEFAULT (getdate()) FOR [DateCreated]
+GO
+
+ALTER TABLE [dbo].[tblInternActivity]  WITH CHECK ADD  CONSTRAINT [FK_tblInternActivity_SITSPL_tblInternship] FOREIGN KEY([InternshipId])
+REFERENCES [dbo].[SITSPL_tblInternship] ([InternshipId])
+GO
+
+ALTER TABLE [dbo].[tblInternActivity] CHECK CONSTRAINT [FK_tblInternActivity_SITSPL_tblInternship]
+GO
+
+=====================
+=================================
+
+CREATE TABLE [dbo].[tblInternBullet](
+	[BulletId] [bigint] IDENTITY(1,1) NOT NULL,
+	[InternshipId] [int] NOT NULL,
+	[BulletPoint] [nvarchar](256) NOT NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[DisplayOnWeb] [bit] NULL,
+	[IsPublished] [bit] NOT NULL,
+ CONSTRAINT [PK_tblInternBullet] PRIMARY KEY CLUSTERED 
+(
+	[BulletId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tblInternBullet] ADD  CONSTRAINT [DF_tblInternBullet_DisplayOnWeb]  DEFAULT ((1)) FOR [DisplayOnWeb]
+GO
+
+ALTER TABLE [dbo].[tblInternBullet]  WITH CHECK ADD  CONSTRAINT [FK_tblInternBullet_InternshipId_SITSPL_tblInternship_InternshipId] FOREIGN KEY([InternshipId])
+REFERENCES [dbo].[SITSPL_tblInternship] ([InternshipId])
+GO
+
+ALTER TABLE [dbo].[tblInternBullet] CHECK CONSTRAINT [FK_tblInternBullet_InternshipId_SITSPL_tblInternship_InternshipId]
+GO
+
+===============
+========================
+
+CREATE TABLE [dbo].[tblInternPerk](
+	[InternPerkId] [bigint] IDENTITY(1,1) NOT NULL,
+	[InternshipId] [int] NOT NULL,
+	[PerkName] [nvarchar](128) NOT NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[DisplayOnWeb] [bit] NULL,
+	[IsPublished] [bit] NOT NULL,
+ CONSTRAINT [PK_tblInternPerk] PRIMARY KEY CLUSTERED 
+(
+	[InternPerkId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tblInternPerk] ADD  CONSTRAINT [DF_tblInternPerk_DisplayOnWeb]  DEFAULT ((1)) FOR [DisplayOnWeb]
+GO
+
+ALTER TABLE [dbo].[tblInternPerk]  WITH CHECK ADD  CONSTRAINT [FK_tblInternPerk_SITSPL_tblInternship] FOREIGN KEY([InternshipId])
+REFERENCES [dbo].[SITSPL_tblInternship] ([InternshipId])
+GO
+
+ALTER TABLE [dbo].[tblInternPerk] CHECK CONSTRAINT [FK_tblInternPerk_SITSPL_tblInternship]
+GO
+
+==============
+====================
+
+CREATE TABLE [dbo].[tblInternSkillReq](
+	[InternSkillId] [bigint] IDENTITY(1,1) NOT NULL,
+	[InternshipId] [int] NULL,
+	[CourseId] [int] NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[DisplayOnWeb] [bit] NULL,
+	[IsPublished] [bit] NOT NULL,
+ CONSTRAINT [PK_tblInternSkillReq] PRIMARY KEY CLUSTERED 
+(
+	[InternSkillId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tblInternSkillReq] ADD  CONSTRAINT [DF_tblInternSkillReq_DisplayOnWeb]  DEFAULT ((1)) FOR [DisplayOnWeb]
+GO
+
+ALTER TABLE [dbo].[tblInternSkillReq]  WITH CHECK ADD  CONSTRAINT [FK_tblInternSkillReq_InternshipId_SITSPL_tblInternship_InternshipId] FOREIGN KEY([InternshipId])
+REFERENCES [dbo].[SITSPL_tblInternship] ([InternshipId])
+GO
+
+ALTER TABLE [dbo].[tblInternSkillReq] CHECK CONSTRAINT [FK_tblInternSkillReq_InternshipId_SITSPL_tblInternship_InternshipId]
+GO
+
+============
+======================
+
+CREATE TABLE [dbo].[tblInternWhoCanApply](
+	[InternApplyId] [bigint] IDENTITY(1,1) NOT NULL,
+	[InternshipId] [int] NOT NULL,
+	[ApplyPoint] [nvarchar](256) NOT NULL,
+	[CreatedBy] [nvarchar](128) NOT NULL,
+	[DateCreated] [datetime] NOT NULL,
+	[UpdatedBy] [nvarchar](128) NULL,
+	[LastUpdated] [datetime] NULL,
+	[DisplayOnWeb] [bit] NULL,
+	[IsPublished] [bit] NOT NULL,
+ CONSTRAINT [PK_tblInternWhoCanApply] PRIMARY KEY CLUSTERED 
+(
+	[InternApplyId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tblInternWhoCanApply] ADD  CONSTRAINT [DF_tblInternWhoCanApply_DisplayOnWeb]  DEFAULT ((1)) FOR [DisplayOnWeb]
+GO
+
+ALTER TABLE [dbo].[tblInternWhoCanApply]  WITH CHECK ADD  CONSTRAINT [FK_tblInternWhoCanApply_SITSPL_tblInternship] FOREIGN KEY([InternshipId])
+REFERENCES [dbo].[SITSPL_tblInternship] ([InternshipId])
+GO
+
+ALTER TABLE [dbo].[tblInternWhoCanApply] CHECK CONSTRAINT [FK_tblInternWhoCanApply_SITSPL_tblInternship]
+GO
+=================
+===========================
+
+
+Procedures
+==========
+
+1.
+
+2.
+
+3.
+
+4. 
+ALTER procedure [dbo].[SITSPL_getStudentDetails]
+@CourseName int = null
+AS
+Begin
+declare @tmp varchar(250)
+SET @tmp = ''
+select 
+@tmp = @tmp + C.CourseName + ', ' 
+FROM SITSPL_tblStudentWithCourse swc
+INNER JOIN SITSPL_tblCourseDetails cd on swc.StudentId = cd.StudentId
+INNER JOIN SITSPL_tblCourse c on c.CourseId = cd.CourseId
+WHERE swc.StudentId = 30096
+
+SELECT 
+swc.StudentId, swc.StudentName
+,SUBSTRING(@tmp, 0, LEN(@tmp)) AS 'COURSE NAME',cd.TotalAmount
+FROM SITSPL_tblStudentWithCourse swc
+INNER JOIN SITSPL_tblCourseDetails cd on swc.StudentId = cd.StudentId
+INNER JOIN SITSPL_tblCourse c on c.CourseId = cd.CourseId
+WHERE swc.StudentId = 30096
+group by swc.StudentId, swc.StudentName,cd.TotalAmount;
+End
+
+

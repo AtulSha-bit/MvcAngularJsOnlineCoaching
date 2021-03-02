@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "CourseStudentToAdminOutbox";
+    Layout = "~/Views/Shared/_LayoutStudents.cshtml";
+}
+
+<br />
+<br />
+<h2 style="text-align:center"><b><u>Message To Admin</u></b></h2>
+<br />
+<br />
+<div class="container">
+    <div ng-app="app" ng-controller="MyCtrl" ng-cloak>
+        <div align="center">
+            <div class="form-group col-md-6">
+                <label align="left"><b>Message To Admin</b></label>
+                <textarea class="form-control" rows="10" cols="40" ng-model="MsgToAdmin">
+            
+            </textarea>
+            </div>
+            
+            </div>
+
+        <div align="center">
+            <input type="submit" value="Send Message" ng-click="SendCourseStudentMsgToAdmin()" class="btn btn-success" />
+        </div>
+</div>
+ </div>
+
+

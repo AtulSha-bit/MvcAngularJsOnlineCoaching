@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewBag.Title = "TutorCommToStudent";
+    Layout = "~/Views/Shared/_LayoutTutor.cshtml";
+}
+
+<style>
+
+    fieldset {
+        border: 2px solid #3d5a80 !important;
+        padding: 3rem !important
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: table;
+    }
+
+    @@media only screen and (max-width:767) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+
+<br />
+
+<h2 class="text-center mt-2"><b><u>Tutor to Student Add Communication</u></b></h2>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="TutorCommToStudentInit()" class="m-3" ng-cloak>
+    @* GetStudentDetails();GetTutorDetails();ViewStudentCategoryDetails();GetAddedInternships();addcourseinit()     ViewSectionByCategoryTypeForStudent *@
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <form>
+                <fieldset>
+                    <legend>Select All Student</legend>
+                    @*<div class="col-md-6">*@
+                    <!--Student Part-->
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Select All Students</label>
+                            @*<input type="checkbox" class="form-control" ng-model="chkAllStudents" /> chkAllBrandTutorStudents *@
+                            <input type="checkbox" class="form-control" ng-model="chkAllStudents" />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <lable class="control-label col-md-2">Select Student Type</lable>
+                            <select ng-model="StudentType" name="studenttype" class="form-control" ng-change="getStudentType()" required>
+                                <option value="">-- Student Type --</option>
+                                @*<option value="Student">Student</option>*@
+                                @*<option value="Brand Student">Brand Student</option>*@
+                                <option value="Course Student">Course Student</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-12" ng-hide="hideCourseStudent">
+
+                            <!--List of Intern Student-->
+                            <h5 style="text-align:center"><b>List Of Course Students </b></h5>
+                            <br />
+                            <table ng-table="CoursetudentsList" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-repeat="d in $data">
+                                    <td title="'S.No'">{{$index+1}}</td>
+                                    <td title="'Name'">{{d.Name}}</td>
+                                    <td title="'Select'">
+                                        @* chkInternStudent*@
+                                        <input type="checkbox" ng-model="d.chkCourseStudents" ng-change="SelectMultipleCourseStudentForTutorStudentCommunication();" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <hr />
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12" ng-hide="hideBrandStudent">
+                            <h5 style="text-align:center"><b>List Of Brand Students </b></h5>
+                            <br />
+                            <table ng-table="BrandStudentsList" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-repeat="d in $data">
+                                    <td title="'S.No'">{{$index+1}}</td>
+                                    <td title="'Name'">{{d.Name}}</td>
+                                    <td title="'Select'">
+                                        @* chkInternStudent*@
+                                        <input type="checkbox" ng-model="d.chkBrandStudents" ng-change="SelectMultipleBrandStudentForTutorStudentCommunication()" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <hr />
+                        </div>
+                    </div>
+
+
+
+                        
+                    <div class="row">
+
+                        <div class="col-md-12" ng-hide="hideUnregisteredStudent">
+                            <h5 style="text-align:center"><b>List Of Students Not Registered In Course </b></h5>
+                            <br />
+                            <table ng-table="StudentsListUnregisteredInCourse" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                                <tr ng-repeat="d in $data">
+                                    <td title="'S.No'">{{$index+1}}</td>
+                                    <td title="'Name'">{{d.Name}}</td>
+                                    <td title="'Select'">
+                                        @* chkInternStudent*@
+                                        <input type="checkbox" ng-model="d.chkBrandStudent" ng-change="SelectMultipleBrandStudentForCommunication();" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <hr />
+                        </div>
+
+                    </div>
+
+                       
+
+
+                    
+
+                    <br />
+
+
+
+
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <label>Message To Students</label>
+                            <textarea type="text" class="form-control" ng-model="mdlMsgToStudents"></textarea>
+                        </div>
+                    </div>
+
+                    @*<div class="form-row">
+                            <div class="col-md-12">
+                                <label>Message To All</label>
+                                <textarea type="text" class="form-control" ng-model="mdlMsgAll"></textarea>
+                            </div>
+                        </div>*@
+
+                    <div class="form-row text-center mt-3">
+                        <div class="col-md-12">
+                            <input type="button" value="Sent Message" class="btn btn-primary" ng-click="TutorsToStudentAddCommunicatioin();" />
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+
+
+

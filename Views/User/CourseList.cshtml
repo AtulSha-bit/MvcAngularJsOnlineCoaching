@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "CourseList";
+    Layout = "~/Views/Shared/_LayoutStudents.cshtml";
+}
+
+
+
+<link href="~/Content/fontawesome-all.min.css" rel="stylesheet" />
+
+<style>
+    .internHeading {
+        padding-top: 27px;
+    }
+
+    .internCardBody {
+        height: 98px;
+        word-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+<title>Show Course List</title>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="CourseListDetail()">
+   <br /> <br />
+    <h2 class="text-center"><b><u>Course List</u></b></h2>
+    <br />
+    <div class="row" id="firstrow">
+        <div class="card mt-2 col-md-3" style="height:200px;" ng-repeat="d in CourseList">
+            <center>
+                <div class="internHeading">
+                    <h5 class="ng-binding">{{ d.CourseName }}</h5>
+                </div>
+                <div class="card-body internCardBody">
+                    @*<p class="justify-content-around">{{ d.Duration }}</p>*@
+                    <p class="justify-content-around">{{ d.DurationName }}</p>
+                </div>
+             @*   <a class="btn btn-info" ng-click="getCoursesDetails(d.StructureId)">Register</a>*@
+            </center>
+        </div>
+    </div>
+    <br />
+</div>
+
+

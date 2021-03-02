@@ -1,0 +1,202 @@
+﻿
+
+@{
+    ViewBag.Title = "CoursesListDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Css/CourseListdetails.css" rel="stylesheet" />
+<style>
+    h2 {
+        margin-top: 0px;
+    }
+
+    #scope {
+        padding: 0px 0px 0px 0px !important;
+    }
+
+    .sd:before {
+        width: 1em;
+        height: 1em;
+        line-height: 1em;
+        display: inline-block;
+        font-family: 'FontAwesome', sans-serif;
+        content: "\f164";
+        padding-right: 18px;
+        padding-left: 40px;
+    }
+
+    .scope {
+        padding: 0px 0px 0px 0px !important;
+    }
+
+    .btn:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0rem rgba(0,0,0,0);
+    }
+
+    .btn-link:hover {
+        color: #0056b3;
+        text-decoration: none;
+        
+    }
+    .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+        width: 100%;
+         padding-right: 0px; 
+        padding-left: 0px;
+
+    }
+
+    li {
+        font-size: 13px;
+    }
+
+    .row {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+</style>
+<script>
+    window.console = window.console || function (t) { };
+</script>
+<script>
+    if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+    }
+</script>
+
+<div class="container">
+    <div ng-app="app" ng-controller="MyCtrl" ng-init="getCourseStructureDetailsBasedOnId();" ng-cloak>
+
+        <div class="col-md-12" style="margin-top:9em;">
+            <h3 style="text-transform:capitalize;text-align:center"><b> {{ CourseName }} </b></h3>
+        </div>
+
+        <div class="row" id="req">
+            <h3 style="margin: 0 2.4rem 1.6rem;">What you'll learn</h3>
+            <div class="col-md-12">
+                <ul class="requl">
+                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" id="req">
+            <h3 style="margin: 0 2.4rem 1.6rem;">Requirements</h3>
+            <div class="col-md-12">
+                <ul class="requl">
+                    <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">We Start from Scratch so no previous experience required!</span></li>
+                    <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">This Course is targeted Primarily at Beginners, So if you have more than a few years Linux experience, this course might not be for you.</span></li>
+                    <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">This Course is targeted Primarily at Beginners, So if you have more than a few years Linux experience, this course might not be for you.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row" id="req">
+            <h3 style="margin: 0 2.4rem 1.6rem;">Description</h3>
+            <div class="col-md-12">
+
+                <p class="sd"> {{ShortDescription}} </p>
+                <h6 ng-if="ShortDescription === undefined || ShortDescription === ''">{{ CourseName }} is good course to take for getting recruited in good companies</h6>
+            </div>
+        </div>
+
+        <div class="" id="req">
+
+            <h3 style="margin: 0 2.4rem 1.6rem;">Course Content</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <i class="fa fa-chevron-down" id="fa"></i>  Prerequisities
+                                    </button>
+                                </h2>
+
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul class="pure-tree">
+                                        <li ng-repeat="d in prerequisitearray" id="subli">
+                                            {{ d.PrerequisitePoints }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" ng-repeat="d in HeadingsContent">
+                            <div class="card-header" id="HeadingCount-{{$index+1}}">
+                                @*id="headingTwo"*@
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapse-{{$index+1}}" aria-expanded="false" aria-controls="collapse-{{$index+1}}">
+                                        <i class="fa fa-chevron-down" id="fa"></i> {{ d.CourseContentHeading }}
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapse-{{$index+1}}" class="collapse" aria-labelledby="HeadingCount-{{$index+1}}" data-parent="#accordionExample">
+                                <div class="card-body text-left">
+
+                                    <ul ng-repeat="d1 in DescriptionsContent" id="scope">
+                                        <li ng-if="d.ContentId === d1.ContentId" id="subli" style="padding-left:0 !important">{{d1.Description}}</li>
+                                    </ul>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <div class="boxx">
+                        <h3 style="margin: .5rem 2.4rem 1.6rem;">Contents</h3>
+
+                        <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+                        <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+                        <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+
+
+                        <div class="row">
+                            <div class="col-md-12" ng-repeat="d in HeadingsContent">
+                                <ol class="scope"><u><b>{{$index+1}}. {{ d.CourseContentHeading }}</u></b></ol>
+                                <ul ng-repeat="d1 in DescriptionsContent" class="scope">
+                                    <li ng-if="d.ContentId === d1.ContentId">{{d1.Description}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br /><br />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
+<script src="~/Scripts/courselist.js"></script>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>

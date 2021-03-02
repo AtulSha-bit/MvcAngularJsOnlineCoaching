@@ -1,0 +1,132 @@
+﻿@model OnlineCoaching.Linq_To_Sql.SITSPL_tblStudentProfile
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Css/log.css" rel="stylesheet" />
+
+    <link href="~/Css/balsamiqsans.css" rel="stylesheet" />
+    <title>Student Login</title>
+
+</head>
+
+<body>
+    @using (Html.BeginForm("StudentLogin", "User", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 col-12">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-12 left">
+                            <img src="~/Images/hd images/Student Login.jpg" style="height:100%" class="w-100" />
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-12 pt-lg-4 right">
+                            <ul>
+                                <a href="#">Student Login</a>
+                            </ul>
+
+                            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "label control-label" })
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", required = "required", autocomplete = "off" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "label control-label" })
+
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control", required = "required" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            @if (ViewBag.Message != null)
+                            {
+                                <h5 style="color:red;text-align:center">@ViewBag.Message</h5>
+                            }
+
+                            <input type="submit" value="LOGIN" class="btn btn-info" />
+                            <br />
+                            <br />
+                            <a href="~/User/ForgetPassword">Forget Password?</a>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    }
+
+
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StudentLogin</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>SITSPL_tblStudentProfile</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>
+    -->

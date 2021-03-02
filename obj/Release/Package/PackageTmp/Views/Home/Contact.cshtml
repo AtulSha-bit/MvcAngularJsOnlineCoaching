@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<title>Contact Us</title>
+<style>
+    #notes {
+        margin-top: 10rem;
+    }
+</style>
+
+<!-- xs<576 | 576<sm<768 | 768<md<992 | 992<lg<1200 | 1200<xl -->
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="Contactinit()" ng-cloak>
+    <div class="modal fade" data-backdrop="static" id="verifyEmailOtpCon">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">&times;</a>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Verify Email OTP</label>
+                        <input type="text" class="form-control" ng-model="VerifyOTPForContact" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    <button class="btn btn-success" ng-click="ConfirmContactOtp()">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12" id="notes">
+                <p>
+                    We are always here to help. If your have requirements/queries about our services; fill up the contact form
+                    below and we'll do our best to reply within 24 hours Alternatively simply pickup the phone and give us a
+                    call.
+                </p>
+                <hr />
+            </div>
+        </div>
+    </div>
+    <section class="form-section">
+        <div class="row">
+            <div class="col-md-6">
+                <form name="validateContact" style="padding: 10px 100px;">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" required name="contactname" ng-model="mdlContactName" ng-pattern="/^[a-z A-Z]+$/" autocomplete="off" nmaxlength="128" placeholder="Full name *">
+                            <span style="color:Red" ng-show="validateContact.contactname.$error.required && validateContact.contactname.$touched" ng-cloak>
+                                Contact Name is required
+                            </span>
+                            <span style="color:Red" ng-show="validateContact.contactname.$dirty && validateContact.contactname.$error.pattern" ng-cloak>
+                                Contact Name must contain alphabets (A-Z and a-z) only
+                            </span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" ng-model="mdlContactEmail" name="contactemail" required ng-pattern="emailregularexpression" maxlength="128" placeholder="Email Address *">
+                            <span style="color:Red" ng-show="validateContact.contactemail.$error.required && validateContact.contactemail.$touched" ng-cloak>
+                                Contact Email is required
+                            </span>
+                            <span style="color:Red" ng-show="validateContact.contactemail.$dirty && validateContact.contactemail.$error.pattern" ng-cloak>
+                                Invalid Email
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" ng-model="mdlContactMobile" required name="contactmobile" autocomplete="off" maxlength="10" ng-pattern="/^[6-9][0-9]{9}$/" placeholder="Mobile *">
+                            <span style="color:Red" ng-show="validateContact.contactmobile.$error.required && validateContact.contactmobile.$touched" ng-cloak>
+                                Contact Mobile is required
+                            </span>
+                            <span style="color:Red" ng-show="validateContact.contactmobile.$dirty && validateContact.contactmobile.$error.pattern" ng-cloak>
+                                10 digits only must start with 6,7,8,9
+                            </span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <select class="form-control" name="contactCountry" id="" required ng-model="mdlContactCountry">
+                                <option value="" selected>-- Select Country--</option>
+                                <option value="India">India</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="U.S.A">U.S.A</option>
+                                <option value="England">England</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span style="color:Red" ng-show="validateContact.contactCountry.$error.required && validateContact.contactCountry.$touched" ng-cloak>
+                                Contact Country is required
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <input type="text" class="form-control" required name="contactSubject" ng-model="mdlContactSubject" nmaxlength="128" placeholder="Subject *">
+                            <span style="color:Red" ng-show="validateContact.contactSubject.$error.required && validateContact.contactSubject.$touched" ng-cloak>
+                                Contact Subject is required
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <textarea class="form-control" required name="contactMessage" ng-model="mdlContactMessage" maxlength="512" rows="3"></textarea>
+                            <span style="color:Red" ng-show="validateContact.contactMessage.$error.required && validateContact.contactMessage.$touched" ng-cloak>
+                                Contact Message is required
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12 text-center">
+                            @*ng-click="AddForContact();"*@
+                            <button type="submit" class="btn btn-sm btn-primary" ng-disabled="validateContact.$invalid" ng-click="SendOtpForContact()"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-6 address">
+                <h5>Call Us / WhatsApp</h5>
+                <p>
+                    <a href="tel:+919899790165"><i class="fas fa-phone"></i> +(91) 9899790165 </a><br>
+                </p>
+                <h5>Email / Website</h5>
+                <p>
+                    <a href="mailto:simplesnippetsinfo@gmail.com"><i class="fas fa-envelope"></i> info@specialiseditsquad.com</a><br>
+                    <a href="http://www.specialiseditsquad.com/"><i class="fas fa-globe"></i></i> http://www.specialiseditsquad.com/ </a>
+
+                </p>
+                <h5>Working hours</h5>
+                <p>
+                    Mon - Fri : 9am - 6pm(IST)
+                </p>
+                <h5>Address</h5>
+                <p>
+                    Mayur Vihar Phase-1,
+                    New Delhi
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid">
+            <!-- <iframe class="embed-responsive-item" src="..."></iframe> -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.765011964037!2d77.29180221508203!3d28.606825582428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce498917df2f3%3A0x301e8bd905f22ae1!2s1%2C%201st%20St%2C%20Pocket%205%2C%20Pratap%20Nagar%2C%20Mayur%20Vihar%2C%20New%20Delhi%2C%20Delhi%20110091!5e0!3m2!1sen!2sin!4v1598712443618!5m2!1sen!2sin"
+                    width="100%" height="450px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "AddStudentFeedback";
+    Layout = "~/Views/Shared/_LayoutStudents.cshtml";
+}
+
+@*<h2>Student Feedback</h2>
+    <div ng-app="app" ng-controller="MyCtrl">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Subject</label>
+                <input type="text" class="form-control" ng-model="mdlStudentFeedSub" maxlength="128" />
+            </div>
+            <div class="col-md-6">
+                <label>Message</label>
+                <textarea type="text" class="form-control" ng-model="mdlStduentFeedMsg" maxlength="512"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <input type="button" ng-click="AddStudentFeedbackDetails()" class="btn btn-primary" value="Submit" />
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </div>*@
+<style>
+    html, body {
+        background-color: #add8e647;
+    }
+
+    form {
+        max-width: 600px;
+        margin: auto;
+    }
+    input.form-control, select.form-control {
+        background-color: rgb(255, 255, 255) !important;
+    }
+
+    textarea {
+        background-color: rgba(255, 255, 255, 255) !important;
+    }
+</style>
+<br />
+
+<div ng-app="app" ng-controller="MyCtrl">
+    <form style="background-color:lightblue; border-radius:15px 0px 15px 0px;padding:10px;margin-top:7em;">
+        <h2 class="text-center"><b><u>Student Feedback</u></b></h2>
+        <div class="form-group row mt-4">
+            <label for="staticEmail" class="col-sm-2 col-form-label"><b>Subject</b></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="mdlStudentFeedSub" maxlength="128" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label"><b>Message</b></label>
+            <div class="col-sm-10">
+                <textarea type="text" class="form-control" ng-model="mdlStduentFeedMsg" maxlength="512"></textarea>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <input type="button" ng-click="AddStudentFeedbackDetails()" class="btn btn-primary" value="Submit" />
+            </div>
+
+        </div>
+    </form>
+
+</div>
+
+
+

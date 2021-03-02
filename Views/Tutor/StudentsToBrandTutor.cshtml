@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "StudentsToBrandTutor";
+    Layout = "~/Views/Shared/_LayoutBrandTutor.cshtml";
+}
+
+<br />
+<br />
+<style>
+    form label {
+        color: #3d5a80 !important;
+        /*  font-size: 20px !important;*/
+        font-weight: unset;
+    }
+
+
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: inline-table;
+    }
+
+    @@media only screen and (max-width:767px) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+@*BrandStudentMessageToTutours*@
+
+<h2 style="text-align:center;text-transform:capitalize"><b>Students To Brand Tutor Incoming</b></h2>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetStudentMessageOfBrandTutor()" ng-cloak class="m-3">
+    <form class="inner2">
+
+        <div class="row mt-1 mt-lg-1 mt-md-1 ml-1 mr-1">
+        
+            <br /><br />
+            <table ng-table="BrandStudentMessageToTutours" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                    <td data-title="'S.No'">{{$index+1}}</td>
+                   
+                    <td data-title="'Student Name'" sortable="'Name'" filter="{ 'Name': 'text' }"> {{ user.Name }}</td>
+                    <td data-title="'Message'" sortable="'Message'" filter="{ 'Message': 'text' }"> {{ user.Message }}</td>
+                    <td data-title="'Date'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">{{ user.DateCreated }}</td>
+
+                </tr>
+            </table>
+        </div>
+
+    </form>
+
+
+</div>
+

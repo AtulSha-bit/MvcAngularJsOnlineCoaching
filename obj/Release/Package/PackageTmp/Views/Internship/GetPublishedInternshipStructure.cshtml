@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "GetPublishedInternshipStructure";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+</style>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="GetPublishedInternshipStructureDetails()">
+
+    <br />
+
+    <h2 class="text-center"><b><u>Published Internship Structure</u></b></h2>
+    <div class="row m-1">
+        <table ng-table="InternshipStrTable" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="d in $data">
+                <td data-title="'Sno'">{{ $index+1}}</td>
+                <td data-title="'Internship Name'" filter="{ 'InternshipName':'text' }" sortable="'InternshipName'"> {{ d.InternshipName}} </td>
+                <td data-title="'Month(s)'" sortable="'DurationName'" filter="{ 'DurationName':'text' }"> {{ d.DurationName }} </td>
+                <td data-title="'Fees'" sortable="'Fees'" filter="{ 'Fees':'text' }" style="text-align:right">
+                    {{ d.Fees}}
+                </td>
+                <td data-title="'Discount'" sortable="'Discount'" filter="{ 'Discount':'text'}" style="text-align:center">
+                    {{ d.Discount}}
+                </td>
+                <td data-title="'Net Amount'" sortable="'NetAmount'" filter="{ 'NetAmount':'text'}" style="text-align:right">
+                    {{ d.NetAmount}}
+                </td>
+                <td data-title="'Internship Type'" sortable="'InternshipType'" filter="{ 'InternshipType':'text'}" style="text-align:center">
+                    {{ d.InternshipType}}
+                </td>
+                <td data-title="'ValidFrom'" sortable="'ValidFrom'" filter="{ 'ValidFrom':'text'}">
+                    {{ d.ValidFrom}}
+                </td>
+                <td data-title="'ValidTo'" sortable="'ValidTo'" filter="{ 'ValidTo':'text' }">{{ d.ValidTo}}</td>
+                <td data-title="'Created Date'" sortable="'DateCreated'" filter="{ 'DateCreated':'text' }"> {{ d.DateCreated}} </td>
+                <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy':'text' }"> {{ d.CreatedBy }} </td>
+                <td data-title="'Last Updated'" sortable="'LastUpdated'" filter="{ 'LastUpdated':'text' }"> {{ user.LastUpdated}} </td>
+                <td data-title="'Updated By'" sortable="'UpdatedBy'" filter="{'UpdatedBy':'text'}"> {{ user.UpdatedBy }} </td>
+                <td data-title="'Action'">
+                    <a href="#" class="btn btn-sm btn-info" ng-click="EditIntershipStructure(d.InternStructureId)"><i class="fa fa-edit"></i></a>
+                    @*EditIntership(d);*@
+                    <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal"
+                       ng-click="deleteCourseStructure(user.CourseId,user.StructureId)"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="15" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

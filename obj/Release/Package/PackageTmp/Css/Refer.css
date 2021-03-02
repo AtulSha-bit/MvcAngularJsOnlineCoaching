@@ -1,0 +1,69 @@
+﻿html, body {
+    overflow-x: hidden;
+    background-color: whitesmoke;
+    font-family: "Poppins",sans-serif;
+}
+
+h2 {
+    margin-top: 7.6rem;
+    text-align: center;
+    height: 16vh;
+    width: 100%;
+    background-color: rgba(0,123,255,.25);
+    padding: 1.6rem;
+}
+
+.refer p {
+    font-size: 14px;
+    line-height: 25px;
+    padding: 1rem 5rem;
+}
+
+.refer p1 {
+    font-weight: bold;
+    color: #6b6d6f;
+    padding-left: 5rem;
+}
+
+@media screen and (max-width:1024px) {
+    h2 {
+        margin-top: 8.6rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    h2 {
+        margin-top: 7.6rem;
+        font-size: 1.5rem;
+        padding: 2.6rem;
+    }
+
+    .refer p {
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    h2 {
+        margin-top: 11rem;
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+
+    .refer p {
+        font-size: 13px;
+        line-height: 20px;
+        padding: .5rem 1rem;
+    }
+
+    .refer p1 {
+        padding-left: 1rem;
+    }
+}
+
+@media screen and (max-width:375px) {
+    h2 {
+        margin-top: 10.5rem;
+        font-size: 1.1rem;
+    }
+}

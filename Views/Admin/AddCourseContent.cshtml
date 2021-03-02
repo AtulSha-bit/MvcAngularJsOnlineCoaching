@@ -1,0 +1,928 @@
+﻿@{
+    ViewBag.Title = "AddCourseContent";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<link href="~/Css/CourseListdetails.css" rel="stylesheet" />
+<style>
+    h2 {
+        margin-top: 0px;
+    }
+</style>
+<script>
+    window.console = window.console || function (t) { };
+</script>
+<script>
+    if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+    }
+</script>
+<style>
+    @@media (min-width: 576px) {
+        .modal-dialog {
+            max-width: 800px;
+            margin: 1.75rem auto;
+        }
+    }
+</style>
+
+<style>
+
+    fieldset {
+        margin-top: 20px;
+        border: 1px solid #3d5a80 !important;
+        padding: 1rem !important;
+    }
+
+    legend {
+        width: auto !important;
+        text-align: center;
+    }
+
+    .b {
+        position: relative;
+        left: 44%;
+        top: 50%;
+    }
+
+    #req {
+        padding-bottom: 1.6rem;
+        background-color: aliceblue;
+        border: 1px solid #dcdacb;
+        border-radius: 4px;
+        padding: 1.4rem 0;
+    }
+
+    svg {
+        min-height: .96rem;
+        color: #73726c;
+        width: 1rem;
+        height: 1rem;
+        fill: currentColor;
+        display: inline-block;
+        flex-shrink: 0;
+    }
+
+    .boxx {
+        border: 1px solid #B0B9C5;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .card {
+        margin-bottom: 0rem;
+    }
+
+    .scope {
+        padding: 0px 0px 0px 0px !important;
+    }
+
+    #subli:before {
+        width: 1em;
+        height: 1em;
+        line-height: 1em;
+        display: inline-block;
+        font-family: 'FontAwesome', sans-serif;
+        content: "\f192";
+        padding-right: 18px;
+        padding-left: 40px;
+    }
+
+    .sd:before {
+        width: 1em;
+        height: 1em;
+        line-height: 1em;
+        display: inline-block;
+        font-family: 'FontAwesome', sans-serif;
+        content: "\f164";
+        padding-right: 18px;
+        padding-left: 40px;
+    }
+    /*li{
+        font-size:13px;
+    }*/
+    .pure-tree:not(.main-tree) li {
+        /* overflow: hidden;*/
+        /* height: 0;*/
+        display: block;
+    }
+</style>
+
+<style>
+    .box {
+        font-family: sf pro display,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    }
+
+    .coursename {
+        font-size: 2.5rem;
+        text-transform: capitalize;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -.02rem;
+        margin-bottom: .8rem;
+    }
+
+    .shortdesc {
+        font-size: 1rem;
+    }
+
+    .box2 {
+        font-family: sf pro display,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    }
+
+    .card-header {
+        padding: 0px !important;
+    }
+
+    body {
+        background-color: #f1f7f4;
+        color: #185d57;
+    }
+
+    .list-group-item {
+        /* background-color: #fff;*/
+        border: 1px solid #185d57;
+    }
+
+    .btn-outline-success {
+        color: #185d57;
+        border-color: #185d57;
+    }
+
+        .btn-outline-success:hover {
+            color: #f1f7f4;
+            background-color: #185d57;
+            border-color: #185d57;
+        }
+</style>
+<br />
+<h2 style="text-align:center"><b><u>Add Course Content</u></b></h2>
+
+<div class="row" ng-app="app" ng-controller="MyCtrl" ng-init="addcoursecontentinit();updatecoursecontentinit()">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-8">
+                <form class="mb-5">
+                    <fieldset>
+                        <legend>Information</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="publish"><b>Publish</b></label>
+                                <input type="checkbox" class="form-control" name="IsPublished" ng-model="IsPublished" />
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label><b>-- Select Course Type --</b> </label>
+                                <select id="ddlcoursetype" class="form-control" required ng-model="CourseType" ng-change="ChangeCourseType()">
+                                    <option value="">-- Select Course Type --</option>
+                                    <option>Course</option>
+                                    <option>Intern</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6" ng-hide="hideCourse">
+                                <label for="inputState">Course</label>
+                                <select id="inputState" class="form-control" name="course" ng-model="Course"
+                                        ng-options="item.CourseId as item.CourseName for item in CoursesData" ng-change="changeCourse()">
+                                    <option value="" selected><p> -- Select  Course --</p></option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6 col-md-3" ng-hide="hideInternship">
+                                <label for="inputState">Internship</label>
+                                <select id="inputState" class="form-control" name="internship" ng-model="Internship"
+                                        ng-options="item.InternshipId as item.InternshipName for item in InternshipsData" ng-change="changeInternship()">
+                                    <option value="" selected>-- Select Internship --</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label><b>Short Description</b></label>
+                                <input type="text" class="form-control" ng-model="ShortDescription">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6" ng-hide="hideCourseContentHeading">
+                                <label><b>Course Content Heading</b></label>
+                                <input type="text" class="form-control" ng-model="CourseContentHeading" />
+                            </div>
+                            <div class="form-group col-md-6" ng-hide="hidesubheadingchoice">
+                                <label><b>-- Sub Heading Choice --</b> </label>
+                                <select class="form-control" required ng-model="SubHeadingChoice" ng-change="ChangeSubHeadingChoice()">
+                                    <option value="" selected>-- Select Choice --</option>
+                                    @*<option>Yes</option>*@
+                                    <option>No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12" ng-hide="hideaboutcourse">
+                                <label><b>About Course</b></label>
+                                <textarea rows="20" cols="60" class="form-control" ng-model="AboutCourse">
+                                </textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-6" ng-hide="hidesubheadingcontent">
+                                <label><b> -- Sub Heading --</b></label>
+                                <input type="text" class="form-control" ng-model="SubHeading" />
+                            </div>
+                        </div>
+
+                        <fieldset ng-hide="hideDescription">
+                            <legend>Course Content Point</legend>
+                            <div class="form-row" ng-hide="hideDescription">
+                                <div class="form-group col-md-5">
+                                    <label for="publish"><b>Publish</b></label>
+                                    <input type="checkbox" class="form-control" name="IsPublish" ng-model="mdlStudentCategoryIsPublished" />
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="inputAddress2"><b>Content Points</b></label>
+                                    <input type="text" class="form-control" ng-model="Description" id="description" name="description" maxlength="100" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-2" ng-hide="btnhidebtnhidedescription">
+                                    <div class="b">
+                                        <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultipleDescription()" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" ng-hide="hideDescriptionTable" ng-if="arrCourseContentDescription.length > 0">
+                                <div class="form-group col-md-12">
+                                    <table class="table table table-striped">
+                                        <tr style="background-color:aliceblue">
+                                            <th>S.No</th>
+                                            <th>Publish</th>
+                                            <th>Content Point</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tr ng-repeat="d in arrCourseContentDescription track by $index">
+                                            <td>{{$index+1}}</td>
+                                            <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                            <td>
+                                                <input class="form-control" maxlength="100" ng-model="d.Description" />
+                                            </td>
+                                            <td><input type="button" value="Delete" class="btn btn-danger btn-sm" ng-click="DeleteDescription($index);" /></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!--=== Start What will you Learn strat Here By Dilshad A. on 22 Dec 2020 ===-->
+                        <fieldset ng-hide="hideDescription">
+                            <legend>What Will You Learn</legend>
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <label for="publish"><b>Publish</b></label>
+                                    <input type="checkbox" class="form-control" name="WWLIsPublished" ng-model="mdlWWLIsPublished" />
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="inputAddress2"><b>Learn Points</b></label>
+                                    <input type="text" class="form-control" ng-model="mdlLearnPoint" id="LearnPoint" name="LearnPoint" maxlength="100" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-2" ng-hide="btnhidebtnhidedescription">
+                                    <div class="b">
+                                        <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultipleCourseContentWhatWillLearn()" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" ng-hide="hideDescriptionTable" ng-if="arrCourseContentWhatWillLearn.length > 0">
+                                <div class="form-group col-md-12">
+                                    <table class="table table table-striped">
+                                        <tr style="background-color:aliceblue">
+                                            <th>S.No</th>
+                                            <th>Publish</th>
+                                            <th>Learn Point</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tr ng-repeat="d in arrCourseContentWhatWillLearn track by $index">
+                                            <td>{{$index+1}}</td>
+                                            <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                            <td>
+                                                <input class="form-control" maxlength="100" ng-model="d.LearnPoint" />
+                                            </td>
+                                            <td><input type="button" value="Delete" class="btn btn-danger btn-sm" ng-click="DeleteCourseContentWhatWillLearn($index);" /></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--=== END What will you Learn strat Here By Dilshad A. on 22 Dec 2020 ===-->
+                        <!--=== Start Requirements strat Here By Dilshad A. on 23 Dec 2020 ===-->
+                        <fieldset ng-hide="hideDescription">
+                            <legend>Requirements Point</legend>
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <label for="publish"><b>Publish</b></label>
+                                    <input type="checkbox" class="form-control" name="RequirementIsPublished" ng-model="mdlRequirementIsPublished" />
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="inputAddress2"><b>Requirement Points</b></label>
+                                    <input type="text" class="form-control" ng-model="mdlRequirementPoint" id="RequirementPoint" name="RequirementPoint" maxlength="100" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-2" ng-hide="btnhidebtnhidedescription">
+                                    <div class="b">
+                                        <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultipleCourseContentRequirement()" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" ng-hide="hideDescriptionTable" ng-if="arrCourseContentRequirement.length > 0">
+                                <div class="form-group col-md-12">
+                                    <table class="table table table-striped">
+                                        <tr style="background-color:aliceblue">
+                                            <th>S.No</th>
+                                            <th>Publish</th>
+                                            <th>Requirement Point</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tr ng-repeat="d in arrCourseContentRequirement track by $index">
+                                            <td>{{$index+1}}</td>
+                                            <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                            <td>
+                                                <input class="form-control" maxlength="100" ng-model="d.RequirementPoint" />
+                                            </td>
+                                            <td><input type="button" value="Delete" class="btn btn-danger btn-sm" ng-click="DeleteCourseContentRequirement($index);" /></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--=== END Requirements strat Here By Dilshad A. on 23 Dec 2020 ===-->
+                        <!--=== Start FAQ strat Here By Dilshad A. on 23 Dec 2020 ===-->
+                        <fieldset ng-hide="hideDescription">
+                            <legend>FAQ Point</legend>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="publish"><b>Publish</b></label>
+                                    <input type="checkbox" class="form-control" name="FAQIsPublished" ng-model="mdlFAQIsPublished" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputAddress2"><b>Question</b></label>
+                                    <input type="text" class="form-control" ng-model="mdlFAQQuestion" id="FAQQuestion" name="FAQQuestion" maxlength="256" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="inputAddress3"><b>Answer</b></label>
+                                    <input type="text" class="form-control" ng-model="mdlFAQAnswer" id="FAQAnswer" name="FAQAnswer" maxlength="256" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-2" ng-hide="btnhidebtnhidedescription">
+                                    <div class="b">
+                                        <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultipleCourseContentFAQ()" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" ng-hide="hideDescriptionTable" ng-if="arrCourseContentFAQ.length > 0">
+                                <div class="form-group col-md-12">
+                                    <table class="table table table-striped">
+                                        <tr style="background-color:aliceblue">
+                                            <th>S.No</th>
+                                            <th>Publish</th>
+                                            <th>Question</th>
+                                            <th>Answer</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tr ng-repeat="d in arrCourseContentFAQ track by $index">
+                                            <td>{{$index+1}}</td>
+                                            <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                            <td>
+                                                <input class="form-control" maxlength="256" ng-model="d.Question" />
+                                            </td>
+                                            <td>
+                                                <input class="form-control" maxlength="256" ng-model="d.Answer" />
+                                            </td>
+                                            <td><input type="button" value="Delete" class="btn btn-danger btn-sm" ng-click="DeleteCourseContentFAQ($index);" /></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--=== END FAQ strat Here By Dilshad A. on 23 Dec 2020 ===-->
+                        <!--=== Start Latest Points strat Here By Dilshad A. on 23 Dec 2020 ===-->
+                        <fieldset ng-hide="hideDescription">
+                            <legend>Latest Point</legend>
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <label for="publish"><b>Publish</b></label>
+                                    <input type="checkbox" class="form-control" name="LatestPointIsPublished" ng-model="mdlLatestPointIsPublished" />
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="inputAddress2"><b>Latest Points</b></label>
+                                    <input type="text" class="form-control" ng-model="mdlLatestPoint" id="LatestPoint" name="LatestPoint" maxlength="100" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-2" ng-hide="btnhidebtnhidedescription">
+                                    <div class="b">
+                                        <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultipleCourseContentLatestPoint()" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" ng-hide="hideDescriptionTable" ng-if="arrCourseContentLatestPoint.length > 0">
+                                <div class="form-group col-md-12">
+                                    <table class="table table table-striped">
+                                        <tr style="background-color:aliceblue">
+                                            <th>S.No</th>
+                                            <th>Publish</th>
+                                            <th>Latest Point</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tr ng-repeat="d in arrCourseContentLatestPoint track by $index">
+                                            <td>{{$index+1}}</td>
+                                            <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                            <td>
+                                                <input class="form-control" maxlength="100" ng-model="d.LatestPoint" />
+                                            </td>
+                                            <td><input type="button" value="Delete" class="btn btn-danger btn-sm" ng-click="DeleteCourseContentLatestPoint($index);" /></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!--=== END Latest Point strat Here By Dilshad A. on 23 Dec 2020 ===-->
+
+                        <fieldset ng-hide="hideDescription">
+                            <legend>Course Prerequisite</legend>
+                            <div class="form-row" ng-hide="hidePrerequisities">
+                                <hr />
+                                <div class="form-group col-md-5">
+                                    <label for="publish"><b>Publish</b></label>
+                                    <input type="checkbox" class="form-control" name="IsPublish" ng-model="mdlPrerequisitiesIsPublished" />
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="inputAddress2"><b>Prerequisite Points</b></label>
+                                    <input class="form-control" ng-model="PrerequisityPoint" id="prerequisities" name="prerequisity" maxlength="100" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-2" ng-hide="btnhideprequisities">
+                                    <div class="b">
+                                        <input type="button" value="Add" class="btn btn-outline-primary btn-sm" ng-click="AddMultiplePrequisities()" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" ng-hide="hidePrerequisitiesTable" ng-if="arrCoursePrerequisities.length > 0">
+                                <div class="form-group col-md-12">
+                                    <table class="table table table-striped">
+                                        <tr style="background-color:aliceblue">
+                                            <th>S.No</th>
+                                            <th>Publish</th>
+                                            <th>Prerequisities</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tr ng-repeat="d in arrCoursePrerequisities track by $index">
+                                            <td>{{$index+1}}</td>
+                                            <td><input type="checkbox" ng-model="d.IsPublished" class="form-control" /></td>
+                                            <td>
+                                                <input class="form-control" maxlength="100" ng-model="d.PrerequisitePoints" />
+                                            </td>
+                                            <td><input type="button" value="Delete" class="btn btn-danger btn-sm" ng-click="DeletePrequisities($index);" /></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-row text-center">
+                            <div class="form-group col-md-12" ng-hide="Insertbtn">
+                                <button type="submit" class="btn btn-primary" ng-click="AddCourseContent()">Submit</button>
+                            </div>
+                        </div>
+
+                        <div class="form-row text-center">
+                            <div class="form-group col-md-12" ng-hide="hideUpdatebtn">
+                                <button type="submit" class="btn btn-primary" ng-click="UpdateCourseContentDescription()">Update</button>
+
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <input type="button" value="Preview" ng-click="CourseContentPreview();" class="btn btn-info" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-4" style="margin-top: 2em;">
+                <!--==== List Of Bullets Points(Content Points) By Dilshad On 31 Oct 2020-->
+                <div class="row" ng-if="CourseType === 'Course'">
+                    <div class="col-md-12">
+                        <div ng-repeat="d in CourseHeadingArray">
+                            <ol><u>{{$index+1}}. {{ d.CourseContentHeading }}</u> </ol>
+                            <ul ng-repeat="d1 in Descriptiondata">
+                                <li ng-if="d.ContentId === d1.ContentId">{{d1.Description}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <br /><br />
+                <!--==== END List Of Bullets Points(Content Points) By Dilshad On 31 Oct 2020-->
+                <!--==== List Of Bullets Points(Content Points For Internship) By Dilshad On 2 Nov 2020-->
+                <div class="row" ng-if="CourseType === 'Intern'">
+                    <div class="col-md-12">
+                        <div ng-repeat="d in InternHeadingdata">
+                            <ol><u>{{$index+1}}. {{ d.CourseContentHeading }}</u> </ol>
+                            <ul ng-repeat="d1 in InternDescriptiondata">
+                                <li ng-if="d.ContentId === d1.ContentId">{{d1.Description}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <br /><br />
+                <!--==== END List Of Bullets Points(Content Points For Internship) By Dilshad On 2 Nov 2020-->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="row">
+        <!-- Modal Course-->
+        <div id="CourseContentPreview" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Course Content Overview </h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- ======Start New Code On 24 Dec By Atul Sh.=====-->
+                        <div class="boxx text-black">
+                            <div class="row">
+                                <div class="col-md-7 box" style="background-color:;">
+                                    <span class="coursename">{{ Course.CourseName }} </span><br />
+                                    <span class="shortdesc mt-4">
+                                        {{    ShortDescription }}
+                                    </span><br />
+                                    <button type="button" class="btn btn-outline-success mt-3">Share<i class="fa fa-share" aria-hidden="true"></i></button>
+                                    <button type="button" class="btn btn-outline-success mt-3">Gift this course<i class="fa fa-gift" aria-hidden="true"></i></button>
+                                    <div id="what"></div>
+                                    <div class="box2 mt-5">
+                                        <div class="row">
+                                            <ul class="list-group list-group-horizontal-md" style="font-weight:700;">
+                                                <li class="list-group-item"><a href="#what" style="color: #185d57;">What you will learn?</a></li>
+                                                <li class="list-group-item"><a href="#about" style="color: #185d57;">About</a></li>
+                                                <li class="list-group-item"><a href="#course" style="color: #185d57;">Content</a></li>
+                                                <li class="list-group-item"><a href="#requirement" style="color: #185d57;">Requirements</a></li>
+                                                <li class="list-group-item" style=""><a href="#what" style="color: #185d57;">Faq</a></li>
+                                            </ul>
+                                        </div>
+                                        <div id="about"></div>
+                                        <div class="req mt-5" id="">
+                                            <h3 style="margin: 0 0rem 1.6rem;"><u>What you'll learn</u></h3>
+                                            <ul class="requl">
+
+                                                @*<li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>*@
+                                                <li ng-repeat="d in arrCourseContentWhatWillLearn" id="subli">
+                                                    {{ d.LearnPoint }}
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                        <div id="course"></div>
+                                        <div class="req" id="">
+                                            <h3 style="margin: 0 0rem 1.6rem;"><u>About</u></h3>
+                                            @*<ul class="requl">
+                <li>
+                    Building a website is, in many ways, an exercise of willpower. It’s tempting to get distracted by the bells and whistles of the design process, and forget all about creating compelling content.
+
+                    It's that compelling content that's crucial to making inbound marketing work for your business.
+
+                    So how do you balance your remarkable content creation with your web design needs? It all starts with the "About Us" page.
+                </li>
+            </ul>*@
+                                            {{  AboutCourse }}
+                                        </div>
+                                        <div id="requirement"></div>
+                                        <div class="req" id="">
+                                            <h3 style="margin: 0 0rem 1.6rem;"><u>Course Content</u></h3>
+                                            <div class="accordion" id="accordionExample">
+                                                <div class="card">
+                                                    <div class="card-header" id="headingOne">
+                                                        <h2 class="mb-0">
+                                                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                <i class="fa fa-chevron-down" id="fa"></i>  Prerequisities
+                                                            </button>
+                                                        </h2>
+                                                    </div>
+
+                                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                        <div class="card-body">
+                                                            <ul class="pure-tree">
+
+                                                                <li ng-repeat="d in arrCoursePrerequisities" id="subli">
+                                                                    {{ d.PrerequisitePoints }}
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card" ng-repeat="d in HeadingsContent">
+                                                    <div class="card-header" id="HeadingCount-{{$index+1}}">
+                                                        @*id="headingTwo"*@
+                                                        <h2 class="mb-0">
+                                                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                                                    data-target="#collapse-{{$index+1}}" aria-expanded="false" aria-controls="collapse-{{$index+1}}">
+                                                                <i class="fa fa-chevron-down" id="fa"></i> {{ d.CourseContentHeading }}
+                                                            </button>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="collapse-{{$index+1}}" class="collapse" aria-labelledby="HeadingCount-{{$index+1}}" data-parent="#accordionExample">
+                                                        <div class="card-body text-left">
+
+                                                            <ul ng-repeat="d1 in DescriptionsContent" id="scope">
+                                                                <li ng-if="d.ContentId === d1.ContentId" id="subli" style="padding-left:0 !important">{{d1.Description}}</li>
+                                                            </ul>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row req" id="">
+                                            <h3 style="margin: 1.5rem 0rem 1.6rem;"><u>Requirements</u></h3>
+                                            <div class="col-md-12">
+                                                <ul class="requl">
+                                                    <li ng-repeat="d in arrCourseContentRequirement" id="subli">
+                                                        {{ d.RequirementPoint }}
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="req" id="faq">
+                                            <h3 style="margin: 0 0rem 1.6rem;"><u>FAQ</u></h3>
+                                            <div class="accordion" id="accordionExample">
+                                                <div class="card" ng-repeat="d in arrCourseContentFAQ">
+                                                    <div class="card-header" id="HeadingCount-{{$index+1}}">
+                                                        <h2 class="mb-0">
+                                                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                                                                    data-target="#collapse-{{$index+1}}" aria-expanded="false" aria-controls="collapse-{{$index+1}}">
+                                                                <i class="fa fa-chevron-down" id="fa"></i> {{ d.Question }}
+                                                            </button>
+                                                        </h2>
+                                                    </div>
+                                                    <div id="collapse-{{$index+1}}" class="collapse" aria-labelledby="HeadingCount-{{$index+1}}" data-parent="#accordionExample">
+                                                        <div class="card-body text-left">
+                                                            <ul id="scope">
+                                                                <li id="subli" style="padding-left:0 !important">{{d.Answer}}</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 sidebox" style="height:auto;width:4rem;border:0px solid red;padding: 2.4rem;color:black;background-color: #185d57;">
+                                    <div class="card-group">
+                                        <div class="card" style="position: fixed; top: 12rem; right: 222px;">
+                                            <div class="mr-3 ml-3 mb-3 mt-3">
+                                                <button type="button" class="btn btn-primary btn-lg btn-block">Add to cart</button>
+                                                <button type="button" class="btn btn-secondary btn-lg btn-block">Buy now</button>
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Course Duration:</h5>
+                                                <ul style="text-transform:capitalize">
+                                                    <li>online courses</li>
+                                                    <li>course material(e-format)</li>
+                                                    <li>highly interactive</li>
+                                                    <li>periodic test(online)</li>
+                                                    <li><b>Latest Point:</b></li>
+                                                    <li ng-repeat="d in arrCourseContentLatestPoint">
+                                                       {{ d.LatestPoint }}
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ====== END New Code On 24 Dec By Atul Sh.=====-->
+
+                        <div class="col-md-12" style="">
+                            <h3 style="text-transform:capitalize;text-align:center"><b> {{ CourseName }} </b></h3>
+                        </div>
+
+                        <div class="row" id="req">
+                            <h3 style="margin: 0 2.4rem 1.6rem;"><u>What you'll learn</u></h3>
+                            <div class="col-md-12">
+                                <ul class="requl">
+                                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">By the end of this course you will understand the fundamentals of the Linux operating system and be able to apply that knowledge in a practical and useful manner.</span></li>
+                                    <li><svg xmlns=""><path d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" /></svg><span class="gap">Quickly Learn the Linux Command Line from Scratch!</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row" id="req">
+                            <h3 style="margin: 0 2.4rem 1.6rem;"><u>Requirements</u></h3>
+                            <div class="col-md-12">
+                                <ul class="requl">
+                                    <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">We Start from Scratch so no previous experience required!</span></li>
+                                    <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">This Course is targeted Primarily at Beginners, So if you have more than a few years Linux experience, this course might not be for you.</span></li>
+                                    <li><svg id="icon-bullet" viewBox="0 0 24 24"><path d="M17 12c0 2.761-2.239 5-5 5s-5-2.239-5-5c0-2.761 2.239-5 5-5s5 2.239 5 5z"></path></svg><span class="gap">This Course is targeted Primarily at Beginners, So if you have more than a few years Linux experience, this course might not be for you.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row" id="req">
+                            <h3 style="margin: 0 2.4rem 1.6rem;"><u>Description</u></h3>
+                            <div class="col-md-12">
+                                <p class="sd"> {{ShortDescription}} </p>
+                                <h6 ng-if="ShortDescription === undefined || ShortDescription === ''">{{ CourseName }} is good course to take for getting recruited in good companies</h6>
+                            </div>
+                        </div>
+
+                        <div class="row" style="text-align:center;" id="req">
+                            <div class="col-md-6">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <i class="fa fa-chevron-down" id="fa"></i>  Prerequisities
+                                                </button>
+                                            </h2>
+
+                                        </div>
+
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <ul class="pure-tree">
+                                                    <li ng-repeat="d in arrCoursePrerequisities" id="subli">
+                                                        {{ d.PrerequisitePoints }}
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        @*ng-repeat="d in HeadingsContent"*@
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    <i class="fa fa-chevron-down" id="fa"></i><lable>
+                                                        {{CourseContentHeading}}
+                                                    </lable>
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                            <div class="card-body text-left">
+
+                                                <ul ng-repeat="d1 in arrCourseContentDescription" class="scope">
+                                                    <li id="subli">{{d1.Description}}</li>
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="boxx">
+                                    <h3 style="margin: .5rem 2.4rem 1.6rem;">Contents</h3>
+
+                                    <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+                                    <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+                                    <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ol class="scope"><u><b>{{$index+1}}. {{CourseContentHeading }}</u></b></ol>
+                                            <ul ng-repeat="d1 in arrCourseContentDescription" style="padding:0px 0px 0px 0px;">
+                                                <li>{{d1.Description}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <br /><br />
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Modal Intern-->
+        <div id="InternContentPreview" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Intern Content Overview </h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="col-md-12" style="">
+                            <h3 style="text-transform:capitalize;text-align:center"><b> {{ CourseName }} </b></h3>
+                        </div>
+
+                        <div class="col-md-12 rights border">
+                            @*<h4 class=""><u><b>Content</b></u></h4>*@
+                            <div class="mt-1">
+                                <h6><b>Description</b></h6>
+                                <p ng-if="ShortDescription !== undefined">{{ShortDescription}}</p>
+                                <p ng-if="ShortDescription === undefined || ShortDescription === ''"></p>
+
+                                <div class="row" style="text-align:center;">
+                                    <div class="col-md-12">
+                                        <div class="accordion" id="accordionExample">
+
+                                            <div class="card">
+                                                @*ng-repeat="d in HeadingsContent"*@
+                                                <div class="card-header" style="padding:0" id="headingTwo">
+                                                    <h2 class="mb-0">
+                                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            <lable>
+                                                                {{CourseContentHeading}}
+                                                            </lable><i class="fa fa-chevron-down float-right" id="fa"></i>
+                                                        </button>
+                                                    </h2>
+                                                </div>
+                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                    <div class="card-body text-left">
+                                                        <ol style="margin:0;padding:0;margin-left:15px;">
+                                                            <li ng-repeat="d in descriptionarray">
+                                                                {{CourseContentHeading}}
+                                                            </li>
+                                                            <li ng-repeat="d1 in arrCourseContentDescription">
+                                                                {{d1.Description}}
+                                                            </li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <br />
+                            <div>
+                                <h6><b>Prerequisities</b></h6>
+                                <ol style="margin:0;padding:0">
+                                    <li ng-repeat="d in arrCoursePrerequisities">
+                                        {{ d.PrerequisitePoints }}
+                                    </li>
+                                </ol>
+                            </div>
+                            <br />
+
+                            @*<div>
+                                    <h6><b>Description</b></h6>
+                                    <ol style="margin:0;padding:0">
+                                        <li ng-repeat="d in arrCourseContentDescription ">
+                                            {{d.Description}}
+                                        </li>
+                                    </ol>
+                                </div>*@
+                            <br />
+
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
+<script src="~/Scripts/courselist.js"></script>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>

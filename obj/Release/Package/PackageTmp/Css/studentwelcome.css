@@ -1,0 +1,63 @@
+﻿html, body {
+    overflow-x: hidden;
+}
+
+.all {
+    margin: 30px;
+}
+
+#img {
+    height: 280px;
+}
+
+.a1 {
+    font-weight: 600;
+    color: #802f99;
+    font-size: 18px;
+}
+
+.card-img-top {
+    height: 200px !important;
+    width: 50% !important;
+}
+
+.bor {
+    border: 0px solid green;
+    text-align: -webkit-center;
+}
+
+#datw {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.circle {
+    border: 0px solid #f1ac2c;
+    border-radius: 50%;
+    width: 50% !important;
+    height: 145px;
+    background-image: linear-gradient(#802f99, #999);
+}
+
+p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: antiquewhite;
+}
+
+.table th {
+    padding: 1.75rem !important;
+}
+
+.table td, .table th {
+    padding: 1.75rem !important;
+}
+
+.footer {
+    height: 50px;
+    background-image: linear-gradient(#802f99, #999);
+}

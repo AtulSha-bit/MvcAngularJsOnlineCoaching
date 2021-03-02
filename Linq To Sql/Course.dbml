@@ -1,0 +1,1161 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CourseDB" Class="CourseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-U134RL1;Initial Catalog=CourseDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CourseDBConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SITSPL_tblInternship" Member="SITSPL_tblInternships">
+    <Type Name="SITSPL_tblInternship">
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InternshipName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PublishedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisplayOnweb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SITSPL_tblInternship_SITSPL_tblInternshipStructure" Member="SITSPL_tblInternshipStructures" ThisKey="InternshipId" OtherKey="InternshipId" Type="SITSPL_tblInternshipStructure" />
+      <Association Name="SITSPL_tblInternship_tblInternTutor" Member="tblInternTutors" ThisKey="InternshipId" OtherKey="InternshipId" Type="tblInternTutor" />
+      <Association Name="SITSPL_tblInternship_tblContent" Member="tblContents" ThisKey="InternshipId" OtherKey="InternCourseId" Type="tblContent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblUserDetails" Member="SITSPL_tblUserDetails">
+    <Type Name="SITSPL_tblUserDetail">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AadharNo" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="PanNo" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblStudentWithCourse" Member="SITSPL_tblStudentWithCourses">
+    <Type Name="SITSPL_tblStudentWithCourse">
+      <Column Name="StudentId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StructureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Landmark" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="PinCode" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DiscountPercent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaymentMode" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPaid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PaymentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FeeAfterDiscount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="JoiningDate" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(216)" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IPAddress" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PublishedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PaymentStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PaidAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Due" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NextInstallmentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RemarksPayment" Type="System.String" DbType="NVarChar(216)" CanBeNull="true" />
+      <Column Name="TemporaryRegNo" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FinalRegNo" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="SITSPL_tblCourseStructure_SITSPL_tblStudentWithCourse" Member="SITSPL_tblCourseStructure" ThisKey="StructureId" OtherKey="StructureId" Type="SITSPL_tblCourseStructure" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblCourse" Member="SITSPL_tblCourses">
+    <Type Name="SITSPL_tblCourse">
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IPAddress" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PublishedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SITSPL_tblCourse_SITSPL_tblCourse" Member="SITSPL_tblCourse2" ThisKey="CourseId" OtherKey="CourseId" Type="SITSPL_tblCourse" Cardinality="One" />
+      <Association Name="SITSPL_tblCourse_tblCourseResource" Member="tblCourseResources" ThisKey="CourseId" OtherKey="CourseId" Type="tblCourseResource" />
+      <Association Name="SITSPL_tblCourse_tblCourseTutor" Member="tblCourseTutors" ThisKey="CourseId" OtherKey="CourseId" Type="tblCourseTutor" />
+      <Association Name="SITSPL_tblCourse_SITSPL_tblCourseStructure" Member="SITSPL_tblCourseStructures" ThisKey="CourseId" OtherKey="CourseId" Type="SITSPL_tblCourseStructure" />
+      <Association Name="SITSPL_tblCourse_tblContent" Member="tblContents" ThisKey="CourseId" OtherKey="CourseId" Type="tblContent" />
+      <Association Name="SITSPL_tblCourse_SITSPL_tblCourse" Member="SITSPL_tblCourse1" ThisKey="CourseId" OtherKey="CourseId" Type="SITSPL_tblCourse" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDuration" Member="tblDurations">
+    <Type Name="tblDuration">
+      <Column Name="DurationId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DurationName" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="DurationType" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblDuration_SITSPL_tblInternshipStructure" Member="SITSPL_tblInternshipStructures" ThisKey="DurationId" OtherKey="DurationId" Type="SITSPL_tblInternshipStructure" />
+      <Association Name="tblDuration_SITSPL_tblCourseStructure" Member="SITSPL_tblCourseStructures" ThisKey="DurationId" OtherKey="DurationId" Type="SITSPL_tblCourseStructure" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInternApply" Member="tblInternApplies">
+    <Type Name="tblInternApply">
+      <Column Name="InterApllyId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Twiter" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Instagram" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Facebook" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="HowDoYouKnow" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="CollegeUniv" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Qualification" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Trade" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="YearOfPassing" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="InternshipStructureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternApply" Member="SITSPL_tblInternshipStructure" ThisKey="InternshipStructureId" OtherKey="InternStructureId" Type="SITSPL_tblInternshipStructure" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblInternshipStructure" Member="SITSPL_tblInternshipStructures">
+    <Type Name="SITSPL_tblInternshipStructure">
+      <Column Name="InternStructureId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DurationName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DurationMonths" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastApplyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalAvailableSeat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ValidTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InternshipType" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FeeAfterDiscount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Stipened" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PublishedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StipenedMoney" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DurationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternApply" Member="tblInternApplies" ThisKey="InternStructureId" OtherKey="InternshipStructureId" Type="tblInternApply" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternActivity" Member="tblInternActivities" ThisKey="InternStructureId" OtherKey="InternshipId" Type="tblInternActivity" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternPerk" Member="tblInternPerks" ThisKey="InternStructureId" OtherKey="InternshipId" Type="tblInternPerk" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternBullet" Member="tblInternBullets" ThisKey="InternStructureId" OtherKey="InternshipId" Type="tblInternBullet" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternSkillReq" Member="tblInternSkillReqs" ThisKey="InternStructureId" OtherKey="InternshipId" Type="tblInternSkillReq" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternWhoCanApply" Member="tblInternWhoCanApplies" ThisKey="InternStructureId" OtherKey="InternshipId" Type="tblInternWhoCanApply" />
+      <Association Name="SITSPL_tblInternship_SITSPL_tblInternshipStructure" Member="SITSPL_tblInternship" ThisKey="InternshipId" OtherKey="InternshipId" Type="SITSPL_tblInternship" IsForeignKey="true" />
+      <Association Name="tblDuration_SITSPL_tblInternshipStructure" Member="tblDuration" ThisKey="DurationId" OtherKey="DurationId" Type="tblDuration" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInternActivity" Member="tblInternActivities">
+    <Type Name="tblInternActivity">
+      <Column Name="InternActivityId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActivityType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActivityPoint" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternActivity" Member="SITSPL_tblInternshipStructure" ThisKey="InternshipId" OtherKey="InternStructureId" Type="SITSPL_tblInternshipStructure" IsForeignKey="true" />
+      <Association Name="tblInternActivityType_tblInternActivity" Member="tblInternActivityType" ThisKey="ActivityType" OtherKey="InternActivityTypeId" Type="tblInternActivityType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInternTutor" Member="tblInternTutors">
+    <Type Name="tblInternTutor">
+      <Column Name="InternTutorId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TutorId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPubllished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SITSPL_tblInternship_tblInternTutor" Member="SITSPL_tblInternship" ThisKey="InternshipId" OtherKey="InternshipId" Type="SITSPL_tblInternship" IsForeignKey="true" />
+      <Association Name="SITSPL_tblTutor_tblInternTutor" Member="SITSPL_tblTutor" ThisKey="TutorId" OtherKey="TutorId" Type="SITSPL_tblTutor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInternPerk" Member="tblInternPerks">
+    <Type Name="tblInternPerk">
+      <Column Name="InternPerkId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PerkName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternPerk" Member="SITSPL_tblInternshipStructure" ThisKey="InternshipId" OtherKey="InternStructureId" Type="SITSPL_tblInternshipStructure" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblActivity" Member="tblActivities">
+    <Type Name="tblActivity">
+      <Column Name="ActivityId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ActivityOperation" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ActivityMessage" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ActivityDescription" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="ActivityDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInternBullet" Member="tblInternBullets">
+    <Type Name="tblInternBullet">
+      <Column Name="BulletId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BulletPoint" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternBullet" Member="SITSPL_tblInternshipStructure" ThisKey="InternshipId" OtherKey="InternStructureId" Type="SITSPL_tblInternshipStructure" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInternSkillReq" Member="tblInternSkillReqs">
+    <Type Name="tblInternSkillReq">
+      <Column Name="InternSkillId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CourseName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternSkillReq" Member="SITSPL_tblInternshipStructure" ThisKey="InternshipId" OtherKey="InternStructureId" Type="SITSPL_tblInternshipStructure" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInternWhoCanApply" Member="tblInternWhoCanApplies">
+    <Type Name="tblInternWhoCanApply">
+      <Column Name="InternApplyId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ApplyPoint" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SITSPL_tblInternshipStructure_tblInternWhoCanApply" Member="SITSPL_tblInternshipStructure" ThisKey="InternshipId" OtherKey="InternStructureId" Type="SITSPL_tblInternshipStructure" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInternActivityType" Member="tblInternActivityTypes">
+    <Type Name="tblInternActivityType">
+      <Column Name="InternActivityTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InternActivityType" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPubllished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblInternActivityType_tblInternActivity" Member="tblInternActivities" ThisKey="InternActivityTypeId" OtherKey="ActivityType" Type="tblInternActivity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStudentCategory" Member="tblStudentCategories">
+    <Type Name="tblStudentCategory">
+      <Column Name="StudentCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblStudentCategory_tblStudentSubCategory" Member="tblStudentSubCategories" ThisKey="StudentCategoryId" OtherKey="StudentCategoryId" Type="tblStudentSubCategory" />
+      <Association Name="tblStudentCategory_SITSPL_tblCourseStructure" Member="SITSPL_tblCourseStructures" ThisKey="StudentCategoryId" OtherKey="StdCatgId" Type="SITSPL_tblCourseStructure" />
+      <Association Name="tblStudentCategory_SITSPL_tblStudentProfile" Member="SITSPL_tblStudentProfiles" ThisKey="StudentCategoryId" OtherKey="StudentCategoryId" Type="SITSPL_tblStudentProfile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCourseDescription" Member="tblCourseDescriptions">
+    <Type Name="tblCourseDescription">
+      <Column Name="DescriptionId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblContent_tblCourseDescription" Member="tblContent" ThisKey="ContentId" OtherKey="ContentId" Type="tblContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblTutor" Member="SITSPL_tblTutors">
+    <Type Name="SITSPL_tblTutor">
+      <Column Name="TutorId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TutorName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TutorExperience" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TutorImage" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TutorDOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TutorContact" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TutorEmail" Type="System.String" DbType="NVarChar(550) NOT NULL" CanBeNull="false" />
+      <Column Name="TutorState" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TutorCity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TutorAddress" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="TutorPinCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AdminDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TutorType" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Association Name="SITSPL_tblTutor_tblInternTutor" Member="tblInternTutors" ThisKey="TutorId" OtherKey="TutorId" Type="tblInternTutor" />
+      <Association Name="SITSPL_tblTutor_tblCourseTutor" Member="tblCourseTutors" ThisKey="TutorId" OtherKey="TutorId" Type="tblCourseTutor" />
+      <Association Name="SITSPL_tblTutor_tblPublicResource" Member="tblPublicResources" ThisKey="TutorId" OtherKey="TutorId" Type="tblPublicResource" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCoursePrerequisities" Member="tblCoursePrerequisities">
+    <Type Name="tblCoursePrerequisity">
+      <Column Name="PrerequisiteId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="PrerequisitePoints" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="tblContent_tblCoursePrerequisity" Member="tblContent" ThisKey="ContentId" OtherKey="ContentId" Type="tblContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCourseResource" Member="tblCourseResources">
+    <Type Name="tblCourseResource">
+      <Column Name="ResourceId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResourceName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ResourceType" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SITSPL_tblCourse_tblCourseResource" Member="SITSPL_tblCourse" ThisKey="CourseId" OtherKey="CourseId" Type="SITSPL_tblCourse" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCourseTutor" Member="tblCourseTutors">
+    <Type Name="tblCourseTutor">
+      <Column Name="CourseTutorId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TutorId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SITSPL_tblCourse_tblCourseTutor" Member="SITSPL_tblCourse" ThisKey="CourseId" OtherKey="CourseId" Type="SITSPL_tblCourse" IsForeignKey="true" />
+      <Association Name="SITSPL_tblTutor_tblCourseTutor" Member="SITSPL_tblTutor" ThisKey="TutorId" OtherKey="TutorId" Type="SITSPL_tblTutor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFeedback" Member="tblFeedbacks">
+    <Type Name="tblFeedback">
+      <Column Name="FeedbackId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblInternResource" Member="tblInternResources">
+    <Type Name="tblInternResource">
+      <Column Name="ResourceId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TutorId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ResourceName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ResourceType" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPubllished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblResource" Member="tblResources">
+    <Type Name="tblResource">
+      <Column Name="ResourceId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResourceName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ResourceType" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPubllished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TutorId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblDocument" Member="SITSPL_tblDocuments">
+    <Type Name="SITSPL_tblDocument">
+      <Column Name="DocumentId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DocumentType" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DoucmentNo" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="AadharNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="PanNo" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblCourseDetails" Member="SITSPL_tblCourseDetails">
+    <Type Name="SITSPL_tblCourseDetail">
+      <Column Name="CourseDetailsId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="StudentEmail" Type="System.String" DbType="NVarChar(750) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseValidFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CourseValidTo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DiscountPercent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FeesWithDiscount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NetAmountToPay" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="JoiningDate" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="SITSPL_tblStudentProfile_SITSPL_tblCourseDetail" Member="SITSPL_tblStudentProfile" ThisKey="StudentId" OtherKey="StudentId" Type="SITSPL_tblStudentProfile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblContact" Member="SITSPL_tblContacts">
+    <Type Name="SITSPL_tblContact">
+      <Column Name="ContactId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(350)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Pincode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Landmark" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFAQ" Member="tblFAQs">
+    <Type Name="tblFAQ">
+      <Column Name="FAQId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Question" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Answer" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="QuestionType" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserFAQ" Member="tblUserFAQs">
+    <Type Name="tblUserFAQ">
+      <Column Name="UserFAQId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Query" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRefer" Member="tblRefers">
+    <Type Name="tblRefer">
+      <Column Name="ReferId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReferBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileRefereBy" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailReferBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ReferTo" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileReferTo" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailReferTo" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblContact" Member="tblContacts">
+    <Type Name="tblContact">
+      <Column Name="ContactId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEnquiry" Member="tblEnquiries">
+    <Type Name="tblEnquiry">
+      <Column Name="EnquiryId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CandidateType" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="EnquiryType" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="PinCode" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(700)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPublicResource" Member="tblPublicResources">
+    <Type Name="tblPublicResource">
+      <Column Name="PublicResourceId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TutorId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ResourceTitle" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ResourceName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DownloadResourceId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SITSPL_tblTutor_tblPublicResource" Member="SITSPL_tblTutor" ThisKey="TutorId" OtherKey="TutorId" Type="SITSPL_tblTutor" IsForeignKey="true" />
+      <Association Name="tblDownloadResourceType_tblPublicResource" Member="tblDownloadResourceType" ThisKey="DownloadResourceId" OtherKey="DownloadResourceId" Type="tblDownloadResourceType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDownloadResourceType" Member="tblDownloadResourceTypes">
+    <Type Name="tblDownloadResourceType">
+      <Column Name="DownloadResourceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DownloadResourceName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="tblDownloadResourceType_tblPublicResource" Member="tblPublicResources" ThisKey="DownloadResourceId" OtherKey="DownloadResourceId" Type="tblPublicResource" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblBatch" Member="SITSPL_tblBatches">
+    <Type Name="SITSPL_tblBatch">
+      <Column Name="BatchId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BatchSize" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="BatchType" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblBatchGroup" Member="SITSPL_tblBatchGroups">
+    <Type Name="SITSPL_tblBatchGroup">
+      <Column Name="BatchGroupId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BatchName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="BatchDescription" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStudentSubCategory" Member="tblStudentSubCategories">
+    <Type Name="tblStudentSubCategory">
+      <Column Name="StudedetSubCategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubCategoryName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentCategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Association Name="tblStudentCategory_tblStudentSubCategory" Member="tblStudentCategory" ThisKey="StudentCategoryId" OtherKey="StudentCategoryId" Type="tblStudentCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblCourseStructure" Member="SITSPL_tblCourseStructures">
+    <Type Name="SITSPL_tblCourseStructure">
+      <Column Name="StructureId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DurationName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Months" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DiscountPercent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ValidTo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="JoiningMonth" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="JoiningDate" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IPAddress" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PublishedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DurationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StdCatgId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TutorId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BatchId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="StudentSubCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SITSPL_tblCourseStructure_SITSPL_tblStudentWithCourse" Member="SITSPL_tblStudentWithCourses" ThisKey="StructureId" OtherKey="StructureId" Type="SITSPL_tblStudentWithCourse" />
+      <Association Name="SITSPL_tblCourseStructure_SITSPL_tblCourseStructure" Member="SITSPL_tblCourseStructure2" ThisKey="StructureId" OtherKey="StructureId" Type="SITSPL_tblCourseStructure" Cardinality="One" />
+      <Association Name="SITSPL_tblCourseStructure_SITSPL_tblStudentProfile" Member="SITSPL_tblStudentProfiles" ThisKey="StructureId" OtherKey="StructureId" Type="SITSPL_tblStudentProfile" />
+      <Association Name="SITSPL_tblCourseStructure_SITSPL_tblCourseStructure" Member="SITSPL_tblCourseStructure1" ThisKey="StructureId" OtherKey="StructureId" Type="SITSPL_tblCourseStructure" IsForeignKey="true" />
+      <Association Name="tblStudentCategory_SITSPL_tblCourseStructure" Member="tblStudentCategory" ThisKey="StdCatgId" OtherKey="StudentCategoryId" Type="tblStudentCategory" IsForeignKey="true" />
+      <Association Name="tblDuration_SITSPL_tblCourseStructure" Member="tblDuration" ThisKey="DurationId" OtherKey="DurationId" Type="tblDuration" IsForeignKey="true" />
+      <Association Name="SITSPL_tblCourse_SITSPL_tblCourseStructure" Member="SITSPL_tblCourse" ThisKey="CourseId" OtherKey="CourseId" Type="SITSPL_tblCourse" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblStudentProfile" Member="SITSPL_tblStudentProfiles">
+    <Type Name="SITSPL_tblStudentProfile">
+      <Column Name="StudentId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentType" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileImage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Fblink" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Twitterlink" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Instalink" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PaymentStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PaidAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Due" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NextInstallmentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RemarksPayment" Type="System.String" DbType="NVarChar(216)" CanBeNull="true" />
+      <Column Name="TemporaryRegNo" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="FinalRegNo" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="PaymentMode" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsPaid" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PaymentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(216)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateDeleted" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(18)" CanBeNull="true" />
+      <Column Name="StructureId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StudentCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TutorId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CourseStructureId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BatchId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="BatchGroupId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="StudentSubCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SITSPL_tblStudentProfile_SITSPL_tblCourseDetail" Member="SITSPL_tblCourseDetails" ThisKey="StudentId" OtherKey="StudentId" Type="SITSPL_tblCourseDetail" />
+      <Association Name="tblStudentCategory_SITSPL_tblStudentProfile" Member="tblStudentCategory" ThisKey="StudentCategoryId" OtherKey="StudentCategoryId" Type="tblStudentCategory" IsForeignKey="true" />
+      <Association Name="SITSPL_tblCourseStructure_SITSPL_tblStudentProfile" Member="SITSPL_tblCourseStructure" ThisKey="StructureId" OtherKey="StructureId" Type="SITSPL_tblCourseStructure" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SITSPL_tblUser" Member="SITSPL_tblUsers">
+    <Type Name="SITSPL_tblUser">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UserPrefix" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="AutoId" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="CompletedId" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCommunication" Member="tblCommunications">
+    <Type Name="tblCommunication">
+      <Column Name="CommunicationId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsAllTeacher" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAllStudent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MessageAllTeachers" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="MessageAllStudents" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsAll" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="MessageAll" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryType" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StudentCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsAllInternStudent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAllCourseStudent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAllInternTutor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAllCourseTutor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TutorId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StudentSubCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AdminId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblContentFAQ" Member="tblContentFAQs">
+    <Type Name="tblContentFAQ">
+      <Column Name="ContentFAQId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Question" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Answer" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ContentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="tblContent_tblContentFAQ" Member="tblContent" ThisKey="ContentId" OtherKey="ContentId" Type="tblContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblContentLatestPoint" Member="tblContentLatestPoints">
+    <Type Name="tblContentLatestPoint">
+      <Column Name="ContentLatestId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LatestPoint" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ContentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="tblContent_tblContentLatestPoint" Member="tblContent" ThisKey="ContentId" OtherKey="ContentId" Type="tblContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblContentRequirement" Member="tblContentRequirements">
+    <Type Name="tblContentRequirement">
+      <Column Name="ContentRequirementId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RequirementPoint" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ContentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="tblContent_tblContentRequirement" Member="tblContent" ThisKey="ContentId" OtherKey="ContentId" Type="tblContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblContentWhatWillYouLearn" Member="tblContentWhatWillYouLearns">
+    <Type Name="tblContentWhatWillYouLearn">
+      <Column Name="WhatWillYouLearnId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="LearnPoint" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="tblContent_tblContentWhatWillYouLearn" Member="tblContent" ThisKey="ContentId" OtherKey="ContentId" Type="tblContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblContent" Member="tblContents">
+    <Type Name="tblContent">
+      <Column Name="ContentId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InternCourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseType" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseContentHeading" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsSubHeading" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SubHeading" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PublishedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="About" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="tblContent_tblCourseDescription" Member="tblCourseDescriptions" ThisKey="ContentId" OtherKey="ContentId" Type="tblCourseDescription" />
+      <Association Name="tblContent_tblCoursePrerequisity" Member="tblCoursePrerequisities" ThisKey="ContentId" OtherKey="ContentId" Type="tblCoursePrerequisity" />
+      <Association Name="tblContent_tblContentFAQ" Member="tblContentFAQs" ThisKey="ContentId" OtherKey="ContentId" Type="tblContentFAQ" />
+      <Association Name="tblContent_tblContentLatestPoint" Member="tblContentLatestPoints" ThisKey="ContentId" OtherKey="ContentId" Type="tblContentLatestPoint" />
+      <Association Name="tblContent_tblContentRequirement" Member="tblContentRequirements" ThisKey="ContentId" OtherKey="ContentId" Type="tblContentRequirement" />
+      <Association Name="tblContent_tblContentWhatWillYouLearn" Member="tblContentWhatWillYouLearns" ThisKey="ContentId" OtherKey="ContentId" Type="tblContentWhatWillYouLearn" />
+      <Association Name="SITSPL_tblCourse_tblContent" Member="SITSPL_tblCourse" ThisKey="CourseId" OtherKey="CourseId" Type="SITSPL_tblCourse" IsForeignKey="true" />
+      <Association Name="SITSPL_tblInternship_tblContent" Member="SITSPL_tblInternship" ThisKey="InternCourseId" OtherKey="InternshipId" Type="SITSPL_tblInternship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.getTutors" Method="getTutors">
+    <ElementType Name="getTutorsResult">
+      <Column Name="TutorId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TutorName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LongDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TutorExperience" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TutorDOB" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="TutorImage" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TutorContact" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TutorEmail" Type="System.String" DbType="NVarChar(550) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="TutorState" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AdminDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TutorCity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TutorAddress" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="TutorPinCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.showStudentProfile" Method="showStudentProfile">
+    <ElementType Name="showStudentProfileResult">
+      <Column Name="StudentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="ProfileImage" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Fblink" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Twitterlink" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Instalink" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SITSPL_AddCourse" Method="SITSPL_AddCourse">
+    <ElementType Name="SITSPL_AddCourseResult">
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CourseName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SITSPL_showInternship" Method="SITSPL_showInternship">
+    <ElementType Name="SITSPL_showInternshipResult">
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InternshipName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SITSPL_GetCommunication" Method="SITSPL_GetCommunication">
+    <ElementType Name="SITSPL_GetCommunicationResult">
+      <Column Name="CommunicationId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TutorName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="MessageAll" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="MessageAllStudents" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="MessageAllTeachers" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsAllStudent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAllTeacher" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAll" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SITSPL_GetStudents" Method="SITSPL_GetStudents">
+    <Parameter Name="CourseName" Parameter="courseName" Type="System.Int32" DbType="Int" />
+    <Parameter Name="JoiningDate" Parameter="joiningDate" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Month" Parameter="month" Type="System.String" DbType="VarChar(35)" />
+    <ElementType Name="SITSPL_GetStudentsResult">
+      <Column Name="StudentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StructureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Course" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Landmark" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="PinCode" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DiscountPercent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaymentMode" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="FeeAfterDiscount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="DOB1" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="JoiningDate" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="CourseValidFrom" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="CourseValidTo" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(216)" CanBeNull="true" />
+      <Column Name="PaymentStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PaidAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Due" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NextInstallmentDate" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="RemarksPayment" Type="System.String" DbType="NVarChar(216)" CanBeNull="true" />
+      <Column Name="TemporaryRegNo" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FinalRegNo" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SITSPL_GetCommunicationMsgByUserAndId" Method="SITSPL_GetCommunicationMsgByUserAndId">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserType" Parameter="userType" Type="System.String" DbType="NVarChar(128)" />
+    <ElementType Name="SITSPL_GetCommunicationMsgByUserAndIdResult">
+      <Column Name="CommunicationId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsAllTeacher" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAllStudent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MessageAllTeachers" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="MessageAllStudents" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsAll" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="MessageAll" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisplayOnWeb" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryType" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StudentCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsAllInternStudent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAllCourseStudent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAllInternTutor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAllCourseTutor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InterApllyId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Twiter" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Instagram" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Facebook" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="HowDoYouKnow" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="CollegeUniv" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Qualification" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Trade" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="YearOfPassing" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="DisplayOnWeb1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy1" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy1" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="LastUpdated1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPublished1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="InternshipStructureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SITSPL_GetCourseContent" Method="SITSPL_GetCourseContent">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserType" Parameter="userType" Type="System.String" DbType="NVarChar(128)" />
+    <ElementType Name="SITSPL_GetCourseContentResult">
+      <Column Name="ContentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseType" Type="System.String" DbType="NVarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseContentHeading" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsSubHeading" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SubHeading" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortDescription" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SITSPL_GetStudentBrandTutorById" Method="SITSPL_GetStudentBrandTutorById">
+    <Parameter Name="Id" Parameter="id" Type="System.Int64" DbType="BigInt" />
+    <ElementType Name="SITSPL_GetStudentBrandTutorByIdResult">
+      <Column Name="StudentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TutorId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TutorName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TutorEmail" Type="System.String" DbType="NVarChar(550) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SITSPL_UserEnquiryDetailsToAdmin" Method="SITSPL_UserEnquiryDetailsToAdmin">
+    <ElementType Name="SITSPL_UserEnquiryDetailsToAdminResult">
+      <Column Name="EnquiryId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="CandidateType" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="EnquiryType" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="InternshipId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="InternshipName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(700)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SITSPL_ShowCourseStructure" Method="SITSPL_ShowCourseStructure">
+    <ElementType Name="SITSPL_ShowCourseStructureResult">
+      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Course" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="StructureId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ValidFrom" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="ValidTo" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdated" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ISDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="DurationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="strDuration" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="StudentCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="BatchSize" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="BatchId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="StudedetSubCategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCategoryName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

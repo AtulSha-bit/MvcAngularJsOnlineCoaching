@@ -1,0 +1,22 @@
+
+ Angular:
+
+ Angular 
+ Visual Studio Code 
+
+ Node Js
+ 
+ angular cli version : ng --version
+
+1) npm install -g @angular/cli@latest
+2) ng new projectname
+
+3) cd projectname
+
+4) ng serve
+
+1) npm install bootstrap@3
+
+2) angular.json me install bootstrap
+
+

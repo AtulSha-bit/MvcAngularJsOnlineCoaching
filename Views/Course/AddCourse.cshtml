@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "AddCourse";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    if (Session["UserId"] == null)
+    {
+        Response.Redirect("~/Admin/Login");
+    }
+}
+<style>
+    form label {
+        color: #3d5a80 !important;
+      /*  font-size: 20px !important;*/
+        font-weight: unset;
+    }
+
+   
+
+    .table-bordered td {
+        text-align: center;
+    }
+
+    .table-bordered thead th {
+        padding: 15px 26px;
+    }
+
+    .table-responsive {
+        display: inline-table;
+    }
+
+    @@media only screen and (max-width:767px) {
+        .table-responsive {
+            display: block;
+        }
+    }
+</style>
+
+<div ng-app="app" ng-controller="MyCtrl" ng-init="addcourseinit()" class="m-2">
+    
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <form name="courseadd" novalidate>
+                <h2 class="text-center"><b><u>Course</u></b></h2>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="course" class="" style="margin-top:6px;font-size:15px !important;">Course Name</label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="course" id="course" ng-model="strCourse" style="margin-top:13px;">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <button type="submit" class="btn btn-primary" ng-disabled="courseadd.$invalid" ng-click="saveCourse()">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+
+    <div class="row mt-1 mt-lg-1 mt-md-1">
+        <table ng-table="ShowUsers" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+            <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                @if (Session["UserId"] != null)
+                {
+                if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "SuperAdmin")
+                {
+                <td data-title="'Sno'">{{$index+1}}</td>
+                <td data-title="'Course'" sortable="'CourseName'" filter="{ 'CourseName': 'text' }">
+                    {{ user.CourseName }}
+                </td>
+
+                <td data-title="'Date Created'" sortable="'DateCreated'" filter="{ 'DateCreated': 'text' }">
+                    {{ user.DateCreated  }}
+                </td>
+
+                <td data-title="'Created By'" sortable="'CreatedBy'" filter="{ 'CreatedBy': 'text' }">
+                    {{ user.CreatedBy }}
+                </td>
+
+                <td data-title="'Action'" class="act">
+
+                    <a href="#" class="btn btn-sm btn-info" ng-click="editCourse(user.CourseId)"><i class="fa fa-edit"></i></a>
+                    @if (Session["UserType"].ToString() == "SuperAdmin")
+                    {
+                    <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#mydeleteModal" ng-click="deleteCourse(user.CourseId)"><i class="fa fa-trash"></i></a>
+                    }
+                </td>
+                }
+
+                }
+
+
+            </tr>
+
+
+            <tr>
+                <td colspan="5" ng-show="$data =='undefined' || $data =='null' || $data.length==0 ">
+                    <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="modal fade" data-backdrop="static" id="mydeleteModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-
+                       dismiss="modal">&times;</a>
+                </div>
+
+                <div class="modal-body">
+                    Are you sure?
+                    You want to delete this Customer
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                    <a class="btn btn-success" ng-click="DeleteCourse(user.CourseId)">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

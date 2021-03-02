@@ -1,0 +1,210 @@
+﻿
+@{
+    ViewBag.Title = "InternshipListDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/Css/IntershipListDetails.css" rel="stylesheet" />
+<style>
+    .btn:focus {
+        box-shadow: 0 0 0 0rem transparent;
+    }
+</style>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="getInternshipStructureBasedOnId();">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <h3 style="text-align:center;font-weight:bold;text-decoration:underline;text-transform: capitalize;">front end development</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="soft col-md-9 border" style="">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 style="text-transform:capitalize;text-align:center"><b><u> {{ InternshipName }}</u> @* front end development*@</b></h4>
+                </div>
+                <br />
+                <div class="col-md-12">
+                    <a href="" style="color: #8A8A8A;">
+                        <span class="s">
+                            @*SkillBit*@
+                            {{ InternshipName }}
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-12 pt-3">
+                    <a href="" style="color: #8A8A8A;">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span class="w">
+                            Work From Home
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-3 text-left" id="item">
+                    <i class="fa fa-play-circle" aria-hidden="true">&nbsp;START&nbsp;DATE</i>
+                    <p>{{ValidFrom}}</p>
+                </div>
+                <div class="col-md-3 text-left">
+                    <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+                    <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+                    <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+
+                </div>
+                <div class="col-md-3 text-left">
+                    <i class="fa fa-money" aria-hidden="true">&nbsp;STIPEND</i>
+                    <p>Immediate</p>
+                </div>
+                <div class="col-md-3 text-left">
+                    <i class="fa fa-hourglass-end" aria-hidden="true">&nbsp;APPLY BY</i>
+                    <p>{{LastApplyDate}}</p>
+                </div>
+            </div>
+            <div class=" row type mt-5">
+                <div class="col-md-6">
+                    <span class="typeone">Internship</span>
+                    <span class="typetwo">Part time allowed</span>
+                </div>
+                <div class="col-md-6 text-right">
+                    <i class="fa fa-users" aria-hidden="true">&nbsp;1000+&nbsp;applicants</i>
+                </div>
+            </div>
+            <div class="row mt-4 aboutskill">
+                <div class="col-md-12  mt-4">
+                    <div>
+                        <h6 ng-if="ShortDescription !== undefined"><b>About <span> {{ InternshipName }}</span> </b></h6>
+                        <a href="">http://skillbits.in<i class="fa fa-external-link " aria-hidden="true" style="font-size: 12px;"></i></a>
+                        <p> {{ShortDescription}} </p>
+                        <h6 ng-if="ShortDescription === undefined || ShortDescription === ''">{{ InternshipName }} is good internship to take for getting recruited in good companies</h6>
+
+                    </div>
+                    <div class="abtw">
+                        <h6 style="text-transform:capitalize;"><b>About the work from home job/internship</b></h6>
+                        <p>Selected intern's day-to-day responsibilities include:</p>
+                        <div ng-repeat="d in bulletsarray">
+                            <p>{{$index+1}}. {{ d.BulletPoint}}</p>
+                        </div>
+
+                    </div>
+                    <div class="mt-4">
+                        <h6><b>Skill(s) required</b></h6>
+                        <div class="col-md-6" style="margin-top: 18px;">
+                            <div ng-repeat="d in skillSetarray">
+                                <span class="typetwo">
+                                    {{ d.CourseName }}
+                                </span>
+                            </div>
+                        </div>
+                        <p id="learn" class="mt-4">Learn these skills on Internshala Trainings</p>
+                        <div class="col-md-12" style="margin-top: 18px;">
+                            <a href="">
+                                <span class="learneone" ng-repeat="d in skillSetarray">
+                                    Learn {{ d.CourseName }}
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="abtw mt-4">
+                        <h6><b>Who can apply</b></h6>
+                        <p>Only those candidates can apply who have knowledge of:</p>
+                        <p>
+                            <div ng-repeat="d in wcaarray">
+                                {{$index+1}}. {{ d.ApplyPoint }}
+                            </div>
+                        </p>
+                    </div>
+                    <h6 class="mt-4"><b>Perks</b></h6>
+                    <div class="col-md-12" style="margin-top: 18px;">
+                        <span class="typetwo" ng-repeat="d in perksaarray">
+                            {{ d.PerkName }}
+                        </span>
+                    </div>
+                    <h6 class="mt-4"><b>Activity</b></h6>
+                    <div ng-repeat="d in activityaarray">
+                        <h6> Activity Type:  {{ d.ActivityType  }} </h6>
+                        <h6>Activity Point: {{ d.ActivityPoint }} </h6>
+                    </div>
+                    <h6 class="mt-4"><b>Number of openings</b></h6>
+                    <p>{{TotalSeat}}</p>
+                </div>
+            </div>
+            <div class="col-md-12 text-center mt-4 mb-4">
+                <button type="button" class="btn btn-success btn-lg" ng-click="InternApplyPage()">Apply Now</button>
+            </div>
+        </div>
+
+        <!--===============================Internship Content on 09 Nov 2020===================================-->
+        <hr />
+        <div class="col-md-3 rights border">
+            <h4 class=""><u><b>Content</b></u></h4>
+            <div class="mt-4">
+                <h6><b>Description</b></h6>
+                <p ng-if="ShortDescription !== undefined">{{ShortDescription}}</p>
+                <p ng-if="ShortDescription === undefined || ShortDescription === ''"></p>
+
+                @*<h6><b>Heading</b></h6>
+                    <p ng-if="CourseContentHeading !== undefined"><b>1.</b> {{CourseContentHeading}} </p>
+                    <p ng-if="CourseContentHeading === undefined || CourseContentHeading === ''"></p>
+
+                    <h6><b>Sub Heading</b></h6>
+                    <p ng-if="SubHeading !== undefined" style="margin-left:10px;"><b>1.1 </b>{{SubHeading}}</p>
+                    <p ng-if="SubHeading === undefined || SubHeading === ''"></p>*@
+                <div class="row" style="text-align:center;" id="req">
+                    <div class="col-md-12">
+                        <div class="accordion" id="accordionExample">
+
+                            <div class="card">
+                                @*ng-repeat="d in HeadingsContent"*@
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <lable>
+                                                {{CourseContentHeading}}
+                                            </lable><i class="fa fa-chevron-down float-right" id="fa"></i>
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body text-left">
+                                        <ol style="margin:0;padding:0;margin-left:15px;">
+                                            <li ng-repeat="d in descriptionarray">
+                                                {{CourseContentHeading}}
+                                                {{d.Description}}
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <br />
+            <div>
+                <h6><b>Prerequisities</b></h6>
+                <ol style="margin:0;padding:0">
+                    <li ng-repeat="d in prerequisitearray">
+                        {{ d.PrerequisitePoints }}
+                    </li>
+                </ol>
+            </div>
+            <br />
+
+            <div>
+                <h6><b>Description</b></h6>
+                <ol style="margin:0;padding:0">
+                    <li ng-repeat="d in descriptionarray">
+                        {{d.Description}}
+                    </li>
+                </ol>
+            </div>
+            <br />
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,733 @@
+
+Course List Details:
+===================
+
+
+@{
+    ViewBag.Title = "CoursesListDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<style>
+    html {
+        line-height: 1;
+    }
+
+    ol, ul {
+        list-style: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    caption, th, td {
+        text-align: left;
+        font-weight: normal;
+        vertical-align: middle;
+    }
+
+    q, blockquote {
+        quotes: none;
+    }
+
+        q:before, q:after, blockquote:before, blockquote:after {
+            content: "";
+            content: none;
+        }
+
+    a img {
+        border: none;
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+        display: block;
+    }
+
+    /* fontawesome */
+    [class*="fa-"]:before {
+        font-family: 'FontAwesome', sans-serif;
+    }
+
+    /* body {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1em;
+        text-align: center;
+        color: #444444;
+
+    }*/
+
+    h1 {
+        font-size: 2.5em;
+        margin: 2em 0 1em;
+    }
+
+    h2 {
+        margin-bottom: 3em;
+    }
+
+    em,
+    strong {
+        font-weight: 700;
+    }
+
+    input {
+        display: none;
+    }
+
+    header p {
+        margin-bottom: 2em;
+    }
+
+    section {
+        margin-bottom: 2em;
+        padding: 0;
+    }
+
+        section:last-of-type {
+            margin-bottom: 0;
+        }
+
+    p {
+        line-height: 1.5em;
+    }
+
+    .container {
+        z-index: 1;
+        margin-bottom: 4em;
+    }
+
+    .pure-tree {
+        text-align: left;
+        display: block;
+    }
+
+        .pure-tree.main-tree {
+            width: 30em;
+            display: inline-block;
+        }
+
+        .pure-tree:not(.main-tree) {
+            padding-left: 1.2em;
+        }
+
+            .pure-tree:not(.main-tree) li {
+                overflow: hidden;
+                height: 0;
+                display: block;
+            }
+
+        .pure-tree label {
+            display: block;
+            cursor: pointer;
+            color: #717780;
+            border-bottom: 1px dashed #B0B9C5;
+            padding: 1.125em 1.125em 1.125em 0;
+        }
+
+            /* .pure-tree label:before {
+                width: 1em;
+                height: 1em;
+                line-height: 1em;
+                display: inline-block;
+                font-family: 'FontAwesome', sans-serif;
+                content: "\f114";
+                padding-right: .75em;
+            }*/
+
+            .pure-tree label:hover {
+                color: #434a58;
+                border-bottom-color: #434a58;
+            }
+
+        .pure-tree .pure-tree_link a {
+            padding: 1.500em 1.125em 0.750em 0;
+            display: block;
+            border-radius: .2em;
+            color: #717780;
+            text-decoration: none;
+        }
+
+            .pure-tree .pure-tree_link a:hover {
+                color: #434a58;
+            }
+
+        .pure-tree.nested {
+            padding-left: 1.7em;
+        }
+
+        .pure-tree [type="checkbox"] {
+            display: none;
+        }
+
+            .pure-tree [type="checkbox"]:checked + label {
+                color: #434a58;
+                border-bottom-color: #434a58;
+            }
+
+            .pure-tree [type="checkbox"]:checked ~ ul > li {
+                height: auto;
+            }
+
+    li i {
+        float: right;
+    }
+</style>
+
+<script>
+    window.console = window.console || function (t) { };
+</script>
+
+
+
+<script>
+    if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+    }
+</script>
+
+
+<h2>CoursesListDetails</h2>
+
+<h2 style="text-align:center;text-transform:capitalize"><b><u>Course Details</u></b></h2>
+
+<div class="row" style="margin-top:40px;" ng-app="app" ng-controller="MyCtrl" ng-init="getCourseStructureDetailsBasedOnId();">
+
+    <div class="col-md-12">
+        <h2 style="text-transform:capitalize;text-align:center"><b> {{ CourseName }} @* front end development*@</b></h2>
+    </div>
+
+    <div class="row" style="margin-top:40px;">
+        <div class="col-md-6">
+            <ul id="compositions-list" class="pure-tree main-tree">
+                <li>
+                    <input type="checkbox" id="trigger-views" checked="checked">
+                    <label for="trigger-views" style="display:none;"></label>
+                    <ul class="pure-tree">
+                        <li class="pure-tree_link" style="display:none;"><a href="" title="index.jade" target="_blank"></a></li>
+                        <li>
+                            <input type="checkbox" id="trigger-layout">
+                            <label for="trigger-layout">layout<i class="fa fa-chevron-down"></i></label>
+                            <ul class="pure-tree">
+                                <li>
+                                    <input type="checkbox" id="trigger-base">
+                                    <label for="trigger-base">base<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-footer">
+                                    <label for="trigger-footer">footer<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="trigger-partials">
+                            <label for="trigger-partials">partials<i class="fa fa-chevron-down"></i></label>
+                            <ul class="pure-tree">
+                                <li>
+                                    <input type="checkbox" id="trigger-header">
+                                    <label for="trigger-header">header<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-list">
+                                    <label for="trigger-list">list<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-message">
+                                    <label for="trigger-message">message<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-panel">
+                                    <label for="trigger-panel">panel<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-prompt">
+                                    <label for="trigger-prompt">prompt<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-sub-header">
+                                    <label for="trigger-sub-header">sub-header<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="trigger-ui">
+                            <label for="trigger-ui">ui<i class="fa fa-chevron-down"></i></label>
+                            <ul class="pure-tree">
+                                <li>
+                                    <input type="checkbox" id="trigger-box-color">
+                                    <label for="trigger-box-color">box-color<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-button">
+                                    <label for="trigger-button">button<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-charts">
+                                    <label for="trigger-charts">charts<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li>
+                                            <input type="checkbox" id="trigger-border">
+                                            <label for="trigger-border">border<i class="fa fa-chevron-down"></i></label>
+                                            <ul class="pure-tree">
+                                                <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="trigger-progress">
+                                            <label for="trigger-progress">progress<i class="fa fa-chevron-down"></i></label>
+                                            <ul class="pure-tree">
+                                                <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-check">
+                                    <label for="trigger-check">check<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-dropdown">
+                                    <label for="trigger-dropdown">dropdown<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-input">
+                                    <label for="trigger-input">input<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-radio">
+                                    <label for="trigger-radio">radio<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-rating-stars">
+                                    <label for="trigger-rating-stars">rating-stars<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-textarea">
+                                    <label for="trigger-textarea">textarea<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="trigger-toggle">
+                                    <label for="trigger-toggle">toggle<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-md-6">
+           
+            <p ng-if="CourseContentHeading !== undefined"><b>1.</b> {{CourseContentHeading}} </p>
+            <p ng-if="CourseContentHeading === undefined || CourseContentHeading === ''"></p>
+
+          
+            <p ng-if="SubHeading !== undefined" style="margin-left:10px;margin-top:-10px"><b>1.1 </b>{{SubHeading}}</p>
+            <p ng-if="SubHeading === undefined || SubHeading === ''"></p>
+
+            <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+            <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+            <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
+
+
+
+
+@*<div class="col-md-6">
+        <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+        <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+        <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+
+    </div>*@
+
+
+
+@*<div class="col-md-6">
+        <ul id="compositions-list" class="pure-tree main-tree">
+            <li>
+                <input type="checkbox" id="trigger-views" checked="checked">
+                <label for="trigger-views" style="display:none;"></label>
+                <ul class="pure-tree">
+                    <li class="pure-tree_link" style="display:none;"><a href="" title="index.jade" target="_blank"></a></li>
+                    <li>
+                        <h6><b>About <span> {{ CourseName }}</span> </b></h6>
+                        <input type="checkbox" id="trigger-layout">
+                        <label for="trigger-layout">Prerequisities<i class="fa fa-chevron-down"></i></label>
+                        <ul class="pure-tree">
+                            <li ng-repeat="d in prerequisitearray">
+                                {{ d.PrerequisitePoints }}
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="trigger-partials">
+                        <label for="trigger-partials">Description<i class="fa fa-chevron-down"></i></label>
+                        <ul class="pure-tree">
+
+                            <li ng-repeat="d in descriptionarray">
+                                {{d.Description}}
+                            </li>
+                            </ul>
+                   </li>
+
+                        </ul>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="trigger-ui">
+                        <label for="trigger-ui">ui<i class="fa fa-chevron-down"></i></label>
+                        <ul class="pure-tree">
+                            <li>
+                                <input type="checkbox" id="trigger-box-color">
+                                <label for="trigger-box-color">box-color<i class="fa fa-chevron-down"></i></label>
+                                <ul class="pure-tree">
+                                    <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <input type="checkbox" id="trigger-toggle">
+                                <label for="trigger-toggle">toggle<i class="fa fa-chevron-down"></i></label>
+                                <ul class="pure-tree">
+                                    <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+    </div>*@
+
+
+
+
+
+===================================================================
+
+
+
+
+@* <div class="row" style="margin-top:40px;" ng-app="app" ng-controller="MyCtrl"
+ ng-init="getCourseStructureDetailsBasedOnId();">
+
+            <div class="col-md-12">
+                <h2 style="text-transform:capitalize;text-align:center"><b> 
+{{ CourseName }} </b></h2>
+            </div>
+
+        <div class="row" style="margin-top:40px;">
+            <div class="col-md-6">
+                <ul id="compositions-list" class="pure-tree main-tree">
+                    <li>
+                        <input type="checkbox" id="trigger-views" checked="checked">
+                        <label for="trigger-views" style="display:none;"></label>
+                        <ul class="pure-tree">
+                            <li class="pure-tree_link" style="display:none;"><a href="" title="index.jade" target="_blank"></a></li>
+                            <li>
+                                <input type="checkbox" id="trigger-layout">
+                                <label for="trigger-layout">layout<i class="fa fa-chevron-down"></i></label>
+                                <ul class="pure-tree">
+                                    <li>
+                                        <input type="checkbox" id="trigger-base">
+                                        <label for="trigger-base">base<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-footer">
+                                        <label for="trigger-footer">footer<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="trigger-partials">
+                                <label for="trigger-partials">partials<i class="fa fa-chevron-down"></i></label>
+                                <ul class="pure-tree">
+                                    <li>
+                                        <input type="checkbox" id="trigger-header">
+                                        <label for="trigger-header">header<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-list">
+                                        <label for="trigger-list">list<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-message">
+                                        <label for="trigger-message">message<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-panel">
+                                        <label for="trigger-panel">panel<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-prompt">
+                                        <label for="trigger-prompt">prompt<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-sub-header">
+                                        <label for="trigger-sub-header">sub-header<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="trigger-ui">
+                                <label for="trigger-ui">ui<i class="fa fa-chevron-down"></i></label>
+                                <ul class="pure-tree">
+                                    <li>
+                                        <input type="checkbox" id="trigger-box-color">
+                                        <label for="trigger-box-color">box-color<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-button">
+                                        <label for="trigger-button">button<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-charts">
+                                        <label for="trigger-charts">charts<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li>
+                                                <input type="checkbox" id="trigger-border">
+                                                <label for="trigger-border">border<i class="fa fa-chevron-down"></i></label>
+                                                <ul class="pure-tree">
+                                                    <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="trigger-progress">
+                                                <label for="trigger-progress">progress<i class="fa fa-chevron-down"></i></label>
+                                                <ul class="pure-tree">
+                                                    <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-check">
+                                        <label for="trigger-check">check<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-dropdown">
+                                        <label for="trigger-dropdown">dropdown<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-input">
+                                        <label for="trigger-input">input<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-radio">
+                                        <label for="trigger-radio">radio<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-rating-stars">
+                                        <label for="trigger-rating-stars">rating-stars<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-textarea">
+                                        <label for="trigger-textarea">textarea<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="trigger-toggle">
+                                        <label for="trigger-toggle">toggle<i class="fa fa-chevron-down"></i></label>
+                                        <ul class="pure-tree">
+                                            <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-6">
+
+                <p ng-if="CourseContentHeading !== undefined"><b>1.</b> {{CourseContentHeading}} </p>
+                <p ng-if="CourseContentHeading === undefined || CourseContentHeading === ''"></p>
+
+
+                <p ng-if="SubHeading !== undefined" style="margin-left:10px;margin-top:-10px"><b>1.1 </b>{{SubHeading}}</p>
+                <p ng-if="SubHeading === undefined || SubHeading === ''"></p>
+
+                <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+                <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+                <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+            </div>
+        </div>*@
+
+
+
+
+
+
+        @*<div class="col-md-6">
+            <i class="fa fa-calendar" aria-hidden="true">&nbsp;DURATION</i>
+            <p ng-if="DurationName !== undefined">{{DurationName}}</p>
+            <p ng-if="DurationName === undefined || DurationName === ''">Immediate</p>
+
+        </div>*@
+
+
+
+        @*<div class="col-md-6">
+            <ul id="compositions-list" class="pure-tree main-tree">
+                <li>
+                    <input type="checkbox" id="trigger-views" checked="checked">
+                    <label for="trigger-views" style="display:none;"></label>
+                    <ul class="pure-tree">
+                        <li class="pure-tree_link" style="display:none;"><a href="" title="index.jade" target="_blank"></a></li>
+                        <li>
+                            <h6><b>About <span> {{ CourseName }}</span> </b></h6>
+                            <input type="checkbox" id="trigger-layout">
+                            <label for="trigger-layout">Prerequisities<i class="fa fa-chevron-down"></i></label>
+                            <ul class="pure-tree">
+                                <li ng-repeat="d in prerequisitearray">
+                                    {{ d.PrerequisitePoints }}
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" id="trigger-partials">
+                            <label for="trigger-partials">Description<i class="fa fa-chevron-down"></i></label>
+                            <ul class="pure-tree">
+
+                                <li ng-repeat="d in descriptionarray">
+                                    {{d.Description}}
+                                </li>
+                                </ul>
+                       </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" id="trigger-ui">
+                            <label for="trigger-ui">ui<i class="fa fa-chevron-down"></i></label>
+                            <ul class="pure-tree">
+                                <li>
+                                    <input type="checkbox" id="trigger-box-color">
+                                    <label for="trigger-box-color">box-color<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <input type="checkbox" id="trigger-toggle">
+                                    <label for="trigger-toggle">toggle<i class="fa fa-chevron-down"></i></label>
+                                    <ul class="pure-tree">
+                                        <li class="pure-tree_link"><a href="" title="index.jade" target="_blank">index.html</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+        </div>*@
+

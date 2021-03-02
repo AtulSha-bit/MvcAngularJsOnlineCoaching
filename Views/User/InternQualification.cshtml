@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "InternQualification";
+    Layout = "~/Views/Shared/LayoutIntern.cshtml";
+}
+
+
+
+<h3 class="text-center" style="margin-top:50px;"><u>Qualification Details</u></h3>
+<div ng-app="app" ng-controller="MyCtrl" ng-init="internprofileinit()">
+    <br />
+    <br />
+    <form class="inner2" name="qualificationreg" novalidate style="margin-left:40px;">
+        <div class="form-row">
+            <div class="col-md-3"></div>
+            <div class="form-group col-md-6">
+                <label for="inputState">Qualification</label>
+                <input type="text" class="form-control" ng-model="Qualification" disabled name="qualification" maxlength="30" required autocomplete="off" />
+                <span style="color:Red" ng-show="qualificationreg.qualification.$error.required && qualificationreg.qualification.$touched" ng-cloak>
+                    Qualification is required
+                </span>
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-3"></div>
+            <div class="form-group col-md-6">
+                <label for="inputCity"> College / University</label>
+                <input type="text" class="form-control" ng-model="CollegeUniv" name="collegeuniv" id="inputCollegeUniv" maxlength="40" required>
+                <span style="color:Red" ng-show="qualificationreg.collegeuniv.$error.required && qualificationreg.collegeuniv.$touched" ng-cloak>
+                    College/University is required
+                </span>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="col-md-3"></div>
+            <div class="form-group col-md-6">
+                <label for="inputZip"> Year Of Passing</label>
+                <input type="text" class="form-control" ng-model="YearOfPassing" id="yearOfPassing" name="yearofpassing" maxlength="6">
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="col-md-3"></div>
+            <div class="form-group col-md-6">
+                <label for="inputAddress"> How Do You Know</label>
+                <textarea rows="3" cols="30" ng-model="HowDoYouKnow" disabled name="howdoyouknow" class="form-control"
+                          maxlength="100" autocomplete="off">
+                                        </textarea>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+
+        @*<div class="form-group">
+                <label for="inputAddress2">Comments</label>
+                <textarea class="form-control" rows="3" cols="30" ng-model="Comments"
+                          id="Comments" name="comments" maxlength="100" autocomplete="off">
+                        </textarea>
+            </div>*@
+
+    </form>
+    <div align="center" id="butk">
+        <button type="submit" class="btn btn-primary"  ng-click="UpdateInternProfileQualification()" @*ng-click="UpdateInternProfile()"*@ ng-disabled="qualificationreg.$invalid">Save</button>
+    </div>
+</div>

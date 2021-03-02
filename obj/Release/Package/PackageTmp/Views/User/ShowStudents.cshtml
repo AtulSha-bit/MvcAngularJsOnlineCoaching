@@ -1,0 +1,227 @@
+﻿
+@{
+    ViewBag.Title = "ShowStudents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Session["UserId"] != null)
+{
+    if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "SuperAdmin")
+    {
+
+        <link href="~/Css/showstudentsuser.css" rel="stylesheet" />
+        <title>Show Structure</title>
+        <style>
+
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+            .ng-cloak, .x-ng-cloak,
+            .ng-hide {
+                display: none !important;
+            }
+
+            .previ:hover {
+                width: 100px;
+                height: 100px;
+                display: block;
+                overflow: hidden;
+            }
+
+            .prevClass:hover {
+                transform: scale(1.3);
+                transition: all 4s ease;
+            }
+        </style>
+
+        <body ng-app="app" ng-controller="MyCtrl" ng-init="studentDetailsInit()">
+           
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8" style="margin-top:9em;">
+                    <h2 class="text-center"><b><u>Student Details</u></b></h2>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-4 mt-lg-3 mt-md-3 mt-3">
+                            <label> Select Course </label>
+                            <select class="form-control" ng-model="intCourseId">
+                                <option value="" selected> -- Select Course -- </option>
+                                <option ng-repeat="d in CourseData" value="{{d.CourseId}}">
+                                    {{d.CourseName}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4 mt-lg-3  mt-md-3 mt-2">
+                            <label> Select Joining Date </label>
+                            <select class="form-control" ng-model="intJoiningDate" name="joiningdate" required>
+                                <option value="" selected>-- Select Joining Date --</option>
+                                <option value="1">01</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4 mt-lg-3  mt-md-3 mt-2">
+                            <label> Select Month </label>
+                            <select class="form-control" ng-model="strMonth">
+                                <option value="" selected> -- Select Month -- </option>
+                                <option value="1 Month">1 Month</option>
+                                <option value="2 Months">2 Months</option>
+                                <option value="3 Months">3 Months</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+
+
+
+            <div class="form-row">
+                <div class="col-md-5"></div>
+                <div class="col-md-2 mt-lg-3  mt-md-3 mt-2" style="text-align:center">
+
+                    <button type="submit" class="submit_btn" ng-click="getfilteredstudentsdata()">Get Data</button>
+                </div>
+                <div class="col-md-5"></div>
+
+            </div>
+
+
+            <br /> <br />
+
+            <div id="tblReport" ng-hide="hidestudentstable">
+                <table ng-table="StudentsDetail" show-filter="true" class="table-bordered table-hover table-condensed table-responsive">
+                    <tr ng-show="$data!='undefined' && $data!='null' && $data.length!=0" ng-repeat="user in $data">
+                        <td data-title="'Sno'">{{$index+1}}</td>
+                        <td data-title="'Name'" sortable="'StudentName'" filter="{'StudentName':'text'}"> {{ user.StudentName }} </td>
+                        <td data-title="'Course'" sortable="'Course'" filter="{'Course':'text'}"> {{ user.Course }} </td>
+                        <td data-title="'Duration'" sortable="'Course'" filter="{'Duration':'text'}"> {{ user.Duration }} </td>
+
+                        <td data-title="'Mobile'" sortable="'Mobile'" filter="{'Mobile':'text'}"> {{ user.Mobile}} </td>
+                        <td data-title="'Email'" sortable="'Email'" filter="{'Email':'text'}"> {{ user.Email}} </td>
+
+                        <td data-title="'DOB'" sortable="'DOB'" filter="{'DOB':'text'}"> {{ user.DOB}} </td>
+
+                        <td data-title="'State'" sortable="'State'" filter="{'State':'text'}"> {{ user.State}} </td>
+                        <td data-title="'City'" sortable="'City'" filter="{'City':'text'}"> {{ user.City}} </td>
+
+                        <td data-title="'Address'" sortable="'Address'" filter="{'Address':'text'}"> {{ user.Address}} </td>
+                        <td data-title="'Landmark'" sortable="'Landmark'" filter="{'Landmark':'text'}"> {{ user.Landmark}} </td>
+                        <td data-title="'Pin Code'" sortable="'PinCode'" filter="{'PinCode':'text'}"> {{ user.PinCode}} </td>
+                        @*<td data-title="'Fees'" sortable="'Fees'" filter="{'Fees':'text'}" style="text-align:right"> {{ user.Fees}} </td>
+                            <td data-title="'Discount(%)'" sortable="'DiscountPercent'" filter="{'DiscountPercent':'text'}"
+                                style="text-align:center">
+                                {{ user.DiscountPercent}}
+                            </td>*@
+
+                        <td data-title="'Payment Mode'" sortable="'PaymentMode'" filter="{'PaymentMode':'text'}"> {{ user.PaymentMode}} </td>
+
+                        @*     <td data-title="'Fee After Discount'" sortable="'FeeAfterDiscount'" filter="{'FeeAfterDiscount':'text'}"
+                                style="text-align:right">
+                                {{ user.FeeAfterDiscount}}
+                            </td>  *@
+
+                        @*   <td data-title="'Net Amount'" sortable="'NetAmount'" filter="{'NetAmount':'text'}" style="text-align:right">
+                                {{ user.NetAmount}}
+                            </td>
+                        *@
+
+                        <td data-title="'Total Amount'" sortable="'NetAmount'" filter="{'NetAmount':'text'}" style="text-align:right">
+                            {{ user.TotalAmount}}
+                        </td>
+
+                        @*<td data-title="'Joining Date'" sortable="'JoiningDate'" filter="{'JoiningDate':'text'}">
+                            {{ user.JoiningDate}}
+                        </td>
+
+                        <td data-title="'Month'" sortable="'Month'" filter="{'Month':'text'}">
+                            {{ user.Month}}
+                        </td>*@
+
+                        <td data-title="'Created By'" sortable="'CreatedBy'" filter="{'CreatedBy':'text'}">
+                            {{ user.CreatedBy}}
+                        </td>
+
+                        <td data-title="'Date Created'" sortable="'DateCreated'" filter="{'DateCreated':'text'}">
+                            {{ user.DateCreated}}
+                        </td>
+
+
+
+                        <td data-title="'Remarks'" sortable="'Remarks'" filter="{'Remarks':'text'}">
+                            {{ user.Remarks}}
+                        </td>
+
+                        <td data-title="'Payment Status'" sortable="'PaymentStatus'" filter="{'PaymentStatus':'text'}">
+                            {{ user.PaymentStatus }}
+
+                        </td>
+
+                        <td data-title="'Paid Amount'" sortable="'PaidAmount'" filter="{'PaidAmount':'text'}">
+                            {{ user.PaidAmount }}
+                        </td>
+
+                        <td data-title="'Due'" sortable="'Due'" filter="{'Due':'text'}">
+                            {{ user.Due }}
+                        </td>
+
+                        <td data-title="'Next Installment Date'" sortable="'NextInstallmentDate'" filter="{'NextInstallmentDate':'text'}">
+                            {{ user.NextInstallmentDate }}
+                        </td>
+
+                        <td data-title="'Remarks Payment'" sortable="'RemarksPayment'" filter="{'RemarksPayment':'text'}">
+                            {{ user.RemarksPayment }}
+                        </td>
+
+                        <td data-title="'Temporary Reg No'" sortable="'TemporaryRegNo'" filter="{'TemporaryRegNo':'text'}">
+                            {{ user.TemporaryRegNo }}
+                        </td>
+
+                        <td data-title="'Final Reg No'" sortable="'FinalRegNo'" filter="{'FinalRegNo':'text'}">
+                            {{ user.FinalRegNo }}
+                        </td>
+
+                        <td data-title="'Action'" class="editbtn">
+                            <a href="#" class="btn btn-success" ng-click="editStudentDetail(user.StudentId)"><i class="fas fa-edit"></i></a>
+                            &nbsp; &nbsp; &nbsp;
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="23" ng-show="$data =='undefined' || $data =='null' || $data.length==0">
+                            <h2 class="text-center"> <font color="red"> No records found</font>  </h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+            <br />
+
+            <div class="row mb-lg-3 mb-md-3 mb-3">
+                <div class="col-md-6 col-6" style="text-align:end">
+                    <input type="submit" id="btnSubmit" class="submit_btn" ng-click="generatePDF('tblReport')"
+                           ng-hide="PdfExport" value="Download Pdf" />
+
+
+                </div>
+
+                <div class="col-md-6 col-6" style="text-align:initial">
+
+
+                    @using (Html.BeginForm("DownloadFilteredInExcel", "User", FormMethod.Post))
+                    {
+                        <button class="submit_btn" ng-show="Export">
+                            Download In Excel
+                        </button>
+
+                    }
+                </div>
+
+            </div>
+
+
+
+            <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+            <script src="~/Scripts/jspdf.debug.js"></script>
+        </body>
+    }
+}
